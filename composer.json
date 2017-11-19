@@ -1,0 +1,52 @@
+{
+  "name": "core23/form-extensions-bundle",
+  "type": "symfony-bundle",
+  "description": "This bundle adds some custom form elements and validation to symfony.",
+  "keywords": [
+    "symfony",
+    "form",
+    "validation",
+    "bundle"
+  ],
+  "homepage": "https://core23.de",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Christian Gripp",
+      "email": "mail@core23.de"
+    }
+  ],
+  "require": {
+    "php": "^7.1",
+    "pugx/autocompleter-bundle": "^1.2",
+    "sonata-project/core-bundle": "^3.6",
+    "symfony/form": "^2.8 || ^3.2",
+    "symfony/framework-bundle": "^2.8 || ^3.2",
+    "symfony/validator": "^2.8 || ^3.2"
+  },
+  "require-dev": {
+    "friendsofphp/php-cs-fixer": "^2.0",
+    "matthiasnoback/symfony-dependency-injection-test": "^1.1",
+    "phpunit/phpunit": "^5.7",
+    "sllh/php-cs-fixer-styleci-bridge": "^2.0",
+    "symfony/phpunit-bridge": "^3.3.12"
+  },
+  "autoload": {
+    "psr-4": {
+      "Core23\\FormExtensionsBundle\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Core23\\FormExtensionsBundle\\Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "0.x-dev"
+    }
+  },
+  "config": {
+    "sort-packages": true
+  }
+}

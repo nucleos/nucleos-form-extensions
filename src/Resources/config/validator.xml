@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+  <services>
+    <service id="core23.form.validator.date_after" class="Core23\FormExtensionsBundle\Validator\Constraints\DateAfterValidator" public="false">
+      <tag name="validator.constraint_validator" alias="core23.form.validator.date_after"/>
+    </service>
+    <service id="core23.form.validator.batch_time_after" class="Core23\FormExtensionsBundle\Validator\Constraints\BatchTimeAfterValidator" public="false">
+      <tag name="validator.constraint_validator" alias="core23.form.validator.batch_time_after"/>
+    </service>
+  </services>
+</container>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+  <services>
+    <service id="core23.form.type.country" class="Core23\FormExtensionsBundle\Form\Type\CountryType">
+      <tag name="form.type" alias="core23_country"/>
+    </service>
+    <service id="core23.form.type.gender" class="Core23\FormExtensionsBundle\Form\Type\GenderType">
+      <tag name="form.type" alias="gender"/>
+    </service>
+    <service id="core23.form.type.output" class="Core23\FormExtensionsBundle\Form\Type\OutputType">
+      <tag name="form.type" alias="output"/>
+    </service>
+    <service id="core23.form.type.date_output" class="Core23\FormExtensionsBundle\Form\Type\DateOutputType">
+      <tag name="form.type" alias="date_output"/>
+    </service>
+    <service id="core23.form.type.number_output" class="Core23\FormExtensionsBundle\Form\Type\NumberOutputType">
+      <tag name="form.type" alias="number_output"/>
+    </service>
+    <service id="core23.form.type.batch_time" class="Core23\FormExtensionsBundle\Form\Type\BatchTimeType">
+      <tag name="form.type" alias="batch_time"/>
+      <argument>Core23\FormExtensionsBundle\Form\Model\BatchTime</argument>
+    </service>
+    <service id="core23.form.time_picker" class="Core23\FormExtensionsBundle\Form\Type\TimePickerType">
+      <tag name="form.type" alias="core23_type_time_picker"/>
+    </service>
+    <service id="core23.form.datetime_picker" class="Core23\FormExtensionsBundle\Form\Type\DateTimePickerType">
+      <tag name="form.type" alias="core23_type_datetime_picker"/>
+      <argument type="service" id="sonata.core.date.moment_format_converter"/>
+    </service>
+    <service id="core23.form.date_picker" class="Core23\FormExtensionsBundle\Form\Type\DatePickerType">
+      <tag name="form.type" alias="core23_type_date_picker"/>
+      <argument type="service" id="sonata.core.date.moment_format_converter"/>
+    </service>
+    <service id="core23.form.type.autocomplete" class="Core23\FormExtensionsBundle\Form\Type\AutocompleteType">
+      <tag name="form.type" alias="core23_autocomplete"/>
+    </service>
+    <service id="core23.form.image_type_extension" class="Core23\FormExtensionsBundle\Form\Extension\ImageTypeExtension">
+      <tag name="form.type_extension" alias="file" extended-type="Symfony\Component\Form\Extension\Core\Type\FileType"/>
+    </service>
+    <service id="core23.form.download_type_extension" class="Core23\FormExtensionsBundle\Form\Extension\DownloadTypeExtension">
+      <tag name="form.type_extension" alias="file" extended-type="Symfony\Component\Form\Extension\Core\Type\FileType"/>
+    </service>
+    <service id="core23.form.help_type_extension" class="Core23\FormExtensionsBundle\Form\Extension\HelpTypeExtension">
+      <tag name="form.type_extension" alias="form" extended-type="Symfony\Component\Form\Extension\Core\Type\FormType"/>
+    </service>
+  </services>
+</container>

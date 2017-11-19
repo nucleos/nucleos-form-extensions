@@ -1,0 +1,94 @@
+{% block batch_time_widget %}
+    {% spaceless %}
+        <div {{ block('widget_container_attributes') }}>
+            <div class="col-md-3">
+                {{ form_row(form.day) }}
+            </div>
+            <div class="col-md-9">
+                {{ form_row(form.time) }}
+            </div>
+        </div>
+    {% endspaceless %}
+{% endblock batch_time_widget %}
+
+{% block core23_type_datetime_picker_widget_html %}
+    {% if datepicker_use_button %}
+        <div class='input-group date' id='dtp_{{ id }}'>
+    {% endif %}
+    {% set attr = attr|merge({'data-date-format': moment_format}) %}
+    {{ block('datetime_widget') }}
+    {% if datepicker_use_button %}
+        <span class="input-group-addon"><span class="glyphicon glyphicon-clock"></span></span>
+        </div>
+    {% endif %}
+{% endblock core23_type_datetime_picker_widget_html %}
+
+{% block core23_type_time_picker_widget %}
+    {% spaceless %}
+        {% if wrap_fields_with_addons %}
+            <div class="form-group">
+                {{ block('core23_type_datetime_picker_widget_html') }}
+            </div>
+        {% else %}
+            {{ block('core23_type_datetime_picker_widget_html') }}
+        {% endif %}
+        <script type="text/javascript">
+            jQuery(function ($) {
+                $('#{{ datepicker_use_button ? 'dtp_' : '' }}{{ id }}').datetimepicker({{ dp_options|json_encode|raw }});
+            });
+        </script>
+    {% endspaceless %}
+{% endblock core23_type_time_picker_widget %}
+
+{% block gender_widget %}
+    {% spaceless %}
+        {% if expanded %}
+            <ul {{ block('widget_container_attributes') }}>
+                {% for child in form %}
+                    <li>
+                        {{ form_widget(child) }}
+                        {{ form_label(child) }}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            {{ block('choice_widget') }}
+        {% endif %}
+    {% endspaceless %}
+{% endblock %}
+
+{% block output_widget %}
+    {% spaceless %}
+        {% set attr = attr|merge({'class': attr.class|default('') ~ ' output'}) %}
+        <div {{ block('widget_attributes') }}>{{ value|default('') }}</div>
+    {% endspaceless %}
+{% endblock %}
+
+{% block date_output_widget %}
+    {% spaceless %}
+        {% set attr = attr|merge({'class': attr.class|default('') ~ ' output'}) %}
+        <div {{ block('widget_attributes') }}>{% if value %}{{ value|format_date }}{% else %}{{ defaultValue }}{% endif %}</div>
+    {% endspaceless %}
+{% endblock %}
+
+{% block file_widget %}
+    {{ block('form_widget_simple') }}
+    {% spaceless %}
+        {% if image_url is defined and image_url is not null %}
+            <img src="{{ asset(image_url) }}" />
+        {% endif %}
+        {% if download_path is defined and download_path is not null %}
+            <a href="{{ asset(download_path) }}" target="_blank" class="btn btn-primary">
+                <i class="fa fa-floppy-o" aria-hidden="true"></i>
+                {{ 'download_file'|trans({}, 'Core23FormExtensionsBundle') }}
+            </a>
+        {% endif %}
+    {% endspaceless %}
+{% endblock %}
+
+{% block core23_autocomplete_widget %}
+    {% set attr = attr|merge({
+        'data-select2-autocomplete': { 'ajaxRoute': path(route_name), 'text': text }|json_encode,
+    }) %}
+    {{ block('form_widget') }}
+{% endblock %}

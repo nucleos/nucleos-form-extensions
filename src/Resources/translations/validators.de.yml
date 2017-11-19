@@ -1,0 +1,4 @@
+error.batch_time_part_empty: 'Es wurde kein Datum für das Feld "%emptyField%" eingegeben, obwohl "%field%" hinterlegt wurde.'
+error.date_part_empty: 'Es wurde kein Datum für das Feld "%emptyField%" eingegeben, obwohl "%field%" hinterlegt wurde.'
+error.second_batch_time_before_first: 'Das eingegebene Datum darf nicht vor dem "%firstField%" Feld liegen.'
+error.second_date_before_first: 'Das eingegebene Datum darf nicht vor dem "%firstField%" Feld liegen.'
