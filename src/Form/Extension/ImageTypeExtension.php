@@ -48,7 +48,7 @@ class ImageTypeExtension extends AbstractTypeExtension
      */
     public function buildView(FormView $view, FormInterface $form, array $options)
     {
-        if ($options['image_path'] !== null) {
+        if (null !== $options['image_path']) {
             $parentData = $form->getParent()->getData();
 
             if (null !== $parentData) {

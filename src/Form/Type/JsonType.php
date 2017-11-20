@@ -54,7 +54,7 @@ class JsonType extends AbstractType implements DataTransformerInterface
             $json = array();
             foreach (explode("\n", $text) as $keyValue) {
                 $parts = explode(':', $keyValue);
-                if (count($parts) === 2) {
+                if (2 === count($parts)) {
                     $key   = trim($parts[0]);
                     $value = trim($parts[1]);
 
