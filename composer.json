@@ -21,6 +21,7 @@
     "pugx/autocompleter-bundle": "^1.2",
     "sonata-project/core-bundle": "^3.6",
     "symfony/dependency-injection": "^2.8.6 || ^3.2",
+    "symfony/expression-language": "^2.8.6 || ^3.2",
     "symfony/form": "^2.8 || ^3.2",
     "symfony/framework-bundle": "^2.8 || ^3.2",
     "symfony/validator": "^2.8 || ^3.2"
