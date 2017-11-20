@@ -20,7 +20,6 @@ if (!class_exists(ConstraintValidatorTestCase::class)) {
     );
 }
 
-
 class DateAfterValidatorTest extends ConstraintValidatorTestCase
 {
     /**
