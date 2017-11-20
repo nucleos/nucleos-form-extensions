@@ -50,7 +50,7 @@ class DownloadTypeExtension extends AbstractTypeExtension
      */
     public function buildView(FormView $view, FormInterface $form, array $options)
     {
-        if ($options['download_path'] !== null) {
+        if (null !== $options['download_path']) {
             $parentData = $form->getParent()->getData();
 
             if (null !== $parentData) {
