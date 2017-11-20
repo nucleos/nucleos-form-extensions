@@ -13,6 +13,14 @@ use Core23\FormExtensionsBundle\Validator\Constraints\DateAfter;
 use Core23\FormExtensionsBundle\Validator\Constraints\DateAfterValidator;
 use Symfony\Component\Validator\Test\ConstraintValidatorTestCase;
 
+if (!class_exists(ConstraintValidatorTestCase::class)) {
+    class_alias(
+        'Symfony\Component\Validator\Tests\Constraints\AbstractConstraintValidatorTest',
+        'Symfony\Component\Validator\Test\ConstraintValidatorTestCase'
+    );
+}
+
+
 class DateAfterValidatorTest extends ConstraintValidatorTestCase
 {
     /**

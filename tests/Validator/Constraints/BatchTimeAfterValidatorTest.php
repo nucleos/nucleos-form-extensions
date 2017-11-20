@@ -14,6 +14,13 @@ use Core23\FormExtensionsBundle\Validator\Constraints\BatchTimeAfter;
 use Core23\FormExtensionsBundle\Validator\Constraints\BatchTimeAfterValidator;
 use Symfony\Component\Validator\Test\ConstraintValidatorTestCase;
 
+if (!class_exists(ConstraintValidatorTestCase::class)) {
+    class_alias(
+        'Symfony\Component\Validator\Tests\Constraints\AbstractConstraintValidatorTest',
+        'Symfony\Component\Validator\Test\ConstraintValidatorTestCase'
+    );
+}
+
 class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
 {
     /**
