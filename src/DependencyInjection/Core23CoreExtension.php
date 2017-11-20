@@ -23,5 +23,6 @@ final class Core23CoreExtension extends Extension
     {
         $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('form.xml');
+        $loader->load('validator.xml');
     }
 }
