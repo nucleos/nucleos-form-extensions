@@ -21,9 +21,6 @@ class BatchTime
      * */
     private $time;
 
-    /**
-     * {@inheritdoc}
-     */
     public function __toString()
     {
         return 'Day: '.$this->day.', Time: '.($this->time ? $this->time->format('H:i:s') : '');
@@ -64,7 +61,7 @@ class BatchTime
     /**
      * @return int
      */
-    public function getSeconds() : int
+    public function getSeconds(): int
     {
         return $this->getDay() * 86400 + ($this->getTime() ? (int) $this->getTime()->format('U') : 0);
     }
