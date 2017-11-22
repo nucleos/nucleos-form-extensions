@@ -1,1 +1,6 @@
 download_file: 'Datei herunterladen'
+form.choice_at: 'Österreich'
+form.choice_ch: 'Schweiz'
+form.choice_de: 'Deutschland'
+gender.female: 'Frau'
+gender.male: 'Herr'
