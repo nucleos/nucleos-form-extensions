@@ -27,7 +27,7 @@ class BatchTime
     }
 
     /**
-     * @return int|null
+     * @return int
      */
     public function getDay(): int
     {
@@ -53,7 +53,7 @@ class BatchTime
     /**
      * @param \DateTime $time
      */
-    public function setTime(\DateTime $time)
+    public function setTime(\DateTime $time) : void
     {
         $this->time = $time;
     }

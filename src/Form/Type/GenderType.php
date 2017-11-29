@@ -15,9 +15,9 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class GenderType extends AbstractType
 {
-    const TYPE_MALE = 'm';
+    public const TYPE_MALE   = 'm';
 
-    const TYPE_FEMALE = 'f';
+    public const TYPE_FEMALE = 'f';
 
     /**
      * {@inheritdoc}
