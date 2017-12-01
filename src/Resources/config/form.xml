@@ -26,10 +26,12 @@
     <service id="core23.form.datetime_picker" class="Core23\FormExtensionsBundle\Form\Type\DateTimePickerType">
       <tag name="form.type" alias="core23_type_datetime_picker"/>
       <argument type="service" id="sonata.core.date.moment_format_converter"/>
+      <argument type="service" id="translator"/>
     </service>
     <service id="core23.form.date_picker" class="Core23\FormExtensionsBundle\Form\Type\DatePickerType">
       <tag name="form.type" alias="core23_type_date_picker"/>
       <argument type="service" id="sonata.core.date.moment_format_converter"/>
+      <argument type="service" id="translator"/>
     </service>
     <service id="core23.form.type.autocomplete" class="Core23\FormExtensionsBundle\Form\Type\AutocompleteType">
       <tag name="form.type" alias="core23_autocomplete"/>
