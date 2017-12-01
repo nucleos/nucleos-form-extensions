@@ -53,7 +53,7 @@ class BatchTime
     /**
      * @param \DateTime $time
      */
-    public function setTime(\DateTime $time) : void
+    public function setTime(\DateTime $time): void
     {
         $this->time = $time;
     }
@@ -61,7 +61,7 @@ class BatchTime
     /**
      * @return int
      */
-    public function getSeconds() : int
+    public function getSeconds(): int
     {
         return $this->getDay() * 86400 + ($this->getTime() ? (int) $this->getTime()->format('U') : 0);
     }
