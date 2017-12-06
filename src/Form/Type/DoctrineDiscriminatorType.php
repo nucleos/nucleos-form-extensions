@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * (c) Christian Gripp <mail@core23.de>
  *
@@ -65,9 +67,9 @@ abstract class DoctrineDiscriminatorType extends AbstractType
     /**
      * {@inheritdoc}
      */
-    public function configureOptions(OptionsResolver $resolver)
+    public function configureOptions(OptionsResolver $resolver): void
     {
-        $choices = array();
+        $choices = [];
 
         $meta = $this->entityManager->getEntityManager()->getClassMetadata($this->entityManager->getClass());
 
@@ -75,8 +77,8 @@ abstract class DoctrineDiscriminatorType extends AbstractType
             $choices[$key] = $key;
         }
 
-        $resolver->setDefaults(array(
+        $resolver->setDefaults([
             'choices' => $choices,
-        ));
+        ]);
     }
 }

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * (c) Christian Gripp <mail@core23.de>
  *
@@ -18,17 +20,17 @@ class CountryType extends AbstractType
     /**
      * {@inheritdoc}
      */
-    public function configureOptions(OptionsResolver $resolver)
+    public function configureOptions(OptionsResolver $resolver): void
     {
         $countries = $this->getCountries();
 
-        $resolver->setDefaults(array(
+        $resolver->setDefaults([
             'choices'      => array_combine($countries, $countries),
             'choice_label' => function ($value, $key, $index) {
                 return 'form.choice_'.strtolower($value);
             },
             'translation_domain' => 'Core23FormExtensionsBundle',
-        ));
+        ]);
     }
 
     /**
@@ -60,6 +62,6 @@ class CountryType extends AbstractType
      */
     protected function getCountries()
     {
-        return array('DE', 'AT', 'CH');
+        return ['DE', 'AT', 'CH'];
     }
 }

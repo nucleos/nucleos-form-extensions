@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * (c) Christian Gripp <mail@core23.de>
  *
@@ -25,18 +27,18 @@ class DateAfterValidatorTest extends ConstraintValidatorTestCase
     /**
      * @expectedException \InvalidArgumentException
      */
-    public function testValidateInvalidFirstField()
+    public function testValidateInvalidFirstField(): void
     {
         $object = $this->getMockBuilder('stdClass')
-            ->setMethods(array('getEnd'))
+            ->setMethods(['getEnd'])
             ->getMock();
         $object->expects($this->any())->method('getEnd')->will($this->returnValue(new \DateTime()));
 
         $constraint = new DateAfter(
-            array(
+            [
                 'firstField'  => 'begin',
                 'secondField' => 'end',
-            )
+            ]
         );
 
         $this->validator->validate($object, $constraint);
@@ -45,18 +47,18 @@ class DateAfterValidatorTest extends ConstraintValidatorTestCase
     /**
      * @expectedException \InvalidArgumentException
      */
-    public function testValidateInvalidSecondField()
+    public function testValidateInvalidSecondField(): void
     {
         $object = $this->getMockBuilder('stdClass')
-            ->setMethods(array('getBegin'))
+            ->setMethods(['getBegin'])
             ->getMock();
         $object->expects($this->any())->method('getBegin')->will($this->returnValue(new \DateTime()));
 
         $constraint = new DateAfter(
-            array(
+            [
                 'firstField'  => 'begin',
                 'secondField' => 'end',
-            )
+            ]
         );
 
         $this->validator->validate($object, $constraint);
@@ -65,19 +67,19 @@ class DateAfterValidatorTest extends ConstraintValidatorTestCase
     /**
      * @expectedException \Symfony\Component\Validator\Exception\UnexpectedTypeException
      */
-    public function testValidateInvalidFirstValue()
+    public function testValidateInvalidFirstValue(): void
     {
         $object = $this->getMockBuilder('stdClass')
-            ->setMethods(array('getBegin', 'getEnd'))
+            ->setMethods(['getBegin', 'getEnd'])
             ->getMock();
         $object->expects($this->any())->method('getBegin')->will($this->returnValue(new \DateTime()));
         $object->expects($this->any())->method('getEnd')->will($this->returnValue('test'));
 
         $constraint = new DateAfter(
-            array(
+            [
                 'firstField'  => 'begin',
                 'secondField' => 'end',
-            )
+            ]
         );
 
         $this->validator->validate($object, $constraint);
@@ -86,37 +88,37 @@ class DateAfterValidatorTest extends ConstraintValidatorTestCase
     /**
      * @expectedException \Symfony\Component\Validator\Exception\UnexpectedTypeException
      */
-    public function testValidateInvalidSecondValue()
+    public function testValidateInvalidSecondValue(): void
     {
         $object = $this->getMockBuilder('stdClass')
-            ->setMethods(array('getBegin', 'getEnd'))
+            ->setMethods(['getBegin', 'getEnd'])
             ->getMock();
         $object->expects($this->any())->method('getBegin')->will($this->returnValue('test'));
         $object->expects($this->any())->method('getEnd')->will($this->returnValue(new \DateTime()));
 
         $constraint = new DateAfter(
-            array(
+            [
                 'firstField'  => 'begin',
                 'secondField' => 'end',
-            )
+            ]
         );
 
         $this->validator->validate($object, $constraint);
     }
 
-    public function testValidateEmptyFirstValue()
+    public function testValidateEmptyFirstValue(): void
     {
         $object = $this->getMockBuilder('stdClass')
-            ->setMethods(array('getBegin', 'getEnd'))
+            ->setMethods(['getBegin', 'getEnd'])
             ->getMock();
         $object->expects($this->any())->method('getBegin')->will($this->returnValue(null));
         $object->expects($this->any())->method('getEnd')->will($this->returnValue(new \DateTime()));
 
         $constraint = new DateAfter(
-            array(
+            [
                 'firstField'  => 'begin',
                 'secondField' => 'end',
-            )
+            ]
         );
 
         $this->setPropertyPath('');
@@ -130,19 +132,19 @@ class DateAfterValidatorTest extends ConstraintValidatorTestCase
             ->assertRaised();
     }
 
-    public function testValidateEmptySecondValue()
+    public function testValidateEmptySecondValue(): void
     {
         $object = $this->getMockBuilder('stdClass')
-            ->setMethods(array('getBegin', 'getEnd'))
+            ->setMethods(['getBegin', 'getEnd'])
             ->getMock();
         $object->expects($this->any())->method('getBegin')->will($this->returnValue(new \DateTime()));
         $object->expects($this->any())->method('getEnd')->will($this->returnValue(null));
 
         $constraint = new DateAfter(
-            array(
+            [
                 'firstField'  => 'begin',
                 'secondField' => 'end',
-            )
+            ]
         );
 
         $this->setPropertyPath('');
@@ -156,19 +158,19 @@ class DateAfterValidatorTest extends ConstraintValidatorTestCase
             ->assertRaised();
     }
 
-    public function testValidateDatesInvalid()
+    public function testValidateDatesInvalid(): void
     {
         $object = $this->getMockBuilder('stdClass')
-            ->setMethods(array('getBegin', 'getEnd'))
+            ->setMethods(['getBegin', 'getEnd'])
             ->getMock();
         $object->expects($this->any())->method('getBegin')->will($this->returnValue(new \DateTime('2015-02-01 10:00')));
         $object->expects($this->any())->method('getEnd')->will($this->returnValue(new \DateTime('2015-01-01 10:00')));
 
         $constraint = new DateAfter(
-            array(
+            [
                 'firstField'  => 'begin',
                 'secondField' => 'end',
-            )
+            ]
         );
 
         $this->setPropertyPath('');
@@ -182,19 +184,19 @@ class DateAfterValidatorTest extends ConstraintValidatorTestCase
             ->assertRaised();
     }
 
-    public function testValidateDatesValid()
+    public function testValidateDatesValid(): void
     {
         $object = $this->getMockBuilder('stdClass')
-            ->setMethods(array('getBegin', 'getEnd'))
+            ->setMethods(['getBegin', 'getEnd'])
             ->getMock();
         $object->expects($this->any())->method('getBegin')->will($this->returnValue(new \DateTime('2015-01-01 10:00')));
         $object->expects($this->any())->method('getEnd')->will($this->returnValue(new \DateTime('2015-02-01 10:00')));
 
         $constraint = new DateAfter(
-            array(
+            [
                 'firstField'  => 'begin',
                 'secondField' => 'end',
-            )
+            ]
         );
 
         $this->validator->validate($object, $constraint);
@@ -202,19 +204,19 @@ class DateAfterValidatorTest extends ConstraintValidatorTestCase
         $this->assertNoViolation();
     }
 
-    public function testValidateEqualDate()
+    public function testValidateEqualDate(): void
     {
         $object = $this->getMockBuilder('stdClass')
-            ->setMethods(array('getBegin', 'getEnd'))
+            ->setMethods(['getBegin', 'getEnd'])
             ->getMock();
         $object->expects($this->any())->method('getBegin')->will($this->returnValue(new \DateTime('2015-01-01 10:00')));
         $object->expects($this->any())->method('getEnd')->will($this->returnValue(new \DateTime('2015-01-01 10:00')));
 
         $constraint = new DateAfter(
-            array(
+            [
                 'firstField'  => 'begin',
                 'secondField' => 'end',
-            )
+            ]
         );
 
         $this->validator->validate($object, $constraint);
@@ -222,20 +224,20 @@ class DateAfterValidatorTest extends ConstraintValidatorTestCase
         $this->assertNoViolation();
     }
 
-    public function testValidateNotRequired()
+    public function testValidateNotRequired(): void
     {
         $object = $this->getMockBuilder('stdClass')
-            ->setMethods(array('getBegin', 'getEnd'))
+            ->setMethods(['getBegin', 'getEnd'])
             ->getMock();
         $object->expects($this->any())->method('getBegin')->will($this->returnValue(null));
         $object->expects($this->any())->method('getEnd')->will($this->returnValue(null));
 
         $constraint = new DateAfter(
-            array(
+            [
                 'firstField'  => 'begin',
                 'secondField' => 'end',
                 'required'    => false,
-            )
+            ]
         );
 
         $this->validator->validate($object, $constraint);
@@ -243,20 +245,20 @@ class DateAfterValidatorTest extends ConstraintValidatorTestCase
         $this->assertNoViolation();
     }
 
-    public function testValidateNotRequiredWithEmptyFirst()
+    public function testValidateNotRequiredWithEmptyFirst(): void
     {
         $object = $this->getMockBuilder('stdClass')
-            ->setMethods(array('getBegin', 'getEnd'))
+            ->setMethods(['getBegin', 'getEnd'])
             ->getMock();
         $object->expects($this->any())->method('getBegin')->will($this->returnValue(null));
         $object->expects($this->any())->method('getEnd')->will($this->returnValue(new \DateTime()));
 
         $constraint = new DateAfter(
-            array(
+            [
                 'firstField'  => 'begin',
                 'secondField' => 'end',
                 'required'    => false,
-            )
+            ]
         );
 
         $this->setPropertyPath('');
@@ -270,20 +272,20 @@ class DateAfterValidatorTest extends ConstraintValidatorTestCase
             ->assertRaised();
     }
 
-    public function testValidateNotRequiredWithEmptySecond()
+    public function testValidateNotRequiredWithEmptySecond(): void
     {
         $object = $this->getMockBuilder('stdClass')
-            ->setMethods(array('getBegin', 'getEnd'))
+            ->setMethods(['getBegin', 'getEnd'])
             ->getMock();
         $object->expects($this->any())->method('getBegin')->will($this->returnValue(new \DateTime()));
         $object->expects($this->any())->method('getEnd')->will($this->returnValue(null));
 
         $constraint = new DateAfter(
-            array(
+            [
                 'firstField'  => 'begin',
                 'secondField' => 'end',
                 'required'    => false,
-            )
+            ]
         );
 
         $this->setPropertyPath('');

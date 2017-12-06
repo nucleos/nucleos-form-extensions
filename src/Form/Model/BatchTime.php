@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * (c) Christian Gripp <mail@core23.de>
  *
@@ -45,7 +47,7 @@ class BatchTime
     /**
      * @return \DateTime|null
      */
-    public function getTime(): ? \DateTime
+    public function getTime(): ?\DateTime
     {
         return $this->time;
     }

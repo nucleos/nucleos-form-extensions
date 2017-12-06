@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * (c) Christian Gripp <mail@core23.de>
  *
@@ -22,7 +24,7 @@ class BatchTimeAfterValidator extends ConstraintValidator
     /**
      * {@inheritdoc}
      */
-    public function validate($value, Constraint $constraint)
+    public function validate($value, Constraint $constraint): void
     {
         if (!$constraint instanceof BatchTimeAfter) {
             throw new UnexpectedTypeException($constraint, __NAMESPACE__.'\BatchTimeAfter');
@@ -33,7 +35,7 @@ class BatchTimeAfterValidator extends ConstraintValidator
         }
 
         try {
-            $firstDate  = $this->getFieldValue($value, $constraint->firstField);
+            $firstDate = $this->getFieldValue($value, $constraint->firstField);
         } catch (NoSuchPropertyException $e) {
             throw new InvalidArgumentException($e->getMessage());
         }

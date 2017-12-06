@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * (c) Christian Gripp <mail@core23.de>
  *
@@ -19,7 +21,7 @@ class DateOutputType extends AbstractType
     /**
      * {@inheritdoc}
      */
-    public function buildView(FormView $view, FormInterface $form, array $options)
+    public function buildView(FormView $view, FormInterface $form, array $options): void
     {
         $view->vars['format']       = $options['format'];
         $view->vars['defaultValue'] = $options['default'];
@@ -28,17 +30,17 @@ class DateOutputType extends AbstractType
     /**
      * {@inheritdoc}
      */
-    public function configureOptions(OptionsResolver $resolver)
+    public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver
-            ->setDefaults(array(
+            ->setDefaults([
                 'default'    => '',
                 'format'     => null,
                 'data_class' => \DateTime::class,
                 'required'   => false,
                 'read_only'  => true,
                 'disabled'   => true,
-            ))
+            ])
             ->setAllowedTypes('default', 'string')
         ;
     }

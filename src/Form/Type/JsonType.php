@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * (c) Christian Gripp <mail@core23.de>
  *
@@ -19,7 +21,7 @@ class JsonType extends AbstractType implements DataTransformerInterface
     /**
      * {@inheritdoc}
      */
-    public function buildForm(FormBuilderInterface $builder, array $options)
+    public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder->addModelTransformer($this);
     }
@@ -51,7 +53,7 @@ class JsonType extends AbstractType implements DataTransformerInterface
         $json = json_decode($text, true);
 
         if (!$json) {
-            $json = array();
+            $json = [];
             foreach (explode("\n", $text) as $keyValue) {
                 $parts = explode(':', $keyValue);
                 if (2 === count($parts)) {

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * (c) Christian Gripp <mail@core23.de>
  *
@@ -48,7 +50,7 @@ class DateAfter extends Constraint
         parent::__construct($options);
 
         if (null === $this->firstField || null === $this->secondField) {
-            throw new MissingOptionsException('The options "firstField" and "secondField" must be given for constraint '.__CLASS__, array('firstField', 'secondField'));
+            throw new MissingOptionsException('The options "firstField" and "secondField" must be given for constraint '.__CLASS__, ['firstField', 'secondField']);
         } elseif ($this->firstField === $this->secondField) {
             throw new InvalidArgumentException('The options "firstField" and "secondField" can not be the same for constraint '.__CLASS__);
         }

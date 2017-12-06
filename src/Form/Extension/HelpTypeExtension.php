@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * (c) Christian Gripp <mail@core23.de>
  *
@@ -29,23 +31,23 @@ final class HelpTypeExtension extends AbstractTypeExtension
     /**
      * {@inheritdoc}
      */
-    public function buildView(FormView $view, FormInterface $form, array $options)
+    public function buildView(FormView $view, FormInterface $form, array $options): void
     {
         $helpTranslationDomain = $options['help_translation_domain'];
         if ($view->parent && null === $helpTranslationDomain) {
             $helpTranslationDomain = $view->vars['translation_domain'];
         }
 
-        $view->vars = array_replace($view->vars, array(
+        $view->vars = array_replace($view->vars, [
             'help'                    => $options['help'],
             'help_translation_domain' => $helpTranslationDomain,
-        ));
+        ]);
     }
 
     /**
      * {@inheritdoc}
      */
-    public function configureOptions(OptionsResolver $resolver)
+    public function configureOptions(OptionsResolver $resolver): void
     {
         $helpTranslationDomainNormalizer = function (Options $options, $helpTranslationDomain) {
             if (true === $helpTranslationDomain) {
@@ -55,14 +57,14 @@ final class HelpTypeExtension extends AbstractTypeExtension
             return $helpTranslationDomain;
         };
 
-        $resolver->setDefaults(array(
+        $resolver->setDefaults([
             'help'                    => null,
             'help_translation_domain' => true,
-        ));
+        ]);
 
         $resolver->setNormalizer('help_translation_domain', $helpTranslationDomainNormalizer);
 
-        $resolver->setAllowedTypes('help', array('null', 'string'));
-        $resolver->setAllowedTypes('help_translation_domain', array('null', 'bool', 'string'));
+        $resolver->setAllowedTypes('help', ['null', 'string']);
+        $resolver->setAllowedTypes('help_translation_domain', ['null', 'bool', 'string']);
     }
 }

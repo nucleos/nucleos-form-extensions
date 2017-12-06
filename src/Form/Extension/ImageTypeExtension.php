@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * (c) Christian Gripp <mail@core23.de>
  *
@@ -23,20 +25,20 @@ class ImageTypeExtension extends AbstractTypeExtension
     /**
      * {@inheritdoc}
      */
-    public function configureOptions(OptionsResolver $resolver)
+    public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver
-            ->setDefaults(array(
+            ->setDefaults([
                 'image_path' => null,
-            ))
-            ->setAllowedTypes('image_path', array('null', 'string'))
+            ])
+            ->setAllowedTypes('image_path', ['null', 'string'])
         ;
     }
 
     /**
      * {@inheritdoc}
      */
-    public function buildForm(FormBuilderInterface $builder, array $options)
+    public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         if (null !== $options['image_path']) {
             $builder->setAttribute('image_path', $options['image_path']);
@@ -46,7 +48,7 @@ class ImageTypeExtension extends AbstractTypeExtension
     /**
      * {@inheritdoc}
      */
-    public function buildView(FormView $view, FormInterface $form, array $options)
+    public function buildView(FormView $view, FormInterface $form, array $options): void
     {
         if (null !== $options['image_path'] && null !== $form->getParent()) {
             $parentData = $form->getParent()->getData();

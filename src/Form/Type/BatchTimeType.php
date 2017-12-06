@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * (c) Christian Gripp <mail@core23.de>
  *
@@ -32,21 +34,21 @@ class BatchTimeType extends AbstractType
     /**
      * {@inheritdoc}
      */
-    public function buildForm(FormBuilderInterface $builder, array $options)
+    public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $required = $builder->getForm()->isRequired();
 
         $builder
-            ->add('day', ChoiceType::class, array(
+            ->add('day', ChoiceType::class, [
                 'label'                     => 'form.input_batch_time_day',
                 'choices'                   => range(0, 2),
                 'choice_translation_domain' => false,
                 'required'                  => $required,
-            ))
-            ->add('time', TimePickerType::class, array(
+            ])
+            ->add('time', TimePickerType::class, [
                 'label'    => 'form.input_batch_time_time',
                 'required' => $required,
-            ));
+            ]);
     }
 
     /**
@@ -68,10 +70,10 @@ class BatchTimeType extends AbstractType
     /**
      * {@inheritdoc}
      */
-    public function configureOptions(OptionsResolver $resolver)
+    public function configureOptions(OptionsResolver $resolver): void
     {
-        $resolver->setDefaults(array(
+        $resolver->setDefaults([
             'data_class' => $this->class,
-        ));
+        ]);
     }
 }

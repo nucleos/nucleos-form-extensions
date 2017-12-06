@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * (c) Christian Gripp <mail@core23.de>
  *
@@ -20,9 +22,9 @@ class TimePickerType extends AbstractType
     /**
      * {@inheritdoc}
      */
-    public function finishView(FormView $view, FormInterface $form, array $options)
+    public function finishView(FormView $view, FormInterface $form, array $options): void
     {
-        $dpOptions = array();
+        $dpOptions = [];
         $format    = 'HH';
 
         if ($options['with_minutes']) {
@@ -60,16 +62,16 @@ class TimePickerType extends AbstractType
     /**
      * {@inheritdoc}
      */
-    public function configureOptions(OptionsResolver $resolver)
+    public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver
-            ->setDefaults(array(
+            ->setDefaults([
                 'input'                 => 'datetime',
                 'widget'                => 'single_text',
                 'datepicker_use_button' => true,
                 'dp_pick_date'          => false,
                 'dp_minute_stepping'    => 1,
-            ))
+            ])
             ->setAllowedTypes('input', 'string')
             ->setAllowedTypes('widget', 'string')
         ;

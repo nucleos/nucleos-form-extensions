@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * (c) Christian Gripp <mail@core23.de>
  *
@@ -15,22 +17,22 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class GenderType extends AbstractType
 {
-    public const TYPE_MALE   = 'm';
+    public const TYPE_MALE = 'm';
 
     public const TYPE_FEMALE = 'f';
 
     /**
      * {@inheritdoc}
      */
-    public function configureOptions(OptionsResolver $resolver)
+    public function configureOptions(OptionsResolver $resolver): void
     {
-        $resolver->setDefaults(array(
-            'choices' => array(
+        $resolver->setDefaults([
+            'choices' => [
                 'gender.male'   => static::TYPE_MALE,
                 'gender.female' => static::TYPE_FEMALE,
-            ),
+            ],
             'choices_as_values' => true,
-        ));
+        ]);
     }
 
     /**

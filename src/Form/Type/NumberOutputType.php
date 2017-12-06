@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * (c) Christian Gripp <mail@core23.de>
  *
@@ -19,7 +21,7 @@ class NumberOutputType extends AbstractType
     /**
      * {@inheritdoc}
      */
-    public function buildForm(FormBuilderInterface $builder, array $options)
+    public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder->addViewTransformer(
             new NumberToLocalizedStringTransformer(
@@ -33,10 +35,10 @@ class NumberOutputType extends AbstractType
     /**
      * {@inheritdoc}
      */
-    public function configureOptions(OptionsResolver $resolver)
+    public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver
-            ->setDefaults(array(
+            ->setDefaults([
                 'precision'     => null,
                 'grouping'      => false,
                 'rounding_mode' => NumberToLocalizedStringTransformer::ROUND_HALF_UP,
@@ -45,12 +47,12 @@ class NumberOutputType extends AbstractType
                 'required'      => false,
                 'read_only'     => true,
                 'disabled'      => true,
-            ))
-            ->setAllowedTypes('precision', array('null', 'int'))
+            ])
+            ->setAllowedTypes('precision', ['null', 'int'])
             ->setAllowedTypes('grouping', 'bool')
             ->setAllowedTypes('suffix', 'string')
             ->setAllowedTypes('prefix', 'string')
-            ->setAllowedValues('rounding_mode', array(
+            ->setAllowedValues('rounding_mode', [
                 NumberToLocalizedStringTransformer::ROUND_FLOOR,
                 NumberToLocalizedStringTransformer::ROUND_DOWN,
                 NumberToLocalizedStringTransformer::ROUND_HALF_DOWN,
@@ -58,7 +60,7 @@ class NumberOutputType extends AbstractType
                 NumberToLocalizedStringTransformer::ROUND_HALF_UP,
                 NumberToLocalizedStringTransformer::ROUND_UP,
                 NumberToLocalizedStringTransformer::ROUND_CEILING,
-            ))
+            ])
         ;
     }
 

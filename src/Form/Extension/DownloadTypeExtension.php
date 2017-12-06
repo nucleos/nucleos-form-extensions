@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * (c) Christian Gripp <mail@core23.de>
  *
@@ -23,22 +25,22 @@ class DownloadTypeExtension extends AbstractTypeExtension
     /**
      * {@inheritdoc}
      */
-    public function configureOptions(OptionsResolver $resolver)
+    public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver
-            ->setDefaults(array(
+            ->setDefaults([
                 'download_path' => null,
                 'download_text' => 'link_download',
-            ))
-            ->setAllowedTypes('download_path', array('null', 'string'))
-            ->setAllowedTypes('download_text', array('null', 'string'))
+            ])
+            ->setAllowedTypes('download_path', ['null', 'string'])
+            ->setAllowedTypes('download_text', ['null', 'string'])
         ;
     }
 
     /**
      * {@inheritdoc}
      */
-    public function buildForm(FormBuilderInterface $builder, array $options)
+    public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         if (null !== $options['download_path']) {
             $builder->setAttribute('download_path', $options['download_path']);
@@ -48,7 +50,7 @@ class DownloadTypeExtension extends AbstractTypeExtension
     /**
      * {@inheritdoc}
      */
-    public function buildView(FormView $view, FormInterface $form, array $options)
+    public function buildView(FormView $view, FormInterface $form, array $options): void
     {
         if (null !== $options['download_path'] && null !== $form->getParent()) {
             $parentData = $form->getParent()->getData();
