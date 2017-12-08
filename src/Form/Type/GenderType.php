@@ -28,10 +28,14 @@ class GenderType extends AbstractType
     {
         $resolver->setDefaults([
             'choices' => [
-                'gender.male'   => static::TYPE_MALE,
-                'gender.female' => static::TYPE_FEMALE,
+                'male'   => static::TYPE_MALE,
+                'female' => static::TYPE_FEMALE,
             ],
             'choices_as_values' => true,
+            'choice_label'      => function ($value, $key, $index) {
+                return 'gender.'.$key;
+            },
+            'choice_translation_domain' => 'Core23FormExtensionsBundle',
         ]);
     }
 
