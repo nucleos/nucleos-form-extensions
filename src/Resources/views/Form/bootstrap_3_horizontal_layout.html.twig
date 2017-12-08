@@ -13,3 +13,11 @@
     {{ block('help') }}
 {%- endblock form_widget %}
 
+{# Override col widths #}
+{% block form_label_class -%}
+col-sm-3
+{%- endblock form_label_class %}
+
+{% block form_group_class -%}
+col-sm-9
+{%- endblock form_group_class %}
