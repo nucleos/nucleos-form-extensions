@@ -20,11 +20,11 @@
     "php": "^7.1",
     "pugx/autocompleter-bundle": "^1.2",
     "sonata-project/core-bundle": "^3.6",
-    "symfony/dependency-injection": "^2.8.6 || ^3.2 || ^4.0",
-    "symfony/expression-language": "^2.8.6 || ^3.2 || ^4.0",
-    "symfony/form": "^2.8.6 || ^3.2 || ^4.0",
-    "symfony/framework-bundle": "^2.8.6 || ^3.2 || ^4.0",
-    "symfony/validator": "^2.8.6 || ^3.2 || ^4.0"
+    "symfony/dependency-injection": "^3.4 || ^4.0",
+    "symfony/expression-language": "^3.4 || ^4.0",
+    "symfony/form": "^3.4 || ^4.0",
+    "symfony/framework-bundle": "^3.4 || ^4.0",
+    "symfony/validator": "^3.4 || ^4.0"
   },
   "require-dev": {
     "matthiasnoback/symfony-dependency-injection-test": "^1.1",
