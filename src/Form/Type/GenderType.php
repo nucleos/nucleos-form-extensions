@@ -31,8 +31,7 @@ class GenderType extends AbstractType
                 'male'   => static::TYPE_MALE,
                 'female' => static::TYPE_FEMALE,
             ],
-            'choices_as_values' => true,
-            'choice_label'      => function ($value, $key, $index) {
+            'choice_label' => function ($value, $key, $index) {
                 return 'gender.'.$key;
             },
             'choice_translation_domain' => 'Core23FormExtensionsBundle',
