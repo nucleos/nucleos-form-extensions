@@ -23,7 +23,6 @@ class OutputType extends AbstractType
     {
         $resolver->setDefaults([
             'required'  => false,
-            'read_only' => true,
             'disabled'  => true,
         ]);
     }

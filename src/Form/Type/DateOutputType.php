@@ -38,7 +38,6 @@ class DateOutputType extends AbstractType
                 'format'     => null,
                 'data_class' => \DateTime::class,
                 'required'   => false,
-                'read_only'  => true,
                 'disabled'   => true,
             ])
             ->setAllowedTypes('default', 'string')

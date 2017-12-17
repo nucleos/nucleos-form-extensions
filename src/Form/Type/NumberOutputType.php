@@ -45,7 +45,6 @@ class NumberOutputType extends AbstractType
                 'suffix'        => '',
                 'prefix'        => '',
                 'required'      => false,
-                'read_only'     => true,
                 'disabled'      => true,
             ])
             ->setAllowedTypes('precision', ['null', 'int'])
