@@ -12,27 +12,12 @@ declare(strict_types=1);
 namespace Core23\FormExtensionsBundle\Form\Handler;
 
 use Core23\FormExtensionsBundle\Form\Handler\Exception\InvalidCallbackException;
-use Symfony\Component\EventDispatcher\Event;
-use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 abstract class AbstractFormHandler implements FormHandlerInterface
 {
-    /**
-     * @var EventDispatcherInterface
-     */
-    private $eventDispatcher;
-
-    /**
-     * @param EventDispatcherInterface $eventDispatcher
-     */
-    public function __construct(EventDispatcherInterface $eventDispatcher)
-    {
-        $this->eventDispatcher = $eventDispatcher;
-    }
-
     /**
      * {@inheritdoc}
      */
@@ -121,18 +106,5 @@ abstract class AbstractFormHandler implements FormHandlerInterface
     protected function postProcess(FormInterface $form, Request $request, Response $response): ?Response
     {
         return $response;
-    }
-
-    /**
-     * Dispatches an event to the dispatcher.
-     *
-     * @param string $eventName
-     * @param Event  $event
-     *
-     * @return Event
-     */
-    final protected function dispatchEvent($eventName, Event $event = null): Event
-    {
-        return $this->eventDispatcher->dispatch($eventName, $event);
     }
 }

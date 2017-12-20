@@ -13,7 +13,6 @@ namespace Core23\FormExtensionsBundle\Test;
 
 use Core23\FormExtensionsBundle\Form\Handler\FormHandlerInterface;
 use PHPUnit\Framework\TestCase;
-use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\Form\FormError;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -22,11 +21,6 @@ use Symfony\Component\HttpFoundation\Session\Session;
 
 abstract class AbstractFormHandlerTest extends TestCase
 {
-    /**
-     * @var \PHPUnit_Framework_MockObject_MockObject|EventDispatcherInterface
-     */
-    protected $eventDispatcher;
-
     /**
      * @var \PHPUnit_Framework_MockObject_MockObject|FormInterface
      */
@@ -52,8 +46,6 @@ abstract class AbstractFormHandlerTest extends TestCase
      */
     protected function setUp(): void
     {
-        $this->eventDispatcher = $this->createMock(EventDispatcherInterface::class);
-
         $this->form = $this->createMock(FormInterface::class);
 
         $this->session = $this->createMock(Session::class);
