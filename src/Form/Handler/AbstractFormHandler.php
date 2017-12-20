@@ -18,9 +18,6 @@ use Symfony\Component\Form\FormInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-/**
- * @deprecated move to form extensions
- */
 abstract class AbstractFormHandler implements FormHandlerInterface
 {
     /**
