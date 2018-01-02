@@ -49,7 +49,7 @@ final class Core23FormExtensionsExtension extends Extension
         }
 
         if (in_array('twig', $templatingEngines)) {
-            $formRessource = 'Core23FormExtensionsBundle:Form:widgets.html.twig';
+            $formRessource = '@Core23FormExtensions/Form/widgets.html.twig';
 
             $container->setParameter('twig.form.resources', array_merge(
                 $container->getParameter('twig.form.resources'),
