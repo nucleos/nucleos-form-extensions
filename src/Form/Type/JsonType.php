@@ -31,6 +31,10 @@ class JsonType extends AbstractType implements DataTransformerInterface
      */
     public function transform($json)
     {
+        if (null === $json) {
+            return '';
+        }
+
         if (!is_array($json)) {
             $json = json_decode($json, true);
         }
@@ -50,6 +54,10 @@ class JsonType extends AbstractType implements DataTransformerInterface
      */
     public function reverseTransform($text)
     {
+        if (null === $text) {
+            return [];
+        }
+
         $json = json_decode($text, true);
 
         if (!$json) {
