@@ -1,3 +1,19 @@
+{% macro render_array(value, inline) %}
+    {% for key, val in value %}
+        {% if val.timestamp is defined %}
+            [{{ key }} => {{ val|date }}]
+        {% elseif val is iterable %}
+            [{{ key }} => {{ _self.render_array(val, inline) }}]
+        {%  else %}
+            [{{ key }} => {{ val }}]
+        {%  endif %}
+
+        {% if not loop.last and not inline %}
+            <br>
+        {% endif %}
+    {% endfor %}
+{% endmacro %}
+
 {% block batch_time_widget %}
     {% spaceless %}
         <div {{ block('widget_container_attributes') }}>
@@ -58,9 +74,17 @@
 {% endblock %}
 
 {% block output_widget %}
+    {% import _self as helper %}
+
     {% spaceless %}
         {% set attr = attr|merge({'class': attr.class|default('') ~ ' output'}) %}
-        <div {{ block('widget_attributes') }}>{{ value|default('') }}</div>
+        <div {{ block('widget_attributes') }}>
+            {% if value is iterable %}
+                {{ helper.render_array(value, false) }}
+            {% else %}
+                {{ value|default('') }}
+            {% endif %}
+        </div>
     {% endspaceless %}
 {% endblock %}
 
