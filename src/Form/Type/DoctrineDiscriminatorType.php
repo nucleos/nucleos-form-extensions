@@ -50,8 +50,10 @@ abstract class DoctrineDiscriminatorType extends AbstractType
 
         $meta = $this->entityManager->getEntityManager()->getClassMetadata($this->entityManager->getClass());
 
-        foreach ($meta->discriminatorMap as $key => $class) {
-            $choices[$key] = $key;
+        if (is_array($meta->discriminatorMap)) {
+            foreach ($meta->discriminatorMap as $key => $class) {
+                $choices[$key] = $key;
+            }
         }
 
         $resolver->setDefaults([
