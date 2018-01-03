@@ -19,11 +19,6 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 abstract class DoctrineDiscriminatorType extends AbstractType
 {
     /**
-     * @var string
-     */
-    private $name;
-
-    /**
      * @var BaseEntityManager
      */
     private $entityManager;
@@ -31,12 +26,10 @@ abstract class DoctrineDiscriminatorType extends AbstractType
     /**
      * DoctrineDiscriminatorType constructor.
      *
-     * @param string            $name
      * @param BaseEntityManager $manager
      */
-    public function __construct($name, BaseEntityManager $manager)
+    public function __construct(BaseEntityManager $manager)
     {
-        $this->name          = $name;
         $this->entityManager = $manager;
     }
 
@@ -46,22 +39,6 @@ abstract class DoctrineDiscriminatorType extends AbstractType
     public function getParent()
     {
         return ChoiceType::class;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getName()
-    {
-        return $this->getBlockPrefix();
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getBlockPrefix()
-    {
-        return $this->name;
     }
 
     /**
