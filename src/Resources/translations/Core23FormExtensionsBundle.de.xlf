@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="de" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="download_file">
+        <source>download_file</source>
+        <target>Datei herunterladen</target>
+      </trans-unit>
+      <trans-unit id=".VQgeSo" resname="form.choice_at">
+        <source>form.choice_at</source>
+        <target>Österreich</target>
+      </trans-unit>
+      <trans-unit id="form.choice_ch">
+        <source>form.choice_ch</source>
+        <target>Schweiz</target>
+      </trans-unit>
+      <trans-unit id="form.choice_de">
+        <source>form.choice_de</source>
+        <target>Deutschland</target>
+      </trans-unit>
+      <trans-unit id="gender.female">
+        <source>gender.female</source>
+        <target>weiblich</target>
+      </trans-unit>
+      <trans-unit id="gender.male">
+        <source>gender.male</source>
+        <target>männlich</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
