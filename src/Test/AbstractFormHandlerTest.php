@@ -12,6 +12,8 @@ declare(strict_types=1);
 namespace Core23\FormExtensionsBundle\Test;
 
 use Core23\FormExtensionsBundle\Form\Handler\FormHandlerInterface;
+use PHPUnit\Framework\AssertionFailedError;
+use PHPUnit\Framework\Constraint\Callback;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Form\FormError;
 use Symfony\Component\Form\FormInterface;
@@ -21,19 +23,10 @@ use Symfony\Component\HttpFoundation\Session\Session;
 
 abstract class AbstractFormHandlerTest extends TestCase
 {
-    /**
-     * @var \PHPUnit_Framework_MockObject_MockObject|FormInterface
-     */
     protected $form;
 
-    /**
-     * @var \PHPUnit_Framework_MockObject_MockObject|Request
-     */
     protected $request;
 
-    /**
-     * @var \PHPUnit_Framework_MockObject_MockObject|Session
-     */
     protected $session;
 
     /**
@@ -166,11 +159,11 @@ abstract class AbstractFormHandlerTest extends TestCase
     }
 
     /**
-     * @throws \PHPUnit_Framework_AssertionFailedError
+     * @throws Callback
      *
-     * @return \PHPUnit_Framework_Constraint_Callback
+     * @return Callback
      */
-    private function equalToErrors()
+    private function equalToErrors(): Callback
     {
         return $this->callback(function ($error) {
             if ($error instanceof FormError) {
@@ -182,7 +175,7 @@ abstract class AbstractFormHandlerTest extends TestCase
                     }
                 }
 
-                throw new \PHPUnit_Framework_AssertionFailedError(
+                throw new AssertionFailedError(
                     sprintf("Method 'addError' was not expected to be called with message '%s'", $error->getMessage())
                 );
             }
@@ -203,13 +196,13 @@ abstract class AbstractFormHandlerTest extends TestCase
     }
 
     /**
-     * @throws \PHPUnit_Framework_AssertionFailedError
+     * @throws AssertionFailedError
      */
     private function checkUncalledErrors(): void
     {
         foreach ($this->errors as $data) {
             if (0 === $data['count']) {
-                throw new \PHPUnit_Framework_AssertionFailedError(
+                throw new AssertionFailedError(
                     sprintf("Method 'addError' was expected to be called with message '%s' actually was not called", $data['message'])
                 );
             }
