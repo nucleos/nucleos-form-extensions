@@ -1,1 +1,50 @@
+12/01/2018 14:52  0.2.0  Added Form Handler
+a3bcbbe Sync config
+41ade4c Removed old build config
+fc4802f Use global phpunit version when calling RMT
+a276257 Bumped sonata dependencies
+cb11e89 Bumped pugx/autocompleter-bundle 1.4 for symfony 4 support
+60f6206 Added missing dependencies
+a3e2cab Removed PHPUnit from phpstan
+ef0c289 Use PHPUnit 6
+19424c8 Moved all translation to xlf
+27d8eeb Allow array outputs
+f4cc6df Removed old BC form code
+cd9e728 Catch invalid discriminator options in DoctrineDiscriminatorType
+2985ba8 Removed name from DoctrineDiscriminatorType
+1b83e35 Use new twig paths
+128077c Catch null values in JsonType
+4822337 Ignore PHPUnit warnings when calling phpstan
+0adf3e0 Added phpstan extension to travis
+d5117ba Fixed file permissions
+95bdf1e Removed old code form tests
+5f9c92a Always register form themes to twig
+7667d18 Removed hard phpunit dependency
+39d9264 Fixed file permissions
+874ef19 Removed version information from phpunit.xml.dist
+7d9cc4d Ignore PHPUnit errors when calling phpstan
+ffc3e46 Removed event dispatcher from form handler
+cd3d0e6 Removed old comment
+f6ddc00 Added form handler test
+8bd8832 Create form factory
+23dedfd Create form handler
+05a0247 Removed deprecated read_only option
+c205518 Fixed coveralls build
+3cf5713 Sync build config
+51f0e98 Removed code climate status
+005773a Fixed file permissions
+ac8eaeb Sync config
+92f9c5c Ignore symfony DI errors when calling phpstan
+f008545 Removed deprecated 'choices_as_values'
+1de6edc Updated travis config for outdated symfony versions
+58d254f Bumped symfony deps to >=3.4
+426de02 Change default form col width
+e1d0604 Gender was not translated
+69aee1c Require latest phpstan version
+d6d533e Fixed CS
+8c4c3b3 Sync config
+15bea0d Sync config
+63b4eb4 Added .editorconfig
+c4a4c25 Release of new version 0.1.0
+6fb2c0a Apply fixes from StyleCI
 01/12/2017 14:45  0.1.0  Initial Release
