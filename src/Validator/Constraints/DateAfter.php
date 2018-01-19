@@ -69,6 +69,6 @@ class DateAfter extends Constraint
      */
     public function validatedBy()
     {
-        return 'core23.form.validator.date_after';
+        return 'core23_form.validator.date_after';
     }
 }

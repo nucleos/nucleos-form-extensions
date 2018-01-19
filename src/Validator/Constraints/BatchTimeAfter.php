@@ -69,6 +69,6 @@ class BatchTimeAfter extends Constraint
      */
     public function validatedBy()
     {
-        return 'core23.form.validator.batch_time_after';
+        return 'core23_form.validator.batch_time_after';
     }
 }
