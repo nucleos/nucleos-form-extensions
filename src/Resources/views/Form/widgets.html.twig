@@ -1,9 +1,10 @@
 {% macro render_array(value, inline) %}
+    {% from _self import render_array %}
     {% for key, val in value %}
         {% if val.timestamp is defined %}
             [{{ key }} => {{ val|date }}]
         {% elseif val is iterable %}
-            [{{ key }} => {{ _self.render_array(val, inline) }}]
+            [{{ key }} => {{ render_array(val, inline) }}]
         {%  else %}
             [{{ key }} => {{ val }}]
         {%  endif %}
