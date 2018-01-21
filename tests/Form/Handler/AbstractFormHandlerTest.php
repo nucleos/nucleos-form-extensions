@@ -17,7 +17,7 @@ use Symfony\Component\Form\FormInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class AbstractFormHandlerTest extends TestCase
+final class AbstractFormHandlerTest extends TestCase
 {
     public function testHandle(): void
     {

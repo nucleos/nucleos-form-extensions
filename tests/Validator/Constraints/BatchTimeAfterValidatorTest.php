@@ -16,7 +16,7 @@ use Core23\FormExtensionsBundle\Validator\Constraints\BatchTimeAfter;
 use Core23\FormExtensionsBundle\Validator\Constraints\BatchTimeAfterValidator;
 use Symfony\Component\Validator\Test\ConstraintValidatorTestCase;
 
-class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
+final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
 {
     /**
      * @expectedException \InvalidArgumentException

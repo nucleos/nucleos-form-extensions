@@ -15,7 +15,7 @@ use Core23\FormExtensionsBundle\Validator\Constraints\DateAfter;
 use Core23\FormExtensionsBundle\Validator\Constraints\DateAfterValidator;
 use Symfony\Component\Validator\Test\ConstraintValidatorTestCase;
 
-class DateAfterValidatorTest extends ConstraintValidatorTestCase
+final class DateAfterValidatorTest extends ConstraintValidatorTestCase
 {
     /**
      * @expectedException \InvalidArgumentException
