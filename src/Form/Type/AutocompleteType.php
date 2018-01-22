@@ -18,7 +18,7 @@ use Symfony\Component\Form\FormView;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\PropertyAccess\PropertyAccess;
 
-class AutocompleteType extends AbstractType
+final class AutocompleteType extends AbstractType
 {
     /**
      * {@inheritdoc}

@@ -16,7 +16,7 @@ use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class BatchTimeType extends AbstractType
+final class BatchTimeType extends AbstractType
 {
     /**
      * @var string

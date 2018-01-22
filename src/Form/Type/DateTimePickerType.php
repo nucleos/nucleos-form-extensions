@@ -14,7 +14,7 @@ namespace Core23\FormExtensionsBundle\Form\Type;
 use Sonata\CoreBundle\Form\Type\DateTimePickerType as BaseDateTimePickerType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class DateTimePickerType extends BaseDateTimePickerType
+final class DateTimePickerType extends BaseDateTimePickerType
 {
     /**
      * {@inheritdoc}

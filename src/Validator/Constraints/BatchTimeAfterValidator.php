@@ -19,7 +19,7 @@ use Symfony\Component\Validator\ConstraintValidator;
 use Symfony\Component\Validator\Exception\InvalidArgumentException;
 use Symfony\Component\Validator\Exception\UnexpectedTypeException;
 
-class BatchTimeAfterValidator extends ConstraintValidator
+final class BatchTimeAfterValidator extends ConstraintValidator
 {
     /**
      * {@inheritdoc}

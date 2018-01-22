@@ -20,7 +20,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\PropertyAccess\PropertyAccess;
 use Symfony\Component\PropertyAccess\PropertyPath;
 
-class ImageTypeExtension extends AbstractTypeExtension
+final class ImageTypeExtension extends AbstractTypeExtension
 {
     /**
      * {@inheritdoc}

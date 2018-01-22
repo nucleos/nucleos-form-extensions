@@ -20,7 +20,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\PropertyAccess\PropertyAccess;
 use Symfony\Component\PropertyAccess\PropertyPath;
 
-class DownloadTypeExtension extends AbstractTypeExtension
+final class DownloadTypeExtension extends AbstractTypeExtension
 {
     /**
      * {@inheritdoc}

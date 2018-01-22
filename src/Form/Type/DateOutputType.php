@@ -16,7 +16,7 @@ use Symfony\Component\Form\FormInterface;
 use Symfony\Component\Form\FormView;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class DateOutputType extends AbstractType
+final class DateOutputType extends AbstractType
 {
     /**
      * {@inheritdoc}

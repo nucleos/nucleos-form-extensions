@@ -16,7 +16,7 @@ use Symfony\Component\Form\DataTransformerInterface;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 
-class JsonType extends AbstractType implements DataTransformerInterface
+final class JsonType extends AbstractType implements DataTransformerInterface
 {
     /**
      * {@inheritdoc}

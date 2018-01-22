@@ -16,7 +16,7 @@ use Symfony\Component\Form\Extension\Core\DataTransformer\NumberToLocalizedStrin
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class NumberOutputType extends AbstractType
+final class NumberOutputType extends AbstractType
 {
     /**
      * {@inheritdoc}

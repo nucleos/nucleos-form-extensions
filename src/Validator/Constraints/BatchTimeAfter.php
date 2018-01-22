@@ -15,7 +15,7 @@ use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\Exception\InvalidArgumentException;
 use Symfony\Component\Validator\Exception\MissingOptionsException;
 
-class BatchTimeAfter extends Constraint
+final class BatchTimeAfter extends Constraint
 {
     /**
      * @var string

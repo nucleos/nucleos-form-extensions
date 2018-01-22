@@ -14,7 +14,7 @@ namespace Core23\FormExtensionsBundle\Form\Type;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class OutputType extends AbstractType
+final class OutputType extends AbstractType
 {
     /**
      * {@inheritdoc}
