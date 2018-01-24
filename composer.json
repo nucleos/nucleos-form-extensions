@@ -21,6 +21,7 @@
         "pugx/autocompleter-bundle": "^1.4",
         "sonata-project/core-bundle": "^3.9",
         "symfony/form": "^3.4 || ^4.0",
+        "symfony/http-foundation": "^3.4 || ^4.0",
         "symfony/options-resolver": "^3.4 || ^4.0",
         "symfony/property-access": "^3.4 || ^4.0",
         "symfony/translation": "^3.4 || ^4.0",
