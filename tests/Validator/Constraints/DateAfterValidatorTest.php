@@ -9,10 +9,10 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Core23\FormExtensionsBundle\Tests\Validator\Constraints;
+namespace Core23\FormExtensions\Tests\Validator\Constraints;
 
-use Core23\FormExtensionsBundle\Validator\Constraints\DateAfter;
-use Core23\FormExtensionsBundle\Validator\Constraints\DateAfterValidator;
+use Core23\FormExtensions\Validator\Constraints\DateAfter;
+use Core23\FormExtensions\Validator\Constraints\DateAfterValidator;
 use Symfony\Component\Validator\Test\ConstraintValidatorTestCase;
 
 final class DateAfterValidatorTest extends ConstraintValidatorTestCase

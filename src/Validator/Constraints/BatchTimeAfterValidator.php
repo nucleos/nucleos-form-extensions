@@ -9,9 +9,9 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Core23\FormExtensionsBundle\Validator\Constraints;
+namespace Core23\FormExtensions\Validator\Constraints;
 
-use Core23\FormExtensionsBundle\Form\Model\BatchTime;
+use Core23\FormExtensions\Form\Model\BatchTime;
 use Symfony\Component\PropertyAccess\Exception\NoSuchPropertyException;
 use Symfony\Component\PropertyAccess\PropertyAccess;
 use Symfony\Component\Validator\Constraint;

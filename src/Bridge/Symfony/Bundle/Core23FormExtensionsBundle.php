@@ -9,9 +9,9 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Core23\FormExtensionsBundle\Bridge\Symfony\Bundle;
+namespace Core23\FormExtensions\Bridge\Symfony\Bundle;
 
-use Core23\FormExtensionsBundle\Bridge\Symfony\DependencyInjection\Core23FormExtensionsExtension;
+use Core23\FormExtensions\Bridge\Symfony\DependencyInjection\Core23FormExtensionsExtension;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 final class Core23FormExtensionsBundle extends Bundle

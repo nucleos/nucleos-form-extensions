@@ -9,7 +9,7 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Core23\FormExtensionsBundle\Form\Type;
+namespace Core23\FormExtensions\Form\Type;
 
 use Sonata\CoreBundle\Form\Type\DateTimePickerType as BaseDateTimePickerType;
 use Symfony\Component\OptionsResolver\OptionsResolver;

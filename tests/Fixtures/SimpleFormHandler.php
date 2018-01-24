@@ -1,8 +1,8 @@
 <?php
 
-namespace Core23\FormExtensionsBundle\Tests\Fixtures;
+namespace Core23\FormExtensions\Tests\Fixtures;
 
-use Core23\FormExtensionsBundle\Form\Handler\AbstractFormHandler;
+use Core23\FormExtensions\Form\Handler\AbstractFormHandler;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\HttpFoundation\Request;
 

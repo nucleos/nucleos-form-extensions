@@ -9,9 +9,9 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Core23\FormExtensionsBundle\Form\Handler;
+namespace Core23\FormExtensions\Form\Handler;
 
-use Core23\FormExtensionsBundle\Form\Handler\Exception\InvalidCallbackException;
+use Core23\FormExtensions\Form\Handler\Exception\InvalidCallbackException;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;

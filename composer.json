@@ -1,7 +1,7 @@
 {
-    "name": "core23/form-extensions-bundle",
+    "name": "core23/form-extensions",
     "type": "symfony-bundle",
-    "description": "This bundle adds some custom form elements and validation to symfony.",
+    "description": "This library adds some custom form elements and validation for symfony.",
     "keywords": [
         "symfony",
         "form",
@@ -48,12 +48,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Core23\\FormExtensionsBundle\\": "src/"
+            "Core23\\FormExtensions\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Core23\\FormExtensionsBundle\\Tests\\": "tests/"
+            "Core23\\FormExtensions\\Tests\\": "tests/"
         }
     },
     "scripts": {
