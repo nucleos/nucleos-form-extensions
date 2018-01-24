@@ -4,9 +4,9 @@ What is the Form Extensions PHP library?
 [![Latest Unstable Version](https://poser.pugx.org/core23/form-extensions/v/unstable)](https://packagist.org/packages/core23/form-extensions)
 [![License](https://poser.pugx.org/core23/form-extensions/license)](https://packagist.org/packages/core23/form-extensions)
 
-[![Build Status](https://travis-ci.org/core23/FormExtensions.svg)](http://travis-ci.org/core23/FormExtensions)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/core23/FormExtensions/badges/quality-score.png)](https://scrutinizer-ci.com/g/core23/FormExtensions/)
-[![Coverage Status](https://coveralls.io/repos/core23/FormExtensions/badge.svg)](https://coveralls.io/r/core23/FormExtensions)
+[![Build Status](https://travis-ci.org/core23/form-extensions.svg)](http://travis-ci.org/core23/form-extensions)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/core23/form-extensions/badges/quality-score.png)](https://scrutinizer-ci.com/g/core23/form-extensions/)
+[![Coverage Status](https://coveralls.io/repos/core23/form-extensions/badge.svg)](https://coveralls.io/r/core23/form-extensions)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/61081f5b-89e5-4594-93cb-281d4e1f536e/mini.png)](https://insight.sensiolabs.com/projects/51aa4b42-d229-4994-bb3a-156da22a1375)
 
 [![Donate to this project using Flattr](https://img.shields.io/badge/flattr-donate-yellow.svg)](https://flattr.com/profile/core23)
