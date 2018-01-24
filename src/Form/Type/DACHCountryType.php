@@ -29,7 +29,7 @@ final class DACHCountryType extends AbstractType
             'choice_label' => function ($value, $key, $index) {
                 return 'form.choice_'.strtolower($value);
             },
-            'translation_domain' => 'Core23FormExtensionsBundle',
+            'choice_translation_domain' => 'Core23FormExtensionsBundle',
         ]);
     }
 
