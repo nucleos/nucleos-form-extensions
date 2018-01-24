@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
   <services>
-    <service id="core23_form.type.country" class="Core23\FormExtensionsBundle\Form\Type\CountryType">
+    <service id="core23_form.type.dach_country" class="Core23\FormExtensionsBundle\Form\Type\DACHCountryType">
       <tag name="form.type" alias="core23_country"/>
     </service>
     <service id="core23_form.type.gender" class="Core23\FormExtensionsBundle\Form\Type\GenderType">
