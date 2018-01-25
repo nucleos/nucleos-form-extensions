@@ -1,3 +1,20 @@
+25/01/2018 17:44  0.3.0  Transformed repository into a library
+245834e Only translation DACH country values
+29a5ea2 Added missing symfony/http-foundation dependency
+8834a0f Replaced old links in README.MD
+460a446 Transformed this repo into a library
+a80c02e Make symfony framework dependency optional
+15e828c Renamed CountryType to DACHCountryType
+e118a10 Closing API
+cf8483b Make tests final
+ee2497e Use correct bundle prefix for serivices and parameters
+a877c89 Fixed render_array macro
+99f80da Ignore vendor-bin when calling lint
+d7bd27d Use weak vendors mode
+4da465b Added rmt tool
+65669c9 Normalize composer.json file
+000d30b Cleanup PHPStan ignores
+7f13c37 Added dev tools via composer-bin plugin
 12/01/2018 14:52  0.2.0  Added Form Handler
 a3bcbbe Sync config
 41ade4c Removed old build config
