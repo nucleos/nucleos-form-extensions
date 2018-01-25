@@ -17,7 +17,7 @@ This bundle adds some custom form elements and validation to symfony.
 ### Installation
 
 ```
-php composer.phar require core23/form-extensions
+composer require core23/form-extensions
 ```
 
 ### Symfony usage
