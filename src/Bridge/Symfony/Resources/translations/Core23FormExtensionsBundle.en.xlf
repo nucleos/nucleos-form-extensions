@@ -7,7 +7,27 @@
     <body>
       <trans-unit id="download_file">
         <source>download_file</source>
-        <target>__download_file</target>
+        <target>Download file</target>
+      </trans-unit>
+      <trans-unit id=".VQgeSo" resname="form.choice_at">
+        <source>form.choice_at</source>
+        <target>Austria</target>
+      </trans-unit>
+      <trans-unit id="form.choice_ch">
+        <source>form.choice_ch</source>
+        <target>Switzerland</target>
+      </trans-unit>
+      <trans-unit id="form.choice_de">
+        <source>form.choice_de</source>
+        <target>Germany</target>
+      </trans-unit>
+      <trans-unit id="gender.female">
+        <source>gender.female</source>
+        <target>female</target>
+      </trans-unit>
+      <trans-unit id="gender.male">
+        <source>gender.male</source>
+        <target>male</target>
       </trans-unit>
     </body>
   </file>
