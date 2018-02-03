@@ -159,9 +159,9 @@ abstract class AbstractFormHandlerTest extends TestCase
     }
 
     /**
-     * @throws Callback
+     * @throws callable
      *
-     * @return Callback
+     * @return callable
      */
     private function equalToErrors(): Callback
     {
