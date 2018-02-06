@@ -36,6 +36,9 @@
         "symfony/framework-bundle": "^3.4 || ^4.0",
         "symfony/phpunit-bridge": "^4.0"
     },
+    "conflict": {
+        "symfony/framework-bundle": "<3.4"
+    },
     "suggest": {
         "symfony/framework-bundle": "If you want to use symfony"
     },
