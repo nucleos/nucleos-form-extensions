@@ -9,7 +9,7 @@
         <source>error.batch_time_part_empty</source>
         <target>Es wurde kein Datum für das Feld "%emptyField%" eingegeben, obwohl "%field%" hinterlegt wurde.</target>
       </trans-unit>
-      <trans-unit id="0Xf8.Qt" resname="error.date_part_empty">
+      <trans-unit id="error.date_part_empty">
         <source>error.date_part_empty</source>
         <target>Es wurde kein Datum für das Feld "%emptyField%" eingegeben, obwohl "%field%" hinterlegt wurde.</target>
       </trans-unit>

@@ -9,7 +9,7 @@
         <source>download_file</source>
         <target>Datei herunterladen</target>
       </trans-unit>
-      <trans-unit id=".VQgeSo" resname="form.choice_at">
+      <trans-unit id="form.choice_at">
         <source>form.choice_at</source>
         <target>Österreich</target>
       </trans-unit>
