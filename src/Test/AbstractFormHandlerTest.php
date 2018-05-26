@@ -13,7 +13,7 @@ namespace Core23\FormExtensions\Test;
 
 use Core23\FormExtensions\Form\Handler\FormHandlerInterface;
 use PHPUnit\Framework\AssertionFailedError;
-use PHPUnit\Framework\Constraint\Callback;
+use PHPUnit\Framework\Constraint\Constraint;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Form\FormError;
 use Symfony\Component\Form\FormInterface;
@@ -161,9 +161,9 @@ abstract class AbstractFormHandlerTest extends TestCase
     /**
      * @throws callable
      *
-     * @return callable
+     * @return Constraint
      */
-    private function equalToErrors(): Callback
+    private function equalToErrors(): Constraint
     {
         return $this->callback(function ($error) {
             if ($error instanceof FormError) {
