@@ -29,7 +29,7 @@ abstract class AbstractFormHandler implements FormHandlerInterface
 
         $form->handleRequest($request);
 
-        if (!$form->isValid() || !$form->isSubmitted()) {
+        if (!$form->isSubmitted() || !$form->isValid()) {
             return null;
         }
 
