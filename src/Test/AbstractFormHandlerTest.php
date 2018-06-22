@@ -25,6 +25,9 @@ abstract class AbstractFormHandlerTest extends TestCase
 {
     protected $form;
 
+    /**
+     * @var Request
+     */
     protected $request;
 
     protected $session;
@@ -43,9 +46,8 @@ abstract class AbstractFormHandlerTest extends TestCase
 
         $this->session = $this->createMock(Session::class);
 
-        $this->request = $this->createMock(Request::class);
-        $this->request->expects($this->any())->method('getSession')
-            ->will($this->returnValue($this->session));
+        $this->request = new Request();
+        $this->request->setSession($this->session);
 
         $this->errors = [];
     }
