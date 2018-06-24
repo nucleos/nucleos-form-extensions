@@ -2,4 +2,5 @@ parameters:
     ignoreErrors:
         # Symfony DI
         - '#Parameter \#1 \$form of method Core23\\FormExtensions\\Form\\Handler\\AbstractFormHandler::handle\(\) expects Symfony\\Component\\Form\\FormInterface, PHPUnit\\Framework\\MockObject\\MockObject given.#'
+        - '#Parameter \#1 \$session of method Symfony\\Component\\HttpFoundation\\Request::setSession\(\) expects Symfony\\Component\\HttpFoundation\\Session\\SessionInterface, PHPUnit\\Framework\\MockObject\\MockObject given.#'
         - '#Parameter \#2 \$request of method Core23\\FormExtensions\\Form\\Handler\\AbstractFormHandler::handle\(\) expects Symfony\\Component\\HttpFoundation\\Request, PHPUnit\\Framework\\MockObject\\MockObject given.#'
