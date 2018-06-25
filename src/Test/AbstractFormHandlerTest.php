@@ -161,8 +161,6 @@ abstract class AbstractFormHandlerTest extends TestCase
     }
 
     /**
-     * @throws callable
-     *
      * @return Constraint
      */
     private function equalToErrors(): Constraint

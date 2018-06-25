@@ -74,7 +74,7 @@ final class BatchTimeAfterValidator extends ConstraintValidator
             throw new UnexpectedTypeException($value, BatchTime::class);
         }
 
-        if ($secondDate && !$firstDate->getTime()) {
+        if (!$firstDate->getTime()) {
             $this->context
                 ->buildViolation($constraint->emptyMessage)
                 ->setParameter('%emptyField%', $constraint->firstField)
@@ -83,7 +83,7 @@ final class BatchTimeAfterValidator extends ConstraintValidator
                 ->addViolation();
 
             return;
-        } elseif ($firstDate && !$secondDate->getTime()) {
+        } elseif (!$secondDate->getTime()) {
             $this->context
                 ->buildViolation($constraint->emptyMessage)
                 ->setParameter('%emptyField%', $constraint->secondField)

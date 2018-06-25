@@ -19,7 +19,7 @@ class BatchTime
     private $day = 0;
 
     /**
-     * @var \DateTime
+     * @var \DateTime|null
      * */
     private $time;
 
@@ -33,7 +33,7 @@ class BatchTime
      */
     public function getDay(): int
     {
-        return $this->day;
+        return $this->day ?: 0;
     }
 
     /**
@@ -65,6 +65,6 @@ class BatchTime
      */
     public function getSeconds(): int
     {
-        return $this->getDay() * 86400 + ($this->getTime() ? (int) $this->getTime()->format('U') : 0);
+        return $this->getDay() * 86400 + (null !== $this->getTime() ? (int) $this->getTime()->format('U') : 0);
     }
 }
