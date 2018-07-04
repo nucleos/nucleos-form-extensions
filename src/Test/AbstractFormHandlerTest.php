@@ -63,6 +63,8 @@ abstract class AbstractFormHandlerTest extends TestCase
      * @param Request    $request
      * @param mixed|null $data
      *
+     * @throws \ReflectionException
+     *
      * @return Response|null
      */
     final protected function executePreProcess(Request $request, $data = null): ?Response
@@ -91,6 +93,8 @@ abstract class AbstractFormHandlerTest extends TestCase
      *
      * @param Request    $request
      * @param mixed|null $data
+     *
+     * @throws \ReflectionException
      *
      * @return bool
      */
@@ -121,6 +125,8 @@ abstract class AbstractFormHandlerTest extends TestCase
      * @param Request    $request
      * @param Response   $response
      * @param mixed|null $data
+     *
+     * @throws \ReflectionException
      *
      * @return Response|null
      */
