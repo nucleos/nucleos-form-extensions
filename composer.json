@@ -18,6 +18,8 @@
     ],
     "require": {
         "php": "^7.1",
+        "ext-json": "*",
+        "ext-pcre": "*",
         "pugx/autocompleter-bundle": "^1.4",
         "sonata-project/core-bundle": "^3.9",
         "symfony/form": "^3.4 || ^4.0",
