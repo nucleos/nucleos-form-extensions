@@ -63,12 +63,4 @@ final class DateAfter extends Constraint
     {
         return self::CLASS_CONSTRAINT;
     }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function validatedBy()
-    {
-        return 'core23_form.validator.date_after';
-    }
 }

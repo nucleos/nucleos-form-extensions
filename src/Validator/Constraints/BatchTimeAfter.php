@@ -63,12 +63,4 @@ final class BatchTimeAfter extends Constraint
     {
         return self::CLASS_CONSTRAINT;
     }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function validatedBy()
-    {
-        return 'core23_form.validator.batch_time_after';
-    }
 }
