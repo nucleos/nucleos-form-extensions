@@ -1,3 +1,25 @@
+07/07/2018 07:17  0.3.1  Div. fixes
+3e6f453 Added mising extensions to composer.json
+69b3daf phpstan findings
+a4f464f Sync phpstan config
+b538157 phpstan findings
+846394d Require latest phpstan version
+c2bd548 phpstan findings
+a63ddf9 Use real request object in tests
+04e4d46 Switch isValid and isSubmitted for symfony 4
+30cbc3a Prepend twig config
+8bedb0f Normalize composer.json
+d6cae0d Created issue templates
+d007c5f Use more generous return type to resolve cs-fixer <> phpstan issues
+96e021f Closing API
+2832dd0 Cleanup translation files
+8ba4f07 Added old symfony/framework-bundle versions to conflict section
+27206e3 Fixed PHPDoc
+e299630 Don't use PHPUnit 7 yet
+885865b Added english translation
+cabf6db Improved documentation
+2252dcb Adding stages to travis build
+ceacb8e Replaced composer.phar with composer in docs
 25/01/2018 17:44  0.3.0  Transformed repository into a library
 245834e Only translation DACH country values
 29a5ea2 Added missing symfony/http-foundation dependency
