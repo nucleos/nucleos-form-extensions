@@ -63,7 +63,7 @@ final class FormFactory implements FormFactoryInterface
     /**
      * Gets the list of default form options.
      *
-     * @return array
+     * @return array<string, mixed>
      */
     private function getDefaultOptions(): array
     {
