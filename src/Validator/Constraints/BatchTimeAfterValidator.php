@@ -30,7 +30,7 @@ final class BatchTimeAfterValidator extends ConstraintValidator
             throw new UnexpectedTypeException($constraint, __NAMESPACE__.'\BatchTimeAfter');
         }
 
-        if (!is_object($value)) {
+        if (!\is_object($value)) {
             return;
         }
 

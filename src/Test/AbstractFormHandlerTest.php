@@ -192,7 +192,7 @@ abstract class AbstractFormHandlerTest extends TestCase
 
     private function checkCalledErrors(): void
     {
-        $count = count($this->errors);
+        $count = \count($this->errors);
         if (0 === $count) {
             $this->form->expects($this->never())->method('addError');
         } else {

@@ -35,12 +35,12 @@ final class JsonType extends AbstractType implements DataTransformerInterface
             return '';
         }
 
-        if (!is_array($json)) {
+        if (!\is_array($json)) {
             $json = json_decode($json, true);
         }
 
         $text = '';
-        if (is_array($json)) {
+        if (\is_array($json)) {
             foreach ($json as $key => $value) {
                 $text .= trim($key).': '.trim($value)."\r\n";
             }
@@ -64,7 +64,7 @@ final class JsonType extends AbstractType implements DataTransformerInterface
             $json = [];
             foreach (explode("\n", $text) as $keyValue) {
                 $parts = explode(':', $keyValue);
-                if (2 === count($parts)) {
+                if (2 === \count($parts)) {
                     $key   = trim($parts[0]);
                     $value = trim($parts[1]);
 

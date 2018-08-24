@@ -41,7 +41,7 @@ abstract class AbstractFormHandler implements FormHandlerInterface
             return null;
         }
 
-        if (!is_callable($callback)) {
+        if (!\is_callable($callback)) {
             throw new InvalidCallbackException('No valid callable.');
         }
 

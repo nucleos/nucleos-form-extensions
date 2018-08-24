@@ -29,7 +29,7 @@ final class DateAfterValidator extends ConstraintValidator
             throw new UnexpectedTypeException($constraint, __NAMESPACE__.'\DateAfter');
         }
 
-        if (!is_object($value)) {
+        if (!\is_object($value)) {
             return;
         }
 
