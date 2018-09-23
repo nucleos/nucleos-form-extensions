@@ -1,3 +1,13 @@
+23/09/2018 13:09  0.3.2  Make PHP function calls explicit
+54c8c0f Updated .editorconfig
+f4c41c8 Fixed CS
+6150dda TRAVIS: Moved dependencies check to allow failures
+84e7cf3 Added missing dependencies
+2ce99c6 Improved PHPDoc
+0f124d6 Removed useless PHPDoc
+a899e5a Sync config
+948905a Added composer-require-checker to build
+ca491d2 Removed useless validatedBy method override
 07/07/2018 07:17  0.3.1  Div. fixes
 3e6f453 Added mising extensions to composer.json
 69b3daf phpstan findings
