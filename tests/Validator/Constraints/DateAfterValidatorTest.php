@@ -25,7 +25,7 @@ final class DateAfterValidatorTest extends ConstraintValidatorTestCase
         $object = $this->getMockBuilder('stdClass')
             ->setMethods(['getEnd'])
             ->getMock();
-        $object->expects($this->any())->method('getEnd')->will($this->returnValue(new \DateTime()));
+        $object->method('getEnd')->will($this->returnValue(new \DateTime()));
 
         $constraint = new DateAfter(
             [
@@ -45,7 +45,7 @@ final class DateAfterValidatorTest extends ConstraintValidatorTestCase
         $object = $this->getMockBuilder('stdClass')
             ->setMethods(['getBegin'])
             ->getMock();
-        $object->expects($this->any())->method('getBegin')->will($this->returnValue(new \DateTime()));
+        $object->method('getBegin')->will($this->returnValue(new \DateTime()));
 
         $constraint = new DateAfter(
             [
@@ -65,8 +65,8 @@ final class DateAfterValidatorTest extends ConstraintValidatorTestCase
         $object = $this->getMockBuilder('stdClass')
             ->setMethods(['getBegin', 'getEnd'])
             ->getMock();
-        $object->expects($this->any())->method('getBegin')->will($this->returnValue(new \DateTime()));
-        $object->expects($this->any())->method('getEnd')->will($this->returnValue('test'));
+        $object->method('getBegin')->will($this->returnValue(new \DateTime()));
+        $object->method('getEnd')->will($this->returnValue('test'));
 
         $constraint = new DateAfter(
             [
@@ -86,8 +86,8 @@ final class DateAfterValidatorTest extends ConstraintValidatorTestCase
         $object = $this->getMockBuilder('stdClass')
             ->setMethods(['getBegin', 'getEnd'])
             ->getMock();
-        $object->expects($this->any())->method('getBegin')->will($this->returnValue('test'));
-        $object->expects($this->any())->method('getEnd')->will($this->returnValue(new \DateTime()));
+        $object->method('getBegin')->will($this->returnValue('test'));
+        $object->method('getEnd')->will($this->returnValue(new \DateTime()));
 
         $constraint = new DateAfter(
             [
@@ -104,8 +104,8 @@ final class DateAfterValidatorTest extends ConstraintValidatorTestCase
         $object = $this->getMockBuilder('stdClass')
             ->setMethods(['getBegin', 'getEnd'])
             ->getMock();
-        $object->expects($this->any())->method('getBegin')->will($this->returnValue(null));
-        $object->expects($this->any())->method('getEnd')->will($this->returnValue(new \DateTime()));
+        $object->method('getBegin')->will($this->returnValue(null));
+        $object->method('getEnd')->will($this->returnValue(new \DateTime()));
 
         $constraint = new DateAfter(
             [
@@ -130,8 +130,8 @@ final class DateAfterValidatorTest extends ConstraintValidatorTestCase
         $object = $this->getMockBuilder('stdClass')
             ->setMethods(['getBegin', 'getEnd'])
             ->getMock();
-        $object->expects($this->any())->method('getBegin')->will($this->returnValue(new \DateTime()));
-        $object->expects($this->any())->method('getEnd')->will($this->returnValue(null));
+        $object->method('getBegin')->will($this->returnValue(new \DateTime()));
+        $object->method('getEnd')->will($this->returnValue(null));
 
         $constraint = new DateAfter(
             [
@@ -156,8 +156,8 @@ final class DateAfterValidatorTest extends ConstraintValidatorTestCase
         $object = $this->getMockBuilder('stdClass')
             ->setMethods(['getBegin', 'getEnd'])
             ->getMock();
-        $object->expects($this->any())->method('getBegin')->will($this->returnValue(new \DateTime('2015-02-01 10:00')));
-        $object->expects($this->any())->method('getEnd')->will($this->returnValue(new \DateTime('2015-01-01 10:00')));
+        $object->method('getBegin')->will($this->returnValue(new \DateTime('2015-02-01 10:00')));
+        $object->method('getEnd')->will($this->returnValue(new \DateTime('2015-01-01 10:00')));
 
         $constraint = new DateAfter(
             [
@@ -182,8 +182,8 @@ final class DateAfterValidatorTest extends ConstraintValidatorTestCase
         $object = $this->getMockBuilder('stdClass')
             ->setMethods(['getBegin', 'getEnd'])
             ->getMock();
-        $object->expects($this->any())->method('getBegin')->will($this->returnValue(new \DateTime('2015-01-01 10:00')));
-        $object->expects($this->any())->method('getEnd')->will($this->returnValue(new \DateTime('2015-02-01 10:00')));
+        $object->method('getBegin')->will($this->returnValue(new \DateTime('2015-01-01 10:00')));
+        $object->method('getEnd')->will($this->returnValue(new \DateTime('2015-02-01 10:00')));
 
         $constraint = new DateAfter(
             [
@@ -202,8 +202,8 @@ final class DateAfterValidatorTest extends ConstraintValidatorTestCase
         $object = $this->getMockBuilder('stdClass')
             ->setMethods(['getBegin', 'getEnd'])
             ->getMock();
-        $object->expects($this->any())->method('getBegin')->will($this->returnValue(new \DateTime('2015-01-01 10:00')));
-        $object->expects($this->any())->method('getEnd')->will($this->returnValue(new \DateTime('2015-01-01 10:00')));
+        $object->method('getBegin')->will($this->returnValue(new \DateTime('2015-01-01 10:00')));
+        $object->method('getEnd')->will($this->returnValue(new \DateTime('2015-01-01 10:00')));
 
         $constraint = new DateAfter(
             [
@@ -222,8 +222,8 @@ final class DateAfterValidatorTest extends ConstraintValidatorTestCase
         $object = $this->getMockBuilder('stdClass')
             ->setMethods(['getBegin', 'getEnd'])
             ->getMock();
-        $object->expects($this->any())->method('getBegin')->will($this->returnValue(null));
-        $object->expects($this->any())->method('getEnd')->will($this->returnValue(null));
+        $object->method('getBegin')->will($this->returnValue(null));
+        $object->method('getEnd')->will($this->returnValue(null));
 
         $constraint = new DateAfter(
             [
@@ -243,8 +243,8 @@ final class DateAfterValidatorTest extends ConstraintValidatorTestCase
         $object = $this->getMockBuilder('stdClass')
             ->setMethods(['getBegin', 'getEnd'])
             ->getMock();
-        $object->expects($this->any())->method('getBegin')->will($this->returnValue(null));
-        $object->expects($this->any())->method('getEnd')->will($this->returnValue(new \DateTime()));
+        $object->method('getBegin')->will($this->returnValue(null));
+        $object->method('getEnd')->will($this->returnValue(new \DateTime()));
 
         $constraint = new DateAfter(
             [
@@ -270,8 +270,8 @@ final class DateAfterValidatorTest extends ConstraintValidatorTestCase
         $object = $this->getMockBuilder('stdClass')
             ->setMethods(['getBegin', 'getEnd'])
             ->getMock();
-        $object->expects($this->any())->method('getBegin')->will($this->returnValue(new \DateTime()));
-        $object->expects($this->any())->method('getEnd')->will($this->returnValue(null));
+        $object->method('getBegin')->will($this->returnValue(new \DateTime()));
+        $object->method('getEnd')->will($this->returnValue(null));
 
         $constraint = new DateAfter(
             [
