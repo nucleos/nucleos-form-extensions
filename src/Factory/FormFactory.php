@@ -9,7 +9,7 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Core23\FormExtensions\Form\Factory;
+namespace Core23\Form\Factory;
 
 use Symfony\Component\Form\FormFactoryInterface as SymfonyFormFactory;
 use Symfony\Component\Form\FormInterface;

@@ -9,7 +9,7 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Core23\FormExtensions\Bridge\Symfony\DependencyInjection;
+namespace Core23\Form\Bridge\Symfony\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -17,7 +17,7 @@ use Symfony\Component\DependencyInjection\Extension\PrependExtensionInterface;
 use Symfony\Component\DependencyInjection\Loader;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
-final class Core23FormExtensionsExtension extends Extension implements PrependExtensionInterface
+final class Core23FormExtension extends Extension implements PrependExtensionInterface
 {
     /**
      * {@inheritdoc}
@@ -37,7 +37,7 @@ final class Core23FormExtensionsExtension extends Extension implements PrependEx
         if ($container->hasExtension('twig')) {
             // add custom form widgets
             $container->prependExtensionConfig('twig', [
-                'form_themes' => ['@Core23FormExtensions/Form/widgets.html.twig'],
+                'form_themes' => ['@Core23Form/Form/widgets.html.twig'],
             ]);
         }
     }

@@ -9,9 +9,9 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Core23\FormExtensions\Tests\Form\Handler;
+namespace Core23\Form\Tests\Form\Handler;
 
-use Core23\FormExtensions\Tests\Fixtures\SimpleFormHandler;
+use Core23\Form\Tests\Fixtures\SimpleFormHandler;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -43,7 +43,7 @@ final class AbstractFormHandlerTest extends TestCase
     }
 
     /**
-     * @expectedException \Core23\FormExtensions\Form\Handler\Exception\InvalidCallbackException
+     * @expectedException \Core23\Form\Handler\Exception\InvalidCallbackException
      */
     public function testHandleInvalidCallback(): void
     {

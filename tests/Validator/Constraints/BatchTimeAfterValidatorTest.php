@@ -9,11 +9,11 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Core23\FormExtensions\Tests\Validator\Constraints;
+namespace Core23\Form\Tests\Validator\Constraints;
 
-use Core23\FormExtensions\Form\Model\BatchTime;
-use Core23\FormExtensions\Validator\Constraints\BatchTimeAfter;
-use Core23\FormExtensions\Validator\Constraints\BatchTimeAfterValidator;
+use Core23\Form\Model\BatchTime;
+use Core23\Form\Validator\Constraints\BatchTimeAfter;
+use Core23\Form\Validator\Constraints\BatchTimeAfterValidator;
 use Symfony\Component\Validator\Test\ConstraintValidatorTestCase;
 
 final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase

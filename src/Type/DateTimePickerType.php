@@ -9,21 +9,22 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Core23\FormExtensions\Form\Type;
+namespace Core23\Form\Type;
 
-use Symfony\Component\Form\AbstractType;
+use Sonata\CoreBundle\Form\Type\DateTimePickerType as BaseDateTimePickerType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-final class OutputType extends AbstractType
+final class DateTimePickerType extends BaseDateTimePickerType
 {
     /**
      * {@inheritdoc}
      */
     public function configureOptions(OptionsResolver $resolver): void
     {
+        parent::configureOptions($resolver);
+
         $resolver->setDefaults([
-            'required'  => false,
-            'disabled'  => true,
+            'dp_side_by_side' => true,
         ]);
     }
 
@@ -32,6 +33,14 @@ final class OutputType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'output';
+        return 'core23_type_datetime_picker';
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getParent()
+    {
+        return BaseDateTimePickerType::class;
     }
 }

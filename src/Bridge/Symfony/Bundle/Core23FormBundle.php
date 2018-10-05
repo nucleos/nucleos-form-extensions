@@ -9,12 +9,12 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Core23\FormExtensions\Bridge\Symfony\Bundle;
+namespace Core23\Form\Bridge\Symfony\Bundle;
 
-use Core23\FormExtensions\Bridge\Symfony\DependencyInjection\Core23FormExtensionsExtension;
+use Core23\Form\Bridge\Symfony\DependencyInjection\Core23FormExtension;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-final class Core23FormExtensionsBundle extends Bundle
+final class Core23FormBundle extends Bundle
 {
     /**
      * {@inheritdoc}
@@ -29,6 +29,6 @@ final class Core23FormExtensionsBundle extends Bundle
      */
     protected function getContainerExtensionClass()
     {
-        return Core23FormExtensionsExtension::class;
+        return Core23FormExtension::class;
     }
 }

@@ -56,12 +56,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Core23\\FormExtensions\\": "src/"
+            "Core23\\Form\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Core23\\FormExtensions\\Tests\\": "tests/"
+            "Core23\\Form\\Tests\\": "tests/"
         }
     },
     "scripts": {

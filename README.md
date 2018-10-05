@@ -39,7 +39,7 @@ Then, enable the bundle by adding it to the list of registered bundles in `bundl
 
 return [
     // ...
-    Core23\FormExtensions\Bridge\Symfony\Bundle\Core23FormExtensionsBundle::class => ['all' => true],
+    Core23\Form\Bridge\Symfony\Bundle\Core23FormBundle::class => ['all' => true],
 ];
 ```
 

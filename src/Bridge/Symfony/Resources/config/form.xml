@@ -1,48 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
   <services>
-    <service id="core23_form.type.dach_country" class="Core23\FormExtensions\Form\Type\DACHCountryType">
+    <service id="core23_form.type.dach_country" class="Core23\Form\Type\DACHCountryType">
       <tag name="form.type" alias="core23_country"/>
     </service>
-    <service id="core23_form.type.gender" class="Core23\FormExtensions\Form\Type\GenderType">
+    <service id="core23_form.type.gender" class="Core23\Form\Type\GenderType">
       <tag name="form.type" alias="gender"/>
     </service>
-    <service id="core23_form.type.output" class="Core23\FormExtensions\Form\Type\OutputType">
+    <service id="core23_form.type.output" class="Core23\Form\Type\OutputType">
       <tag name="form.type" alias="output"/>
     </service>
-    <service id="core23_form.type.date_output" class="Core23\FormExtensions\Form\Type\DateOutputType">
+    <service id="core23_form.type.date_output" class="Core23\Form\Type\DateOutputType">
       <tag name="form.type" alias="date_output"/>
     </service>
-    <service id="core23_form.type.number_output" class="Core23\FormExtensions\Form\Type\NumberOutputType">
+    <service id="core23_form.type.number_output" class="Core23\Form\Type\NumberOutputType">
       <tag name="form.type" alias="number_output"/>
     </service>
-    <service id="core23_form.type.batch_time" class="Core23\FormExtensions\Form\Type\BatchTimeType">
+    <service id="core23_form.type.batch_time" class="Core23\Form\Type\BatchTimeType">
       <tag name="form.type" alias="batch_time"/>
-      <argument>Core23\FormExtensions\Form\Model\BatchTime</argument>
+      <argument>Core23\Form\Model\BatchTime</argument>
     </service>
-    <service id="core23_form.time_picker" class="Core23\FormExtensions\Form\Type\TimePickerType">
+    <service id="core23_form.time_picker" class="Core23\Form\Type\TimePickerType">
       <tag name="form.type" alias="core23_type_time_picker"/>
     </service>
-    <service id="core23_form.datetime_picker" class="Core23\FormExtensions\Form\Type\DateTimePickerType">
+    <service id="core23_form.datetime_picker" class="Core23\Form\Type\DateTimePickerType">
       <tag name="form.type" alias="core23_type_datetime_picker"/>
       <argument type="service" id="sonata.core.date.moment_format_converter"/>
       <argument type="service" id="translator"/>
     </service>
-    <service id="core23_form.date_picker" class="Core23\FormExtensions\Form\Type\DatePickerType">
+    <service id="core23_form.date_picker" class="Core23\Form\Type\DatePickerType">
       <tag name="form.type" alias="core23_type_date_picker"/>
       <argument type="service" id="sonata.core.date.moment_format_converter"/>
       <argument type="service" id="translator"/>
     </service>
-    <service id="core23_form.type.autocomplete" class="Core23\FormExtensions\Form\Type\AutocompleteType">
+    <service id="core23_form.type.autocomplete" class="Core23\Form\Type\AutocompleteType">
       <tag name="form.type" alias="core23_autocomplete"/>
     </service>
-    <service id="core23_form.image_type_extension" class="Core23\FormExtensions\Form\Extension\ImageTypeExtension">
+    <service id="core23_form.image_type_extension" class="Core23\Form\Extension\ImageTypeExtension">
       <tag name="form.type_extension" alias="file" extended-type="Symfony\Component\Form\Extension\Core\Type\FileType"/>
     </service>
-    <service id="core23_form.download_type_extension" class="Core23\FormExtensions\Form\Extension\DownloadTypeExtension">
+    <service id="core23_form.download_type_extension" class="Core23\Form\Extension\DownloadTypeExtension">
       <tag name="form.type_extension" alias="file" extended-type="Symfony\Component\Form\Extension\Core\Type\FileType"/>
     </service>
-    <service id="core23_form.help_type_extension" class="Core23\FormExtensions\Form\Extension\HelpTypeExtension">
+    <service id="core23_form.help_type_extension" class="Core23\Form\Extension\HelpTypeExtension">
       <tag name="form.type_extension" alias="form" extended-type="Symfony\Component\Form\Extension\Core\Type\FormType"/>
     </service>
   </services>
