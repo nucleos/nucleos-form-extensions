@@ -1,3 +1,9 @@
+06/10/2018 22:53  1.0.0  Stable release
+961cf3b Fixed phpstan ignored list
+72d313e Removed word "Extensions" from namespace
+f5fadcb Updated release config
+731c8a8 Updated style config
+1c01cd8 Clean tests
 23/09/2018 13:09  0.3.2  Make PHP function calls explicit
 54c8c0f Updated .editorconfig
 f4c41c8 Fixed CS
