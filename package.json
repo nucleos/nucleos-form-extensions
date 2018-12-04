@@ -1,0 +1,14 @@
+{
+  "name": "@core23/form-extensions",
+  "version": "1.0.0",
+  "homepage": "https://core23.de",
+  "author": "Christian Gripp <mail@core23.de>",
+  "dependencies": {
+    "select2": "^3.5.1",
+    "select2-bootstrap-css": "^1.4"
+  },
+  "main": "assets/npm.js",
+  "files": [
+    "assets/"
+  ]
+}
