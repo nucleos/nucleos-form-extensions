@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace Core23\Form\Type;
 
-use Sonata\CoreBundle\Form\Type\DatePickerType as BaseDatePickerType;
+use Sonata\Form\Type\DatePickerType as BaseDatePickerType;
 
 final class DatePickerType extends BaseDatePickerType
 {

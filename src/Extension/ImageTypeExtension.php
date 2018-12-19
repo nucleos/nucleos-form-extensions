@@ -68,8 +68,10 @@ final class ImageTypeExtension extends AbstractTypeExtension
     /**
      * {@inheritdoc}
      */
-    public function getExtendedType()
+    public static function getExtendedTypes(): iterable
     {
-        return FileType::class;
+        return [
+         FileType::class,
+            ];
     }
 }

@@ -23,14 +23,6 @@ final class HelpTypeExtension extends AbstractTypeExtension
     /**
      * {@inheritdoc}
      */
-    public function getExtendedType()
-    {
-        return FormType::class;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
     public function buildView(FormView $view, FormInterface $form, array $options): void
     {
         $helpTranslationDomain = $options['help_translation_domain'];
@@ -66,5 +58,15 @@ final class HelpTypeExtension extends AbstractTypeExtension
 
         $resolver->setAllowedTypes('help', ['null', 'string']);
         $resolver->setAllowedTypes('help_translation_domain', ['null', 'bool', 'string']);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public static function getExtendedTypes(): iterable
+    {
+        return [
+            FormType::class,
+            ];
     }
 }
