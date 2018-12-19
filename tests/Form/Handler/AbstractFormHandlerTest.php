@@ -29,9 +29,9 @@ final class AbstractFormHandlerTest extends TestCase
         $form->expects($this->once())->method('handleRequest')
             ->with($this->equalTo($request));
         $form->expects($this->once())->method('isValid')
-            ->will($this->returnValue(true));
+            ->willReturn(true);
         $form->expects($this->once())->method('isSubmitted')
-            ->will($this->returnValue(true));
+            ->willReturn(true);
 
         $handler = new SimpleFormHandler();
 
@@ -53,9 +53,9 @@ final class AbstractFormHandlerTest extends TestCase
         $form->expects($this->once())->method('handleRequest')
             ->with($this->equalTo($request));
         $form->expects($this->once())->method('isValid')
-            ->will($this->returnValue(true));
+            ->willReturn(true);
         $form->expects($this->once())->method('isSubmitted')
-            ->will($this->returnValue(true));
+            ->willReturn(true);
 
         $handler = new SimpleFormHandler();
 

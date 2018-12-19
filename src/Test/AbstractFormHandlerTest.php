@@ -73,7 +73,7 @@ abstract class AbstractFormHandlerTest extends TestCase
 
         if (null !== $data) {
             $this->form->expects($this->once())->method('getData')
-                ->will($this->returnValue($data));
+                ->willReturn($data);
         }
 
         $method = new \ReflectionMethod($handler, 'preProcess');
@@ -104,7 +104,7 @@ abstract class AbstractFormHandlerTest extends TestCase
 
         if (null !== $data) {
             $this->form->method('getData')
-                ->will($this->returnValue($data));
+                ->willReturn($data);
         }
 
         $method = new \ReflectionMethod($handler, 'process');
@@ -136,7 +136,7 @@ abstract class AbstractFormHandlerTest extends TestCase
 
         if (null !== $data) {
             $this->form->expects($this->once())->method('getData')
-                ->will($this->returnValue($data));
+                ->willReturn($data);
         }
 
         $method = new \ReflectionMethod($handler, 'postProcess');
