@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace Core23\Form\Type;
 
-use Sonata\Doctrine\Entity\BaseEntityManager;
+use Sonata\CoreBundle\Model\BaseEntityManager;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
