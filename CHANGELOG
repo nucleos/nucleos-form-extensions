@@ -1,3 +1,20 @@
+30/12/2018 22:58  2.0.0  Moved bundle assets to "assets" folder
+f74e8ea Fixed phpunit config for release command
+2c745e4 Removed sonata deprecations
+ad35b52 Revert "Removed sonata core-bundle dependency"
+b329629 Added platform workaround for php-cs-fixer tool
+4593e20 Require latest phpunit bridge
+d1d24e5 Removed sonata core-bundle dependency
+ebcbb2a Require latest phpunit bridge
+342e3a2 Improved unit tests
+35c0028 Removed deprecation warnings
+18882d9 Travis: Test against PHP 7.3
+d9c90a5 Moved assets outside the src dir
+378b910 Dropped support for PHP 7.1
+6243b2b Fixed syntax error in editorconfig
+973ba88 Moved test dependencies to vendor-bin
+26fbfd0 Removed donation from README
+fa1182b Changed composer alias to 1.x
 06/10/2018 22:53  1.0.0  Stable release
 961cf3b Fixed phpstan ignored list
 72d313e Removed word "Extensions" from namespace
