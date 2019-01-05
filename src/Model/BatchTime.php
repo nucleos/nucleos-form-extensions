@@ -25,6 +25,14 @@ class BatchTime
 
     public function __toString()
     {
+        return $this->toString();
+    }
+
+    /**
+     * @return string
+     */
+    public function toString(): string
+    {
         return 'Day: '.$this->day.', Time: '.($this->time ? $this->time->format('H:i:s') : '');
     }
 
