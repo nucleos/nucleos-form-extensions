@@ -52,7 +52,7 @@ final class DACHCountryType extends AbstractType
     /**
      * @return string[]
      */
-    protected function getCountries()
+    protected function getCountries(): array
     {
         return ['DE', 'AT', 'CH'];
     }
