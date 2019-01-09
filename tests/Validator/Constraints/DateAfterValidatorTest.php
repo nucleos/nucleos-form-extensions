@@ -17,11 +17,10 @@ use Symfony\Component\Validator\Test\ConstraintValidatorTestCase;
 
 final class DateAfterValidatorTest extends ConstraintValidatorTestCase
 {
-    /**
-     * @expectedException \InvalidArgumentException
-     */
     public function testValidateInvalidFirstField(): void
     {
+        $this->expectException(\InvalidArgumentException::class);
+
         $object = $this->getMockBuilder('stdClass')
             ->setMethods(['getEnd'])
             ->getMock();
@@ -37,11 +36,10 @@ final class DateAfterValidatorTest extends ConstraintValidatorTestCase
         $this->validator->validate($object, $constraint);
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     */
     public function testValidateInvalidSecondField(): void
     {
+        $this->expectException(\InvalidArgumentException::class);
+
         $object = $this->getMockBuilder('stdClass')
             ->setMethods(['getBegin'])
             ->getMock();
@@ -57,11 +55,10 @@ final class DateAfterValidatorTest extends ConstraintValidatorTestCase
         $this->validator->validate($object, $constraint);
     }
 
-    /**
-     * @expectedException \Symfony\Component\Validator\Exception\UnexpectedTypeException
-     */
     public function testValidateInvalidFirstValue(): void
     {
+        $this->expectException(\Symfony\Component\Validator\Exception\UnexpectedTypeException::class);
+
         $object = $this->getMockBuilder('stdClass')
             ->setMethods(['getBegin', 'getEnd'])
             ->getMock();
@@ -78,11 +75,10 @@ final class DateAfterValidatorTest extends ConstraintValidatorTestCase
         $this->validator->validate($object, $constraint);
     }
 
-    /**
-     * @expectedException \Symfony\Component\Validator\Exception\UnexpectedTypeException
-     */
     public function testValidateInvalidSecondValue(): void
     {
+        $this->expectException(\Symfony\Component\Validator\Exception\UnexpectedTypeException::class);
+
         $object = $this->getMockBuilder('stdClass')
             ->setMethods(['getBegin', 'getEnd'])
             ->getMock();

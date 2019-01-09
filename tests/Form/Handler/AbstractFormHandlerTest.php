@@ -42,11 +42,10 @@ final class AbstractFormHandlerTest extends TestCase
         $this->assertSame($response, $result);
     }
 
-    /**
-     * @expectedException \Core23\Form\Handler\Exception\InvalidCallbackException
-     */
     public function testHandleInvalidCallback(): void
     {
+        $this->expectException(\Core23\Form\Handler\Exception\InvalidCallbackException::class);
+
         $request = $this->createMock(Request::class);
 
         $form = $this->createMock(FormInterface::class);

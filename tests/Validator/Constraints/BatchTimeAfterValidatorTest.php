@@ -18,11 +18,10 @@ use Symfony\Component\Validator\Test\ConstraintValidatorTestCase;
 
 final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
 {
-    /**
-     * @expectedException \InvalidArgumentException
-     */
     public function testValidateInvalidFirstField(): void
     {
+        $this->expectException(\InvalidArgumentException::class);
+
         $end = new BatchTime();
         $end->setTime(new \DateTime());
 
@@ -41,11 +40,10 @@ final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
         $this->validator->validate($object, $constraint);
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     */
     public function testValidateInvalidSecondField(): void
     {
+        $this->expectException(\InvalidArgumentException::class);
+
         $begin = new BatchTime();
         $begin->setTime(new \DateTime());
 
@@ -64,11 +62,10 @@ final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
         $this->validator->validate($object, $constraint);
     }
 
-    /**
-     * @expectedException \Symfony\Component\Validator\Exception\UnexpectedTypeException
-     */
     public function testValidateInvalidFirstValue(): void
     {
+        $this->expectException(\Symfony\Component\Validator\Exception\UnexpectedTypeException::class);
+
         $begin = new BatchTime();
         $begin->setTime(new \DateTime());
 
@@ -88,11 +85,10 @@ final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
         $this->validator->validate($object, $constraint);
     }
 
-    /**
-     * @expectedException \Symfony\Component\Validator\Exception\UnexpectedTypeException
-     */
     public function testValidateInvalidSecondValue(): void
     {
+        $this->expectException(\Symfony\Component\Validator\Exception\UnexpectedTypeException::class);
+
         $end = new BatchTime();
         $end->setTime(new \DateTime());
 
