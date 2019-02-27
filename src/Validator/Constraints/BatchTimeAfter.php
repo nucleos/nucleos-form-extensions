@@ -51,7 +51,8 @@ final class BatchTimeAfter extends Constraint
 
         if (null === $this->firstField || null === $this->secondField) {
             throw new MissingOptionsException('The options "firstField" and "secondField" must be given for constraint '.__CLASS__, ['firstField', 'secondField']);
-        } elseif ($this->firstField === $this->secondField) {
+        }
+        if ($this->firstField === $this->secondField) {
             throw new InvalidArgumentException('The options "firstField" and "secondField" can not be the same for constraint '.__CLASS__);
         }
     }

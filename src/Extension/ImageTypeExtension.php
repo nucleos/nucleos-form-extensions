@@ -71,7 +71,7 @@ final class ImageTypeExtension extends AbstractTypeExtension
     public static function getExtendedTypes(): iterable
     {
         return [
-         FileType::class,
-            ];
+            FileType::class,
+        ];
     }
 }

@@ -48,7 +48,8 @@ final class BatchTimeType extends AbstractType
             ->add('time', TimePickerType::class, [
                 'label'    => 'form.input_batch_time_time',
                 'required' => $required,
-            ]);
+            ])
+        ;
     }
 
     /**

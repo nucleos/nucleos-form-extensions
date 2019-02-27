@@ -50,16 +50,19 @@ final class DateAfterValidator extends ConstraintValidator
                 ->setParameter('%emptyField%', $constraint->firstField)
                 ->setParameter('%field%', $constraint->secondField)
                 ->atPath($constraint->firstField)
-                ->addViolation();
+                ->addViolation()
+            ;
 
             return;
-        } elseif ($firstDate && !$secondDate) {
+        }
+        if ($firstDate && !$secondDate) {
             $this->context
                 ->buildViolation($constraint->emptyMessage)
                 ->setParameter('%emptyField%', $constraint->secondField)
                 ->setParameter('%field%', $constraint->firstField)
                 ->atPath($constraint->secondField)
-                ->addViolation();
+                ->addViolation()
+            ;
 
             return;
         }
@@ -74,7 +77,8 @@ final class DateAfterValidator extends ConstraintValidator
                 ->setParameter('%firstField%', $constraint->firstField)
                 ->setParameter('%secondField%', $constraint->secondField)
                 ->atPath($constraint->secondField)
-                ->addViolation();
+                ->addViolation()
+            ;
         }
     }
 

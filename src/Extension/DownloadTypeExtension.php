@@ -75,7 +75,7 @@ final class DownloadTypeExtension extends AbstractTypeExtension
     public static function getExtendedTypes(): iterable
     {
         return [
-         FileType::class,
-            ];
+            FileType::class,
+        ];
     }
 }

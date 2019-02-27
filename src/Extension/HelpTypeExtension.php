@@ -67,6 +67,6 @@ final class HelpTypeExtension extends AbstractTypeExtension
     {
         return [
             FormType::class,
-            ];
+        ];
     }
 }

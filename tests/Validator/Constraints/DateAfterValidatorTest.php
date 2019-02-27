@@ -23,7 +23,8 @@ final class DateAfterValidatorTest extends ConstraintValidatorTestCase
 
         $object = $this->getMockBuilder('stdClass')
             ->setMethods(['getEnd'])
-            ->getMock();
+            ->getMock()
+        ;
         $object->method('getEnd')->willReturn(new \DateTime());
 
         $constraint = new DateAfter(
@@ -42,7 +43,8 @@ final class DateAfterValidatorTest extends ConstraintValidatorTestCase
 
         $object = $this->getMockBuilder('stdClass')
             ->setMethods(['getBegin'])
-            ->getMock();
+            ->getMock()
+        ;
         $object->method('getBegin')->willReturn(new \DateTime());
 
         $constraint = new DateAfter(
@@ -61,7 +63,8 @@ final class DateAfterValidatorTest extends ConstraintValidatorTestCase
 
         $object = $this->getMockBuilder('stdClass')
             ->setMethods(['getBegin', 'getEnd'])
-            ->getMock();
+            ->getMock()
+        ;
         $object->method('getBegin')->willReturn(new \DateTime());
         $object->method('getEnd')->willReturn('test');
 
@@ -81,7 +84,8 @@ final class DateAfterValidatorTest extends ConstraintValidatorTestCase
 
         $object = $this->getMockBuilder('stdClass')
             ->setMethods(['getBegin', 'getEnd'])
-            ->getMock();
+            ->getMock()
+        ;
         $object->method('getBegin')->willReturn('test');
         $object->method('getEnd')->willReturn(new \DateTime());
 
@@ -99,7 +103,8 @@ final class DateAfterValidatorTest extends ConstraintValidatorTestCase
     {
         $object = $this->getMockBuilder('stdClass')
             ->setMethods(['getBegin', 'getEnd'])
-            ->getMock();
+            ->getMock()
+        ;
         $object->method('getBegin')->willReturn(null);
         $object->method('getEnd')->willReturn(new \DateTime());
 
@@ -118,14 +123,16 @@ final class DateAfterValidatorTest extends ConstraintValidatorTestCase
             ->setParameter('%emptyField%', $constraint->firstField)
             ->setParameter('%field%', $constraint->secondField)
             ->atPath($constraint->firstField)
-            ->assertRaised();
+            ->assertRaised()
+        ;
     }
 
     public function testValidateEmptySecondValue(): void
     {
         $object = $this->getMockBuilder('stdClass')
             ->setMethods(['getBegin', 'getEnd'])
-            ->getMock();
+            ->getMock()
+        ;
         $object->method('getBegin')->willReturn(new \DateTime());
         $object->method('getEnd')->willReturn(null);
 
@@ -144,14 +151,16 @@ final class DateAfterValidatorTest extends ConstraintValidatorTestCase
             ->setParameter('%emptyField%', $constraint->secondField)
             ->setParameter('%field%', $constraint->firstField)
             ->atPath($constraint->secondField)
-            ->assertRaised();
+            ->assertRaised()
+        ;
     }
 
     public function testValidateDatesInvalid(): void
     {
         $object = $this->getMockBuilder('stdClass')
             ->setMethods(['getBegin', 'getEnd'])
-            ->getMock();
+            ->getMock()
+        ;
         $object->method('getBegin')->willReturn(new \DateTime('2015-02-01 10:00'));
         $object->method('getEnd')->willReturn(new \DateTime('2015-01-01 10:00'));
 
@@ -170,14 +179,16 @@ final class DateAfterValidatorTest extends ConstraintValidatorTestCase
             ->setParameter('%firstField%', $constraint->firstField)
             ->setParameter('%secondField%', $constraint->secondField)
             ->atPath($constraint->secondField)
-            ->assertRaised();
+            ->assertRaised()
+        ;
     }
 
     public function testValidateDatesValid(): void
     {
         $object = $this->getMockBuilder('stdClass')
             ->setMethods(['getBegin', 'getEnd'])
-            ->getMock();
+            ->getMock()
+        ;
         $object->method('getBegin')->willReturn(new \DateTime('2015-01-01 10:00'));
         $object->method('getEnd')->willReturn(new \DateTime('2015-02-01 10:00'));
 
@@ -197,7 +208,8 @@ final class DateAfterValidatorTest extends ConstraintValidatorTestCase
     {
         $object = $this->getMockBuilder('stdClass')
             ->setMethods(['getBegin', 'getEnd'])
-            ->getMock();
+            ->getMock()
+        ;
         $object->method('getBegin')->willReturn(new \DateTime('2015-01-01 10:00'));
         $object->method('getEnd')->willReturn(new \DateTime('2015-01-01 10:00'));
 
@@ -217,7 +229,8 @@ final class DateAfterValidatorTest extends ConstraintValidatorTestCase
     {
         $object = $this->getMockBuilder('stdClass')
             ->setMethods(['getBegin', 'getEnd'])
-            ->getMock();
+            ->getMock()
+        ;
         $object->method('getBegin')->willReturn(null);
         $object->method('getEnd')->willReturn(null);
 
@@ -238,7 +251,8 @@ final class DateAfterValidatorTest extends ConstraintValidatorTestCase
     {
         $object = $this->getMockBuilder('stdClass')
             ->setMethods(['getBegin', 'getEnd'])
-            ->getMock();
+            ->getMock()
+        ;
         $object->method('getBegin')->willReturn(null);
         $object->method('getEnd')->willReturn(new \DateTime());
 
@@ -258,14 +272,16 @@ final class DateAfterValidatorTest extends ConstraintValidatorTestCase
             ->setParameter('%emptyField%', $constraint->firstField)
             ->setParameter('%field%', $constraint->secondField)
             ->atPath($constraint->firstField)
-            ->assertRaised();
+            ->assertRaised()
+        ;
     }
 
     public function testValidateNotRequiredWithEmptySecond(): void
     {
         $object = $this->getMockBuilder('stdClass')
             ->setMethods(['getBegin', 'getEnd'])
-            ->getMock();
+            ->getMock()
+        ;
         $object->method('getBegin')->willReturn(new \DateTime());
         $object->method('getEnd')->willReturn(null);
 
@@ -285,7 +301,8 @@ final class DateAfterValidatorTest extends ConstraintValidatorTestCase
             ->setParameter('%emptyField%', $constraint->secondField)
             ->setParameter('%field%', $constraint->firstField)
             ->atPath($constraint->secondField)
-            ->assertRaised();
+            ->assertRaised()
+        ;
     }
 
     /**

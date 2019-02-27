@@ -27,11 +27,14 @@ final class AbstractFormHandlerTest extends TestCase
 
         $form = $this->createMock(FormInterface::class);
         $form->expects($this->once())->method('handleRequest')
-            ->with($this->equalTo($request));
+            ->with($this->equalTo($request))
+        ;
         $form->expects($this->once())->method('isValid')
-            ->willReturn(true);
+            ->willReturn(true)
+        ;
         $form->expects($this->once())->method('isSubmitted')
-            ->willReturn(true);
+            ->willReturn(true)
+        ;
 
         $handler = new SimpleFormHandler();
 
@@ -50,11 +53,14 @@ final class AbstractFormHandlerTest extends TestCase
 
         $form = $this->createMock(FormInterface::class);
         $form->expects($this->once())->method('handleRequest')
-            ->with($this->equalTo($request));
+            ->with($this->equalTo($request))
+        ;
         $form->expects($this->once())->method('isValid')
-            ->willReturn(true);
+            ->willReturn(true)
+        ;
         $form->expects($this->once())->method('isSubmitted')
-            ->willReturn(true);
+            ->willReturn(true)
+        ;
 
         $handler = new SimpleFormHandler();
 
