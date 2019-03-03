@@ -15,6 +15,11 @@ use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\Exception\InvalidArgumentException;
 use Symfony\Component\Validator\Exception\MissingOptionsException;
 
+/**
+ * @Annotation
+ *
+ * @Target({"CLASS", "ANNOTATION"})
+ */
 final class BatchTimeAfter extends Constraint
 {
     /**
