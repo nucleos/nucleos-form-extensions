@@ -1,3 +1,14 @@
+17/03/2019 17:11  2.1.0  Added validator annotations
+c18b7f0 [MINOR] Added validator constraints annotations
+9c71920 [BUILD] Added weak_vendors when calling phpunit
+f3e2dbf [PATCH] Updated CS Fixer config and run
+930b122 [BUILD] Updated phpstan version
+5d30bb9 [BUILD] Fixed symfony test setup
+af308dc [MINOR] Removed support for outdated symfony versions
+3ab0bb2 Fixed CS
+f636fd7 Updated cs-fixer config
+9b4fa4a Use return types
+3d6b5c8 Added toString method to models
 30/12/2018 22:58  2.0.0  Moved bundle assets to "assets" folder
 f74e8ea Fixed phpunit config for release command
 2c745e4 Removed sonata deprecations
