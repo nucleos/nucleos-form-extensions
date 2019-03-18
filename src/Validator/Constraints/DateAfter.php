@@ -12,8 +12,7 @@ declare(strict_types=1);
 namespace Core23\Form\Validator\Constraints;
 
 use Symfony\Component\Validator\Constraint;
-use Symfony\Component\Validator\Exception\InvalidArgumentException;
-use Symfony\Component\Validator\Exception\MissingOptionsException;
+use Symfony\Component\Validator\Exception\InvalidOptionsException;
 
 /**
  * @Annotation
@@ -54,12 +53,23 @@ final class DateAfter extends Constraint
     {
         parent::__construct($options);
 
-        if (null === $this->firstField || null === $this->secondField) {
-            throw new MissingOptionsException('The options "firstField" and "secondField" must be given for constraint '.__CLASS__, ['firstField', 'secondField']);
-        }
         if ($this->firstField === $this->secondField) {
-            throw new InvalidArgumentException('The options "firstField" and "secondField" can not be the same for constraint '.__CLASS__);
+            throw new InvalidOptionsException('The options "firstField" and "secondField" can not be the same for constraint '.__CLASS__, [
+                'firstField',
+                'secondField',
+            ]);
         }
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getRequiredOptions(): array
+    {
+        return [
+            'firstField',
+            'secondField',
+        ];
     }
 
     /**
