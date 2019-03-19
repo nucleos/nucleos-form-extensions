@@ -10,6 +10,7 @@
 namespace Core23\Form\Tests\Bridge\Symfony\Bundle;
 
 use Core23\Form\Bridge\Symfony\Bundle\Core23FormBundle;
+use Core23\Form\Bridge\Symfony\DependencyInjection\Core23FormExtension;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpKernel\Bundle\BundleInterface;
 
@@ -27,5 +28,12 @@ class Core23FormBundleTest extends TestCase
         $bundle = new Core23FormBundle();
 
         $this->assertStringEndsWith('Bridge/Symfony/Bundle', \dirname($bundle->getPath()));
+    }
+
+    public function testGetContainerExtension(): void
+    {
+        $bundle = new Core23FormBundle();
+
+        $this->assertInstanceOf(Core23FormExtension::class, $bundle->getContainerExtension());
     }
 }
