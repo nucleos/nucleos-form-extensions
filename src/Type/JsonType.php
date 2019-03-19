@@ -60,19 +60,8 @@ final class JsonType extends AbstractType implements DataTransformerInterface
 
         $json = json_decode($text, true);
 
-        if (!$json) {
-            $json = [];
-            foreach (explode("\n", $text) as $keyValue) {
-                $parts = explode(':', $keyValue);
-                if (2 === \count($parts)) {
-                    $key   = trim($parts[0]);
-                    $value = trim($parts[1]);
-
-                    if ($key || $value) {
-                        $json[$key] = $value;
-                    }
-                }
-            }
+        if (false !== $json && \is_string($text)) {
+            $json = self::transformTextToArray($text);
         }
 
         return $json;
@@ -84,5 +73,28 @@ final class JsonType extends AbstractType implements DataTransformerInterface
     public function getParent()
     {
         return TextareaType::class;
+    }
+
+    /**
+     * @param string $text
+     *
+     * @return array
+     */
+    private static function transformTextToArray(string $text): array
+    {
+        $json = [];
+        foreach (explode("\n", $text) as $keyValue) {
+            $parts = explode(':', $keyValue);
+            if (2 === \count($parts)) {
+                $key   = trim($parts[0]);
+                $value = trim($parts[1]);
+
+                if ($key || $value) {
+                    $json[$key] = $value;
+                }
+            }
+        }
+
+        return $json;
     }
 }

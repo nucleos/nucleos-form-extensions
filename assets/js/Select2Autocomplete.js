@@ -22,6 +22,7 @@ class Select2Autocomplete {
     }, options);
 
     const select = jQuery(element);
+    const self = this;
 
     select.select2({
       ajax: {
@@ -35,16 +36,7 @@ class Select2Autocomplete {
           };
         },
         results: function (data) {
-          let results = [];
-          jQuery.each(data, function (index, item) {
-            results.push({
-              id: item.id,
-              text: item.value
-            });
-          });
-          return {
-            results: results
-          };
+          return self.parseResult(data);
         },
         cache: true,
         escapeMarkup: function (markup) {
@@ -54,11 +46,23 @@ class Select2Autocomplete {
       }
     });
 
-
     select.select2('data', {
       id: select.val(),
       text: settings.text
     });
+  }
+
+  parseResult(data) {
+    let results = [];
+    jQuery.each(data, function (index, item) {
+      results.push({
+        id: item.id,
+        text: item.value
+      });
+    });
+    return {
+      results: results
+    };
   }
 }
 

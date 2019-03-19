@@ -24,7 +24,6 @@ final class TimePickerType extends AbstractType
      */
     public function finishView(FormView $view, FormInterface $form, array $options): void
     {
-        $dpOptions = [];
         $format    = 'HH';
 
         if ($options['with_minutes']) {
@@ -37,26 +36,9 @@ final class TimePickerType extends AbstractType
             $options['dp_use_seconds'] = true;
         }
 
-        $view->vars['moment_format'] = $format;
-
-        foreach ($options as $key => $value) {
-            if (false !== strpos($key, 'dp_')) {
-                // We remove 'dp_' and camelize the options names
-                $dpKey = substr($key, 3);
-                $dpKey = preg_replace_callback(
-                    '/_([a-z])/',
-                    function ($c) {
-                        return strtoupper($c[1]);
-                    },
-                    $dpKey
-                );
-
-                $dpOptions[$dpKey] = $value;
-            }
-        }
-
+        $view->vars['moment_format']         = $format;
         $view->vars['datepicker_use_button'] = empty($options['datepicker_use_button']) ? false : true;
-        $view->vars['dp_options']            = $dpOptions;
+        $view->vars['dp_options']            = self::createDpOptions($options);
     }
 
     /**
@@ -91,5 +73,33 @@ final class TimePickerType extends AbstractType
     public function getBlockPrefix()
     {
         return 'core23_type_time_picker';
+    }
+
+    /**
+     * @param array $options
+     *
+     * @return array
+     */
+    private static function createDpOptions(array $options): array
+    {
+        $dpOptions = [];
+
+        foreach ($options as $key => $value) {
+            if (false !== strpos($key, 'dp_')) {
+                // We remove 'dp_' and camelize the options names
+                $dpKey = substr($key, 3);
+                $dpKey = preg_replace_callback(
+                    '/_([a-z])/',
+                    function ($c) {
+                        return strtoupper($c[1]);
+                    },
+                    $dpKey
+                );
+
+                $dpOptions[$dpKey] = $value;
+            }
+        }
+
+        return $dpOptions;
     }
 }
