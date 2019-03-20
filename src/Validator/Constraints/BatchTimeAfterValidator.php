@@ -37,11 +37,11 @@ final class BatchTimeAfterValidator extends ConstraintValidator
         $firstDate  = $this->getFieldValue($value, $constraint->firstField);
         $secondDate = $this->getFieldValue($value, $constraint->secondField);
 
-        if (!$constraint->required && null ===$firstDate && null ===$secondDate) {
+        if (!$constraint->required && null === $firstDate && null === $secondDate) {
             return;
         }
 
-        if (null ===$firstDate && $secondDate) {
+        if (null === $firstDate) {
             $this->context
                 ->buildViolation($constraint->emptyMessage)
                 ->setParameter('%emptyField%', $constraint->firstField)
@@ -49,11 +49,9 @@ final class BatchTimeAfterValidator extends ConstraintValidator
                 ->atPath($constraint->firstField)
                 ->addViolation()
             ;
-
-            return;
         }
 
-        if ($firstDate && null ===$secondDate) {
+        if (null === $secondDate) {
             $this->context
                 ->buildViolation($constraint->emptyMessage)
                 ->setParameter('%emptyField%', $constraint->secondField)
@@ -61,11 +59,13 @@ final class BatchTimeAfterValidator extends ConstraintValidator
                 ->atPath($constraint->secondField)
                 ->addViolation()
             ;
+        }
 
+        if (null === $firstDate || null === $secondDate) {
             return;
         }
 
-        if (null ===$firstDate->getTime()) {
+        if (null === $firstDate->getTime()) {
             $this->context
                 ->buildViolation($constraint->emptyMessage)
                 ->setParameter('%emptyField%', $constraint->firstField)
@@ -76,7 +76,7 @@ final class BatchTimeAfterValidator extends ConstraintValidator
 
             return;
         }
-        if (null ===$secondDate->getTime()) {
+        if (null === $secondDate->getTime()) {
             $this->context
                 ->buildViolation($constraint->emptyMessage)
                 ->setParameter('%emptyField%', $constraint->secondField)
