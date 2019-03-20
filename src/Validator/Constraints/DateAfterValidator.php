@@ -11,6 +11,7 @@ declare(strict_types=1);
 
 namespace Core23\Form\Validator\Constraints;
 
+use DateTime;
 use Symfony\Component\PropertyAccess\Exception\NoSuchPropertyException;
 use Symfony\Component\PropertyAccess\PropertyAccess;
 use Symfony\Component\Validator\Constraint;
@@ -33,50 +34,46 @@ final class DateAfterValidator extends ConstraintValidator
             return;
         }
 
-        try {
-            $firstDate  = $this->getFieldValue($value, $constraint->firstField);
-            $secondDate = $this->getFieldValue($value, $constraint->secondField);
-        } catch (NoSuchPropertyException $e) {
-            throw new InvalidArgumentException($e->getMessage());
-        }
+        $firstFieldName  = $constraint->firstField;
+        $secondFieldName = $constraint->secondField;
 
-        if (!$constraint->required && !$firstDate && !$secondDate) {
+        $firstDate  = $this->getFieldValue($value, $firstFieldName);
+        $secondDate = $this->getFieldValue($value, $secondFieldName);
+
+        if (!$constraint->required && null === $firstDate && null === $secondDate) {
             return;
         }
 
-        if (!$firstDate && $secondDate) {
+        if (null === $firstDate && $secondDate) {
             $this->context
                 ->buildViolation($constraint->emptyMessage)
-                ->setParameter('%emptyField%', $constraint->firstField)
-                ->setParameter('%field%', $constraint->secondField)
-                ->atPath($constraint->firstField)
-                ->addViolation()
-            ;
-
-            return;
-        }
-        if ($firstDate && !$secondDate) {
-            $this->context
-                ->buildViolation($constraint->emptyMessage)
-                ->setParameter('%emptyField%', $constraint->secondField)
-                ->setParameter('%field%', $constraint->firstField)
-                ->atPath($constraint->secondField)
+                ->setParameter('%emptyField%', $firstFieldName)
+                ->setParameter('%field%', $secondFieldName)
+                ->atPath($firstFieldName)
                 ->addViolation()
             ;
 
             return;
         }
 
-        if (!$firstDate instanceof \DateTime || !$secondDate instanceof \DateTime) {
-            throw new UnexpectedTypeException($value, \DateTime::class);
+        if ($firstDate && null === $secondDate) {
+            $this->context
+                ->buildViolation($constraint->emptyMessage)
+                ->setParameter('%emptyField%', $secondFieldName)
+                ->setParameter('%field%', $firstFieldName)
+                ->atPath($secondFieldName)
+                ->addViolation()
+            ;
+
+            return;
         }
 
         if ($firstDate > $secondDate) {
             $this->context
                 ->buildViolation($constraint->message)
-                ->setParameter('%firstField%', $constraint->firstField)
-                ->setParameter('%secondField%', $constraint->secondField)
-                ->atPath($constraint->secondField)
+                ->setParameter('%firstField%', $firstFieldName)
+                ->setParameter('%secondField%', $secondFieldName)
+                ->atPath($secondFieldName)
                 ->addViolation()
             ;
         }
@@ -86,12 +83,22 @@ final class DateAfterValidator extends ConstraintValidator
      * @param mixed  $object
      * @param string $field
      *
-     * @return mixed
+     * @return DateTime|null
      */
-    private function getFieldValue($object, string $field)
+    private function getFieldValue($object, string $field): ?DateTime
     {
         $propertyAccessor = PropertyAccess::createPropertyAccessor();
 
-        return $propertyAccessor->getValue($object, $field);
+        try {
+            $value = $propertyAccessor->getValue($object, $field);
+        } catch (NoSuchPropertyException $e) {
+            throw new InvalidArgumentException($e->getMessage());
+        }
+
+        if (null !== $value && !$value instanceof DateTime) {
+            throw new UnexpectedTypeException($value, DateTime::class);
+        }
+
+        return $value;
     }
 }

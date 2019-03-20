@@ -34,23 +34,14 @@ final class BatchTimeAfterValidator extends ConstraintValidator
             return;
         }
 
-        try {
-            $firstDate = $this->getFieldValue($value, $constraint->firstField);
-        } catch (NoSuchPropertyException $e) {
-            throw new InvalidArgumentException($e->getMessage());
-        }
+        $firstDate  = $this->getFieldValue($value, $constraint->firstField);
+        $secondDate = $this->getFieldValue($value, $constraint->secondField);
 
-        try {
-            $secondDate = $this->getFieldValue($value, $constraint->secondField);
-        } catch (NoSuchPropertyException $e) {
-            throw new InvalidArgumentException($e->getMessage());
-        }
-
-        if (!$constraint->required && !$firstDate && !$secondDate) {
+        if (!$constraint->required && null ===$firstDate && null ===$secondDate) {
             return;
         }
 
-        if (!$firstDate && $secondDate) {
+        if (null ===$firstDate && $secondDate) {
             $this->context
                 ->buildViolation($constraint->emptyMessage)
                 ->setParameter('%emptyField%', $constraint->firstField)
@@ -61,7 +52,8 @@ final class BatchTimeAfterValidator extends ConstraintValidator
 
             return;
         }
-        if ($firstDate && !$secondDate) {
+
+        if ($firstDate && null ===$secondDate) {
             $this->context
                 ->buildViolation($constraint->emptyMessage)
                 ->setParameter('%emptyField%', $constraint->secondField)
@@ -73,11 +65,7 @@ final class BatchTimeAfterValidator extends ConstraintValidator
             return;
         }
 
-        if (!$firstDate instanceof BatchTime || !$secondDate instanceof BatchTime) {
-            throw new UnexpectedTypeException($value, BatchTime::class);
-        }
-
-        if (!$firstDate->getTime()) {
+        if (null ===$firstDate->getTime()) {
             $this->context
                 ->buildViolation($constraint->emptyMessage)
                 ->setParameter('%emptyField%', $constraint->firstField)
@@ -88,7 +76,7 @@ final class BatchTimeAfterValidator extends ConstraintValidator
 
             return;
         }
-        if (!$secondDate->getTime()) {
+        if (null ===$secondDate->getTime()) {
             $this->context
                 ->buildViolation($constraint->emptyMessage)
                 ->setParameter('%emptyField%', $constraint->secondField)
@@ -115,12 +103,22 @@ final class BatchTimeAfterValidator extends ConstraintValidator
      * @param mixed  $object
      * @param string $field
      *
-     * @return mixed
+     * @return BatchTime|null
      */
-    private function getFieldValue($object, string $field)
+    private function getFieldValue($object, string $field): ?BatchTime
     {
         $propertyAccessor = PropertyAccess::createPropertyAccessor();
 
-        return $propertyAccessor->getValue($object, $field);
+        try {
+            $value =  $propertyAccessor->getValue($object, $field);
+        } catch (NoSuchPropertyException $e) {
+            throw new InvalidArgumentException($e->getMessage());
+        }
+
+        if (null !== $value && !$value instanceof BatchTime) {
+            throw new UnexpectedTypeException($value, BatchTime::class);
+        }
+
+        return $value;
     }
 }
