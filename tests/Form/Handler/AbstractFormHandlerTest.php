@@ -11,6 +11,7 @@ declare(strict_types=1);
 
 namespace Core23\Form\Tests\Form\Handler;
 
+use Core23\Form\Handler\Exception\InvalidCallbackException;
 use Core23\Form\Tests\Fixtures\SimpleFormHandler;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Form\FormInterface;
@@ -21,8 +22,7 @@ final class AbstractFormHandlerTest extends TestCase
 {
     public function testHandle(): void
     {
-        $request = $this->createMock(Request::class);
-
+        $request  = $this->createMock(Request::class);
         $response = $this->createMock(Response::class);
 
         $form = $this->createMock(FormInterface::class);
@@ -47,7 +47,7 @@ final class AbstractFormHandlerTest extends TestCase
 
     public function testHandleInvalidCallback(): void
     {
-        $this->expectException(\Core23\Form\Handler\Exception\InvalidCallbackException::class);
+        $this->expectException(InvalidCallbackException::class);
 
         $request = $this->createMock(Request::class);
 

@@ -1,18 +1,10 @@
+includes:
+    - vendor-bin/phpstan/vendor/jangregor/phpstan-prophecy/src/extension.neon
+    - vendor-bin/phpstan/vendor/phpstan/phpstan-phpunit/extension.neon
+    - vendor-bin/phpstan/vendor/phpstan/phpstan-phpunit/rules.neon
+
 parameters:
     autoload_files:
         - vendor-bin/test/vendor/autoload.php
 
-    includes:
-        - vendor-bin/phpstan/vendor/phpstan/phpstan-deprecation-rules/rules.neon
-        - vendor-bin/phpstan/vendor/phpstan/phpstan-phpunit/extension.neon
-        - vendor-bin/phpstan/vendor/phpstan/phpstan-phpunit/rules.neon
-        - vendor-bin/phpstan/vendor/phpstan/phpstan-strict-rules/rules.neon
-
     ignoreErrors:
-        # PHPUnit
-        - '#Parameter \#1 \$container of method Symfony\\Component\\DependencyInjection\\Extension\\PrependExtensionInterface::prepend\(\) expects Symfony\\Component\\DependencyInjection\\ContainerBuilder, PHPUnit\\Framework\\MockObject\\MockObject given.#'
-
-        # Symfony DI
-        - '#Parameter \#1 \$form of method Core23\\Form\\Handler\\AbstractFormHandler::handle\(\) expects Symfony\\Component\\Form\\FormInterface, PHPUnit\\Framework\\MockObject\\MockObject given.#'
-        - '#Parameter \#1 \$session of method Symfony\\Component\\HttpFoundation\\Request::setSession\(\) expects Symfony\\Component\\HttpFoundation\\Session\\SessionInterface, PHPUnit\\Framework\\MockObject\\MockObject given.#'
-        - '#Parameter \#2 \$request of method Core23\\Form\\Handler\\AbstractFormHandler::handle\(\) expects Symfony\\Component\\HttpFoundation\\Request, PHPUnit\\Framework\\MockObject\\MockObject given.#'
