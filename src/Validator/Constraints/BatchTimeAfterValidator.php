@@ -31,7 +31,7 @@ final class BatchTimeAfterValidator extends ConstraintValidator
         }
 
         if (!\is_object($value)) {
-            return;
+            throw new InvalidArgumentException(sprintf('Could not validate "%s"', \gettype($value)));
         }
 
         $firstDate  = $this->getFieldValue($value, $constraint->firstField);
