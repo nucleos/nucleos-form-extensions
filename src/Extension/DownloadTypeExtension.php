@@ -72,6 +72,16 @@ final class DownloadTypeExtension extends AbstractTypeExtension
     /**
      * {@inheritdoc}
      */
+    public function getExtendedType()
+    {
+        foreach (static::getExtendedTypes() as $extendedType) {
+            return $extendedType;
+        }
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public static function getExtendedTypes(): iterable
     {
         return [
