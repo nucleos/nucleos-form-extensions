@@ -11,6 +11,8 @@ declare(strict_types=1);
 
 namespace Core23\Form\Model;
 
+use DateTime;
+
 class BatchTime
 {
     /**
@@ -19,7 +21,7 @@ class BatchTime
     private $day = 0;
 
     /**
-     * @var \DateTime|null
+     * @var DateTime|null
      * */
     private $time;
 
@@ -33,7 +35,7 @@ class BatchTime
      */
     public function toString(): string
     {
-        return 'Day: '.$this->day.', Time: '.($this->time ? $this->time->format('H:i:s') : '');
+        return 'Day: '.$this->day.', Time: '.($this->time ? $this->time->format('H:i:s') : 'null');
     }
 
     /**
@@ -53,17 +55,17 @@ class BatchTime
     }
 
     /**
-     * @return \DateTime|null
+     * @return DateTime|null
      */
-    public function getTime(): ?\DateTime
+    public function getTime(): ?DateTime
     {
         return $this->time;
     }
 
     /**
-     * @param \DateTime $time
+     * @param DateTime $time
      */
-    public function setTime(\DateTime $time): void
+    public function setTime(DateTime $time): void
     {
         $this->time = $time;
     }
@@ -73,6 +75,13 @@ class BatchTime
      */
     public function getSeconds(): int
     {
-        return $this->getDay() * 86400 + (null !== $this->getTime() ? (int) $this->getTime()->format('U') : 0);
+        $seconds =  $this->getDay() * 86400;
+
+        if (null !== $this->getTime()) {
+            $time = clone $this->getTime();
+            $seconds += (int) $time->format('U');
+        }
+
+        return $seconds;
     }
 }
