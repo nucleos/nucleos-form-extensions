@@ -18,6 +18,10 @@ use Symfony\Component\Form\FormView;
 use Symfony\Component\OptionsResolver\Options;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
+/**
+ * @deprecated Use the symfony help extension
+ * @see https://symfony.com/doc/current/form/form_customization.html#form-help-form-view
+ */
 final class HelpTypeExtension extends AbstractTypeExtension
 {
     /**
