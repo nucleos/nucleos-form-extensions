@@ -45,9 +45,9 @@ final class HelpTypeExtension extends AbstractTypeExtension
      */
     public function configureOptions(OptionsResolver $resolver): void
     {
-        $helpTranslationDomainNormalizer = function (Options $options, $helpTranslationDomain) {
-            if (true === $helpTranslationDomain) {
-                return $options['translation_domain'];
+        $helpTranslationDomainNormalizer = static function (Options $options, $helpTranslationDomain) {
+            if (null === $helpTranslationDomain && $options->offsetExists('translation_domain')) {
+                return $options->offsetGet('translation_domain');
             }
 
             return $helpTranslationDomain;
@@ -55,7 +55,7 @@ final class HelpTypeExtension extends AbstractTypeExtension
 
         $resolver->setDefaults([
             'help'                    => null,
-            'help_translation_domain' => true,
+            'help_translation_domain' => null,
         ]);
 
         $resolver->setNormalizer('help_translation_domain', $helpTranslationDomainNormalizer);
