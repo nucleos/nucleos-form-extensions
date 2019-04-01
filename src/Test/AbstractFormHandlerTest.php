@@ -72,7 +72,7 @@ abstract class AbstractFormHandlerTest extends TestCase
         $handler = $this->createFormHandler();
 
         if (null !== $data) {
-            $this->form->expects($this->once())->method('getData')
+            $this->form->method('getData')
                 ->willReturn($data)
             ;
         }
@@ -137,7 +137,7 @@ abstract class AbstractFormHandlerTest extends TestCase
         $handler = $this->createFormHandler();
 
         if (null !== $data) {
-            $this->form->expects($this->once())->method('getData')
+            $this->form->method('getData')
                 ->willReturn($data)
             ;
         }
