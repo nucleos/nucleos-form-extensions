@@ -11,9 +11,11 @@ declare(strict_types=1);
 
 namespace Core23\Form\Type;
 
+use Core23\Form\Model\BatchTime;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\OptionsResolver\Options;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 final class BatchTimeType extends AbstractType
@@ -26,8 +28,17 @@ final class BatchTimeType extends AbstractType
     /**
      * @param string $class
      */
-    public function __construct(string $class)
+    public function __construct(string $class = null)
     {
+        if (null === $class) {
+            $class = BatchTime::class;
+        } else {
+            @trigger_error(
+                'Passing a class as constructor argument is deprecated',
+                E_USER_DEPRECATED
+            );
+        }
+
         $this->class = $class;
     }
 
