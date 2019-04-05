@@ -19,7 +19,7 @@ class DateAfterTest extends TestCase
     public function testItIsNotInstantiableWithMissingFirstField(): void
     {
         $this->expectException(MissingOptionsException::class);
-        $this->expectExceptionMessage(sprintf('The options "firstField" must be set for constraint "%s"', DateAfter::class));
+        $this->expectExceptionMessageRegExp(sprintf('#^%s#', preg_quote('The options "firstField" must be set for constraint', '#')));
 
         new DateAfter([
             'secondField' => 'first',
@@ -29,7 +29,7 @@ class DateAfterTest extends TestCase
     public function testItIsNotInstantiableWithMissingSecondField(): void
     {
         $this->expectException(MissingOptionsException::class);
-        $this->expectExceptionMessage(sprintf('The options "secondField" must be set for constraint "%s"', DateAfter::class));
+        $this->expectExceptionMessageRegExp(sprintf('#^%s#', preg_quote('The options "secondField" must be set for constraint', '#')));
 
         new DateAfter([
             'firstField' => 'first',
