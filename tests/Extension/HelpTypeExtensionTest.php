@@ -1,0 +1,115 @@
+<?php
+
+/*
+ * (c) Christian Gripp <mail@core23.de>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Core23\Form\Tests\Extension;
+
+use Core23\Form\Extension\HelpTypeExtension;
+use PHPUnit\Framework\TestCase;
+use Symfony\Component\Form\Extension\Core\Type\FormType;
+use Symfony\Component\Form\FormInterface;
+use Symfony\Component\Form\FormTypeExtensionInterface;
+use Symfony\Component\Form\FormView;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+
+class HelpTypeExtensionTest extends TestCase
+{
+    public function testItIsInstantiable(): void
+    {
+        $extension = new HelpTypeExtension();
+
+        $this->assertInstanceOf(FormTypeExtensionInterface::class, $extension);
+    }
+
+    public function testBuildViewWithDefaults(): void
+    {
+        $view = new FormView();
+        $form = $this->prophesize(FormInterface::class);
+
+        $extension = new HelpTypeExtension();
+        $extension->buildView($view, $form->reveal(), [
+            'help'                   => null,
+            'help_translation_domain'=> null,
+        ]);
+
+        $this->assertNull($view->vars['help']);
+        $this->assertNull($view->vars['help_translation_domain']);
+    }
+
+    public function testBuildViewWithParentTranslation(): void
+    {
+        $parentView = new FormView();
+
+        $view                             = new FormView($parentView);
+        $view->vars['translation_domain'] = 'Foo';
+        $form                             = $this->prophesize(FormInterface::class);
+
+        $extension = new HelpTypeExtension();
+        $extension->buildView($view, $form->reveal(), [
+            'help'                   => 'my help text',
+            'help_translation_domain'=> null,
+        ]);
+
+        $this->assertSame('my help text', $view->vars['help']);
+        $this->assertSame('Foo', $view->vars['help_translation_domain']);
+    }
+
+    public function testBuildView(): void
+    {
+        $view = new FormView();
+        $form = $this->prophesize(FormInterface::class);
+
+        $extension = new HelpTypeExtension();
+        $extension->buildView($view, $form->reveal(), [
+            'help'                   => null,
+            'help_translation_domain'=> null,
+        ]);
+
+        $this->assertNull($view->vars['help']);
+        $this->assertNull($view->vars['help_translation_domain']);
+    }
+
+    public function testConfigureOptions(): void
+    {
+        $resolver = new OptionsResolver();
+
+        $extension = new HelpTypeExtension();
+        $extension->configureOptions($resolver);
+
+        $result = $resolver->resolve();
+
+        $this->assertNull($result['help']);
+        $this->assertNull($result['help_translation_domain']);
+    }
+
+    public function testConfigureOptionsWithFallback(): void
+    {
+        $resolver = new OptionsResolver();
+        $resolver->setDefault('translation_domain', 'FallbackDomain');
+
+        $extension = new HelpTypeExtension();
+        $extension->configureOptions($resolver);
+
+        $result = $resolver->resolve();
+
+        $this->assertNull($result['help']);
+        $this->assertSame('FallbackDomain', $result['help_translation_domain']);
+    }
+
+    public function testExtendedTypes(): void
+    {
+        $this->assertSame([FormType::class], HelpTypeExtension::getExtendedTypes());
+    }
+
+    public function testExtendedType(): void
+    {
+        $extension = new HelpTypeExtension();
+
+        $this->assertSame(FormType::class, $extension->getExtendedType());
+    }
+}

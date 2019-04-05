@@ -8,3 +8,4 @@ parameters:
         - vendor-bin/test/vendor/autoload.php
 
     ignoreErrors:
+        - '#Access to an undefined property Prophecy\\Prophecy\\ObjectProphecy<Doctrine\\ORM\\Mapping\\ClassMetadata>::\$discriminatorMap.#'

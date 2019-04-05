@@ -12,18 +12,45 @@ declare(strict_types=1);
 namespace Core23\Form\Tests\Validator\Constraints;
 
 use Core23\Form\Model\BatchTime;
+use Core23\Form\Tests\Fixtures\DummyConstraint;
 use Core23\Form\Validator\Constraints\BatchTimeAfter;
 use Core23\Form\Validator\Constraints\BatchTimeAfterValidator;
+use DateTime;
+use InvalidArgumentException;
+use Symfony\Component\Validator\Exception\UnexpectedTypeException;
 use Symfony\Component\Validator\Test\ConstraintValidatorTestCase;
 
 final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
 {
+    public function testValidateInvalidConstraint(): void
+    {
+        $this->expectException(UnexpectedTypeException::class);
+        $this->expectExceptionMessage('Expected argument of type "Core23\Form\Validator\Constraints\BatchTimeAfter", "Core23\Form\Tests\Fixtures\DummyConstraint" given');
+
+        $this->validator->validate('dummy', new DummyConstraint());
+    }
+
+    public function testValidateInvalidObject(): void
+    {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('Could not validate "string"');
+
+        $constraint = new BatchTimeAfter(
+            [
+                'firstField'  => 'begin',
+                'secondField' => 'end',
+            ]
+        );
+
+        $this->validator->validate('dummy', $constraint);
+    }
+
     public function testValidateInvalidFirstField(): void
     {
         $this->expectException(\InvalidArgumentException::class);
 
         $end = new BatchTime();
-        $end->setTime(new \DateTime());
+        $end->setTime(new DateTime());
 
         $object = $this->getMockBuilder('stdClass')
             ->setMethods(['getEnd'])
@@ -46,7 +73,7 @@ final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
         $this->expectException(\InvalidArgumentException::class);
 
         $begin = new BatchTime();
-        $begin->setTime(new \DateTime());
+        $begin->setTime(new DateTime());
 
         $object = $this->getMockBuilder('stdClass')
             ->setMethods(['getBegin'])
@@ -69,7 +96,7 @@ final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
         $this->expectException(\Symfony\Component\Validator\Exception\UnexpectedTypeException::class);
 
         $begin = new BatchTime();
-        $begin->setTime(new \DateTime());
+        $begin->setTime(new DateTime());
 
         $object = $this->getMockBuilder('stdClass')
             ->setMethods(['getBegin', 'getEnd'])
@@ -93,7 +120,7 @@ final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
         $this->expectException(\Symfony\Component\Validator\Exception\UnexpectedTypeException::class);
 
         $end = new BatchTime();
-        $end->setTime(new \DateTime());
+        $end->setTime(new DateTime());
 
         $object = $this->getMockBuilder('stdClass')
             ->setMethods(['getBegin', 'getEnd'])
@@ -115,7 +142,7 @@ final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
     public function testValidateEmptyFirstValue(): void
     {
         $end = new BatchTime();
-        $end->setTime(new \DateTime());
+        $end->setTime(new DateTime());
 
         $object = $this->getMockBuilder('stdClass')
             ->setMethods(['getBegin', 'getEnd'])
@@ -146,7 +173,7 @@ final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
     public function testValidateEmptySecondValue(): void
     {
         $begin = new BatchTime();
-        $begin->setTime(new \DateTime());
+        $begin->setTime(new DateTime());
 
         $object = $this->getMockBuilder('stdClass')
             ->setMethods(['getBegin', 'getEnd'])
@@ -177,10 +204,10 @@ final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
     public function testValidateDatesInvalid(): void
     {
         $begin = new BatchTime();
-        $begin->setTime(new \DateTime('2015-02-01 10:00'));
+        $begin->setTime(new DateTime('2015-02-01 10:00'));
 
         $end = new BatchTime();
-        $end->setTime(new \DateTime('2015-01-01 10:00'));
+        $end->setTime(new DateTime('2015-01-01 10:00'));
 
         $object = $this->getMockBuilder('stdClass')
             ->setMethods(['getBegin', 'getEnd'])
@@ -211,10 +238,10 @@ final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
     public function testValidateDatesValid(): void
     {
         $begin = new BatchTime();
-        $begin->setTime(new \DateTime('2015-01-01 10:00'));
+        $begin->setTime(new DateTime('2015-01-01 10:00'));
 
         $end = new BatchTime();
-        $end->setTime(new \DateTime('2015-02-01 10:00'));
+        $end->setTime(new DateTime('2015-02-01 10:00'));
 
         $object = $this->getMockBuilder('stdClass')
             ->setMethods(['getBegin', 'getEnd'])
@@ -238,10 +265,10 @@ final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
     public function testValidateEqualDate(): void
     {
         $begin = new BatchTime();
-        $begin->setTime(new \DateTime('2015-01-01 10:00'));
+        $begin->setTime(new DateTime('2015-01-01 10:00'));
 
         $end = new BatchTime();
-        $end->setTime(new \DateTime('2015-01-01 10:00'));
+        $end->setTime(new DateTime('2015-01-01 10:00'));
 
         $object = $this->getMockBuilder('stdClass')
             ->setMethods(['getBegin', 'getEnd'])
@@ -287,7 +314,7 @@ final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
     public function testValidateNotRequiredWithEmptyFirst(): void
     {
         $end = new BatchTime();
-        $end->setTime(new \DateTime());
+        $end->setTime(new DateTime());
 
         $object = $this->getMockBuilder('stdClass')
             ->setMethods(['getBegin', 'getEnd'])
@@ -319,7 +346,7 @@ final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
     public function testValidateNotRequiredWithEmptySecond(): void
     {
         $begin = new BatchTime();
-        $begin->setTime(new \DateTime());
+        $begin->setTime(new DateTime());
 
         $object = $this->getMockBuilder('stdClass')
             ->setMethods(['getBegin', 'getEnd'])
@@ -353,7 +380,7 @@ final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
         $begin = new BatchTime();
 
         $end = new BatchTime();
-        $end->setTime(new \DateTime('2015-02-01 10:00'));
+        $end->setTime(new DateTime('2015-02-01 10:00'));
 
         $object = $this->getMockBuilder('stdClass')
             ->setMethods(['getBegin', 'getEnd'])
@@ -384,7 +411,7 @@ final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
     public function testValidateEmptySecondValueDate(): void
     {
         $begin = new BatchTime();
-        $begin->setTime(new \DateTime('2015-01-01 10:00'));
+        $begin->setTime(new DateTime('2015-01-01 10:00'));
 
         $end = new BatchTime();
 

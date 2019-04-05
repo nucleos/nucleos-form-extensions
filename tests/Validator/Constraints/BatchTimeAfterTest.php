@@ -19,7 +19,7 @@ class BatchTimeAfterTest extends TestCase
     public function testItIsNotInstantiableWithMissingFirstField(): void
     {
         $this->expectException(MissingOptionsException::class);
-        $this->expectExceptionMessage(sprintf('The options "firstField" must be set for constraint %s', BatchTimeAfter::class));
+        $this->expectExceptionMessage(sprintf('The options "firstField" must be set for constraint "%s"', BatchTimeAfter::class));
 
         new BatchTimeAfter([
             'secondField' => 'first',
@@ -29,7 +29,7 @@ class BatchTimeAfterTest extends TestCase
     public function testItIsNotInstantiableWithMissingSecondField(): void
     {
         $this->expectException(MissingOptionsException::class);
-        $this->expectExceptionMessage(sprintf('The options "secondField" must be set for constraint %s', BatchTimeAfter::class));
+        $this->expectExceptionMessage(sprintf('The options "secondField" must be set for constraint "%s"', BatchTimeAfter::class));
 
         new BatchTimeAfter([
             'firstField' => 'first',
@@ -56,5 +56,15 @@ class BatchTimeAfterTest extends TestCase
 
         $this->assertSame('first', $dateAfter->firstField);
         $this->assertSame('second', $dateAfter->secondField);
+    }
+
+    public function testGetTarget(): void
+    {
+        $dateAfter = new BatchTimeAfter([
+            'firstField'  => 'first',
+            'secondField' => 'second',
+        ]);
+
+        $this->assertSame('class', $dateAfter->getTargets());
     }
 }
