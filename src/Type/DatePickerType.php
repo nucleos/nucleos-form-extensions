@@ -13,6 +13,9 @@ namespace Core23\Form\Type;
 
 use Sonata\Form\Type\DatePickerType as BaseDatePickerType;
 
+/**
+ * @deprecated use Sonata\Form\Type\DatePickerType instead
+ */
 final class DatePickerType extends BaseDatePickerType
 {
     /**
