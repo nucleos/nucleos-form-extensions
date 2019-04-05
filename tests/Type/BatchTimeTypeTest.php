@@ -9,7 +9,6 @@
 
 namespace Core23\Form\Tests\Type;
 
-use Core23\Form\Model\BatchTime;
 use Core23\Form\Type\BatchTimeType;
 use Symfony\Component\Form\Extension\Core\Type\FormType;
 
@@ -17,14 +16,14 @@ class BatchTimeTypeTest extends BaseTypeTest
 {
     public function testGetParent(): void
     {
-        $type = new BatchTimeType(BatchTime::class);
+        $type = new BatchTimeType();
 
         $this->assertSame(FormType::class, $type->getParent());
     }
 
     public function testGetBlockPrefix(): void
     {
-        $type = new BatchTimeType(BatchTime::class);
+        $type = new BatchTimeType();
 
         $this->assertSame('batch_time', $type->getBlockPrefix());
     }
