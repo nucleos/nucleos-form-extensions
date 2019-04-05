@@ -55,7 +55,7 @@ abstract class DoctrineDiscriminatorType extends AbstractType
         }
 
         $resolver->setDefaults([
-            'choices' => $choices,
+            'choices'  => $choices,
         ]);
     }
 }
