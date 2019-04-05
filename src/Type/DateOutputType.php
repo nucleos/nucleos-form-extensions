@@ -11,6 +11,7 @@ declare(strict_types=1);
 
 namespace Core23\Form\Type;
 
+use DateTime;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\Form\FormView;
@@ -36,7 +37,8 @@ final class DateOutputType extends AbstractType
             ->setDefaults([
                 'default'    => '',
                 'format'     => null,
-                'data_class' => \DateTime::class,
+                'data_class' => DateTime::class,
+                'compound'   => false,
                 'required'   => false,
                 'disabled'   => true,
             ])
