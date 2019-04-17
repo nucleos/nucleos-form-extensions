@@ -90,7 +90,6 @@ class AbstractFormHandlerTestCaseTest extends AbstractFormHandlerTest
     }
 
     /**
-     * /**
      * @return FormHandlerInterface
      */
     protected function createFormHandler(): FormHandlerInterface

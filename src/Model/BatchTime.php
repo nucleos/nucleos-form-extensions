@@ -22,7 +22,7 @@ class BatchTime
 
     /**
      * @var DateTime|null
-     * */
+     */
     private $time;
 
     public function __toString()
