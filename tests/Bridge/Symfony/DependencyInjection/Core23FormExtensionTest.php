@@ -56,12 +56,12 @@ class Core23FormExtensionTest extends AbstractExtensionTestCase
     public function testLoadWithTwigExtension(): void
     {
         $fakeContainer = $this->createMock(ContainerBuilder::class);
-        $fakeContainer->expects($this->once())
+        $fakeContainer->expects(static::once())
             ->method('hasExtension')
-            ->with($this->equalTo('twig'))
+            ->with(static::equalTo('twig'))
             ->willReturn(true)
         ;
-        $fakeContainer->expects($this->once())
+        $fakeContainer->expects(static::once())
             ->method('prependExtensionConfig')
             ->with('twig', ['form_themes' => ['@Core23Form/Form/widgets.html.twig']])
         ;

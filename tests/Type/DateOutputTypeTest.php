@@ -24,9 +24,9 @@ class DateOutputTypeTest extends BaseTypeTest
 
         $form = $builder->setEmptyData($emptyData)->getForm()->submit(null);
 
-        $this->assertSame('', $form->getViewData());
-        $this->assertSame($expectedData, $form->getNormData());
-        $this->assertSame($expectedData, $form->getData());
+        static::assertSame('', $form->getViewData());
+        static::assertSame($expectedData, $form->getNormData());
+        static::assertSame($expectedData, $form->getData());
     }
 
     protected function getTestedType(): string

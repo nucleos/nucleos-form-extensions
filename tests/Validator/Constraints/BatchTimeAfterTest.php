@@ -54,8 +54,8 @@ class BatchTimeAfterTest extends TestCase
             'secondField' => 'second',
         ]);
 
-        $this->assertSame('first', $dateAfter->firstField);
-        $this->assertSame('second', $dateAfter->secondField);
+        static::assertSame('first', $dateAfter->firstField);
+        static::assertSame('second', $dateAfter->secondField);
     }
 
     public function testGetTarget(): void
@@ -65,6 +65,6 @@ class BatchTimeAfterTest extends TestCase
             'secondField' => 'second',
         ]);
 
-        $this->assertSame('class', $dateAfter->getTargets());
+        static::assertSame('class', $dateAfter->getTargets());
     }
 }

@@ -23,7 +23,7 @@ class HelpTypeExtensionTest extends TestCase
     {
         $extension = new HelpTypeExtension();
 
-        $this->assertInstanceOf(FormTypeExtensionInterface::class, $extension);
+        static::assertInstanceOf(FormTypeExtensionInterface::class, $extension);
     }
 
     public function testBuildViewWithDefaults(): void
@@ -37,8 +37,8 @@ class HelpTypeExtensionTest extends TestCase
             'help_translation_domain'=> null,
         ]);
 
-        $this->assertNull($view->vars['help']);
-        $this->assertNull($view->vars['help_translation_domain']);
+        static::assertNull($view->vars['help']);
+        static::assertNull($view->vars['help_translation_domain']);
     }
 
     public function testBuildViewWithParentTranslation(): void
@@ -55,8 +55,8 @@ class HelpTypeExtensionTest extends TestCase
             'help_translation_domain'=> null,
         ]);
 
-        $this->assertSame('my help text', $view->vars['help']);
-        $this->assertSame('Foo', $view->vars['help_translation_domain']);
+        static::assertSame('my help text', $view->vars['help']);
+        static::assertSame('Foo', $view->vars['help_translation_domain']);
     }
 
     public function testBuildView(): void
@@ -70,8 +70,8 @@ class HelpTypeExtensionTest extends TestCase
             'help_translation_domain'=> null,
         ]);
 
-        $this->assertNull($view->vars['help']);
-        $this->assertNull($view->vars['help_translation_domain']);
+        static::assertNull($view->vars['help']);
+        static::assertNull($view->vars['help_translation_domain']);
     }
 
     public function testConfigureOptions(): void
@@ -83,8 +83,8 @@ class HelpTypeExtensionTest extends TestCase
 
         $result = $resolver->resolve();
 
-        $this->assertNull($result['help']);
-        $this->assertNull($result['help_translation_domain']);
+        static::assertNull($result['help']);
+        static::assertNull($result['help_translation_domain']);
     }
 
     public function testConfigureOptionsWithFallback(): void
@@ -97,19 +97,19 @@ class HelpTypeExtensionTest extends TestCase
 
         $result = $resolver->resolve();
 
-        $this->assertNull($result['help']);
-        $this->assertSame('FallbackDomain', $result['help_translation_domain']);
+        static::assertNull($result['help']);
+        static::assertSame('FallbackDomain', $result['help_translation_domain']);
     }
 
     public function testExtendedTypes(): void
     {
-        $this->assertSame([FormType::class], HelpTypeExtension::getExtendedTypes());
+        static::assertSame([FormType::class], HelpTypeExtension::getExtendedTypes());
     }
 
     public function testExtendedType(): void
     {
         $extension = new HelpTypeExtension();
 
-        $this->assertSame(FormType::class, $extension->getExtendedType());
+        static::assertSame(FormType::class, $extension->getExtendedType());
     }
 }

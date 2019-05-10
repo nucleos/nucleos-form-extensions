@@ -26,13 +26,13 @@ final class AbstractFormHandlerTest extends TestCase
         $response = $this->createMock(Response::class);
 
         $form = $this->createMock(FormInterface::class);
-        $form->expects($this->once())->method('handleRequest')
-            ->with($this->equalTo($request))
+        $form->expects(static::once())->method('handleRequest')
+            ->with(static::equalTo($request))
         ;
-        $form->expects($this->once())->method('isValid')
+        $form->expects(static::once())->method('isValid')
             ->willReturn(true)
         ;
-        $form->expects($this->once())->method('isSubmitted')
+        $form->expects(static::once())->method('isSubmitted')
             ->willReturn(true)
         ;
 
@@ -42,7 +42,7 @@ final class AbstractFormHandlerTest extends TestCase
             return $response;
         });
 
-        $this->assertSame($response, $result);
+        static::assertSame($response, $result);
     }
 
     public function testHandleInvalidCallback(): void
@@ -52,13 +52,13 @@ final class AbstractFormHandlerTest extends TestCase
         $request = $this->createMock(Request::class);
 
         $form = $this->createMock(FormInterface::class);
-        $form->expects($this->once())->method('handleRequest')
-            ->with($this->equalTo($request))
+        $form->expects(static::once())->method('handleRequest')
+            ->with(static::equalTo($request))
         ;
-        $form->expects($this->once())->method('isValid')
+        $form->expects(static::once())->method('isValid')
             ->willReturn(true)
         ;
-        $form->expects($this->once())->method('isSubmitted')
+        $form->expects(static::once())->method('isSubmitted')
             ->willReturn(true)
         ;
 

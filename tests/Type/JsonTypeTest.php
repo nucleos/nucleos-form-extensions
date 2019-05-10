@@ -35,9 +35,9 @@ class JsonTypeTest extends BaseTypeTest
 
         $form = $builder->setEmptyData($emptyData)->getForm()->submit(null);
 
-        $this->assertSame($emptyData, $form->getViewData());
-        $this->assertSame($expectedData, $form->getNormData());
-        $this->assertSame([], $form->getData());
+        static::assertSame($emptyData, $form->getViewData());
+        static::assertSame($expectedData, $form->getNormData());
+        static::assertSame([], $form->getData());
     }
 
     protected function getTestedType(): string

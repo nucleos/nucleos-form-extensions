@@ -56,9 +56,9 @@ class AutocompleteTypeTest extends BaseTypeTest
         ]);
         $view = $builder->getForm()->createView();
 
-        $this->assertSame('parent_child_grand_child', $view['child']['grand_child']->vars['id']);
-        $this->assertSame('grand_child', $view['child']['grand_child']->vars['name']);
-        $this->assertSame('parent[child][grand_child]', $view['child']['grand_child']->vars['full_name']);
+        static::assertSame('parent_child_grand_child', $view['child']['grand_child']->vars['id']);
+        static::assertSame('grand_child', $view['child']['grand_child']->vars['name']);
+        static::assertSame('parent[child][grand_child]', $view['child']['grand_child']->vars['full_name']);
     }
 
     public function testSubmitNull($expected = null, $norm = null, $view = ''): void
@@ -92,9 +92,9 @@ class AutocompleteTypeTest extends BaseTypeTest
 
         $form = $builder->setEmptyData($emptyData)->getForm()->submit(null);
 
-        $this->assertSame('1', $form->getViewData());
-        $this->assertSame($expectedData, $form->getNormData());
-        $this->assertSame($model, $form->getData());
+        static::assertSame('1', $form->getViewData());
+        static::assertSame($expectedData, $form->getNormData());
+        static::assertSame($model, $form->getData());
     }
 
     protected function create($data = null, array $options = []): FormInterface

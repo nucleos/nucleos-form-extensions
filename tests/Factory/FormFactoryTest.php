@@ -29,7 +29,7 @@ class FormFactoryTest extends TestCase
     {
         $factory = new FormFactory($this->formFactory->reveal(), 'foo', 'bar');
 
-        $this->assertInstanceOf(FormFactoryInterface::class, $factory);
+        static::assertInstanceOf(FormFactoryInterface::class, $factory);
     }
 
     public function testCreate(): void
@@ -47,6 +47,6 @@ class FormFactoryTest extends TestCase
 
         $factory = new FormFactory($this->formFactory->reveal(), 'foo', 'bar', ['MyGroup']);
 
-        $this->assertSame($form->reveal(), $factory->create($data));
+        static::assertSame($form->reveal(), $factory->create($data));
     }
 }
