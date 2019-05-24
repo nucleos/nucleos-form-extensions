@@ -56,9 +56,9 @@ class DatePickerTypeTest extends BaseTypeTest
 
         $form = $builder->setEmptyData($emptyData)->getForm()->submit(null);
 
-        $this->assertSame($emptyData, $form->getViewData());
-        $this->assertSame('2018-06-03', $form->getNormData()->format('Y-m-d'));
-        $this->assertSame('2018-06-03', $form->getData()->format('Y-m-d'));
+        static::assertSame($emptyData, $form->getViewData());
+        static::assertSame('2018-06-03', $form->getNormData()->format('Y-m-d'));
+        static::assertSame('2018-06-03', $form->getData()->format('Y-m-d'));
     }
 
     protected function getTestedType(): string

@@ -24,7 +24,7 @@ class DownloadTypeExtensionTest extends TestCase
     {
         $extension = new DownloadTypeExtension();
 
-        $this->assertInstanceOf(FormTypeExtensionInterface::class, $extension);
+        static::assertInstanceOf(FormTypeExtensionInterface::class, $extension);
     }
 
     public function testConfigureOptions(): void
@@ -36,8 +36,8 @@ class DownloadTypeExtensionTest extends TestCase
 
         $result = $resolver->resolve();
 
-        $this->assertNull($result['download_path']);
-        $this->assertSame('link_download', $result['download_text']);
+        static::assertNull($result['download_path']);
+        static::assertSame('link_download', $result['download_text']);
     }
 
     public function testBuildForm(): void
@@ -75,8 +75,8 @@ class DownloadTypeExtensionTest extends TestCase
             'download_text' => 'link_download',
         ]);
 
-        $this->assertSame('/foo/bar.png', $view->vars['download_path']);
-        $this->assertSame('link_download', $view->vars['download_text']);
+        static::assertSame('/foo/bar.png', $view->vars['download_path']);
+        static::assertSame('link_download', $view->vars['download_text']);
     }
 
     public function testBuildViewWithoutData(): void
@@ -99,19 +99,19 @@ class DownloadTypeExtensionTest extends TestCase
             'download_text' => 'link_download',
         ]);
 
-        $this->assertNull($view->vars['download_path']);
-        $this->assertSame('link_download', $view->vars['download_text']);
+        static::assertNull($view->vars['download_path']);
+        static::assertSame('link_download', $view->vars['download_text']);
     }
 
     public function testExtendedTypes(): void
     {
-        $this->assertSame([FileType::class], DownloadTypeExtension::getExtendedTypes());
+        static::assertSame([FileType::class], DownloadTypeExtension::getExtendedTypes());
     }
 
     public function testExtendedType(): void
     {
         $extension = new DownloadTypeExtension();
 
-        $this->assertSame(FileType::class, $extension->getExtendedType());
+        static::assertSame(FileType::class, $extension->getExtendedType());
     }
 }

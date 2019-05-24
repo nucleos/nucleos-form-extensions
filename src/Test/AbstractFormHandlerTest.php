@@ -174,7 +174,7 @@ abstract class AbstractFormHandlerTest extends TestCase
      */
     private function equalToErrors(): Constraint
     {
-        return $this->callback(function ($error) {
+        return static::callback(function ($error) {
             if ($error instanceof FormError) {
                 foreach ($this->errors as &$data) {
                     if ($error->getMessage() === $data['message'] && $error->getMessageParameters() === $data['parameters']) {
@@ -197,9 +197,9 @@ abstract class AbstractFormHandlerTest extends TestCase
     {
         $count = \count($this->errors);
         if (0 === $count) {
-            $this->form->expects($this->never())->method('addError');
+            $this->form->expects(static::never())->method('addError');
         } else {
-            $this->form->expects($this->exactly($count))->method('addError')
+            $this->form->expects(static::exactly($count))->method('addError')
                 ->with($this->equalToErrors())
             ;
         }

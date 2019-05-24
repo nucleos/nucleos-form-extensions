@@ -28,7 +28,7 @@ class AbstractFormHandlerTestCaseTest extends AbstractFormHandlerTest
         $object  = new stdClass();
         $request = new Request();
 
-        $this->assertNull($this->executePreProcess($request, $object));
+        static::assertNull($this->executePreProcess($request, $object));
     }
 
     public function testExecutePreProcessWithError(): void
@@ -40,7 +40,7 @@ class AbstractFormHandlerTestCaseTest extends AbstractFormHandlerTest
 
         $this->assertError('my error', ['foo' => 'bar']);
 
-        $this->assertNotNull($this->executePreProcess($request, $object));
+        static::assertNotNull($this->executePreProcess($request, $object));
     }
 
     public function testExecuteProcess(): void
@@ -50,7 +50,7 @@ class AbstractFormHandlerTestCaseTest extends AbstractFormHandlerTest
         $object  = new stdClass();
         $request = new Request();
 
-        $this->assertTrue($this->executeProcess($request, $object));
+        static::assertTrue($this->executeProcess($request, $object));
     }
 
     public function testExecuteProcessWithError(): void
@@ -62,7 +62,7 @@ class AbstractFormHandlerTestCaseTest extends AbstractFormHandlerTest
 
         $this->assertError('my error', ['foo' => 'bar']);
 
-        $this->assertFalse($this->executeProcess($request, $object));
+        static::assertFalse($this->executeProcess($request, $object));
     }
 
     public function testExecutePostProcess(): void
@@ -73,7 +73,7 @@ class AbstractFormHandlerTestCaseTest extends AbstractFormHandlerTest
         $request  = new Request();
         $response = new Response();
 
-        $this->assertSame($response, $this->executePostProcess($request, $response, $object));
+        static::assertSame($response, $this->executePostProcess($request, $response, $object));
     }
 
     public function testExecutePostProcessWithError(): void
@@ -86,7 +86,7 @@ class AbstractFormHandlerTestCaseTest extends AbstractFormHandlerTest
 
         $this->assertError('my error', ['foo' => 'bar']);
 
-        $this->assertNull($this->executePostProcess($request, $response, $object));
+        static::assertNull($this->executePostProcess($request, $response, $object));
     }
 
     /**

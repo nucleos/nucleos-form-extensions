@@ -20,8 +20,8 @@ class GenderTypeTest extends BaseTypeTest
         $choices = $this->factory->create($this->getTestedType())
             ->createView()->vars['choices'];
 
-        $this->assertContains(new ChoiceView('m', 'm', 'gender.male'), $choices, '', false, false);
-        $this->assertContains(new ChoiceView('f', 'f', 'gender.female'), $choices, '', false, false);
+        static::assertContains(new ChoiceView('m', 'm', 'gender.male'), $choices, '', false, false);
+        static::assertContains(new ChoiceView('f', 'f', 'gender.female'), $choices, '', false, false);
     }
 
     public function testUnknownGenderIsNotIncluded(): void
@@ -35,7 +35,7 @@ class GenderTypeTest extends BaseTypeTest
             $genderCodes[] = $choice->value;
         }
 
-        $this->assertNotContains('t', $genderCodes);
+        static::assertNotContains('t', $genderCodes);
     }
 
     /**
@@ -58,14 +58,14 @@ class GenderTypeTest extends BaseTypeTest
     {
         $type = new GenderType();
 
-        $this->assertSame(ChoiceType::class, $type->getParent());
+        static::assertSame(ChoiceType::class, $type->getParent());
     }
 
     public function testGetBlockPrefix(): void
     {
         $type = new GenderType();
 
-        $this->assertSame('gender', $type->getBlockPrefix());
+        static::assertSame('gender', $type->getBlockPrefix());
     }
 
     protected function getTestedType(): string

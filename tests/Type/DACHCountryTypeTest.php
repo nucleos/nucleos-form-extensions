@@ -20,9 +20,9 @@ class DACHCountryTypeTest extends BaseTypeTest
         $choices = $this->factory->create($this->getTestedType())
             ->createView()->vars['choices'];
 
-        $this->assertContains(new ChoiceView('DE', 'DE', 'form.choice_de'), $choices, '', false, false);
-        $this->assertContains(new ChoiceView('AT', 'AT', 'form.choice_at'), $choices, '', false, false);
-        $this->assertContains(new ChoiceView('CH', 'CH', 'form.choice_ch'), $choices, '', false, false);
+        static::assertContains(new ChoiceView('DE', 'DE', 'form.choice_de'), $choices, '', false, false);
+        static::assertContains(new ChoiceView('AT', 'AT', 'form.choice_at'), $choices, '', false, false);
+        static::assertContains(new ChoiceView('CH', 'CH', 'form.choice_ch'), $choices, '', false, false);
     }
 
     public function testUnknownCountryIsNotIncluded(): void
@@ -36,7 +36,7 @@ class DACHCountryTypeTest extends BaseTypeTest
             $countryCodes[] = $choice->value;
         }
 
-        $this->assertNotContains('ZZ', $countryCodes);
+        static::assertNotContains('ZZ', $countryCodes);
     }
 
     /**
@@ -59,14 +59,14 @@ class DACHCountryTypeTest extends BaseTypeTest
     {
         $type = new DACHCountryType();
 
-        $this->assertSame(ChoiceType::class, $type->getParent());
+        static::assertSame(ChoiceType::class, $type->getParent());
     }
 
     public function testGetBlockPrefix(): void
     {
         $type = new DACHCountryType();
 
-        $this->assertSame('core23_country', $type->getBlockPrefix());
+        static::assertSame('core23_country', $type->getBlockPrefix());
     }
 
     protected function getTestedType(): string

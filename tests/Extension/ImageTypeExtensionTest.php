@@ -24,7 +24,7 @@ class ImageTypeExtensionTest extends TestCase
     {
         $extension = new ImageTypeExtension();
 
-        $this->assertInstanceOf(FormTypeExtensionInterface::class, $extension);
+        static::assertInstanceOf(FormTypeExtensionInterface::class, $extension);
     }
 
     public function testConfigureOptions(): void
@@ -36,7 +36,7 @@ class ImageTypeExtensionTest extends TestCase
 
         $result = $resolver->resolve();
 
-        $this->assertNull($result['image_path']);
+        static::assertNull($result['image_path']);
     }
 
     public function testBuildForm(): void
@@ -73,7 +73,7 @@ class ImageTypeExtensionTest extends TestCase
             'image_path' => '[image]',
         ]);
 
-        $this->assertSame('/foo/bar.png', $view->vars['image_url']);
+        static::assertSame('/foo/bar.png', $view->vars['image_url']);
     }
 
     public function testBuildViewWithoutData(): void
@@ -95,18 +95,18 @@ class ImageTypeExtensionTest extends TestCase
             'image_path' => '[image]',
         ]);
 
-        $this->assertNull($view->vars['image_url']);
+        static::assertNull($view->vars['image_url']);
     }
 
     public function testExtendedTypes(): void
     {
-        $this->assertSame([FileType::class], ImageTypeExtension::getExtendedTypes());
+        static::assertSame([FileType::class], ImageTypeExtension::getExtendedTypes());
     }
 
     public function testExtendedType(): void
     {
         $extension = new ImageTypeExtension();
 
-        $this->assertSame(FileType::class, $extension->getExtendedType());
+        static::assertSame(FileType::class, $extension->getExtendedType());
     }
 }
