@@ -1,3 +1,35 @@
+11/06/2019 18:48  2.2.0  Internal code refactoring
+f74947c [TEST] Use better default locale in test
+0507451 [BUILD] Replaced deprecated "weak_vendors" option
+530b31e Added GitHub sponsoring information
+a414694 [PATCH] Fixed CS
+fd7d077 [BUILD] Updated export-ignore files
+e18bf64 [BUILD] Updated build tools
+7f9dab9 [PATCH] Fixed S
+c7fcc13 [BUILD] Removed dependency stage from build matrix
+b3c1e3c [TEST] Fixed tests for old symfony versions
+d7cf491 [TEST] Removed deprecation warning
+c7f65ac [TEST] Increased test coverage
+392f97b [PATCH] Fixed CS
+960e91e [MINOR] Set (Date)OutputType compound to false
+7c69b92 [MINOR] Deprecated DatePickerType
+e7ad3b1 [MINOR] Deprecated class in BatchTimeType constructor
+9eea35d [TEST] Removed hard Form::getData call in FormHandlerTest
+4a2f80c [MINOR] Changed default help_translation_domain to null
+b066fd9 [MINOR] Throw exception when validating invalid model
+47fbbb9 [PATCH] Minor internal code refactoring
+9dd9960 [PATCH] Added FormExtension::getExtendedType method as a symfony BC layer
+65ba957 [MINOR] Deprecated HelpTypeExtension in favor of the symfony "help" extension
+0de2920 [BUILD] Removed current copyright date
+c587559 [BUILD] Cleanup phpstan errors
+8473f61 [PATCH] Fixed BatchTimeAfterValidator for with fields
+575f23b [PATCH] Minor internal code refactoring
+50d94ca [PATCH] Minor internal code refactoring
+5c1865f [BUILD] Fixed phpstan ignore list
+f18e325 [BUILD] Added more tests
+a8fbed6 [MINOR] Fixed wrong form service ids
+04a596c [MINOR] Throw correct exception in constraints
+d824412 [BUILD] Added more tests
 17/03/2019 17:11  2.1.0  Added validator annotations
 c18b7f0 [MINOR] Added validator constraints annotations
 9c71920 [BUILD] Added weak_vendors when calling phpunit
