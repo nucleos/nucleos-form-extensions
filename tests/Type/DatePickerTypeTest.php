@@ -25,7 +25,7 @@ class DatePickerTypeTest extends BaseTypeTest
     {
         $this->translator      = $this->prophesize(TranslatorInterface::class);
         $this->translator->getLocale()
-            ->willReturn('EN')
+            ->willReturn('en')
         ;
         $this->formatConverter = $this->prophesize(MomentFormatConverter::class);
 
