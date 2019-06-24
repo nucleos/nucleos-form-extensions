@@ -11,7 +11,7 @@ namespace Core23\Form\Tests\Type;
 
 use Core23\Form\Type\OutputType;
 
-class OutputTypeTest extends BaseTypeTest
+final class OutputTypeTest extends BaseTypeTest
 {
     public function testSubmitNull($expected = null, $norm = null, $view = ''): void
     {

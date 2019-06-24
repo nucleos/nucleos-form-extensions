@@ -14,7 +14,7 @@ use PHPUnit\Framework\TestCase;
 use Symfony\Component\Validator\Exception\InvalidOptionsException;
 use Symfony\Component\Validator\Exception\MissingOptionsException;
 
-class BatchTimeAfterTest extends TestCase
+final class BatchTimeAfterTest extends TestCase
 {
     public function testItIsNotInstantiableWithMissingFirstField(): void
     {

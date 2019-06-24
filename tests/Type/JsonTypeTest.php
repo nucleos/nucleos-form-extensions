@@ -11,7 +11,7 @@ namespace Core23\Form\Tests\Type;
 
 use Core23\Form\Type\JsonType;
 
-class JsonTypeTest extends BaseTypeTest
+final class JsonTypeTest extends BaseTypeTest
 {
     public function testSubmitNull($expected = [], $norm = null, $view = ''): void
     {

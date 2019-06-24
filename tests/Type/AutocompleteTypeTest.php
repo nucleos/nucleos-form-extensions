@@ -20,7 +20,7 @@ use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormInterface;
 
-class AutocompleteTypeTest extends BaseTypeTest
+final class AutocompleteTypeTest extends BaseTypeTest
 {
     private $objectRepository;
 

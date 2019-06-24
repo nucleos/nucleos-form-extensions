@@ -17,7 +17,7 @@ use Symfony\Component\Form\FormTypeExtensionInterface;
 use Symfony\Component\Form\FormView;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class HelpTypeExtensionTest extends TestCase
+final class HelpTypeExtensionTest extends TestCase
 {
     public function testItIsInstantiable(): void
     {

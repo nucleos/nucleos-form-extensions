@@ -14,7 +14,7 @@ use Core23\Form\Bridge\Symfony\DependencyInjection\Core23FormExtension;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpKernel\Bundle\BundleInterface;
 
-class Core23FormBundleTest extends TestCase
+final class Core23FormBundleTest extends TestCase
 {
     public function testItIsInstantiable(): void
     {

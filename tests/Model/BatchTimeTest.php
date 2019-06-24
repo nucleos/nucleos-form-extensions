@@ -13,7 +13,7 @@ use Core23\Form\Model\BatchTime;
 use DateTime;
 use PHPUnit\Framework\TestCase;
 
-class BatchTimeTest extends TestCase
+final class BatchTimeTest extends TestCase
 {
     public static function setUpBeforeClass()
     {
