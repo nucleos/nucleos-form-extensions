@@ -11,7 +11,7 @@ namespace Core23\Form\Tests\Type;
 
 use Core23\Form\Type\DateOutputType;
 
-class DateOutputTypeTest extends BaseTypeTest
+final class DateOutputTypeTest extends BaseTypeTest
 {
     public function testSubmitNull($expected = null, $norm = null, $view = ''): void
     {

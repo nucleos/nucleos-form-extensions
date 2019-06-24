@@ -18,7 +18,7 @@ use Symfony\Component\Form\FormTypeExtensionInterface;
 use Symfony\Component\Form\FormView;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class DownloadTypeExtensionTest extends TestCase
+final class DownloadTypeExtensionTest extends TestCase
 {
     public function testItIsInstantiable(): void
     {

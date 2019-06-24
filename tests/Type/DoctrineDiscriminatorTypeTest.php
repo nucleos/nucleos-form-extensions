@@ -15,7 +15,7 @@ use Doctrine\ORM\Mapping\ClassMetadata;
 use Sonata\Doctrine\Entity\BaseEntityManager;
 use Symfony\Component\Form\ChoiceList\View\ChoiceView;
 
-class DoctrineDiscriminatorTypeTest extends BaseTypeTest
+final class DoctrineDiscriminatorTypeTest extends BaseTypeTest
 {
     private $baseEntityManager;
 

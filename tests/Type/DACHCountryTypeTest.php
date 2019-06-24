@@ -13,7 +13,7 @@ use Core23\Form\Type\DACHCountryType;
 use Symfony\Component\Form\ChoiceList\View\ChoiceView;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
-class DACHCountryTypeTest extends BaseTypeTest
+final class DACHCountryTypeTest extends BaseTypeTest
 {
     public function testCountriesAreSelectable(): void
     {

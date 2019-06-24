@@ -11,7 +11,7 @@ namespace Core23\Form\Tests\Type;
 
 use Core23\Form\Type\NumberOutputType;
 
-class NumberOutputTypeTest extends BaseTypeTest
+final class NumberOutputTypeTest extends BaseTypeTest
 {
     public function testSubmitNull($expected = null, $norm = null, $view = ''): void
     {

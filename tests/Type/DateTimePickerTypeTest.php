@@ -14,7 +14,7 @@ use Sonata\Form\Date\MomentFormatConverter;
 use Sonata\Form\Type\DateTimePickerType as BaseDateTimePickerType;
 use Symfony\Component\Translation\TranslatorInterface;
 
-class DateTimePickerTypeTest extends BaseTypeTest
+final class DateTimePickerTypeTest extends BaseTypeTest
 {
     private $translator;
 

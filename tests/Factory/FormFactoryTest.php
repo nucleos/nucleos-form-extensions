@@ -16,7 +16,7 @@ use stdClass;
 use Symfony\Component\Form\FormFactoryInterface as SymfonyFormFactory;
 use Symfony\Component\Form\FormInterface;
 
-class FormFactoryTest extends TestCase
+final class FormFactoryTest extends TestCase
 {
     private $formFactory;
 

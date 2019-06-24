@@ -13,7 +13,7 @@ use Core23\Form\Type\GenderType;
 use Symfony\Component\Form\ChoiceList\View\ChoiceView;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
-class GenderTypeTest extends BaseTypeTest
+final class GenderTypeTest extends BaseTypeTest
 {
     public function testGendersAreSelectable(): void
     {
