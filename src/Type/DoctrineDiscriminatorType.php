@@ -23,9 +23,6 @@ abstract class DoctrineDiscriminatorType extends AbstractType
      */
     private $entityManager;
 
-    /**
-     * @param BaseEntityManager $manager
-     */
     public function __construct(BaseEntityManager $manager)
     {
         $this->entityManager = $manager;

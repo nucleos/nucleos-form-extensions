@@ -60,11 +60,6 @@ abstract class AbstractFormHandler implements FormHandlerInterface
 
     /**
      * Executes before form validating and processing is started.
-     *
-     * @param FormInterface $form
-     * @param Request       $request
-     *
-     * @return Response|null
      */
     protected function preProcess(FormInterface $form, Request $request): ?Response
     {
@@ -73,11 +68,6 @@ abstract class AbstractFormHandler implements FormHandlerInterface
 
     /**
      * Executes after preprocessing and before form processing is started.
-     *
-     * @param FormInterface $form
-     * @param Request       $request
-     *
-     * @return Response|null
      */
     protected function validate(FormInterface $form, Request $request): ?Response
     {
@@ -86,22 +76,11 @@ abstract class AbstractFormHandler implements FormHandlerInterface
 
     /**
      * Executes the form processing.
-     *
-     * @param FormInterface $form
-     * @param Request       $request
-     *
-     * @return bool
      */
     abstract protected function process(FormInterface $form, Request $request): bool;
 
     /**
      * Executes after form processing is finished and filters response.
-     *
-     * @param FormInterface $form
-     * @param Request       $request
-     * @param Response      $response
-     *
-     * @return Response|null
      */
     protected function postProcess(FormInterface $form, Request $request, Response $response): ?Response
     {
