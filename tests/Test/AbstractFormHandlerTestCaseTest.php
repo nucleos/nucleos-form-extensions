@@ -89,9 +89,6 @@ final class AbstractFormHandlerTestCaseTest extends AbstractFormHandlerTest
         static::assertNull($this->executePostProcess($request, $response, $object));
     }
 
-    /**
-     * @return FormHandlerInterface
-     */
     protected function createFormHandler(): FormHandlerInterface
     {
         return $this->formHandler;

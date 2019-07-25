@@ -79,12 +79,6 @@ final class DateAfterValidator extends ConstraintValidator
         }
     }
 
-    /**
-     * @param mixed  $object
-     * @param string $field
-     *
-     * @return DateTime|null
-     */
     private function getFieldValue($object, string $field): ?DateTime
     {
         $propertyAccessor = PropertyAccess::createPropertyAccessor();

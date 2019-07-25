@@ -52,20 +52,14 @@ abstract class AbstractFormHandlerTest extends TestCase
         $this->errors = [];
     }
 
-    /**
-     * @return FormHandlerInterface
-     */
     abstract protected function createFormHandler(): FormHandlerInterface;
 
     /**
      * Executes the preProcess method.
      *
-     * @param Request    $request
      * @param mixed|null $data
      *
      * @throws \ReflectionException
-     *
-     * @return Response|null
      */
     final protected function executePreProcess(Request $request, $data = null): ?Response
     {
@@ -92,12 +86,9 @@ abstract class AbstractFormHandlerTest extends TestCase
     /**
      * Executes the process method.
      *
-     * @param Request    $request
      * @param mixed|null $data
      *
      * @throws \ReflectionException
-     *
-     * @return bool
      */
     final protected function executeProcess(Request $request, $data = null): bool
     {
@@ -124,13 +115,9 @@ abstract class AbstractFormHandlerTest extends TestCase
     /**
      * Executes the postProcess method.
      *
-     * @param Request    $request
-     * @param Response   $response
      * @param mixed|null $data
      *
      * @throws \ReflectionException
-     *
-     * @return Response|null
      */
     final protected function executePostProcess(Request $request, Response $response, $data = null): ?Response
     {
@@ -156,9 +143,6 @@ abstract class AbstractFormHandlerTest extends TestCase
 
     /**
      * Assets an error.
-     *
-     * @param string $message
-     * @param array  $messageParameters
      */
     final protected function assertError(string $message, array $messageParameters = []): void
     {
@@ -169,9 +153,6 @@ abstract class AbstractFormHandlerTest extends TestCase
         ];
     }
 
-    /**
-     * @return Constraint
-     */
     private function equalToErrors(): Constraint
     {
         return static::callback(function ($error) {

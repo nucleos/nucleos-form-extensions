@@ -75,11 +75,6 @@ final class JsonType extends AbstractType implements DataTransformerInterface
         return TextareaType::class;
     }
 
-    /**
-     * @param string $text
-     *
-     * @return array
-     */
     private static function transformTextToArray(string $text): array
     {
         $json = [];

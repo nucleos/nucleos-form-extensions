@@ -75,11 +75,6 @@ final class TimePickerType extends AbstractType
         return 'core23_type_time_picker';
     }
 
-    /**
-     * @param array $options
-     *
-     * @return array
-     */
     private static function createDpOptions(array $options): array
     {
         $dpOptions = [];

@@ -18,10 +18,7 @@ interface FormFactoryInterface
     /**
      * Creates a new form instance.
      *
-     * @param mixed $data
-     * @param array $options
-     *
-     * @return FormInterface
+     * @param mixed|null $data
      */
     public function create($data = null, array $options = []): FormInterface;
 }

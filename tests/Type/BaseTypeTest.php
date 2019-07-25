@@ -135,11 +135,6 @@ abstract class BaseTypeTest extends TypeTestCase
         static::assertFalse($view->vars['multipart']);
     }
 
-    /**
-     * @param mixed $expected
-     * @param mixed $norm
-     * @param mixed $view
-     */
     public function testSubmitNull($expected = null, $norm = null, $view = null): void
     {
         $form = $this->create();
@@ -150,10 +145,6 @@ abstract class BaseTypeTest extends TypeTestCase
         static::assertSame($view, $form->getViewData());
     }
 
-    /**
-     * @param mixed $emptyData
-     * @param mixed $expectedData
-     */
     public function testSubmitNullUsesDefaultEmptyData($emptyData = 'empty', $expectedData = null): void
     {
         $builder = $this->factory->createBuilder($this->getTestedType());
@@ -178,9 +169,6 @@ abstract class BaseTypeTest extends TypeTestCase
 
     /**
      * @param mixed|null $data
-     * @param array      $options
-     *
-     * @return FormInterface
      */
     protected function create($data = null, array $options = []): FormInterface
     {
@@ -188,23 +176,13 @@ abstract class BaseTypeTest extends TypeTestCase
     }
 
     /**
-     * @param string     $name
      * @param mixed|null $data
-     * @param array      $options
-     *
-     * @return FormInterface
      */
     protected function createNamed(string $name, $data = null, array $options = []): FormInterface
     {
         return $this->factory->createNamed($name, $this->getTestedType(), $data, $options);
     }
 
-    /**
-     * @param array $parentOptions
-     * @param array $childOptions
-     *
-     * @return FormBuilderInterface
-     */
     protected function createBuilder(array $parentOptions = [], array $childOptions = []): FormBuilderInterface
     {
         return $this->factory

@@ -37,10 +37,7 @@ final class FormFactory implements FormFactoryInterface
     private $validationGroups;
 
     /**
-     * @param SymfonyFormFactory $formFactory
-     * @param string             $name
-     * @param string             $type
-     * @param array              $validationGroups
+     * @param array $validationGroups
      */
     public function __construct(SymfonyFormFactory $formFactory, string $name, string $type, array $validationGroups = null)
     {

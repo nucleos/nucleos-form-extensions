@@ -21,13 +21,7 @@ interface FormHandlerInterface
     /**
      * Handels form processing.
      *
-     * @param FormInterface $form
-     * @param Request       $request
-     * @param callable      $callback
-     *
      * @throws InvalidCallbackException
-     *
-     * @return Response|null
      */
     public function handle(FormInterface $form, Request $request, callable $callback): ?Response;
 }

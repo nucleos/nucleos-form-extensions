@@ -30,49 +30,31 @@ class BatchTime
         return $this->toString();
     }
 
-    /**
-     * @return string
-     */
     public function toString(): string
     {
         return 'Day: '.$this->day.', Time: '.($this->time ? $this->time->format('H:i:s') : 'null');
     }
 
-    /**
-     * @return int
-     */
     public function getDay(): int
     {
         return $this->day ?: 0;
     }
 
-    /**
-     * @param int $day
-     */
     public function setDay(int $day): void
     {
         $this->day = $day;
     }
 
-    /**
-     * @return DateTime|null
-     */
     public function getTime(): ?DateTime
     {
         return $this->time;
     }
 
-    /**
-     * @param DateTime $time
-     */
     public function setTime(DateTime $time): void
     {
         $this->time = $time;
     }
 
-    /**
-     * @return int
-     */
     public function getSeconds(): int
     {
         $seconds =  $this->getDay() * 86400;
