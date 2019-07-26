@@ -38,7 +38,7 @@ final class AbstractFormHandlerTest extends TestCase
 
         $handler = new SimpleFormHandler();
 
-        $result = $handler->handle($form, $request, function () use ($response) {
+        $result = $handler->handle($form, $request, static function () use ($response) {
             return $response;
         });
 
@@ -64,7 +64,7 @@ final class AbstractFormHandlerTest extends TestCase
 
         $handler = new SimpleFormHandler();
 
-        $handler->handle($form, $request, function () {
+        $handler->handle($form, $request, static function () {
             return null;
         });
     }

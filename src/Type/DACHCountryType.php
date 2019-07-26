@@ -26,7 +26,7 @@ final class DACHCountryType extends AbstractType
 
         $resolver->setDefaults([
             'choices'      => array_combine($countries, $countries),
-            'choice_label' => function ($value, $key, $index) {
+            'choice_label' => static function ($value, $key, $index) {
                 return 'form.choice_'.strtolower($value);
             },
             'choice_translation_domain' => 'Core23FormBundle',
