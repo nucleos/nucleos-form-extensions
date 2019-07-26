@@ -28,9 +28,6 @@ final class BatchTimeTypeTest extends BaseTypeTest
         static::assertSame('batch_time', $type->getBlockPrefix());
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function testSubmitNull($expected = null, $norm = null, $view = null): void
     {
         $form = $this->create(null, [
@@ -43,9 +40,6 @@ final class BatchTimeTypeTest extends BaseTypeTest
         static::assertSame($view, $form->getViewData());
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function testSubmitNullUsesDefaultEmptyData($emptyData = null, $expectedData = null): void
     {
         static::markTestSkipped('emptyData is not supported');

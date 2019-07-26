@@ -19,18 +19,12 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 final class DateOutputType extends AbstractType
 {
-    /**
-     * {@inheritdoc}
-     */
     public function buildView(FormView $view, FormInterface $form, array $options): void
     {
         $view->vars['format']       = $options['format'];
         $view->vars['defaultValue'] = $options['default'];
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver
@@ -46,17 +40,11 @@ final class DateOutputType extends AbstractType
         ;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getBlockPrefix()
     {
         return 'date_output';
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getParent()
     {
         return OutputType::class;

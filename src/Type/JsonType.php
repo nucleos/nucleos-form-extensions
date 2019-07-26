@@ -18,17 +18,11 @@ use Symfony\Component\Form\FormBuilderInterface;
 
 final class JsonType extends AbstractType implements DataTransformerInterface
 {
-    /**
-     * {@inheritdoc}
-     */
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder->addModelTransformer($this);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function transform($json)
     {
         if (null === $json) {
@@ -49,9 +43,6 @@ final class JsonType extends AbstractType implements DataTransformerInterface
         return $text;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function reverseTransform($text)
     {
         if (null === $text) {
@@ -67,9 +58,6 @@ final class JsonType extends AbstractType implements DataTransformerInterface
         return $json;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getParent()
     {
         return TextareaType::class;

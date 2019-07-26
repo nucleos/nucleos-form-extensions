@@ -37,9 +37,6 @@ abstract class AbstractFormHandlerTest extends TestCase
      */
     private $errors;
 
-    /**
-     * {@inheritdoc}
-     */
     protected function setUp(): void
     {
         $this->form = $this->createMock(FormInterface::class);

@@ -20,9 +20,6 @@ use Symfony\Component\PropertyAccess\PropertyAccess;
 
 final class AutocompleteType extends AbstractType
 {
-    /**
-     * {@inheritdoc}
-     */
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver
@@ -33,9 +30,6 @@ final class AutocompleteType extends AbstractType
         ;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function buildView(FormView $view, FormInterface $form, array $options): void
     {
         $text = null;
@@ -53,17 +47,11 @@ final class AutocompleteType extends AbstractType
         $view->vars['route_name'] = $options['route_name'];
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getBlockPrefix()
     {
         return 'core23_autocomplete';
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getParent()
     {
         return BaseAutocompleteType::class;

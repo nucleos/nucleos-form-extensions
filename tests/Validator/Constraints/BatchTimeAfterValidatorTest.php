@@ -441,9 +441,6 @@ final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
         ;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     protected function createValidator()
     {
         return new BatchTimeAfterValidator();

@@ -47,9 +47,6 @@ final class FormFactory implements FormFactoryInterface
         $this->validationGroups = $validationGroups;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function create($data = null, array $options = []): FormInterface
     {
         $options = array_merge($this->getDefaultOptions(), $options);

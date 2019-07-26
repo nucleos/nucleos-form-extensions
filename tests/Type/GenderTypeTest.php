@@ -38,17 +38,11 @@ final class GenderTypeTest extends BaseTypeTest
         static::assertNotContains('t', $genderCodes);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function testSubmitNull($expected = null, $norm = null, $view = null): void
     {
         parent::testSubmitNull($expected, $norm, '');
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function testSubmitNullUsesDefaultEmptyData($emptyData = 'f', $expectedData = 'f'): void
     {
         parent::testSubmitNullUsesDefaultEmptyData($emptyData, $expectedData);

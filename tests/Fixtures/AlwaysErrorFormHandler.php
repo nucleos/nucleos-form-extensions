@@ -17,9 +17,6 @@ use Symfony\Component\HttpFoundation\Response;
 
 final class AlwaysErrorFormHandler extends AbstractFormHandler
 {
-    /**
-     * {@inheritdoc}
-     */
     protected function process(FormInterface $form, Request $request): bool
     {
         $form->addError(new FormError('my error', null, ['foo' => 'bar']));
@@ -27,9 +24,6 @@ final class AlwaysErrorFormHandler extends AbstractFormHandler
         return false;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     protected function preProcess(FormInterface $form, Request $request): ?Response
     {
         $form->addError(new FormError('my error', null, ['foo' => 'bar']));
@@ -37,9 +31,6 @@ final class AlwaysErrorFormHandler extends AbstractFormHandler
         return new Response();
     }
 
-    /**
-     * {@inheritdoc}
-     */
     protected function postProcess(FormInterface $form, Request $request, Response $response): ?Response
     {
         $form->addError(new FormError('my error', null, ['foo' => 'bar']));

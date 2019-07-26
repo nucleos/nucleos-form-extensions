@@ -19,9 +19,6 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 final class TimePickerType extends AbstractType
 {
-    /**
-     * {@inheritdoc}
-     */
     public function finishView(FormView $view, FormInterface $form, array $options): void
     {
         $format    = 'HH';
@@ -41,9 +38,6 @@ final class TimePickerType extends AbstractType
         $view->vars['dp_options']            = self::createDpOptions($options);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver
@@ -59,17 +53,11 @@ final class TimePickerType extends AbstractType
         ;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getParent()
     {
         return TimeType::class;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getBlockPrefix()
     {
         return 'core23_type_time_picker';

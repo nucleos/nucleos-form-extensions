@@ -39,17 +39,11 @@ final class DACHCountryTypeTest extends BaseTypeTest
         static::assertNotContains('ZZ', $countryCodes);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function testSubmitNull($expected = null, $norm = null, $view = null): void
     {
         parent::testSubmitNull($expected, $norm, '');
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function testSubmitNullUsesDefaultEmptyData($emptyData = 'AT', $expectedData = 'AT'): void
     {
         parent::testSubmitNullUsesDefaultEmptyData($emptyData, $expectedData);

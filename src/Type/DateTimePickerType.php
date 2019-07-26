@@ -16,9 +16,6 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 final class DateTimePickerType extends BaseDateTimePickerType
 {
-    /**
-     * {@inheritdoc}
-     */
     public function configureOptions(OptionsResolver $resolver): void
     {
         parent::configureOptions($resolver);
@@ -28,17 +25,11 @@ final class DateTimePickerType extends BaseDateTimePickerType
         ]);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getBlockPrefix()
     {
         return 'core23_type_datetime_picker';
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getParent()
     {
         return BaseDateTimePickerType::class;

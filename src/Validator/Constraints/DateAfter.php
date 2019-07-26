@@ -61,9 +61,6 @@ final class DateAfter extends Constraint
         }
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getRequiredOptions(): array
     {
         return [
@@ -72,9 +69,6 @@ final class DateAfter extends Constraint
         ];
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getTargets()
     {
         return self::CLASS_CONSTRAINT;

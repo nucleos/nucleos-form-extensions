@@ -22,9 +22,6 @@ use Symfony\Component\PropertyAccess\PropertyPath;
 
 final class DownloadTypeExtension extends AbstractTypeExtension
 {
-    /**
-     * {@inheritdoc}
-     */
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver
@@ -37,9 +34,6 @@ final class DownloadTypeExtension extends AbstractTypeExtension
         ;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         if (null !== $options['download_path']) {
@@ -47,9 +41,6 @@ final class DownloadTypeExtension extends AbstractTypeExtension
         }
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function buildView(FormView $view, FormInterface $form, array $options): void
     {
         if (null !== $options['download_path'] && null !== $form->getParent()) {
@@ -69,9 +60,6 @@ final class DownloadTypeExtension extends AbstractTypeExtension
         $view->vars['download_text'] = $options['download_text'];
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getExtendedType()
     {
         foreach (static::getExtendedTypes() as $extendedType) {
@@ -79,9 +67,6 @@ final class DownloadTypeExtension extends AbstractTypeExtension
         }
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public static function getExtendedTypes(): iterable
     {
         return [
