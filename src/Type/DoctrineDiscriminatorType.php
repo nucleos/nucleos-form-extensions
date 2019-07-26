@@ -28,17 +28,11 @@ abstract class DoctrineDiscriminatorType extends AbstractType
         $this->entityManager = $manager;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getParent()
     {
         return ChoiceType::class;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function configureOptions(OptionsResolver $resolver): void
     {
         $choices = [];

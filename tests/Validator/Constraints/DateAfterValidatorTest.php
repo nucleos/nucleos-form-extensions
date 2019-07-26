@@ -332,9 +332,6 @@ final class DateAfterValidatorTest extends ConstraintValidatorTestCase
         ;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     protected function createValidator()
     {
         return new DateAfterValidator();

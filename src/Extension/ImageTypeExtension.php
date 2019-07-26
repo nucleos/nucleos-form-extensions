@@ -22,9 +22,6 @@ use Symfony\Component\PropertyAccess\PropertyPath;
 
 final class ImageTypeExtension extends AbstractTypeExtension
 {
-    /**
-     * {@inheritdoc}
-     */
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver
@@ -35,9 +32,6 @@ final class ImageTypeExtension extends AbstractTypeExtension
         ;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         if (null !== $options['image_path']) {
@@ -45,9 +39,6 @@ final class ImageTypeExtension extends AbstractTypeExtension
         }
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function buildView(FormView $view, FormInterface $form, array $options): void
     {
         if (null !== $options['image_path'] && null !== $form->getParent()) {
@@ -65,9 +56,6 @@ final class ImageTypeExtension extends AbstractTypeExtension
         }
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getExtendedType()
     {
         foreach (static::getExtendedTypes() as $extendedType) {
@@ -75,9 +63,6 @@ final class ImageTypeExtension extends AbstractTypeExtension
         }
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public static function getExtendedTypes(): iterable
     {
         return [

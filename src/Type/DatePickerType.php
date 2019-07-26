@@ -18,17 +18,11 @@ use Sonata\Form\Type\DatePickerType as BaseDatePickerType;
  */
 final class DatePickerType extends BaseDatePickerType
 {
-    /**
-     * {@inheritdoc}
-     */
     public function getBlockPrefix()
     {
         return 'core23_type_date_picker';
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getParent()
     {
         return BaseDatePickerType::class;

@@ -24,9 +24,6 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
  */
 final class HelpTypeExtension extends AbstractTypeExtension
 {
-    /**
-     * {@inheritdoc}
-     */
     public function buildView(FormView $view, FormInterface $form, array $options): void
     {
         $helpTranslationDomain = $options['help_translation_domain'];
@@ -40,9 +37,6 @@ final class HelpTypeExtension extends AbstractTypeExtension
         ]);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function configureOptions(OptionsResolver $resolver): void
     {
         $helpTranslationDomainNormalizer = static function (Options $options, $helpTranslationDomain) {
@@ -64,9 +58,6 @@ final class HelpTypeExtension extends AbstractTypeExtension
         $resolver->setAllowedTypes('help_translation_domain', ['null', 'bool', 'string']);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getExtendedType()
     {
         foreach (static::getExtendedTypes() as $extendedType) {
@@ -74,9 +65,6 @@ final class HelpTypeExtension extends AbstractTypeExtension
         }
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public static function getExtendedTypes(): iterable
     {
         return [

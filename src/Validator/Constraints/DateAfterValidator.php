@@ -21,9 +21,6 @@ use Symfony\Component\Validator\Exception\UnexpectedTypeException;
 
 final class DateAfterValidator extends ConstraintValidator
 {
-    /**
-     * {@inheritdoc}
-     */
     public function validate($value, Constraint $constraint): void
     {
         if (!$constraint instanceof DateAfter) {

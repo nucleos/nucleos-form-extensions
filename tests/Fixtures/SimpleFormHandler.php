@@ -17,9 +17,6 @@ use Symfony\Component\HttpFoundation\Request;
 
 final class SimpleFormHandler extends AbstractFormHandler
 {
-    /**
-     * {@inheritdoc}
-     */
     protected function process(FormInterface $form, Request $request): bool
     {
         return true;
