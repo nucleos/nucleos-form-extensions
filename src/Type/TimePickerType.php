@@ -85,7 +85,7 @@ final class TimePickerType extends AbstractType
                 $dpKey = substr($key, 3);
                 $dpKey = preg_replace_callback(
                     '/_([a-z])/',
-                    function ($c) {
+                    static function ($c) {
                         return strtoupper($c[1]);
                     },
                     $dpKey
