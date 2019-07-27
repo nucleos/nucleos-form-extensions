@@ -1,9 +1,12 @@
 {
     "require": {
+        "ekino/phpstan-banned-code": "^0.1",
         "jangregor/phpstan-prophecy": "^0.4",
+        "pepakriz/phpstan-exception-rules": "^0.8",
         "phpstan/extension-installer": "^1.0",
         "phpstan/phpstan": "^0.11",
-        "phpstan/phpstan-phpunit": "^0.11"
+        "phpstan/phpstan-phpunit": "^0.11",
+        "phpstan/phpstan-symfony": "^0.11"
     },
     "conflict": {
         "phpunit/phpunit": ">=8.0"
