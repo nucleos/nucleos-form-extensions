@@ -20,7 +20,7 @@ final class FormFactoryTest extends TestCase
 {
     private $formFactory;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->formFactory = $this->prophesize(SymfonyFormFactory::class);
     }
