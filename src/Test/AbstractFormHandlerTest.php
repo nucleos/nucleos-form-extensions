@@ -14,6 +14,7 @@ namespace Core23\Form\Test;
 use Core23\Form\Handler\FormHandlerInterface;
 use PHPUnit\Framework\AssertionFailedError;
 use PHPUnit\Framework\Constraint\Constraint;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Form\FormError;
 use Symfony\Component\Form\FormInterface;
@@ -23,6 +24,9 @@ use Symfony\Component\HttpFoundation\Session\Session;
 
 abstract class AbstractFormHandlerTest extends TestCase
 {
+    /**
+     * @var FormInterface|MockObject
+     */
     protected $form;
 
     /**
@@ -30,6 +34,9 @@ abstract class AbstractFormHandlerTest extends TestCase
      */
     protected $request;
 
+    /**
+     * @var MockObject|Session
+     */
     protected $session;
 
     /**

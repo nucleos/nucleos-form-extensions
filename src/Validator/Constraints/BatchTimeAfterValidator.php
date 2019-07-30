@@ -96,6 +96,9 @@ final class BatchTimeAfterValidator extends ConstraintValidator
         }
     }
 
+    /**
+     * @param array|object $object
+     */
     private function getFieldValue($object, string $field): ?BatchTime
     {
         $propertyAccessor = PropertyAccess::createPropertyAccessor();

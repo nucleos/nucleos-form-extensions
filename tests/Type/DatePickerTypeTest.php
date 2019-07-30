@@ -66,7 +66,7 @@ final class DatePickerTypeTest extends BaseTypeTest
         return DatePickerType::class;
     }
 
-    protected function getTypes()
+    protected function getTypes(): array
     {
         return [
             new BaseDatePickerType($this->formatConverter->reveal(), $this->translator->reveal()),

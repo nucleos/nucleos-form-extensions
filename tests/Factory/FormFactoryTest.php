@@ -10,7 +10,6 @@
 namespace Core23\Form\Tests\Factory;
 
 use Core23\Form\Factory\FormFactory;
-use Core23\Form\Factory\FormFactoryInterface;
 use PHPUnit\Framework\TestCase;
 use stdClass;
 use Symfony\Component\Form\FormFactoryInterface as SymfonyFormFactory;
@@ -23,13 +22,6 @@ final class FormFactoryTest extends TestCase
     protected function setUp(): void
     {
         $this->formFactory = $this->prophesize(SymfonyFormFactory::class);
-    }
-
-    public function testItIsInstantiable(): void
-    {
-        $factory = new FormFactory($this->formFactory->reveal(), 'foo', 'bar');
-
-        static::assertInstanceOf(FormFactoryInterface::class, $factory);
     }
 
     public function testCreate(): void

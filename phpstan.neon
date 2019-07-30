@@ -4,3 +4,10 @@ parameters:
 
     ignoreErrors:
         - '#Access to an undefined property Prophecy\\Prophecy\\ObjectProphecy<Doctrine\\ORM\\Mapping\\ClassMetadata>::\$discriminatorMap.#'
+        - '#Method Core23\\Form\\Type\\.+::transform\(\) has parameter \$.+ with no typehint specified.#'
+        - '#Method Core23\\Form\\Type\\.+::reverseTransform\(\) has parameter \$.+with no typehint specified.#'
+
+        # PHPUnit
+        -
+            message: '#Property .*::\$.* has no typehint specified.#'
+            path: tests/

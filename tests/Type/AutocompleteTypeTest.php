@@ -135,7 +135,7 @@ final class AutocompleteTypeTest extends BaseTypeTest
         return AutocompleteType::class;
     }
 
-    protected function getTypes()
+    protected function getTypes(): array
     {
         return [
             new PUGXAutocompleteType($this->registry->reveal()),

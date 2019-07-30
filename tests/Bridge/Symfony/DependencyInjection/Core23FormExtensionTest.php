@@ -73,7 +73,7 @@ final class Core23FormExtensionTest extends AbstractExtensionTestCase
         }
     }
 
-    protected function getContainerExtensions()
+    protected function getContainerExtensions(): array
     {
         return [
             new Core23FormExtension(),
