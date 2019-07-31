@@ -53,12 +53,12 @@ final class TimePickerType extends AbstractType
         ;
     }
 
-    public function getParent()
+    public function getParent(): string
     {
         return TimeType::class;
     }
 
-    public function getBlockPrefix()
+    public function getBlockPrefix(): string
     {
         return 'core23_type_time_picker';
     }

@@ -145,6 +145,10 @@ abstract class BaseTypeTest extends TypeTestCase
         static::assertSame($view, $form->getViewData());
     }
 
+    /**
+     * @param mixed|null $emptyData
+     * @param mixed|null $expectedData
+     */
     public function testSubmitNullUsesDefaultEmptyData($emptyData = 'empty', $expectedData = null): void
     {
         $builder = $this->factory->createBuilder($this->getTestedType());

@@ -16,6 +16,7 @@ use Core23\Form\Validator\Constraints\DateAfter;
 use Core23\Form\Validator\Constraints\DateAfterValidator;
 use DateTime;
 use InvalidArgumentException;
+use Symfony\Component\Validator\ConstraintValidatorInterface;
 use Symfony\Component\Validator\Exception\UnexpectedTypeException;
 use Symfony\Component\Validator\Test\ConstraintValidatorTestCase;
 
@@ -332,7 +333,7 @@ final class DateAfterValidatorTest extends ConstraintValidatorTestCase
         ;
     }
 
-    protected function createValidator()
+    protected function createValidator(): ConstraintValidatorInterface
     {
         return new DateAfterValidator();
     }
