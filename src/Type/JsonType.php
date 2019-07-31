@@ -72,7 +72,7 @@ final class JsonType extends AbstractType implements DataTransformerInterface
                 $key   = trim($parts[0]);
                 $value = trim($parts[1]);
 
-                if ($key || $value) {
+                if ('' !== $key || '' !== $value) {
                     $json[$key] = $value;
                 }
             }

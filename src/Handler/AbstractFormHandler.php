@@ -20,7 +20,7 @@ abstract class AbstractFormHandler implements FormHandlerInterface
 {
     final public function handle(FormInterface $form, Request $request, callable $callback): ?Response
     {
-        if ($response = $this->preProcess($form, $request)) {
+        if (null !== $response = $this->preProcess($form, $request)) {
             return $response;
         }
 
@@ -30,16 +30,12 @@ abstract class AbstractFormHandler implements FormHandlerInterface
             return null;
         }
 
-        if ($response = $this->validate($form, $request)) {
+        if (null !== $response = $this->validate($form, $request)) {
             return $response;
         }
 
         if (!$this->process($form, $request)) {
             return null;
-        }
-
-        if (!\is_callable($callback)) {
-            throw new InvalidCallbackException('No valid callable.');
         }
 
         $response = $callback();
@@ -48,7 +44,7 @@ abstract class AbstractFormHandler implements FormHandlerInterface
             throw new InvalidCallbackException('Invalid callback response.');
         }
 
-        if ($response = $this->postProcess($form, $request, $response)) {
+        if (null !== $response = $this->postProcess($form, $request, $response)) {
             return $response;
         }
 

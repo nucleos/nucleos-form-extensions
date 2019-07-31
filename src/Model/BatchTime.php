@@ -32,7 +32,7 @@ class BatchTime
 
     public function toString(): string
     {
-        return 'Day: '.$this->day.', Time: '.($this->time ? $this->time->format('H:i:s') : 'null');
+        return 'Day: '.$this->day.', Time: '.(null !== $this->time ? $this->time->format('H:i:s') : 'null');
     }
 
     public function getDay(): int

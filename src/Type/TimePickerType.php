@@ -23,18 +23,18 @@ final class TimePickerType extends AbstractType
     {
         $format    = 'HH';
 
-        if ($options['with_minutes']) {
+        if (null !== $options['with_minutes']) {
             $format .= ':mm';
             $options['dp_use_minutes'] = true;
         }
 
-        if ($options['with_seconds']) {
+        if (null !== $options['with_seconds']) {
             $format .= ':ss';
             $options['dp_use_seconds'] = true;
         }
 
         $view->vars['moment_format']         = $format;
-        $view->vars['datepicker_use_button'] = empty($options['datepicker_use_button']) ? false : true;
+        $view->vars['datepicker_use_button'] = (bool) $options['datepicker_use_button'];
         $view->vars['dp_options']            = self::createDpOptions($options);
     }
 

@@ -34,8 +34,8 @@ final class AutocompleteType extends AbstractType
     {
         $text = null;
 
-        if ($data = $form->getData()) {
-            if ($options['property']) {
+        if (null !== $data = $form->getData()) {
+            if (null !== $options['property']) {
                 $accessor = PropertyAccess::createPropertyAccessor();
                 $accessor->getValue($data, $options['property']);
             } else {
