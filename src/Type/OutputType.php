@@ -18,7 +18,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 final class OutputType extends AbstractType implements DataTransformerInterface
 {
-    public function buildForm(FormBuilderInterface $builder, array $options)
+    public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         if ('' === $options['empty_data']) {
             $builder->addViewTransformer($this);
@@ -39,12 +39,12 @@ final class OutputType extends AbstractType implements DataTransformerInterface
         return $data;
     }
 
-    public function reverseTransform($data)
+    public function reverseTransform($data): string
     {
         return $data ?? '';
     }
 
-    public function getBlockPrefix()
+    public function getBlockPrefix(): string
     {
         return 'output';
     }

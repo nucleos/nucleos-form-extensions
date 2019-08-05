@@ -12,17 +12,9 @@ namespace Core23\Form\Tests\Bridge\Symfony\Bundle;
 use Core23\Form\Bridge\Symfony\Bundle\Core23FormBundle;
 use Core23\Form\Bridge\Symfony\DependencyInjection\Core23FormExtension;
 use PHPUnit\Framework\TestCase;
-use Symfony\Component\HttpKernel\Bundle\BundleInterface;
 
 final class Core23FormBundleTest extends TestCase
 {
-    public function testItIsInstantiable(): void
-    {
-        $bundle = new Core23FormBundle();
-
-        static::assertInstanceOf(BundleInterface::class, $bundle);
-    }
-
     public function testGetPath(): void
     {
         $bundle = new Core23FormBundle();

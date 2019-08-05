@@ -41,7 +41,7 @@ final class DateAfterValidator extends ConstraintValidator
             return;
         }
 
-        if (null === $firstDate && $secondDate) {
+        if (null === $firstDate && null !== $secondDate) {
             $this->context
                 ->buildViolation($constraint->emptyMessage)
                 ->setParameter('%emptyField%', $firstFieldName)
@@ -53,7 +53,7 @@ final class DateAfterValidator extends ConstraintValidator
             return;
         }
 
-        if ($firstDate && null === $secondDate) {
+        if (null !== $firstDate && null === $secondDate) {
             $this->context
                 ->buildViolation($constraint->emptyMessage)
                 ->setParameter('%emptyField%', $secondFieldName)
@@ -76,6 +76,9 @@ final class DateAfterValidator extends ConstraintValidator
         }
     }
 
+    /**
+     * @param array|object $object
+     */
     private function getFieldValue($object, string $field): ?DateTime
     {
         $propertyAccessor = PropertyAccess::createPropertyAccessor();

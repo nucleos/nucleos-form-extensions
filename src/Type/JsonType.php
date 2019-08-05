@@ -23,7 +23,7 @@ final class JsonType extends AbstractType implements DataTransformerInterface
         $builder->addModelTransformer($this);
     }
 
-    public function transform($json)
+    public function transform($json): string
     {
         if (null === $json) {
             return '';
@@ -43,7 +43,7 @@ final class JsonType extends AbstractType implements DataTransformerInterface
         return $text;
     }
 
-    public function reverseTransform($text)
+    public function reverseTransform($text): array
     {
         if (null === $text) {
             return [];
@@ -72,7 +72,7 @@ final class JsonType extends AbstractType implements DataTransformerInterface
                 $key   = trim($parts[0]);
                 $value = trim($parts[1]);
 
-                if ($key || $value) {
+                if ('' !== $key || '' !== $value) {
                     $json[$key] = $value;
                 }
             }

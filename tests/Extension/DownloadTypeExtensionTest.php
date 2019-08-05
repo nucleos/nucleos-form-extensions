@@ -14,19 +14,11 @@ use PHPUnit\Framework\TestCase;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormInterface;
-use Symfony\Component\Form\FormTypeExtensionInterface;
 use Symfony\Component\Form\FormView;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 final class DownloadTypeExtensionTest extends TestCase
 {
-    public function testItIsInstantiable(): void
-    {
-        $extension = new DownloadTypeExtension();
-
-        static::assertInstanceOf(FormTypeExtensionInterface::class, $extension);
-    }
-
     public function testConfigureOptions(): void
     {
         $resolver = new OptionsResolver();

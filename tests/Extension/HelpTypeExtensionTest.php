@@ -13,19 +13,11 @@ use Core23\Form\Extension\HelpTypeExtension;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\Form\FormInterface;
-use Symfony\Component\Form\FormTypeExtensionInterface;
 use Symfony\Component\Form\FormView;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 final class HelpTypeExtensionTest extends TestCase
 {
-    public function testItIsInstantiable(): void
-    {
-        $extension = new HelpTypeExtension();
-
-        static::assertInstanceOf(FormTypeExtensionInterface::class, $extension);
-    }
-
     public function testBuildViewWithDefaults(): void
     {
         $view = new FormView();

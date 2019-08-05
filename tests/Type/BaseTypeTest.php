@@ -135,6 +135,11 @@ abstract class BaseTypeTest extends TypeTestCase
         static::assertFalse($view->vars['multipart']);
     }
 
+    /**
+     * @param mixed|null $expected
+     * @param mixed|null $norm
+     * @param mixed|null $view
+     */
     public function testSubmitNull($expected = null, $norm = null, $view = null): void
     {
         $form = $this->create();
@@ -145,6 +150,10 @@ abstract class BaseTypeTest extends TypeTestCase
         static::assertSame($view, $form->getViewData());
     }
 
+    /**
+     * @param mixed|null $emptyData
+     * @param mixed|null $expectedData
+     */
     public function testSubmitNullUsesDefaultEmptyData($emptyData = 'empty', $expectedData = null): void
     {
         $builder = $this->factory->createBuilder($this->getTestedType());

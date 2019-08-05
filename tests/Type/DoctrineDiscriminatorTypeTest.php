@@ -86,7 +86,7 @@ final class DoctrineDiscriminatorTypeTest extends BaseTypeTest
         return EntityDoctrineDiscriminatorType::class;
     }
 
-    protected function getTypes()
+    protected function getTypes(): array
     {
         return [
             new EntityDoctrineDiscriminatorType($this->baseEntityManager->reveal()),

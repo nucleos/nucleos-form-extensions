@@ -17,6 +17,7 @@ use Core23\Form\Validator\Constraints\BatchTimeAfter;
 use Core23\Form\Validator\Constraints\BatchTimeAfterValidator;
 use DateTime;
 use InvalidArgumentException;
+use Symfony\Component\Validator\ConstraintValidatorInterface;
 use Symfony\Component\Validator\Exception\UnexpectedTypeException;
 use Symfony\Component\Validator\Test\ConstraintValidatorTestCase;
 
@@ -441,7 +442,7 @@ final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
         ;
     }
 
-    protected function createValidator()
+    protected function createValidator(): ConstraintValidatorInterface
     {
         return new BatchTimeAfterValidator();
     }
