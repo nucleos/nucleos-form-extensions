@@ -53,8 +53,8 @@ final class DoctrineDiscriminatorTypeTest extends BaseTypeTest
         $choices = $this->factory->create($this->getTestedType())
             ->createView()->vars['choices'];
 
-        static::assertContains(new ChoiceView('foo', 'foo', 'foo'), $choices, '', false, false);
-        static::assertContains(new ChoiceView('bar', 'bar', 'bar'), $choices, '', false, false);
+        static::assertContainsEquals(new ChoiceView('foo', 'foo', 'foo'), $choices);
+        static::assertContainsEquals(new ChoiceView('bar', 'bar', 'bar'), $choices);
     }
 
     public function testUnknownTypeIsNotIncluded(): void
