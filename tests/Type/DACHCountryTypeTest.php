@@ -20,9 +20,9 @@ final class DACHCountryTypeTest extends BaseTypeTest
         $choices = $this->factory->create($this->getTestedType())
             ->createView()->vars['choices'];
 
-        static::assertContains(new ChoiceView('DE', 'DE', 'form.choice_de'), $choices, '', false, false);
-        static::assertContains(new ChoiceView('AT', 'AT', 'form.choice_at'), $choices, '', false, false);
-        static::assertContains(new ChoiceView('CH', 'CH', 'form.choice_ch'), $choices, '', false, false);
+        static::assertContainsEquals(new ChoiceView('DE', 'DE', 'form.choice_de'), $choices);
+        static::assertContainsEquals(new ChoiceView('AT', 'AT', 'form.choice_at'), $choices);
+        static::assertContainsEquals(new ChoiceView('CH', 'CH', 'form.choice_ch'), $choices);
     }
 
     public function testUnknownCountryIsNotIncluded(): void

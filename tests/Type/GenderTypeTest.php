@@ -20,8 +20,8 @@ final class GenderTypeTest extends BaseTypeTest
         $choices = $this->factory->create($this->getTestedType())
             ->createView()->vars['choices'];
 
-        static::assertContains(new ChoiceView('m', 'm', 'gender.male'), $choices, '', false, false);
-        static::assertContains(new ChoiceView('f', 'f', 'gender.female'), $choices, '', false, false);
+        static::assertContainsEquals(new ChoiceView('m', 'm', 'gender.male'), $choices);
+        static::assertContainsEquals(new ChoiceView('f', 'f', 'gender.female'), $choices);
     }
 
     public function testUnknownGenderIsNotIncluded(): void
