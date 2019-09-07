@@ -24,7 +24,8 @@ final class AutocompleteType extends AbstractType
     {
         $resolver
             ->setDefaults([
-                'property' => null,
+                'property'    => null,
+                'empty_value' => '',
             ])
             ->setRequired('route_name')
         ;
@@ -43,8 +44,9 @@ final class AutocompleteType extends AbstractType
             }
         }
 
-        $view->vars['text']       = $text;
-        $view->vars['route_name'] = $options['route_name'];
+        $view->vars['text']        = $text;
+        $view->vars['route_name']  = $options['route_name'];
+        $view->vars['empty_value'] = $options['empty_value'];
     }
 
     public function getBlockPrefix()
