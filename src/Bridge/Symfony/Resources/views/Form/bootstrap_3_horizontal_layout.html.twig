@@ -1,11 +1,11 @@
 {% extends 'bootstrap_3_horizontal_layout.html.twig' %}
 
 {% block help %}
-{% spaceless %}
+{% apply spaceless %}
 {% if help is defined and help %}
     <p class="help-block">{{ help_translation_domain is same as(false) ? help : help|trans({}, help_translation_domain) }}</p>
 {% endif %}
-{% endspaceless %}
+{% endapply %}
 {% endblock %}
 
 {% block form_widget -%}
