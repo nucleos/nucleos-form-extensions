@@ -1,3 +1,27 @@
+01/11/2019 21:26  2.3.0  Allow empty value for autocomplete form
+2cd5f49 [PATCH] Remove deprecated twig calls
+a9f125b [BUILD] Simplify rmt config
+897a5d1 [MINOR] Allow empty value for autocomplete form
+c51339c [BUILD] Remove nightly build from Travis
+6dd99fc [BUILD] Added project specific phpstan settings
+c15596c [TEST] Fixed deprecations in tests
+3b52b3a [DOCS] Updated README
+80391d2 [MINOR] Bumped dependencies
+cc58a3a [BUILD] Use phpunit 8
+245932b [TEST] Fixed phpstan findings
+ca2cd33 [PATCH] Add type hints
+7d60084 [PATCH] Use more precise null and type checks
+34e3c13 [TEST] Added return type to setUp method
+2f618be [BUILD] Remove include from phpstan config
+f664277 [BUILD] Added more strict phpstan rules
+a5c617b [BUILD] Added more strict phpstan rules
+e23dafc [PATCH] Removed superfluous PHPDoc
+94350b7 [PATCH] Updated CS config
+f9f14c5 [BUILD] Added kodiak config
+303fbf6 [BUILD] Include phpstan-prophecy extension
+1bbf131 [BUILD] Removed superfluous phpdoc
+5f74a7f [BUILD] Added more phpstan checks
+ebae90f [PATCH] Make test classes final
 11/06/2019 18:48  2.2.0  Internal code refactoring
 f74947c [TEST] Use better default locale in test
 0507451 [BUILD] Replaced deprecated "weak_vendors" option
