@@ -23,12 +23,12 @@ final class TimePickerType extends AbstractType
     {
         $format    = 'HH';
 
-        if (null !== $options['with_minutes']) {
+        if (true === $options['with_minutes']) {
             $format .= ':mm';
             $options['dp_use_minutes'] = true;
         }
 
-        if (null !== $options['with_seconds']) {
+        if (true === $options['with_seconds']) {
             $format .= ':ss';
             $options['dp_use_seconds'] = true;
         }
