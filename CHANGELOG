@@ -1,3 +1,6 @@
+02/11/2019 14:24  2.3.1  Form fixes
+02ea456 [PATCH] Fix time picker with_minutes/with_seconds check
+6a9edc1 [PATCH] Fix setting null value
 01/11/2019 21:26  2.3.0  Allow empty value for autocomplete form
 2cd5f49 [PATCH] Remove deprecated twig calls
 a9f125b [BUILD] Simplify rmt config
