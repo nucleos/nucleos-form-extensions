@@ -37,12 +37,12 @@ class BatchTime
 
     public function getDay(): int
     {
-        return $this->day ?: 0;
+        return $this->day;
     }
 
-    public function setDay(int $day): void
+    public function setDay(?int $day): void
     {
-        $this->day = $day;
+        $this->day = $day ?: 0;
     }
 
     public function getTime(): ?DateTime
@@ -50,7 +50,7 @@ class BatchTime
         return $this->time;
     }
 
-    public function setTime(DateTime $time): void
+    public function setTime(?DateTime $time): void
     {
         $this->time = $time;
     }
