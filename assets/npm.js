@@ -1,1 +1,3 @@
-import './js/Select2Autocomplete';
+import Autocomplete from './js/Autocomplete';
+
+export default Autocomplete

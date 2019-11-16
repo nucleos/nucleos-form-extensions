@@ -113,10 +113,10 @@
 
 {% block core23_autocomplete_widget %}
     {% set attr = attr|merge({
-        'data-select2-autocomplete': {
+        'data-autocomplete': {
             'ajaxRoute': path(route_name),
-            'text': text|default(empty_value|trans({}, translation_domain))
         }|json_encode,
+        'placeholder': text|default(empty_value|trans({}, translation_domain))
     }) %}
     {{ block('form_widget') }}
 {% endblock %}
