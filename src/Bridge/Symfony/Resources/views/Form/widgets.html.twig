@@ -115,8 +115,9 @@
     {% set attr = attr|merge({
         'data-autocomplete': {
             'ajaxRoute': path(route_name),
+            'text': text|default(''),
         }|json_encode,
-        'placeholder': text|default(empty_value|trans({}, translation_domain))
+        'placeholder': empty_value|trans({}, translation_domain)
     }) %}
     {{ block('form_widget') }}
 {% endblock %}
