@@ -22,6 +22,7 @@ export default class Autocomplete {
     const defaults = {
       ajaxRoute: '',
       minChars: 3,
+      text: '',
     };
 
     this.settings = {...defaults, ...options};
@@ -40,6 +41,10 @@ export default class Autocomplete {
       },
     });
 
+    if (this.settings.text) {
+      element.value = this.settings.text;
+    }
+
     element.addEventListener('input', async function () {
       autocomplete.list = await self.fetchResult(element.value);
 
@@ -56,6 +61,7 @@ export default class Autocomplete {
     const shadowInput = document.createElement('input');
     shadowInput.setAttribute("type", "hidden");
     shadowInput.setAttribute("name", element.name);
+    shadowInput.value = element.value;
 
     element.parentNode.insertBefore(shadowInput, element.nextSibling);
     element.setAttribute("name", element.name + '_autocomplete');
