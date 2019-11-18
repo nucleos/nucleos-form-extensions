@@ -1,3 +1,5 @@
+18/11/2019 21:47  3.0.1  Fix setting text value after submit
+954e050 [PATCH] Fix setting text value after submit
 18/11/2019 19:53  3.0.0  Remove select2 dependency
 9c16e8f [PATCH] Fix empty data handling in frontend lib
 72a5410 [MAJOR] Remove jQuery dependency
