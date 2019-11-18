@@ -1,3 +1,8 @@
+18/11/2019 19:53  3.0.0  Remove select2 dependency
+9c16e8f [PATCH] Fix empty data handling in frontend lib
+72a5410 [MAJOR] Remove jQuery dependency
+a07b255 [MAJOR] Update branch alias
+17be6a6 [MINOR] Remove support for symfony < 4.2
 02/11/2019 14:24  2.3.1  Form fixes
 02ea456 [PATCH] Fix time picker with_minutes/with_seconds check
 6a9edc1 [PATCH] Fix setting null value
