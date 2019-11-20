@@ -46,14 +46,16 @@ export default class Autocomplete {
     }
 
     element.addEventListener('input', async function () {
-      autocomplete.list = await self.fetchResult(element.value);
+      await self.fetchResult(element.value)
+        .then((result) => {
+          if (result.length === 0) {
+            self.shadowElement.value = '0';
+          }
 
-      if (autocomplete.list.length === 0) {
-        self.shadowElement.value = '0';
-      }
-
-      autocomplete.evaluate();
-      autocomplete.open();
+          autocomplete.list = result;
+          autocomplete.evaluate();
+          autocomplete.open();
+        })
     });
   }
 
