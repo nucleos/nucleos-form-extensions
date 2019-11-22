@@ -46,14 +46,14 @@ export default class Autocomplete {
     }
 
     element.addEventListener('input', async function () {
-      autocomplete.list = await self.fetchResult(element.value);
+      self.shadowElement.value = '0';
 
-      if (autocomplete.list.length === 0) {
-        self.shadowElement.value = '0';
-      }
-
-      autocomplete.evaluate();
-      autocomplete.open();
+      await self.fetchResult(element.value)
+        .then((result) => {
+          autocomplete.list = result;
+          autocomplete.evaluate();
+          autocomplete.open();
+        });
     });
   }
 
@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    const options = JSON.parse(element.getAttribute('data-autocomplete') || '{}');
+    const options = JSON.parse(element.dataset.autocomplete || '{}');
 
     weakMap.set(element, {
       autocomplete: new Autocomplete(element, options)
