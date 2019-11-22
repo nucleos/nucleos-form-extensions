@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    const options = JSON.parse(element.getAttribute('data-autocomplete') || '{}');
+    const options = JSON.parse(element.dataset.autocomplete || '{}');
 
     weakMap.set(element, {
       autocomplete: new Autocomplete(element, options)
