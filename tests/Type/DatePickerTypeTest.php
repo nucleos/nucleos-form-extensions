@@ -13,7 +13,7 @@ use Core23\Form\Type\DatePickerType;
 use IntlDateFormatter;
 use Sonata\Form\Date\MomentFormatConverter;
 use Sonata\Form\Type\DatePickerType as BaseDatePickerType;
-use Symfony\Component\Translation\TranslatorInterface;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 final class DatePickerTypeTest extends BaseTypeTest
 {

@@ -12,7 +12,7 @@ namespace Core23\Form\Tests\Type;
 use Core23\Form\Type\DateTimePickerType;
 use Sonata\Form\Date\MomentFormatConverter;
 use Sonata\Form\Type\DateTimePickerType as BaseDateTimePickerType;
-use Symfony\Component\Translation\TranslatorInterface;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 final class DateTimePickerTypeTest extends BaseTypeTest
 {
