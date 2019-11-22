@@ -40,7 +40,8 @@
         "symfony/dependency-injection": "^4.2.12",
         "symfony/expression-language": "^4.2.12",
         "symfony/framework-bundle": "^4.2.12",
-        "symfony/http-kernel": "^4.2.12"
+        "symfony/http-kernel": "^4.2.12",
+        "symfony/twig-bridge": "^4.2.12"
     },
     "suggest": {
         "symfony/framework-bundle": "If you want to use symfony"
