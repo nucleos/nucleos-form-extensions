@@ -31,10 +31,12 @@
         "symfony/validator": "^4.2.12"
     },
     "conflict": {
+        "doctrine/orm": "<2.5",
         "symfony/framework-bundle": "<4.2"
     },
     "require-dev": {
         "bamarni/composer-bin-plugin": "^1.2",
+        "doctrine/orm": "^2.5",
         "sllh/composer-lint": "^1.0",
         "symfony/config": "^4.2.12",
         "symfony/dependency-injection": "^4.2.12",
