@@ -24,18 +24,6 @@
     <service id="core23_form.type.time_picker" class="Core23\Form\Type\TimePickerType">
       <tag name="form.type" alias="core23_type_time_picker"/>
     </service>
-    <service id="core23_form.datetime_picker" alias="core23_form.type.datetime_picker">
-    </service>
-    <service id="core23_form.type.datetime_picker" class="Core23\Form\Type\DateTimePickerType">
-      <tag name="form.type" alias="core23_type_datetime_picker"/>
-      <argument type="service" id="sonata.core.date.moment_format_converter"/>
-      <argument type="service" id="translator"/>
-    </service>
-    <service id="core23_form.type.date_picker" class="Core23\Form\Type\DatePickerType">
-      <tag name="form.type" alias="core23_type_date_picker"/>
-      <argument type="service" id="sonata.core.date.moment_format_converter"/>
-      <argument type="service" id="translator"/>
-    </service>
     <service id="core23_form.type.autocomplete" class="Core23\Form\Type\AutocompleteType">
       <tag name="form.type" alias="core23_autocomplete"/>
     </service>

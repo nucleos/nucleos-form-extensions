@@ -17,8 +17,6 @@ use Core23\Form\Type\AutocompleteType;
 use Core23\Form\Type\BatchTimeType;
 use Core23\Form\Type\DACHCountryType;
 use Core23\Form\Type\DateOutputType;
-use Core23\Form\Type\DatePickerType;
-use Core23\Form\Type\DateTimePickerType;
 use Core23\Form\Type\GenderType;
 use Core23\Form\Type\NumberOutputType;
 use Core23\Form\Type\OutputType;
@@ -28,6 +26,7 @@ use Core23\Form\Validator\Constraints\DateAfterValidator;
 use Matthias\SymfonyDependencyInjectionTest\PhpUnit\AbstractExtensionTestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\PrependExtensionInterface;
+
 
 final class Core23FormExtensionTest extends AbstractExtensionTestCase
 {
@@ -42,8 +41,6 @@ final class Core23FormExtensionTest extends AbstractExtensionTestCase
         $this->assertContainerBuilderHasService('core23_form.type.number_output', NumberOutputType::class);
         $this->assertContainerBuilderHasService('core23_form.type.batch_time', BatchTimeType::class);
         $this->assertContainerBuilderHasService('core23_form.type.time_picker', TimePickerType::class);
-        $this->assertContainerBuilderHasService('core23_form.type.datetime_picker', DateTimePickerType::class);
-        $this->assertContainerBuilderHasService('core23_form.type.date_picker', DatePickerType::class);
         $this->assertContainerBuilderHasService('core23_form.type.autocomplete', AutocompleteType::class);
         $this->assertContainerBuilderHasService('core23_form.image_type_extension', ImageTypeExtension::class);
         $this->assertContainerBuilderHasService('core23_form.download_type_extension', DownloadTypeExtension::class);
