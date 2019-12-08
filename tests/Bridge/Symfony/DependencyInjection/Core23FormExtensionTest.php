@@ -27,7 +27,6 @@ use Matthias\SymfonyDependencyInjectionTest\PhpUnit\AbstractExtensionTestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\PrependExtensionInterface;
 
-
 final class Core23FormExtensionTest extends AbstractExtensionTestCase
 {
     public function testLoadDefault(): void
