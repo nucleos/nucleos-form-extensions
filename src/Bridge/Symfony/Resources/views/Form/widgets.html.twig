@@ -28,35 +28,6 @@
     {% endapply %}
 {% endblock batch_time_widget %}
 
-{% block core23_type_datetime_picker_widget_html %}
-    {% if datepicker_use_button %}
-        <div class='input-group date' id='dtp_{{ id }}'>
-    {% endif %}
-    {% set attr = attr|merge({'data-date-format': moment_format}) %}
-    {{ block('datetime_widget') }}
-    {% if datepicker_use_button %}
-        <span class="input-group-addon"><span class="glyphicon glyphicon-clock"></span></span>
-        </div>
-    {% endif %}
-{% endblock core23_type_datetime_picker_widget_html %}
-
-{% block core23_type_time_picker_widget %}
-    {% apply spaceless %}
-        {% if wrap_fields_with_addons %}
-            <div class="form-group">
-                {{ block('core23_type_datetime_picker_widget_html') }}
-            </div>
-        {% else %}
-            {{ block('core23_type_datetime_picker_widget_html') }}
-        {% endif %}
-        <script type="text/javascript">
-            jQuery(function ($) {
-                $('#{{ datepicker_use_button ? 'dtp_' : '' }}{{ id }}').datetimepicker({{ dp_options|json_encode|raw }});
-            });
-        </script>
-    {% endapply %}
-{% endblock core23_type_time_picker_widget %}
-
 {% block gender_widget %}
     {% apply spaceless %}
         {% if expanded %}
