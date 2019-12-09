@@ -56,13 +56,6 @@ final class ImageTypeExtension extends AbstractTypeExtension
         }
     }
 
-    public function getExtendedType()
-    {
-        foreach (static::getExtendedTypes() as $extendedType) {
-            return $extendedType;
-        }
-    }
-
     public static function getExtendedTypes(): iterable
     {
         return [

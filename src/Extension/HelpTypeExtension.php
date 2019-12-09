@@ -58,13 +58,6 @@ final class HelpTypeExtension extends AbstractTypeExtension
         $resolver->setAllowedTypes('help_translation_domain', ['null', 'bool', 'string']);
     }
 
-    public function getExtendedType()
-    {
-        foreach (static::getExtendedTypes() as $extendedType) {
-            return $extendedType;
-        }
-    }
-
     public static function getExtendedTypes(): iterable
     {
         return [

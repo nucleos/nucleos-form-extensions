@@ -99,11 +99,4 @@ final class DownloadTypeExtensionTest extends TestCase
     {
         static::assertSame([FileType::class], DownloadTypeExtension::getExtendedTypes());
     }
-
-    public function testExtendedType(): void
-    {
-        $extension = new DownloadTypeExtension();
-
-        static::assertSame(FileType::class, $extension->getExtendedType());
-    }
 }
