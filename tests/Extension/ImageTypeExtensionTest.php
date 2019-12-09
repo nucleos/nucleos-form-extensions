@@ -94,11 +94,4 @@ final class ImageTypeExtensionTest extends TestCase
     {
         static::assertSame([FileType::class], ImageTypeExtension::getExtendedTypes());
     }
-
-    public function testExtendedType(): void
-    {
-        $extension = new ImageTypeExtension();
-
-        static::assertSame(FileType::class, $extension->getExtendedType());
-    }
 }

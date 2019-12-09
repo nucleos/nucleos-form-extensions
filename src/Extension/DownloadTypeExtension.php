@@ -60,13 +60,6 @@ final class DownloadTypeExtension extends AbstractTypeExtension
         $view->vars['download_text'] = $options['download_text'];
     }
 
-    public function getExtendedType()
-    {
-        foreach (static::getExtendedTypes() as $extendedType) {
-            return $extendedType;
-        }
-    }
-
     public static function getExtendedTypes(): iterable
     {
         return [

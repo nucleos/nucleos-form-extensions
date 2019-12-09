@@ -97,11 +97,4 @@ final class HelpTypeExtensionTest extends TestCase
     {
         static::assertSame([FormType::class], HelpTypeExtension::getExtendedTypes());
     }
-
-    public function testExtendedType(): void
-    {
-        $extension = new HelpTypeExtension();
-
-        static::assertSame(FormType::class, $extension->getExtendedType());
-    }
 }
