@@ -8,10 +8,8 @@ Form Extensions
 [![Monthly Downloads](https://poser.pugx.org/core23/form-extensions/d/monthly)](https://packagist.org/packages/core23/form-extensions)
 [![Daily Downloads](https://poser.pugx.org/core23/form-extensions/d/daily)](https://packagist.org/packages/core23/form-extensions)
 
-[![Build Status](https://travis-ci.org/core23/form-extensions.svg)](http://travis-ci.org/core23/form-extensions)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/core23/form-extensions/badges/quality-score.png)](https://scrutinizer-ci.com/g/core23/form-extensions/)
-[![Code Climate](https://codeclimate.com/github/core23/form-extensions/badges/gpa.svg)](https://codeclimate.com/github/core23/form-extensions)
-[![Coverage Status](https://coveralls.io/repos/core23/form-extensions/badge.svg)](https://coveralls.io/r/core23/form-extensions)
+[![Continuous Integration](https://github.com/core23/form-extensions/workflows/Continuous%20Integration/badge.svg)](https://github.com/core23/form-extensions/actions)
+[![Code Coverage](https://codecov.io/gh/core23/form-extensions/branch/master/graph/badge.svg)](https://codecov.io/gh/core23/form-extensions)
 
 This library adds some custom form elements and validation for symfony.
 
@@ -25,7 +23,7 @@ composer require core23/form-extensions
 
 ### Assets
 
-It is recommended to use [webpack](https://webpack.js.org/) / [webpack-encore](https://github.com/symfony/webpack-encore) 
+It is recommended to use [webpack](https://webpack.js.org/) / [webpack-encore](https://github.com/symfony/webpack-encore)
 to include the `Select2Autocomplete.js` file in your page. These file is located in the `assets` folder.
 
 ## Symfony usage
