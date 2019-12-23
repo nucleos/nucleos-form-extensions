@@ -11,6 +11,8 @@ declare(strict_types=1);
 
 namespace Core23\Form\Handler\Exception;
 
-class InvalidCallbackException extends \InvalidArgumentException
+use InvalidArgumentException;
+
+class InvalidCallbackException extends InvalidArgumentException
 {
 }
