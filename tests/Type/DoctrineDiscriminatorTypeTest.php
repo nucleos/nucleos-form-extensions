@@ -14,15 +14,25 @@ namespace Core23\Form\Tests\Type;
 use Core23\Form\Tests\Fixtures\EntityDoctrineDiscriminatorType;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Mapping\ClassMetadata;
+use Prophecy\Prophecy\ObjectProphecy;
 use Sonata\Doctrine\Entity\BaseEntityManager;
 use Symfony\Component\Form\ChoiceList\View\ChoiceView;
 
 final class DoctrineDiscriminatorTypeTest extends BaseTypeTest
 {
+    /**
+     * @var ObjectProphecy
+     */
     private $baseEntityManager;
 
+    /**
+     * @var ObjectProphecy
+     */
     private $entityManager;
 
+    /**
+     * @var ObjectProphecy
+     */
     private $classMetadata;
 
     protected function setUp(): void
