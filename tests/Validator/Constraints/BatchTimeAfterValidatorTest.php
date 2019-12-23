@@ -48,7 +48,7 @@ final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
 
     public function testValidateInvalidFirstField(): void
     {
-        $this->expectException(\InvalidArgumentException::class);
+        $this->expectException(InvalidArgumentException::class);
 
         $end = new BatchTime();
         $end->setTime(new DateTime());
@@ -71,7 +71,7 @@ final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
 
     public function testValidateInvalidSecondField(): void
     {
-        $this->expectException(\InvalidArgumentException::class);
+        $this->expectException(InvalidArgumentException::class);
 
         $begin = new BatchTime();
         $begin->setTime(new DateTime());
@@ -94,7 +94,7 @@ final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
 
     public function testValidateInvalidFirstValue(): void
     {
-        $this->expectException(\Symfony\Component\Validator\Exception\UnexpectedTypeException::class);
+        $this->expectException(UnexpectedTypeException::class);
 
         $begin = new BatchTime();
         $begin->setTime(new DateTime());
@@ -118,7 +118,7 @@ final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
 
     public function testValidateInvalidSecondValue(): void
     {
-        $this->expectException(\Symfony\Component\Validator\Exception\UnexpectedTypeException::class);
+        $this->expectException(UnexpectedTypeException::class);
 
         $end = new BatchTime();
         $end->setTime(new DateTime());
