@@ -24,7 +24,7 @@ final class BatchTimeAfterValidator extends ConstraintValidator
     public function validate($value, Constraint $constraint): void
     {
         if (!$constraint instanceof BatchTimeAfter) {
-            throw new UnexpectedTypeException($constraint, __NAMESPACE__.'\BatchTimeAfter');
+            throw new UnexpectedTypeException($constraint, BatchTimeAfter::class);
         }
 
         if (!\is_object($value)) {
