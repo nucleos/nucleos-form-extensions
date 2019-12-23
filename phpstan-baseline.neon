@@ -1,0 +1,83 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Method Core23\\\\Form\\\\Type\\\\JsonType\\:\\:transform\\(\\) has parameter \\$json with no typehint specified\\.$#"
+			count: 1
+			path: src/Type/JsonType.php
+
+		-
+			message: "#^Method Core23\\\\Form\\\\Type\\\\JsonType\\:\\:reverseTransform\\(\\) has parameter \\$text with no typehint specified\\.$#"
+			count: 1
+			path: src/Type/JsonType.php
+
+		-
+			message: "#^Method Core23\\\\Form\\\\Type\\\\OutputType\\:\\:transform\\(\\) has parameter \\$data with no typehint specified\\.$#"
+			count: 1
+			path: src/Type/OutputType.php
+
+		-
+			message: "#^Method Core23\\\\Form\\\\Type\\\\OutputType\\:\\:reverseTransform\\(\\) has parameter \\$data with no typehint specified\\.$#"
+			count: 1
+			path: src/Type/OutputType.php
+
+		-
+			message: "#^Instantiated class Symfony\\\\Component\\\\HttpKernel\\\\Client not found\\.$#"
+			count: 1
+			path: tests/Bridge/Symfony/Bundle/BundleIntegrationTest.php
+
+		-
+			message: "#^Call to method request\\(\\) on an unknown class Symfony\\\\Component\\\\HttpKernel\\\\Client\\.$#"
+			count: 1
+			path: tests/Bridge/Symfony/Bundle/BundleIntegrationTest.php
+
+		-
+			message: "#^Call to method getResponse\\(\\) on an unknown class Symfony\\\\Component\\\\HttpKernel\\\\Client\\.$#"
+			count: 1
+			path: tests/Bridge/Symfony/Bundle/BundleIntegrationTest.php
+
+		-
+			message: "#^Property Core23\\\\Form\\\\Tests\\\\Factory\\\\FormFactoryTest\\:\\:\\$formFactory has no typehint specified\\.$#"
+			count: 1
+			path: tests/Factory/FormFactoryTest.php
+
+		-
+			message: "#^Property Core23\\\\Form\\\\Tests\\\\Test\\\\AbstractFormHandlerTestCaseTest\\:\\:\\$formHandler has no typehint specified\\.$#"
+			count: 1
+			path: tests/Test/AbstractFormHandlerTestCaseTest.php
+
+		-
+			message: "#^Property Core23\\\\Form\\\\Tests\\\\Type\\\\AutocompleteTypeTest\\:\\:\\$objectRepository has no typehint specified\\.$#"
+			count: 1
+			path: tests/Type/AutocompleteTypeTest.php
+
+		-
+			message: "#^Property Core23\\\\Form\\\\Tests\\\\Type\\\\AutocompleteTypeTest\\:\\:\\$objectManager has no typehint specified\\.$#"
+			count: 1
+			path: tests/Type/AutocompleteTypeTest.php
+
+		-
+			message: "#^Property Core23\\\\Form\\\\Tests\\\\Type\\\\AutocompleteTypeTest\\:\\:\\$registry has no typehint specified\\.$#"
+			count: 1
+			path: tests/Type/AutocompleteTypeTest.php
+
+		-
+			message: "#^Property Core23\\\\Form\\\\Tests\\\\Type\\\\DoctrineDiscriminatorTypeTest\\:\\:\\$baseEntityManager has no typehint specified\\.$#"
+			count: 1
+			path: tests/Type/DoctrineDiscriminatorTypeTest.php
+
+		-
+			message: "#^Property Core23\\\\Form\\\\Tests\\\\Type\\\\DoctrineDiscriminatorTypeTest\\:\\:\\$entityManager has no typehint specified\\.$#"
+			count: 1
+			path: tests/Type/DoctrineDiscriminatorTypeTest.php
+
+		-
+			message: "#^Property Core23\\\\Form\\\\Tests\\\\Type\\\\DoctrineDiscriminatorTypeTest\\:\\:\\$classMetadata has no typehint specified\\.$#"
+			count: 1
+			path: tests/Type/DoctrineDiscriminatorTypeTest.php
+
+		-
+			message: "#^Access to an undefined property Prophecy\\\\Prophecy\\\\ObjectProphecy\\<Doctrine\\\\ORM\\\\Mapping\\\\ClassMetadata\\>\\:\\:\\$discriminatorMap\\.$#"
+			count: 1
+			path: tests/Type/DoctrineDiscriminatorTypeTest.php
+
+
