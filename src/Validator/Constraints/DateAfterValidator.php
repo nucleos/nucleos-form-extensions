@@ -24,7 +24,7 @@ final class DateAfterValidator extends ConstraintValidator
     public function validate($value, Constraint $constraint): void
     {
         if (!$constraint instanceof DateAfter) {
-            throw new UnexpectedTypeException($constraint, __NAMESPACE__.'\DateAfter');
+            throw new UnexpectedTypeException($constraint, DateAfter::class);
         }
 
         if (!\is_object($value)) {
