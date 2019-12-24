@@ -16,6 +16,8 @@ use PHPUnit\Framework\AssertionFailedError;
 use PHPUnit\Framework\Constraint\Constraint;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
+use ReflectionException;
+use ReflectionMethod;
 use Symfony\Component\Form\FormError;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -63,7 +65,7 @@ abstract class AbstractFormHandlerTest extends TestCase
      *
      * @param mixed|null $data
      *
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     final protected function executePreProcess(Request $request, $data = null): ?Response
     {
@@ -75,7 +77,7 @@ abstract class AbstractFormHandlerTest extends TestCase
             ;
         }
 
-        $method = new \ReflectionMethod($handler, 'preProcess');
+        $method = new ReflectionMethod($handler, 'preProcess');
         $method->setAccessible(true);
 
         $this->checkCalledErrors();
@@ -92,7 +94,7 @@ abstract class AbstractFormHandlerTest extends TestCase
      *
      * @param mixed|null $data
      *
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     final protected function executeProcess(Request $request, $data = null): bool
     {
@@ -104,7 +106,7 @@ abstract class AbstractFormHandlerTest extends TestCase
             ;
         }
 
-        $method = new \ReflectionMethod($handler, 'process');
+        $method = new ReflectionMethod($handler, 'process');
         $method->setAccessible(true);
 
         $this->checkCalledErrors();
@@ -121,7 +123,7 @@ abstract class AbstractFormHandlerTest extends TestCase
      *
      * @param mixed|null $data
      *
-     * @throws \ReflectionException
+     * @throws ReflectionException
      */
     final protected function executePostProcess(Request $request, Response $response, $data = null): ?Response
     {
@@ -133,7 +135,7 @@ abstract class AbstractFormHandlerTest extends TestCase
             ;
         }
 
-        $method = new \ReflectionMethod($handler, 'postProcess');
+        $method = new ReflectionMethod($handler, 'postProcess');
         $method->setAccessible(true);
 
         $this->checkCalledErrors();
