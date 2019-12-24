@@ -36,47 +36,22 @@ parameters:
 			path: tests/Bridge/Symfony/Bundle/BundleIntegrationTest.php
 
 		-
-			message: "#^Property Core23\\\\Form\\\\Tests\\\\Factory\\\\FormFactoryTest\\:\\:\\$formFactory has no typehint specified\\.$#"
+			message: "#^Parameter \\#1 \\$formFactory of class Core23\\\\Form\\\\Factory\\\\FormFactory constructor expects Symfony\\\\Component\\\\Form\\\\FormFactoryInterface, object given\\.$#"
 			count: 1
 			path: tests/Factory/FormFactoryTest.php
 
 		-
-			message: "#^Property Core23\\\\Form\\\\Tests\\\\Test\\\\AbstractFormHandlerTestCaseTest\\:\\:\\$formHandler has no typehint specified\\.$#"
-			count: 1
-			path: tests/Test/AbstractFormHandlerTestCaseTest.php
-
-		-
-			message: "#^Property Core23\\\\Form\\\\Tests\\\\Type\\\\AutocompleteTypeTest\\:\\:\\$objectRepository has no typehint specified\\.$#"
+			message: "#^Parameter \\#1 \\$registry of class PUGX\\\\AutocompleterBundle\\\\Form\\\\Type\\\\AutocompleteType constructor expects Doctrine\\\\Persistence\\\\ManagerRegistry, object given\\.$#"
 			count: 1
 			path: tests/Type/AutocompleteTypeTest.php
-
-		-
-			message: "#^Property Core23\\\\Form\\\\Tests\\\\Type\\\\AutocompleteTypeTest\\:\\:\\$objectManager has no typehint specified\\.$#"
-			count: 1
-			path: tests/Type/AutocompleteTypeTest.php
-
-		-
-			message: "#^Property Core23\\\\Form\\\\Tests\\\\Type\\\\AutocompleteTypeTest\\:\\:\\$registry has no typehint specified\\.$#"
-			count: 1
-			path: tests/Type/AutocompleteTypeTest.php
-
-		-
-			message: "#^Property Core23\\\\Form\\\\Tests\\\\Type\\\\DoctrineDiscriminatorTypeTest\\:\\:\\$baseEntityManager has no typehint specified\\.$#"
-			count: 1
-			path: tests/Type/DoctrineDiscriminatorTypeTest.php
-
-		-
-			message: "#^Property Core23\\\\Form\\\\Tests\\\\Type\\\\DoctrineDiscriminatorTypeTest\\:\\:\\$entityManager has no typehint specified\\.$#"
-			count: 1
-			path: tests/Type/DoctrineDiscriminatorTypeTest.php
-
-		-
-			message: "#^Property Core23\\\\Form\\\\Tests\\\\Type\\\\DoctrineDiscriminatorTypeTest\\:\\:\\$classMetadata has no typehint specified\\.$#"
-			count: 1
-			path: tests/Type/DoctrineDiscriminatorTypeTest.php
 
 		-
 			message: "#^Access to an undefined property Prophecy\\\\Prophecy\\\\ObjectProphecy\\<Doctrine\\\\ORM\\\\Mapping\\\\ClassMetadata\\>\\:\\:\\$discriminatorMap\\.$#"
+			count: 1
+			path: tests/Type/DoctrineDiscriminatorTypeTest.php
+
+		-
+			message: "#^Parameter \\#1 \\$manager of class Core23\\\\Form\\\\Tests\\\\Fixtures\\\\EntityDoctrineDiscriminatorType constructor expects Sonata\\\\Doctrine\\\\Entity\\\\BaseEntityManager, object given\\.$#"
 			count: 1
 			path: tests/Type/DoctrineDiscriminatorTypeTest.php
 
