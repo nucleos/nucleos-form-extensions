@@ -296,12 +296,7 @@ final class DateAfterValidatorTest extends ConstraintValidatorTestCase
 
         $this->validator->validate($object, $constraint);
 
-        $this->buildViolation($constraint->emptyMessage)
-            ->setParameter('%emptyField%', $constraint->firstField)
-            ->setParameter('%field%', $constraint->secondField)
-            ->atPath($constraint->firstField)
-            ->assertRaised()
-        ;
+        $this->assertNoViolation();
     }
 
     public function testValidateNotRequiredWithEmptySecond(): void
@@ -325,12 +320,7 @@ final class DateAfterValidatorTest extends ConstraintValidatorTestCase
 
         $this->validator->validate($object, $constraint);
 
-        $this->buildViolation($constraint->emptyMessage)
-            ->setParameter('%emptyField%', $constraint->secondField)
-            ->setParameter('%field%', $constraint->firstField)
-            ->atPath($constraint->secondField)
-            ->assertRaised()
-        ;
+        $this->assertNoViolation();
     }
 
     protected function createValidator(): ConstraintValidatorInterface
