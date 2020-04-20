@@ -1,3 +1,11 @@
+# 4.0.1
+
+## Changes
+
+## 🐛 Bug Fixes
+
+- Remove date after violation if not required @core23 (#54)
+
 # 4.0.0
 
 ## Changes
