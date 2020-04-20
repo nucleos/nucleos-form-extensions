@@ -1,3 +1,11 @@
+# 4.0.2
+
+## Changes
+
+## 🐛 Bug Fixes
+
+- Fix wrong date after validation for null values @core23 (#55)
+
 # 4.0.1
 
 ## Changes
