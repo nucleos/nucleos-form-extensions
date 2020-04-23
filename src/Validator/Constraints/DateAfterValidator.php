@@ -37,7 +37,7 @@ final class DateAfterValidator extends ConstraintValidator
         $firstDate  = $this->getFieldValue($value, $firstFieldName);
         $secondDate = $this->getFieldValue($value, $secondFieldName);
 
-        if (!$constraint->required && null === $firstDate && null === $secondDate) {
+        if (!$constraint->required && (null === $firstDate || null === $secondDate)) {
             return;
         }
 

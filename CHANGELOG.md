@@ -1,3 +1,19 @@
+# 4.0.2
+
+## Changes
+
+## 🐛 Bug Fixes
+
+- Fix wrong date after validation for null values @core23 (#55)
+
+# 4.0.1
+
+## Changes
+
+## 🐛 Bug Fixes
+
+- Remove date after violation if not required @core23 (#54)
+
 # 4.0.0
 
 ## Changes
