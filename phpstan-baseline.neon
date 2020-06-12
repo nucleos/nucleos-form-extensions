@@ -1,24 +1,139 @@
 parameters:
 	ignoreErrors:
 		-
-			message: "#^Method Core23\\\\Form\\\\Type\\\\JsonType\\:\\:transform\\(\\) has parameter \\$json with no typehint specified\\.$#"
+			message: "#^Method Core23\\\\Form\\\\Extension\\\\DownloadTypeExtension\\:\\:buildForm\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Extension/DownloadTypeExtension.php
+
+		-
+			message: "#^Method Core23\\\\Form\\\\Extension\\\\DownloadTypeExtension\\:\\:buildView\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Extension/DownloadTypeExtension.php
+
+		-
+			message: "#^Method Core23\\\\Form\\\\Extension\\\\HelpTypeExtension\\:\\:buildView\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Extension/HelpTypeExtension.php
+
+		-
+			message: "#^Method Core23\\\\Form\\\\Extension\\\\ImageTypeExtension\\:\\:buildForm\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Extension/ImageTypeExtension.php
+
+		-
+			message: "#^Method Core23\\\\Form\\\\Extension\\\\ImageTypeExtension\\:\\:buildView\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Extension/ImageTypeExtension.php
+
+		-
+			message: "#^Property Core23\\\\Form\\\\Factory\\\\FormFactory\\:\\:\\$validationGroups type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Factory/FormFactory.php
+
+		-
+			message: "#^Method Core23\\\\Form\\\\Factory\\\\FormFactory\\:\\:__construct\\(\\) has parameter \\$validationGroups with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Factory/FormFactory.php
+
+		-
+			message: "#^Method Core23\\\\Form\\\\Factory\\\\FormFactory\\:\\:create\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Factory/FormFactory.php
+
+		-
+			message: "#^Method Core23\\\\Form\\\\Factory\\\\FormFactoryInterface\\:\\:create\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Factory/FormFactoryInterface.php
+
+		-
+			message: "#^Short ternary operator is not allowed\\. Use null coalesce operator if applicable or consider using long ternary\\.$#"
+			count: 1
+			path: src/Model/BatchTime.php
+
+		-
+			message: "#^Property Core23\\\\Form\\\\Test\\\\AbstractFormHandlerTest\\:\\:\\$errors type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Test/AbstractFormHandlerTest.php
+
+		-
+			message: "#^Method Core23\\\\Form\\\\Test\\\\AbstractFormHandlerTest\\:\\:assertError\\(\\) has parameter \\$messageParameters with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Test/AbstractFormHandlerTest.php
+
+		-
+			message: "#^Anonymous function should have native return typehint \"bool\"\\.$#"
+			count: 1
+			path: src/Test/AbstractFormHandlerTest.php
+
+		-
+			message: "#^Short ternary operator is not allowed\\. Use null coalesce operator if applicable or consider using long ternary\\.$#"
+			count: 1
+			path: src/Type/BatchTimeType.php
+
+		-
+			message: "#^Anonymous function should have native return typehint \"string\"\\.$#"
+			count: 1
+			path: src/Type/DACHCountryType.php
+
+		-
+			message: "#^Property Core23\\\\Form\\\\Type\\\\DoctrineDiscriminatorType\\:\\:\\$entityManager with generic class Sonata\\\\Doctrine\\\\Entity\\\\BaseEntityManager does not specify its types\\: T$#"
+			count: 1
+			path: src/Type/DoctrineDiscriminatorType.php
+
+		-
+			message: "#^Method Core23\\\\Form\\\\Type\\\\DoctrineDiscriminatorType\\:\\:__construct\\(\\) has parameter \\$manager with generic class Sonata\\\\Doctrine\\\\Entity\\\\BaseEntityManager but does not specify its types\\: T$#"
+			count: 1
+			path: src/Type/DoctrineDiscriminatorType.php
+
+		-
+			message: "#^Anonymous function should have native return typehint \"string\"\\.$#"
+			count: 1
+			path: src/Type/GenderType.php
+
+		-
+			message: "#^Method Core23\\\\Form\\\\Type\\\\JsonType\\:\\:reverseTransform\\(\\) return type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Type/JsonType.php
 
 		-
-			message: "#^Method Core23\\\\Form\\\\Type\\\\JsonType\\:\\:reverseTransform\\(\\) has parameter \\$text with no typehint specified\\.$#"
+			message: "#^Method Core23\\\\Form\\\\Type\\\\JsonType\\:\\:transformTextToArray\\(\\) return type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Type/JsonType.php
 
 		-
-			message: "#^Method Core23\\\\Form\\\\Type\\\\OutputType\\:\\:transform\\(\\) has parameter \\$data with no typehint specified\\.$#"
+			message: "#^Method Core23\\\\Form\\\\Type\\\\TimePickerType\\:\\:createDpOptions\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
 			count: 1
-			path: src/Type/OutputType.php
+			path: src/Type/TimePickerType.php
 
 		-
-			message: "#^Method Core23\\\\Form\\\\Type\\\\OutputType\\:\\:reverseTransform\\(\\) has parameter \\$data with no typehint specified\\.$#"
+			message: "#^Method Core23\\\\Form\\\\Type\\\\TimePickerType\\:\\:createDpOptions\\(\\) return type has no value type specified in iterable type array\\.$#"
 			count: 1
-			path: src/Type/OutputType.php
+			path: src/Type/TimePickerType.php
+
+		-
+			message: "#^Anonymous function should have native return typehint \"string\"\\.$#"
+			count: 1
+			path: src/Type/TimePickerType.php
+
+		-
+			message: "#^Method Core23\\\\Form\\\\Validator\\\\Constraints\\\\BatchTimeAfter\\:\\:__construct\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Validator/Constraints/BatchTimeAfter.php
+
+		-
+			message: "#^Method Core23\\\\Form\\\\Validator\\\\Constraints\\\\BatchTimeAfterValidator\\:\\:getFieldValue\\(\\) has parameter \\$object with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Validator/Constraints/BatchTimeAfterValidator.php
+
+		-
+			message: "#^Method Core23\\\\Form\\\\Validator\\\\Constraints\\\\DateAfter\\:\\:__construct\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Validator/Constraints/DateAfter.php
+
+		-
+			message: "#^Method Core23\\\\Form\\\\Validator\\\\Constraints\\\\DateAfterValidator\\:\\:getFieldValue\\(\\) has parameter \\$object with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Validator/Constraints/DateAfterValidator.php
 
 		-
 			message: "#^Instantiated class Symfony\\\\Component\\\\HttpKernel\\\\Client not found\\.$#"
@@ -41,12 +156,82 @@ parameters:
 			path: tests/Factory/FormFactoryTest.php
 
 		-
+			message: "#^Cannot access property \\$vars on Symfony\\\\Component\\\\Form\\\\FormView\\|null\\.$#"
+			count: 3
+			path: tests/Type/AutocompleteTypeTest.php
+
+		-
+			message: "#^Offset 'grand_child' does not exist on Symfony\\\\Component\\\\Form\\\\FormView\\|null\\.$#"
+			count: 3
+			path: tests/Type/AutocompleteTypeTest.php
+
+		-
+			message: "#^Method Core23\\\\Form\\\\Tests\\\\Type\\\\AutocompleteTypeTest\\:\\:create\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: tests/Type/AutocompleteTypeTest.php
+
+		-
+			message: "#^Method Core23\\\\Form\\\\Tests\\\\Type\\\\AutocompleteTypeTest\\:\\:createNamed\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: tests/Type/AutocompleteTypeTest.php
+
+		-
+			message: "#^Method Core23\\\\Form\\\\Tests\\\\Type\\\\AutocompleteTypeTest\\:\\:createBuilder\\(\\) has parameter \\$childOptions with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: tests/Type/AutocompleteTypeTest.php
+
+		-
+			message: "#^Method Core23\\\\Form\\\\Tests\\\\Type\\\\AutocompleteTypeTest\\:\\:createBuilder\\(\\) has parameter \\$parentOptions with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: tests/Type/AutocompleteTypeTest.php
+
+		-
+			message: "#^Method Core23\\\\Form\\\\Tests\\\\Type\\\\AutocompleteTypeTest\\:\\:getTypes\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: tests/Type/AutocompleteTypeTest.php
+
+		-
 			message: "#^Parameter \\#1 \\$registry of class PUGX\\\\AutocompleterBundle\\\\Form\\\\Type\\\\AutocompleteType constructor expects Doctrine\\\\Persistence\\\\ManagerRegistry, object given\\.$#"
 			count: 1
 			path: tests/Type/AutocompleteTypeTest.php
 
 		-
+			message: "#^Cannot access property \\$vars on Symfony\\\\Component\\\\Form\\\\FormView\\|null\\.$#"
+			count: 9
+			path: tests/Type/BaseTypeTest.php
+
+		-
+			message: "#^Offset 'grand_child' does not exist on Symfony\\\\Component\\\\Form\\\\FormView\\|null\\.$#"
+			count: 3
+			path: tests/Type/BaseTypeTest.php
+
+		-
+			message: "#^Method Core23\\\\Form\\\\Tests\\\\Type\\\\BaseTypeTest\\:\\:create\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: tests/Type/BaseTypeTest.php
+
+		-
+			message: "#^Method Core23\\\\Form\\\\Tests\\\\Type\\\\BaseTypeTest\\:\\:createNamed\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: tests/Type/BaseTypeTest.php
+
+		-
+			message: "#^Method Core23\\\\Form\\\\Tests\\\\Type\\\\BaseTypeTest\\:\\:createBuilder\\(\\) has parameter \\$childOptions with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: tests/Type/BaseTypeTest.php
+
+		-
+			message: "#^Method Core23\\\\Form\\\\Tests\\\\Type\\\\BaseTypeTest\\:\\:createBuilder\\(\\) has parameter \\$parentOptions with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: tests/Type/BaseTypeTest.php
+
+		-
 			message: "#^Access to an undefined property Prophecy\\\\Prophecy\\\\ObjectProphecy\\<Doctrine\\\\ORM\\\\Mapping\\\\ClassMetadata\\>\\:\\:\\$discriminatorMap\\.$#"
+			count: 1
+			path: tests/Type/DoctrineDiscriminatorTypeTest.php
+
+		-
+			message: "#^Method Core23\\\\Form\\\\Tests\\\\Type\\\\DoctrineDiscriminatorTypeTest\\:\\:getTypes\\(\\) return type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: tests/Type/DoctrineDiscriminatorTypeTest.php
 
@@ -55,4 +240,23 @@ parameters:
 			count: 1
 			path: tests/Type/DoctrineDiscriminatorTypeTest.php
 
+		-
+			message: "#^Trying to mock an undefined method getEnd\\(\\) on class stdClass\\.$#"
+			count: 13
+			path: tests/Validator/Constraints/BatchTimeAfterValidatorTest.php
+
+		-
+			message: "#^Trying to mock an undefined method getBegin\\(\\) on class stdClass\\.$#"
+			count: 13
+			path: tests/Validator/Constraints/BatchTimeAfterValidatorTest.php
+
+		-
+			message: "#^Trying to mock an undefined method getEnd\\(\\) on class stdClass\\.$#"
+			count: 11
+			path: tests/Validator/Constraints/DateAfterValidatorTest.php
+
+		-
+			message: "#^Trying to mock an undefined method getBegin\\(\\) on class stdClass\\.$#"
+			count: 11
+			path: tests/Validator/Constraints/DateAfterValidatorTest.php
 
