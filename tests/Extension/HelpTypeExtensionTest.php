@@ -13,6 +13,7 @@ namespace Core23\Form\Tests\Extension;
 
 use Core23\Form\Extension\HelpTypeExtension;
 use PHPUnit\Framework\TestCase;
+use Prophecy\PhpUnit\ProphecyTrait;
 use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\Form\FormView;
@@ -20,6 +21,8 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 final class HelpTypeExtensionTest extends TestCase
 {
+    use ProphecyTrait;
+
     public function testBuildViewWithDefaults(): void
     {
         $view = new FormView();

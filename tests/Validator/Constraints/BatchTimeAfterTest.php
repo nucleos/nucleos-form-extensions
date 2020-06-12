@@ -21,7 +21,7 @@ final class BatchTimeAfterTest extends TestCase
     public function testItIsNotInstantiableWithMissingFirstField(): void
     {
         $this->expectException(MissingOptionsException::class);
-        $this->expectExceptionMessageRegExp(sprintf('#^%s#', preg_quote('The options "firstField" must be set for constraint', '#')));
+        $this->expectExceptionMessageMatches(sprintf('#^%s#', preg_quote('The options "firstField" must be set for constraint', '#')));
 
         new BatchTimeAfter([
             'secondField' => 'first',
@@ -31,7 +31,7 @@ final class BatchTimeAfterTest extends TestCase
     public function testItIsNotInstantiableWithMissingSecondField(): void
     {
         $this->expectException(MissingOptionsException::class);
-        $this->expectExceptionMessageRegExp(sprintf('#^%s#', preg_quote('The options "secondField" must be set for constraint', '#')));
+        $this->expectExceptionMessageMatches(sprintf('#^%s#', preg_quote('The options "secondField" must be set for constraint', '#')));
 
         new BatchTimeAfter([
             'firstField' => 'first',
