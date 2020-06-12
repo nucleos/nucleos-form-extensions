@@ -13,6 +13,7 @@ namespace Core23\Form\Tests\Extension;
 
 use Core23\Form\Extension\ImageTypeExtension;
 use PHPUnit\Framework\TestCase;
+use Prophecy\PhpUnit\ProphecyTrait;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormInterface;
@@ -21,6 +22,8 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 final class ImageTypeExtensionTest extends TestCase
 {
+    use ProphecyTrait;
+
     public function testConfigureOptions(): void
     {
         $resolver = new OptionsResolver();

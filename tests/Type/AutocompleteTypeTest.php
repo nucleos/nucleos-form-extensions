@@ -16,6 +16,7 @@ use Doctrine\Common\Persistence\ManagerRegistry;
 use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\Common\Persistence\ObjectRepository;
 use Prophecy\Argument;
+use Prophecy\PhpUnit\ProphecyTrait;
 use Prophecy\Prophecy\ObjectProphecy;
 use PUGX\AutocompleterBundle\Form\Type\AutocompleteType as PUGXAutocompleteType;
 use stdClass;
@@ -25,6 +26,8 @@ use Symfony\Component\Form\FormInterface;
 
 final class AutocompleteTypeTest extends BaseTypeTest
 {
+    use ProphecyTrait;
+
     /**
      * @var ObjectProphecy
      */
