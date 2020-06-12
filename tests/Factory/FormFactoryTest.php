@@ -13,6 +13,7 @@ namespace Core23\Form\Tests\Factory;
 
 use Core23\Form\Factory\FormFactory;
 use PHPUnit\Framework\TestCase;
+use Prophecy\PhpUnit\ProphecyTrait;
 use Prophecy\Prophecy\ObjectProphecy;
 use stdClass;
 use Symfony\Component\Form\FormFactoryInterface as SymfonyFormFactory;
@@ -20,6 +21,8 @@ use Symfony\Component\Form\FormInterface;
 
 final class FormFactoryTest extends TestCase
 {
+    use ProphecyTrait;
+
     /**
      * @var ObjectProphecy
      */
