@@ -9,9 +9,9 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Core23\Form\Tests\Type;
+namespace Nucleos\Form\Tests\Type;
 
-use Core23\Form\Type\GenderType;
+use Nucleos\Form\Type\GenderType;
 use Symfony\Component\Form\ChoiceList\View\ChoiceView;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 

@@ -9,7 +9,7 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Core23\Form\Validator\Constraints;
+namespace Nucleos\Form\Validator\Constraints;
 
 use DateTime;
 use Symfony\Component\PropertyAccess\Exception\NoSuchPropertyException;

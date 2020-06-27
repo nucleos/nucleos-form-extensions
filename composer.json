@@ -1,5 +1,5 @@
 {
-    "name": "core23/form-extensions",
+    "name": "nucleos/form-extensions",
     "type": "library",
     "description": "This library adds some custom form elements and validation for symfony.",
     "keywords": [
@@ -9,7 +9,7 @@
         "validation",
         "bundle"
     ],
-    "homepage": "https://core23.de",
+    "homepage": "https://nucleos.rocks",
     "license": "MIT",
     "authors": [
         {
@@ -54,17 +54,17 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "3.x-dev"
+            "dev-master": "5.x-dev"
         }
     },
     "autoload": {
         "psr-4": {
-            "Core23\\Form\\": "src/"
+            "Nucleos\\Form\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Core23\\Form\\Tests\\": "tests/"
+            "Nucleos\\Form\\Tests\\": "tests/"
         }
     },
     "scripts": {

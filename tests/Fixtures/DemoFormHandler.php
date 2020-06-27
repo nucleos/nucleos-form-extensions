@@ -9,9 +9,9 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Core23\Form\Tests\Fixtures;
+namespace Nucleos\Form\Tests\Fixtures;
 
-use Core23\Form\Handler\AbstractFormHandler;
+use Nucleos\Form\Handler\AbstractFormHandler;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\HttpFoundation\Request;
 

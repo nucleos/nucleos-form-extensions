@@ -9,12 +9,12 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Core23\Form\Tests\Test;
+namespace Nucleos\Form\Tests\Test;
 
-use Core23\Form\Handler\FormHandlerInterface;
-use Core23\Form\Test\AbstractFormHandlerTest;
-use Core23\Form\Tests\Fixtures\AlwaysErrorFormHandler;
-use Core23\Form\Tests\Fixtures\DemoFormHandler;
+use Nucleos\Form\Handler\FormHandlerInterface;
+use Nucleos\Form\Test\AbstractFormHandlerTest;
+use Nucleos\Form\Tests\Fixtures\AlwaysErrorFormHandler;
+use Nucleos\Form\Tests\Fixtures\DemoFormHandler;
 use stdClass;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;

@@ -9,9 +9,9 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Core23\Form\Tests\Factory;
+namespace Nucleos\Form\Tests\Factory;
 
-use Core23\Form\Factory\FormFactory;
+use Nucleos\Form\Factory\FormFactory;
 use PHPUnit\Framework\TestCase;
 use Prophecy\PhpUnit\ProphecyTrait;
 use Prophecy\Prophecy\ObjectProphecy;

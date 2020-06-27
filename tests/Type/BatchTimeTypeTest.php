@@ -9,9 +9,9 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Core23\Form\Tests\Type;
+namespace Nucleos\Form\Tests\Type;
 
-use Core23\Form\Type\BatchTimeType;
+use Nucleos\Form\Type\BatchTimeType;
 use Symfony\Component\Form\Extension\Core\Type\FormType;
 
 final class BatchTimeTypeTest extends BaseTypeTest

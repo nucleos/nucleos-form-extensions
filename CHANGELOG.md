@@ -1,3 +1,40 @@
+# 5.0.0
+
+## Changes
+
+* Renamed namespace `Core23\Form` to `Nucleos\Form` after move to [@nucleos]
+
+  Run
+
+  ```
+  $ composer remove core23/form-extensions
+  ```
+
+  and
+
+  ```
+  $ composer require nucleos/form-extensions
+  ```
+
+  to update.
+
+  Run
+
+  ```
+  $ find . -type f -exec sed -i '.bak' 's/Core23\\Form/Nucleos\\Form/g' {} \;
+  ```
+
+  to replace occurrences of `Core23\Form` with `Nucleos\Form`.
+
+  Run
+
+  ```
+  $ find -type f -name '*.bak' -delete
+  ```
+
+  to delete backup files created in the previous step.
+
+
 # 4.0.2
 
 ## Changes

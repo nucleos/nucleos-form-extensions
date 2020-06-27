@@ -1,47 +1,42 @@
 parameters:
 	ignoreErrors:
 		-
-			message: "#^Method Core23\\\\Form\\\\Extension\\\\DownloadTypeExtension\\:\\:buildForm\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
+			message: "#^Method Nucleos\\\\Form\\\\Extension\\\\DownloadTypeExtension\\:\\:buildForm\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Extension/DownloadTypeExtension.php
 
 		-
-			message: "#^Method Core23\\\\Form\\\\Extension\\\\DownloadTypeExtension\\:\\:buildView\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
+			message: "#^Method Nucleos\\\\Form\\\\Extension\\\\DownloadTypeExtension\\:\\:buildView\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Extension/DownloadTypeExtension.php
 
 		-
-			message: "#^Method Core23\\\\Form\\\\Extension\\\\HelpTypeExtension\\:\\:buildView\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/Extension/HelpTypeExtension.php
-
-		-
-			message: "#^Method Core23\\\\Form\\\\Extension\\\\ImageTypeExtension\\:\\:buildForm\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
+			message: "#^Method Nucleos\\\\Form\\\\Extension\\\\ImageTypeExtension\\:\\:buildForm\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Extension/ImageTypeExtension.php
 
 		-
-			message: "#^Method Core23\\\\Form\\\\Extension\\\\ImageTypeExtension\\:\\:buildView\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
+			message: "#^Method Nucleos\\\\Form\\\\Extension\\\\ImageTypeExtension\\:\\:buildView\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Extension/ImageTypeExtension.php
 
 		-
-			message: "#^Property Core23\\\\Form\\\\Factory\\\\FormFactory\\:\\:\\$validationGroups type has no value type specified in iterable type array\\.$#"
+			message: "#^Property Nucleos\\\\Form\\\\Factory\\\\FormFactory\\:\\:\\$validationGroups type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Factory/FormFactory.php
 
 		-
-			message: "#^Method Core23\\\\Form\\\\Factory\\\\FormFactory\\:\\:__construct\\(\\) has parameter \\$validationGroups with no value type specified in iterable type array\\.$#"
+			message: "#^Method Nucleos\\\\Form\\\\Factory\\\\FormFactory\\:\\:__construct\\(\\) has parameter \\$validationGroups with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Factory/FormFactory.php
 
 		-
-			message: "#^Method Core23\\\\Form\\\\Factory\\\\FormFactory\\:\\:create\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
+			message: "#^Method Nucleos\\\\Form\\\\Factory\\\\FormFactory\\:\\:create\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Factory/FormFactory.php
 
 		-
-			message: "#^Method Core23\\\\Form\\\\Factory\\\\FormFactoryInterface\\:\\:create\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
+			message: "#^Method Nucleos\\\\Form\\\\Factory\\\\FormFactoryInterface\\:\\:create\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Factory/FormFactoryInterface.php
 
@@ -51,12 +46,12 @@ parameters:
 			path: src/Model/BatchTime.php
 
 		-
-			message: "#^Property Core23\\\\Form\\\\Test\\\\AbstractFormHandlerTest\\:\\:\\$errors type has no value type specified in iterable type array\\.$#"
+			message: "#^Property Nucleos\\\\Form\\\\Test\\\\AbstractFormHandlerTest\\:\\:\\$errors type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Test/AbstractFormHandlerTest.php
 
 		-
-			message: "#^Method Core23\\\\Form\\\\Test\\\\AbstractFormHandlerTest\\:\\:assertError\\(\\) has parameter \\$messageParameters with no value type specified in iterable type array\\.$#"
+			message: "#^Method Nucleos\\\\Form\\\\Test\\\\AbstractFormHandlerTest\\:\\:assertError\\(\\) has parameter \\$messageParameters with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Test/AbstractFormHandlerTest.php
 
@@ -76,12 +71,12 @@ parameters:
 			path: src/Type/DACHCountryType.php
 
 		-
-			message: "#^Property Core23\\\\Form\\\\Type\\\\DoctrineDiscriminatorType\\:\\:\\$entityManager with generic class Sonata\\\\Doctrine\\\\Entity\\\\BaseEntityManager does not specify its types\\: T$#"
+			message: "#^Property Nucleos\\\\Form\\\\Type\\\\DoctrineDiscriminatorType\\:\\:\\$entityManager with generic class Sonata\\\\Doctrine\\\\Entity\\\\BaseEntityManager does not specify its types\\: T$#"
 			count: 1
 			path: src/Type/DoctrineDiscriminatorType.php
 
 		-
-			message: "#^Method Core23\\\\Form\\\\Type\\\\DoctrineDiscriminatorType\\:\\:__construct\\(\\) has parameter \\$manager with generic class Sonata\\\\Doctrine\\\\Entity\\\\BaseEntityManager but does not specify its types\\: T$#"
+			message: "#^Method Nucleos\\\\Form\\\\Type\\\\DoctrineDiscriminatorType\\:\\:__construct\\(\\) has parameter \\$manager with generic class Sonata\\\\Doctrine\\\\Entity\\\\BaseEntityManager but does not specify its types\\: T$#"
 			count: 1
 			path: src/Type/DoctrineDiscriminatorType.php
 
@@ -91,22 +86,22 @@ parameters:
 			path: src/Type/GenderType.php
 
 		-
-			message: "#^Method Core23\\\\Form\\\\Type\\\\JsonType\\:\\:reverseTransform\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: "#^Method Nucleos\\\\Form\\\\Type\\\\JsonType\\:\\:reverseTransform\\(\\) return type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Type/JsonType.php
 
 		-
-			message: "#^Method Core23\\\\Form\\\\Type\\\\JsonType\\:\\:transformTextToArray\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: "#^Method Nucleos\\\\Form\\\\Type\\\\JsonType\\:\\:transformTextToArray\\(\\) return type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Type/JsonType.php
 
 		-
-			message: "#^Method Core23\\\\Form\\\\Type\\\\TimePickerType\\:\\:createDpOptions\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
+			message: "#^Method Nucleos\\\\Form\\\\Type\\\\TimePickerType\\:\\:createDpOptions\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Type/TimePickerType.php
 
 		-
-			message: "#^Method Core23\\\\Form\\\\Type\\\\TimePickerType\\:\\:createDpOptions\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: "#^Method Nucleos\\\\Form\\\\Type\\\\TimePickerType\\:\\:createDpOptions\\(\\) return type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Type/TimePickerType.php
 
@@ -116,22 +111,22 @@ parameters:
 			path: src/Type/TimePickerType.php
 
 		-
-			message: "#^Method Core23\\\\Form\\\\Validator\\\\Constraints\\\\BatchTimeAfter\\:\\:__construct\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
+			message: "#^Method Nucleos\\\\Form\\\\Validator\\\\Constraints\\\\BatchTimeAfter\\:\\:__construct\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Validator/Constraints/BatchTimeAfter.php
 
 		-
-			message: "#^Method Core23\\\\Form\\\\Validator\\\\Constraints\\\\BatchTimeAfterValidator\\:\\:getFieldValue\\(\\) has parameter \\$object with no value type specified in iterable type array\\.$#"
+			message: "#^Method Nucleos\\\\Form\\\\Validator\\\\Constraints\\\\BatchTimeAfterValidator\\:\\:getFieldValue\\(\\) has parameter \\$object with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Validator/Constraints/BatchTimeAfterValidator.php
 
 		-
-			message: "#^Method Core23\\\\Form\\\\Validator\\\\Constraints\\\\DateAfter\\:\\:__construct\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
+			message: "#^Method Nucleos\\\\Form\\\\Validator\\\\Constraints\\\\DateAfter\\:\\:__construct\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Validator/Constraints/DateAfter.php
 
 		-
-			message: "#^Method Core23\\\\Form\\\\Validator\\\\Constraints\\\\DateAfterValidator\\:\\:getFieldValue\\(\\) has parameter \\$object with no value type specified in iterable type array\\.$#"
+			message: "#^Method Nucleos\\\\Form\\\\Validator\\\\Constraints\\\\DateAfterValidator\\:\\:getFieldValue\\(\\) has parameter \\$object with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Validator/Constraints/DateAfterValidator.php
 
@@ -151,7 +146,7 @@ parameters:
 			path: tests/Bridge/Symfony/Bundle/BundleIntegrationTest.php
 
 		-
-			message: "#^Parameter \\#1 \\$formFactory of class Core23\\\\Form\\\\Factory\\\\FormFactory constructor expects Symfony\\\\Component\\\\Form\\\\FormFactoryInterface, object given\\.$#"
+			message: "#^Parameter \\#1 \\$formFactory of class Nucleos\\\\Form\\\\Factory\\\\FormFactory constructor expects Symfony\\\\Component\\\\Form\\\\FormFactoryInterface, object given\\.$#"
 			count: 1
 			path: tests/Factory/FormFactoryTest.php
 
@@ -166,27 +161,27 @@ parameters:
 			path: tests/Type/AutocompleteTypeTest.php
 
 		-
-			message: "#^Method Core23\\\\Form\\\\Tests\\\\Type\\\\AutocompleteTypeTest\\:\\:create\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
+			message: "#^Method Nucleos\\\\Form\\\\Tests\\\\Type\\\\AutocompleteTypeTest\\:\\:create\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: tests/Type/AutocompleteTypeTest.php
 
 		-
-			message: "#^Method Core23\\\\Form\\\\Tests\\\\Type\\\\AutocompleteTypeTest\\:\\:createNamed\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
+			message: "#^Method Nucleos\\\\Form\\\\Tests\\\\Type\\\\AutocompleteTypeTest\\:\\:createNamed\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: tests/Type/AutocompleteTypeTest.php
 
 		-
-			message: "#^Method Core23\\\\Form\\\\Tests\\\\Type\\\\AutocompleteTypeTest\\:\\:createBuilder\\(\\) has parameter \\$childOptions with no value type specified in iterable type array\\.$#"
+			message: "#^Method Nucleos\\\\Form\\\\Tests\\\\Type\\\\AutocompleteTypeTest\\:\\:createBuilder\\(\\) has parameter \\$childOptions with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: tests/Type/AutocompleteTypeTest.php
 
 		-
-			message: "#^Method Core23\\\\Form\\\\Tests\\\\Type\\\\AutocompleteTypeTest\\:\\:createBuilder\\(\\) has parameter \\$parentOptions with no value type specified in iterable type array\\.$#"
+			message: "#^Method Nucleos\\\\Form\\\\Tests\\\\Type\\\\AutocompleteTypeTest\\:\\:createBuilder\\(\\) has parameter \\$parentOptions with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: tests/Type/AutocompleteTypeTest.php
 
 		-
-			message: "#^Method Core23\\\\Form\\\\Tests\\\\Type\\\\AutocompleteTypeTest\\:\\:getTypes\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: "#^Method Nucleos\\\\Form\\\\Tests\\\\Type\\\\AutocompleteTypeTest\\:\\:getTypes\\(\\) return type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: tests/Type/AutocompleteTypeTest.php
 
@@ -206,22 +201,22 @@ parameters:
 			path: tests/Type/BaseTypeTest.php
 
 		-
-			message: "#^Method Core23\\\\Form\\\\Tests\\\\Type\\\\BaseTypeTest\\:\\:create\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
+			message: "#^Method Nucleos\\\\Form\\\\Tests\\\\Type\\\\BaseTypeTest\\:\\:create\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: tests/Type/BaseTypeTest.php
 
 		-
-			message: "#^Method Core23\\\\Form\\\\Tests\\\\Type\\\\BaseTypeTest\\:\\:createNamed\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
+			message: "#^Method Nucleos\\\\Form\\\\Tests\\\\Type\\\\BaseTypeTest\\:\\:createNamed\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: tests/Type/BaseTypeTest.php
 
 		-
-			message: "#^Method Core23\\\\Form\\\\Tests\\\\Type\\\\BaseTypeTest\\:\\:createBuilder\\(\\) has parameter \\$childOptions with no value type specified in iterable type array\\.$#"
+			message: "#^Method Nucleos\\\\Form\\\\Tests\\\\Type\\\\BaseTypeTest\\:\\:createBuilder\\(\\) has parameter \\$childOptions with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: tests/Type/BaseTypeTest.php
 
 		-
-			message: "#^Method Core23\\\\Form\\\\Tests\\\\Type\\\\BaseTypeTest\\:\\:createBuilder\\(\\) has parameter \\$parentOptions with no value type specified in iterable type array\\.$#"
+			message: "#^Method Nucleos\\\\Form\\\\Tests\\\\Type\\\\BaseTypeTest\\:\\:createBuilder\\(\\) has parameter \\$parentOptions with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: tests/Type/BaseTypeTest.php
 
@@ -231,12 +226,12 @@ parameters:
 			path: tests/Type/DoctrineDiscriminatorTypeTest.php
 
 		-
-			message: "#^Method Core23\\\\Form\\\\Tests\\\\Type\\\\DoctrineDiscriminatorTypeTest\\:\\:getTypes\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: "#^Method Nucleos\\\\Form\\\\Tests\\\\Type\\\\DoctrineDiscriminatorTypeTest\\:\\:getTypes\\(\\) return type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: tests/Type/DoctrineDiscriminatorTypeTest.php
 
 		-
-			message: "#^Parameter \\#1 \\$manager of class Core23\\\\Form\\\\Tests\\\\Fixtures\\\\EntityDoctrineDiscriminatorType constructor expects Sonata\\\\Doctrine\\\\Entity\\\\BaseEntityManager, object given\\.$#"
+			message: "#^Parameter \\#1 \\$manager of class Nucleos\\\\Form\\\\Tests\\\\Fixtures\\\\EntityDoctrineDiscriminatorType constructor expects Sonata\\\\Doctrine\\\\Entity\\\\BaseEntityManager, object given\\.$#"
 			count: 1
 			path: tests/Type/DoctrineDiscriminatorTypeTest.php
 

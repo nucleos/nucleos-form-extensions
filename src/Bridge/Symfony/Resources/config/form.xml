@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
   <services>
-    <service id="core23_form.type.dach_country" class="Core23\Form\Type\DACHCountryType">
+    <service id="nucleos_form.type.dach_country" class="Nucleos\Form\Type\DACHCountryType">
       <tag name="form.type" alias="core23_country"/>
     </service>
-    <service id="core23_form.type.gender" class="Core23\Form\Type\GenderType">
+    <service id="nucleos_form.type.gender" class="Nucleos\Form\Type\GenderType">
       <tag name="form.type" alias="gender"/>
     </service>
-    <service id="core23_form.type.output" class="Core23\Form\Type\OutputType">
+    <service id="nucleos_form.type.output" class="Nucleos\Form\Type\OutputType">
       <tag name="form.type" alias="output"/>
     </service>
-    <service id="core23_form.type.date_output" class="Core23\Form\Type\DateOutputType">
+    <service id="nucleos_form.type.date_output" class="Nucleos\Form\Type\DateOutputType">
       <tag name="form.type" alias="date_output"/>
     </service>
-    <service id="core23_form.type.number_output" class="Core23\Form\Type\NumberOutputType">
+    <service id="nucleos_form.type.number_output" class="Nucleos\Form\Type\NumberOutputType">
       <tag name="form.type" alias="number_output"/>
     </service>
-    <service id="core23_form.type.batch_time" class="Core23\Form\Type\BatchTimeType">
+    <service id="nucleos_form.type.batch_time" class="Nucleos\Form\Type\BatchTimeType">
       <tag name="form.type" alias="batch_time"/>
     </service>
-    <service id="core23_form.time_picker" alias="core23_form.type.time_picker">
+    <service id="nucleos_form.time_picker" alias="nucleos_form.type.time_picker">
     </service>
-    <service id="core23_form.type.time_picker" class="Core23\Form\Type\TimePickerType">
+    <service id="nucleos_form.type.time_picker" class="Nucleos\Form\Type\TimePickerType">
       <tag name="form.type" alias="core23_type_time_picker"/>
     </service>
-    <service id="core23_form.type.autocomplete" class="Core23\Form\Type\AutocompleteType">
+    <service id="nucleos_form.type.autocomplete" class="Nucleos\Form\Type\AutocompleteType">
       <tag name="form.type" alias="core23_autocomplete"/>
     </service>
-    <service id="core23_form.image_type_extension" class="Core23\Form\Extension\ImageTypeExtension">
+    <service id="nucleos_form.image_type_extension" class="Nucleos\Form\Extension\ImageTypeExtension">
       <tag name="form.type_extension" alias="file" extended-type="Symfony\Component\Form\Extension\Core\Type\FileType"/>
     </service>
-    <service id="core23_form.download_type_extension" class="Core23\Form\Extension\DownloadTypeExtension">
+    <service id="nucleos_form.download_type_extension" class="Nucleos\Form\Extension\DownloadTypeExtension">
       <tag name="form.type_extension" alias="file" extended-type="Symfony\Component\Form\Extension\Core\Type\FileType"/>
     </service>
-    <service id="core23_form.help_type_extension" class="Core23\Form\Extension\HelpTypeExtension">
+    <service id="nucleos_form.help_type_extension" class="Nucleos\Form\Extension\HelpTypeExtension">
       <tag name="form.type_extension" alias="form" extended-type="Symfony\Component\Form\Extension\Core\Type\FormType"/>
     </service>
   </services>

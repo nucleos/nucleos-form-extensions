@@ -9,10 +9,10 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Core23\Form\Tests\Bridge\Symfony\App;
+namespace Nucleos\Form\Tests\Bridge\Symfony\App;
 
-use Core23\Form\Bridge\Symfony\Bundle\Core23FormBundle;
-use Core23\Form\Tests\Bridge\Symfony\App\Controller\SampleTestController;
+use Nucleos\Form\Bridge\Symfony\Bundle\NucleosFormBundle;
+use Nucleos\Form\Tests\Bridge\Symfony\App\Controller\SampleTestController;
 use Symfony\Bundle\FrameworkBundle\FrameworkBundle;
 use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
 use Symfony\Component\Config\Loader\LoaderInterface;
@@ -32,7 +32,7 @@ final class AppKernel extends Kernel
     public function registerBundles()
     {
         yield new FrameworkBundle();
-        yield new Core23FormBundle();
+        yield new NucleosFormBundle();
     }
 
     public function getCacheDir(): string

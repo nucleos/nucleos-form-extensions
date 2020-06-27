@@ -9,11 +9,11 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Core23\Form\Tests\Type;
+namespace Nucleos\Form\Tests\Type;
 
-use Core23\Form\Tests\Fixtures\EntityDoctrineDiscriminatorType;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Mapping\ClassMetadata;
+use Nucleos\Form\Tests\Fixtures\EntityDoctrineDiscriminatorType;
 use Prophecy\PhpUnit\ProphecyTrait;
 use Prophecy\Prophecy\ObjectProphecy;
 use Sonata\Doctrine\Entity\BaseEntityManager;
