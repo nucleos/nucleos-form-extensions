@@ -2,7 +2,7 @@
 
 ## Changes
 
-* Renamed namespace `Core23\Form` to `Nucleos\Form` after move to [@nucleos]
+- Renamed namespace `Core23\Form` to `Nucleos\Form` after move to [@nucleos]
 
   Run
 
@@ -33,6 +33,14 @@
   ```
 
   to delete backup files created in the previous step.
+  
+## 🚀 Features
+
+- Add combined assets @core23 (#68)
+
+## 📦 Dependencies
+
+- Drop support for PHP 7.2 @core23 (#59)
 
 
 # 4.0.2
