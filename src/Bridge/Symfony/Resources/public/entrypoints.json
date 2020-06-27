@@ -1,0 +1,12 @@
+{
+  "entrypoints": {
+    "widget": {
+      "css": [
+        "/bundles/nucleosform/widget.css"
+      ],
+      "js": [
+        "/bundles/nucleosform/widget.js"
+      ]
+    }
+  }
+}

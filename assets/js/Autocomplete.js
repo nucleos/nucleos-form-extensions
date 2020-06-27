@@ -1,4 +1,4 @@
-import 'awesomplete';
+import Awesomplete from 'awesomplete';
 import 'awesomplete/awesomplete.css'
 
 export default class Autocomplete {
