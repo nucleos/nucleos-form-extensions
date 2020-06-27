@@ -33,8 +33,5 @@
     <service id="nucleos_form.download_type_extension" class="Nucleos\Form\Extension\DownloadTypeExtension">
       <tag name="form.type_extension" alias="file" extended-type="Symfony\Component\Form\Extension\Core\Type\FileType"/>
     </service>
-    <service id="nucleos_form.help_type_extension" class="Nucleos\Form\Extension\HelpTypeExtension">
-      <tag name="form.type_extension" alias="form" extended-type="Symfony\Component\Form\Extension\Core\Type\FormType"/>
-    </service>
   </services>
 </container>

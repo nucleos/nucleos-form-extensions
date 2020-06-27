@@ -14,7 +14,6 @@ namespace Nucleos\Form\Tests\Bridge\Symfony\DependencyInjection;
 use Matthias\SymfonyDependencyInjectionTest\PhpUnit\AbstractExtensionTestCase;
 use Nucleos\Form\Bridge\Symfony\DependencyInjection\NucleosFormExtension;
 use Nucleos\Form\Extension\DownloadTypeExtension;
-use Nucleos\Form\Extension\HelpTypeExtension;
 use Nucleos\Form\Extension\ImageTypeExtension;
 use Nucleos\Form\Type\AutocompleteType;
 use Nucleos\Form\Type\BatchTimeType;
@@ -45,7 +44,6 @@ final class NucleosFormExtensionTest extends AbstractExtensionTestCase
         $this->assertContainerBuilderHasService('nucleos_form.type.autocomplete', AutocompleteType::class);
         $this->assertContainerBuilderHasService('nucleos_form.image_type_extension', ImageTypeExtension::class);
         $this->assertContainerBuilderHasService('nucleos_form.download_type_extension', DownloadTypeExtension::class);
-        $this->assertContainerBuilderHasService('nucleos_form.help_type_extension', HelpTypeExtension::class);
 
         $this->assertContainerBuilderHasService('nucleos_form.validator.date_after', DateAfterValidator::class);
         $this->assertContainerBuilderHasService('nucleos_form.validator.batch_time_after', BatchTimeAfterValidator::class);

@@ -19,28 +19,6 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 final class BatchTimeType extends AbstractType
 {
-    /**
-     * @var string
-     */
-    private $class;
-
-    /**
-     * @param string $class
-     */
-    public function __construct(string $class = null)
-    {
-        if (null === $class) {
-            $class = BatchTime::class;
-        } else {
-            @trigger_error(
-                'Passing a class as constructor argument is deprecated',
-                E_USER_DEPRECATED
-            );
-        }
-
-        $this->class = $class;
-    }
-
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $emptyData = $builder->getEmptyData() ?: null;
@@ -69,7 +47,7 @@ final class BatchTimeType extends AbstractType
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => $this->class,
+            'data_class' => BatchTime::class,
             'compound'   => true,
         ]);
     }
