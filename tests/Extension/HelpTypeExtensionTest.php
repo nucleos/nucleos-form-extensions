@@ -9,9 +9,9 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Core23\Form\Tests\Extension;
+namespace Nucleos\Form\Tests\Extension;
 
-use Core23\Form\Extension\HelpTypeExtension;
+use Nucleos\Form\Extension\HelpTypeExtension;
 use PHPUnit\Framework\TestCase;
 use Prophecy\PhpUnit\ProphecyTrait;
 use Symfony\Component\Form\Extension\Core\Type\FormType;

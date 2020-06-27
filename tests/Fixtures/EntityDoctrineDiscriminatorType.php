@@ -9,9 +9,9 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Core23\Form\Tests\Fixtures;
+namespace Nucleos\Form\Tests\Fixtures;
 
-use Core23\Form\Type\DoctrineDiscriminatorType;
+use Nucleos\Form\Type\DoctrineDiscriminatorType;
 
 final class EntityDoctrineDiscriminatorType extends DoctrineDiscriminatorType
 {

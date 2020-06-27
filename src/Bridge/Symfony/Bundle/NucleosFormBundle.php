@@ -9,12 +9,12 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Core23\Form\Bridge\Symfony\Bundle;
+namespace Nucleos\Form\Bridge\Symfony\Bundle;
 
-use Core23\Form\Bridge\Symfony\DependencyInjection\Core23FormExtension;
+use Nucleos\Form\Bridge\Symfony\DependencyInjection\NucleosFormExtension;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-final class Core23FormBundle extends Bundle
+final class NucleosFormBundle extends Bundle
 {
     public function getPath()
     {
@@ -23,6 +23,6 @@ final class Core23FormBundle extends Bundle
 
     protected function getContainerExtensionClass()
     {
-        return Core23FormExtension::class;
+        return NucleosFormExtension::class;
     }
 }

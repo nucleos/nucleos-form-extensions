@@ -9,10 +9,10 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Core23\Form\Tests\Form\Handler;
+namespace Nucleos\Form\Tests\Form\Handler;
 
-use Core23\Form\Handler\Exception\InvalidCallbackException;
-use Core23\Form\Tests\Fixtures\SimpleFormHandler;
+use Nucleos\Form\Handler\Exception\InvalidCallbackException;
+use Nucleos\Form\Tests\Fixtures\SimpleFormHandler;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\HttpFoundation\Request;

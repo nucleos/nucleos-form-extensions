@@ -9,9 +9,9 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Core23\Form\Test;
+namespace Nucleos\Form\Test;
 
-use Core23\Form\Handler\FormHandlerInterface;
+use Nucleos\Form\Handler\FormHandlerInterface;
 use PHPUnit\Framework\AssertionFailedError;
 use PHPUnit\Framework\Constraint\Constraint;
 use PHPUnit\Framework\MockObject\MockObject;

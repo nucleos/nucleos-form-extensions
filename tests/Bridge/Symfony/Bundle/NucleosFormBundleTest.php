@@ -9,25 +9,25 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Core23\Form\Tests\Bridge\Symfony\Bundle;
+namespace Nucleos\Form\Tests\Bridge\Symfony\Bundle;
 
-use Core23\Form\Bridge\Symfony\Bundle\Core23FormBundle;
-use Core23\Form\Bridge\Symfony\DependencyInjection\Core23FormExtension;
+use Nucleos\Form\Bridge\Symfony\Bundle\NucleosFormBundle;
+use Nucleos\Form\Bridge\Symfony\DependencyInjection\NucleosFormExtension;
 use PHPUnit\Framework\TestCase;
 
-final class Core23FormBundleTest extends TestCase
+final class NucleosFormBundleTest extends TestCase
 {
     public function testGetPath(): void
     {
-        $bundle = new Core23FormBundle();
+        $bundle = new NucleosFormBundle();
 
         static::assertStringEndsWith('Bridge/Symfony/Bundle', \dirname($bundle->getPath()));
     }
 
     public function testGetContainerExtension(): void
     {
-        $bundle = new Core23FormBundle();
+        $bundle = new NucleosFormBundle();
 
-        static::assertInstanceOf(Core23FormExtension::class, $bundle->getContainerExtension());
+        static::assertInstanceOf(NucleosFormExtension::class, $bundle->getContainerExtension());
     }
 }

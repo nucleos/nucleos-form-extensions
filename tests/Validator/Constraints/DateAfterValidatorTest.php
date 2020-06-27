@@ -9,13 +9,13 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Core23\Form\Tests\Validator\Constraints;
+namespace Nucleos\Form\Tests\Validator\Constraints;
 
-use Core23\Form\Tests\Fixtures\DummyConstraint;
-use Core23\Form\Validator\Constraints\DateAfter;
-use Core23\Form\Validator\Constraints\DateAfterValidator;
 use DateTime;
 use InvalidArgumentException;
+use Nucleos\Form\Tests\Fixtures\DummyConstraint;
+use Nucleos\Form\Validator\Constraints\DateAfter;
+use Nucleos\Form\Validator\Constraints\DateAfterValidator;
 use Symfony\Component\Validator\ConstraintValidatorInterface;
 use Symfony\Component\Validator\Exception\UnexpectedTypeException;
 use Symfony\Component\Validator\Test\ConstraintValidatorTestCase;
@@ -25,7 +25,7 @@ final class DateAfterValidatorTest extends ConstraintValidatorTestCase
     public function testValidateInvalidConstraint(): void
     {
         $this->expectException(UnexpectedTypeException::class);
-        $this->expectExceptionMessage('Expected argument of type "Core23\Form\Validator\Constraints\DateAfter", "Core23\Form\Tests\Fixtures\DummyConstraint" given');
+        $this->expectExceptionMessage('Expected argument of type "Nucleos\Form\Validator\Constraints\DateAfter", "Nucleos\Form\Tests\Fixtures\DummyConstraint" given');
 
         $this->validator->validate('dummy', new DummyConstraint());
     }

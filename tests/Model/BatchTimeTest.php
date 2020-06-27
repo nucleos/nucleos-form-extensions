@@ -9,10 +9,10 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Core23\Form\Tests\Model;
+namespace Nucleos\Form\Tests\Model;
 
-use Core23\Form\Model\BatchTime;
 use DateTime;
+use Nucleos\Form\Model\BatchTime;
 use PHPUnit\Framework\TestCase;
 
 final class BatchTimeTest extends TestCase

@@ -9,9 +9,9 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Core23\Form\Tests\Validator\Constraints;
+namespace Nucleos\Form\Tests\Validator\Constraints;
 
-use Core23\Form\Validator\Constraints\BatchTimeAfter;
+use Nucleos\Form\Validator\Constraints\BatchTimeAfter;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Validator\Exception\InvalidOptionsException;
 use Symfony\Component\Validator\Exception\MissingOptionsException;

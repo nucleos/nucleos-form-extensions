@@ -9,7 +9,7 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Core23\Form\Model;
+namespace Nucleos\Form\Model;
 
 use DateTime;
 
