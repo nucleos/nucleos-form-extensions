@@ -21,9 +21,9 @@ final class NucleosFormExtension extends Extension implements PrependExtensionIn
 {
     public function load(array $configs, ContainerBuilder $container): void
     {
-        $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
-        $loader->load('form.xml');
-        $loader->load('validator.xml');
+        $loader = new Loader\PhpFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
+        $loader->load('form.php');
+        $loader->load('validator.php');
     }
 
     public function prepend(ContainerBuilder $container): void
