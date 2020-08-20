@@ -24,17 +24,17 @@ final class DoctrineDiscriminatorTypeTest extends BaseTypeTest
     use ProphecyTrait;
 
     /**
-     * @var ObjectProphecy
+     * @var ObjectProphecy<BaseEntityManager>
      */
     private $baseEntityManager;
 
     /**
-     * @var ObjectProphecy
+     * @var ObjectProphecy<EntityManager>
      */
     private $entityManager;
 
     /**
-     * @var ObjectProphecy
+     * @var ObjectProphecy<ClassMetadata>
      */
     private $classMetadata;
 

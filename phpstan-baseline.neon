@@ -146,11 +146,6 @@ parameters:
 			path: tests/Bridge/Symfony/Bundle/BundleIntegrationTest.php
 
 		-
-			message: "#^Parameter \\#1 \\$formFactory of class Nucleos\\\\Form\\\\Factory\\\\FormFactory constructor expects Symfony\\\\Component\\\\Form\\\\FormFactoryInterface, object given\\.$#"
-			count: 1
-			path: tests/Factory/FormFactoryTest.php
-
-		-
 			message: "#^Cannot access property \\$vars on Symfony\\\\Component\\\\Form\\\\FormView\\|null\\.$#"
 			count: 3
 			path: tests/Type/AutocompleteTypeTest.php
@@ -182,11 +177,6 @@ parameters:
 
 		-
 			message: "#^Method Nucleos\\\\Form\\\\Tests\\\\Type\\\\AutocompleteTypeTest\\:\\:getTypes\\(\\) return type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: tests/Type/AutocompleteTypeTest.php
-
-		-
-			message: "#^Parameter \\#1 \\$registry of class PUGX\\\\AutocompleterBundle\\\\Form\\\\Type\\\\AutocompleteType constructor expects Doctrine\\\\Persistence\\\\ManagerRegistry, object given\\.$#"
 			count: 1
 			path: tests/Type/AutocompleteTypeTest.php
 
@@ -227,11 +217,6 @@ parameters:
 
 		-
 			message: "#^Method Nucleos\\\\Form\\\\Tests\\\\Type\\\\DoctrineDiscriminatorTypeTest\\:\\:getTypes\\(\\) return type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: tests/Type/DoctrineDiscriminatorTypeTest.php
-
-		-
-			message: "#^Parameter \\#1 \\$manager of class Nucleos\\\\Form\\\\Tests\\\\Fixtures\\\\EntityDoctrineDiscriminatorType constructor expects Sonata\\\\Doctrine\\\\Entity\\\\BaseEntityManager, object given\\.$#"
 			count: 1
 			path: tests/Type/DoctrineDiscriminatorTypeTest.php
 
