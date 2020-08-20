@@ -29,17 +29,17 @@ final class AutocompleteTypeTest extends BaseTypeTest
     use ProphecyTrait;
 
     /**
-     * @var ObjectProphecy
+     * @var ObjectProphecy<ObjectRepository>
      */
     private $objectRepository;
 
     /**
-     * @var ObjectProphecy
+     * @var ObjectProphecy<ObjectManager>
      */
     private $objectManager;
 
     /**
-     * @var ObjectProphecy
+     * @var ObjectProphecy<ManagerRegistry>
      */
     private $registry;
 

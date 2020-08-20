@@ -24,7 +24,7 @@ final class FormFactoryTest extends TestCase
     use ProphecyTrait;
 
     /**
-     * @var ObjectProphecy
+     * @var ObjectProphecy<SymfonyFormFactory>
      */
     private $formFactory;
 
