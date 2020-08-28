@@ -151,7 +151,7 @@ jobs:
           extensions: "mbstring, json"
           php-version: ${{ matrix.php-version }}
 
-      - name: Install Symfony Flex
+      - name: 'Install Symfony Flex'
         run: |
           composer global require --prefer-dist --no-progress --no-suggest --ansi symfony/flex
 
