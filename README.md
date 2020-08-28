@@ -10,6 +10,7 @@ Form Extensions
 
 [![Continuous Integration](https://github.com/nucleos/nucleos-form-extensions/workflows/Continuous%20Integration/badge.svg)](https://github.com/nucleos/nucleos-form-extensions/actions)
 [![Code Coverage](https://codecov.io/gh/nucleos/nucleos-form-extensions/branch/main/graph/badge.svg)](https://codecov.io/gh/nucleos/nucleos-form-extensions)
+[![Type Coverage](https://shepherd.dev/github/nucleos/nucleos-form-extensions/coverage.svg)](https://shepherd.dev/github/nucleos/nucleos-form-extensions)
 
 This library adds some custom form elements and validation for symfony.
 
