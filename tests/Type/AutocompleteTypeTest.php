@@ -11,9 +11,9 @@ declare(strict_types=1);
 
 namespace Nucleos\Form\Tests\Type;
 
-use Doctrine\Common\Persistence\ManagerRegistry;
-use Doctrine\Common\Persistence\ObjectManager;
-use Doctrine\Common\Persistence\ObjectRepository;
+use Doctrine\Persistence\ManagerRegistry;
+use Doctrine\Persistence\ObjectManager;
+use Doctrine\Persistence\ObjectRepository;
 use Nucleos\Form\Type\AutocompleteType;
 use Prophecy\Argument;
 use Prophecy\PhpUnit\ProphecyTrait;
