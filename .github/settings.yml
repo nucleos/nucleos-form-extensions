@@ -6,7 +6,7 @@ repository:
   name: nucleos-form-extensions
   description: ⚙️ This library adds some custom form elements and validation for symfony.
   homepage: https://nucleos.rocks
-  topics: library, symfony, symfony-bridge, form, validation
+  topics: hacktoberfest, library, symfony, symfony-bridge, form, validation
 
 branches:
   - name: main
