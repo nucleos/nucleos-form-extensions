@@ -1,26 +1,6 @@
 parameters:
 	ignoreErrors:
 		-
-			message: "#^Method Nucleos\\\\Form\\\\Extension\\\\DownloadTypeExtension\\:\\:buildForm\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/Extension/DownloadTypeExtension.php
-
-		-
-			message: "#^Method Nucleos\\\\Form\\\\Extension\\\\DownloadTypeExtension\\:\\:buildView\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/Extension/DownloadTypeExtension.php
-
-		-
-			message: "#^Method Nucleos\\\\Form\\\\Extension\\\\ImageTypeExtension\\:\\:buildForm\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/Extension/ImageTypeExtension.php
-
-		-
-			message: "#^Method Nucleos\\\\Form\\\\Extension\\\\ImageTypeExtension\\:\\:buildView\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/Extension/ImageTypeExtension.php
-
-		-
 			message: "#^Property Nucleos\\\\Form\\\\Factory\\\\FormFactory\\:\\:\\$validationGroups type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Factory/FormFactory.php
