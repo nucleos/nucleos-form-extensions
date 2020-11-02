@@ -131,11 +131,6 @@ parameters:
 			path: tests/Type/AutocompleteTypeTest.php
 
 		-
-			message: "#^Cannot access property \\$vars on Symfony\\\\Component\\\\Form\\\\FormView\\|null\\.$#"
-			count: 3
-			path: tests/Type/AutocompleteTypeTest.php
-
-		-
 			message: "#^Offset 'grand_child' does not exist on Symfony\\\\Component\\\\Form\\\\FormView\\|null\\.$#"
 			count: 3
 			path: tests/Type/AutocompleteTypeTest.php
@@ -167,7 +162,7 @@ parameters:
 
 		-
 			message: "#^Cannot access property \\$vars on Symfony\\\\Component\\\\Form\\\\FormView\\|null\\.$#"
-			count: 9
+			count: 6
 			path: tests/Type/BaseTypeTest.php
 
 		-
