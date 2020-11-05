@@ -21,6 +21,9 @@ use Symfony\Component\Validator\ConstraintValidatorInterface;
 use Symfony\Component\Validator\Exception\UnexpectedTypeException;
 use Symfony\Component\Validator\Test\ConstraintValidatorTestCase;
 
+/**
+ * @SuppressWarnings(PHPMD.TooManyPublicMethods)
+ */
 final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
 {
     public function testValidateInvalidConstraint(): void
