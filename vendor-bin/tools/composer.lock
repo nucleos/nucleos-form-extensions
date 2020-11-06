@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "50f1ae428ba2bde38cfc9bf1547cdefd",
+    "content-hash": "45ed7392ddafbb94a5736e7140ed5adc",
     "packages": [],
     "packages-dev": [
         {
@@ -2339,25 +2339,25 @@
         },
         {
             "name": "psalm/plugin-phpunit",
-            "version": "0.11.0",
+            "version": "0.12.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/psalm/psalm-plugin-phpunit.git",
-                "reference": "d3f5c00e8ceac01ad85ae2a85865763e43f0d56d"
+                "reference": "85ee5a080a5281e63085d933b30a06b1b1680758"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/psalm/psalm-plugin-phpunit/zipball/d3f5c00e8ceac01ad85ae2a85865763e43f0d56d",
-                "reference": "d3f5c00e8ceac01ad85ae2a85865763e43f0d56d",
+                "url": "https://api.github.com/repos/psalm/psalm-plugin-phpunit/zipball/85ee5a080a5281e63085d933b30a06b1b1680758",
+                "reference": "85ee5a080a5281e63085d933b30a06b1b1680758",
                 "shasum": ""
             },
             "require": {
                 "composer/package-versions-deprecated": "^1.10",
                 "composer/semver": "^1.4 || ^2.0 || ^3.0",
                 "ext-simplexml": "*",
-                "php": "^7.1.3",
+                "php": "^7.1.3 || ^8.0",
                 "phpunit/phpunit": "^7.5 || ^8.0 || ^9.0",
-                "vimeo/psalm": "^3.6.2 || dev-master"
+                "vimeo/psalm": "^3.6.2 || dev-master || dev-4.x"
             },
             "require-dev": {
                 "codeception/codeception": "^4.0.3",
@@ -2387,7 +2387,7 @@
                 }
             ],
             "description": "Psalm plugin for PHPUnit",
-            "time": "2020-08-24T21:08:29+00:00"
+            "time": "2020-09-28T17:25:39+00:00"
         },
         {
             "name": "psalm/plugin-symfony",
