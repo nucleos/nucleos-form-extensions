@@ -21,6 +21,11 @@ use Symfony\Component\Validator\Exception\UnexpectedTypeException;
 
 final class BatchTimeAfterValidator extends ConstraintValidator
 {
+    /**
+     * @SuppressWarnings(PHPMD.CyclomaticComplexity)
+     * @SuppressWarnings(PHPMD.NPathComplexity)
+     * @SuppressWarnings(PHPMD.ExcessiveMethodLength)
+     */
     public function validate($value, Constraint $constraint): void
     {
         if (!$constraint instanceof BatchTimeAfter) {

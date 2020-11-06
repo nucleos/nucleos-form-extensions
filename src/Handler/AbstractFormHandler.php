@@ -18,6 +18,10 @@ use Symfony\Component\HttpFoundation\Response;
 
 abstract class AbstractFormHandler implements FormHandlerInterface
 {
+    /**
+     * @SuppressWarnings(PHPMD.CyclomaticComplexity)
+     * @SuppressWarnings(PHPMD.NPathComplexity)
+     */
     final public function handle(FormInterface $form, Request $request, callable $callback): ?Response
     {
         if (null !== $response = $this->preProcess($form, $request)) {
