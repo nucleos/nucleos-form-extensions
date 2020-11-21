@@ -45,7 +45,8 @@
         "symfony/expression-language": "^4.2.12 || ^5.0",
         "symfony/framework-bundle": "^4.2.12 || ^5.0",
         "symfony/http-kernel": "^4.2.12 || ^5.0",
-        "symfony/twig-bridge": "^4.2.12 || ^5.0"
+        "symfony/twig-bridge": "^4.2.12 || ^5.0",
+        "twig/intl-extra": "^2.4 || ^3.0"
     },
     "suggest": {
         "symfony/framework-bundle": "If you want to use symfony"
