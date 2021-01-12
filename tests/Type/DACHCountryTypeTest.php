@@ -62,7 +62,7 @@ final class DACHCountryTypeTest extends BaseTypeTest
     {
         $type = new DACHCountryType();
 
-        static::assertSame('core23_country', $type->getBlockPrefix());
+        static::assertSame('nucleos_country', $type->getBlockPrefix());
     }
 
     protected function getTestedType(): string

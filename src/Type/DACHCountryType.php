@@ -37,7 +37,7 @@ final class DACHCountryType extends AbstractType
 
     public function getBlockPrefix()
     {
-        return 'core23_country';
+        return 'nucleos_country';
     }
 
     /**
