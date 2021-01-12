@@ -51,7 +51,7 @@ final class AutocompleteType extends AbstractType
 
     public function getBlockPrefix()
     {
-        return 'core23_autocomplete';
+        return 'nucleos_autocomplete';
     }
 
     public function getParent()

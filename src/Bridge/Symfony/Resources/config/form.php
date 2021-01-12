@@ -26,7 +26,7 @@ return static function (ContainerConfigurator $container): void {
 
         ->set('nucleos_form.type.dach_country', DACHCountryType::class)
             ->tag('validator.constraint_validator', [
-                'form.type' => 'core23_country',
+                'form.type' => 'nucleos_country',
             ])
 
         ->set('nucleos_form.type.gender', GenderType::class)
@@ -58,12 +58,12 @@ return static function (ContainerConfigurator $container): void {
 
         ->set('nucleos_form.type.time_picker', TimePickerType::class)
             ->tag('validator.constraint_validator', [
-                'form.type' => 'core23_type_time_picker',
+                'form.type' => 'nucleos_type_time_picker',
             ])
 
         ->set('nucleos_form.type.autocomplete', AutocompleteType::class)
             ->tag('validator.constraint_validator', [
-                'form.type' => 'core23_autocomplete',
+                'form.type' => 'nucleos_autocomplete',
             ])
 
         ->set('nucleos_form.image_type_extension', ImageTypeExtension::class)

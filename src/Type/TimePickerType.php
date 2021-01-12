@@ -60,7 +60,7 @@ final class TimePickerType extends AbstractType
 
     public function getBlockPrefix(): string
     {
-        return 'core23_type_time_picker';
+        return 'nucleos_type_time_picker';
     }
 
     private static function createDpOptions(array $options): array
