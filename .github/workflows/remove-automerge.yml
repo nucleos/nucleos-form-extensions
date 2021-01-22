@@ -2,6 +2,8 @@ on:
   pull_request:
     types: [ closed ]
 
+name: "Cleanup automerge"
+
 jobs:
   remove-label:
     name: "Remove automerge label"
