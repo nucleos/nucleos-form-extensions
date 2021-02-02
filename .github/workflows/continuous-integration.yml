@@ -1,4 +1,6 @@
-# https://help.github.com/en/categories/automating-your-workflow-with-github-actions
+---
+
+name: "Continuous Integration"
 
 on:
   pull_request:
@@ -7,8 +9,6 @@ on:
       - "**"
     tags:
       - "**"
-
-name: "Continuous Integration"
 
 jobs:
   webpack:
