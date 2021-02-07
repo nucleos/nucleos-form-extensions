@@ -1,6 +1,64 @@
-# 5.0.0
+# Changelog
 
-## Changes
+All notable changes to this project will be documented in this file, in reverse chronological order by release.
+
+## 5.2.0 - TBD
+
+### Added
+
+- Nothing.
+
+### Changed
+
+- Nothing.
+
+### Deprecated
+
+- Nothing.
+
+### Removed
+
+- Nothing.
+
+### Fixed
+
+- Nothing.
+
+## 5.1.0 - 2021-01-18
+
+-----
+
+### Release Notes for [5.1.0](https://github.com/nucleos/nucleos-form-extensions/milestone/1)
+
+
+
+### 5.1.0
+
+- Total issues resolved: **0**
+- Total pull requests resolved: **7**
+- Total contributors: **2**
+
+#### Bug
+
+ - [180: Rename form prefixes](https://github.com/nucleos/nucleos-form-extensions/pull/180) thanks to @core23
+ - [141: Missing dependency](https://github.com/nucleos/nucleos-form-extensions/pull/141) thanks to @core23
+
+#### dependency
+
+ - [175: Bump pugx/autocompleter-bundle](https://github.com/nucleos/nucleos-form-extensions/pull/175) thanks to @core23
+ - [155: Bump ini from 1.3.5 to 1.3.8](https://github.com/nucleos/nucleos-form-extensions/pull/155) thanks to @dependabot[bot]
+ - [144: Add support for PHP 8](https://github.com/nucleos/nucleos-form-extensions/pull/144) thanks to @core23
+
+#### Enhancement
+
+ - [70: Move configuration to PHP](https://github.com/nucleos/nucleos-form-extensions/pull/70) thanks to @core23
+
+
+-----
+
+## 5.0.0
+
+### Changes
 
 - Renamed namespace `Core23\Form` to `Nucleos\Form` after move to [@nucleos]
 
@@ -33,50 +91,50 @@
   ```
 
   to delete backup files created in the previous step.
-  
-## 🚀 Features
+
+### 🚀 Features
 
 - Add combined assets [@core23] ([#68])
 
-## 📦 Dependencies
+### 📦 Dependencies
 
 - Drop support for PHP 7.2 [@core23] ([#59])
 
 
-# 4.0.2
+## 4.0.2
 
-## Changes
+### Changes
 
-## 🐛 Bug Fixes
+### 🐛 Bug Fixes
 
 - Fix wrong date after validation for null values [@core23] ([#55])
 
-# 4.0.1
+## 4.0.1
 
-## Changes
+### Changes
 
-## 🐛 Bug Fixes
+### 🐛 Bug Fixes
 
 - Remove date after violation if not required [@core23] ([#54])
 
-# 4.0.0
+## 4.0.0
 
-## Changes
+### Changes
 
 - Use class alias in validators [@core23] ([#50])
 - Add missing strict file header [@core23] ([#44])
 - Add missing (optional) doctrine extension [@core23] ([#39])
 - Use dataset instead of getAttribute [@core23] ([#34])
 
-## ❌ BC Breaks
+### ❌ BC Breaks
 
 - Remove custom Date(Time)PickerType [@core23] ([#40])
 
-## 🚀 Features
+### 🚀 Features
 
 - Add support for symfony 5 [@core23] ([#32])
 
-## 📦 Dependencies
+### 📦 Dependencies
 
 - Add missing twig bridge dependency [@core23] ([#31])
 
