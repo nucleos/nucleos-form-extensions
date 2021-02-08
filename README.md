@@ -8,8 +8,8 @@ Form Extensions
 [![Monthly Downloads](https://poser.pugx.org/nucleos/form-extensions/d/monthly)](https://packagist.org/packages/nucleos/form-extensions)
 [![Daily Downloads](https://poser.pugx.org/nucleos/form-extensions/d/daily)](https://packagist.org/packages/nucleos/form-extensions)
 
-[![Continuous Integration](https://github.com/nucleos/nucleos-form-extensions/workflows/Continuous%20Integration/badge.svg)](https://github.com/nucleos/nucleos-form-extensions/actions?query=workflow%3A"Continuous+Integration"+branch%3Amain)
-[![Code Coverage](https://codecov.io/gh/nucleos/nucleos-form-extensions/branch/main/graph/badge.svg)](https://codecov.io/gh/nucleos/nucleos-form-extensions)
+[![Continuous Integration](https://github.com/nucleos/nucleos-form-extensions/workflows/Continuous%20Integration/badge.svg)](https://github.com/nucleos/nucleos-form-extensions/actions?query=workflow%3A"Continuous+Integration")
+[![Code Coverage](https://codecov.io/gh/nucleos/nucleos-form-extensions/graph/badge.svg)](https://codecov.io/gh/nucleos/nucleos-form-extensions)
 [![Type Coverage](https://shepherd.dev/github/nucleos/nucleos-form-extensions/coverage.svg)](https://shepherd.dev/github/nucleos/nucleos-form-extensions)
 
 This library adds some custom form elements and validation for symfony.
