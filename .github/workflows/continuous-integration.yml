@@ -1,14 +1,13 @@
-# https://help.github.com/en/categories/automating-your-workflow-with-github-actions
+name: 'Continuous Integration'
 
 on:
+  create:
   pull_request:
   push:
     branches:
       - "**"
     tags:
       - "**"
-
-name: "Continuous Integration"
 
 jobs:
   webpack:
