@@ -27,7 +27,7 @@ use Symfony\Component\HttpFoundation\Session\Session;
 abstract class AbstractFormHandlerTest extends TestCase
 {
     /**
-     * @var FormInterface|MockObject
+     * @var FormInterface&MockObject
      */
     protected $form;
 
@@ -37,7 +37,7 @@ abstract class AbstractFormHandlerTest extends TestCase
     protected $request;
 
     /**
-     * @var MockObject|Session
+     * @var MockObject&Session
      */
     protected $session;
 
