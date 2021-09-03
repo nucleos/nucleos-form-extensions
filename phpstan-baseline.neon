@@ -1,17 +1,17 @@
 parameters:
 	ignoreErrors:
 		-
-			message: "#^Property Nucleos\\\\Form\\\\Factory\\\\FormFactory\\:\\:\\$validationGroups type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/Factory/FormFactory.php
-
-		-
 			message: "#^Method Nucleos\\\\Form\\\\Factory\\\\FormFactory\\:\\:__construct\\(\\) has parameter \\$validationGroups with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Factory/FormFactory.php
 
 		-
 			message: "#^Method Nucleos\\\\Form\\\\Factory\\\\FormFactory\\:\\:create\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Factory/FormFactory.php
+
+		-
+			message: "#^Property Nucleos\\\\Form\\\\Factory\\\\FormFactory\\:\\:\\$validationGroups type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Factory/FormFactory.php
 
@@ -26,7 +26,7 @@ parameters:
 			path: src/Model/BatchTime.php
 
 		-
-			message: "#^Property Nucleos\\\\Form\\\\Test\\\\AbstractFormHandlerTest\\:\\:\\$errors type has no value type specified in iterable type array\\.$#"
+			message: "#^Anonymous function should have native return typehint \"bool\"\\.$#"
 			count: 1
 			path: src/Test/AbstractFormHandlerTest.php
 
@@ -36,7 +36,7 @@ parameters:
 			path: src/Test/AbstractFormHandlerTest.php
 
 		-
-			message: "#^Anonymous function should have native return typehint \"bool\"\\.$#"
+			message: "#^Property Nucleos\\\\Form\\\\Test\\\\AbstractFormHandlerTest\\:\\:\\$errors type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Test/AbstractFormHandlerTest.php
 
@@ -46,24 +46,14 @@ parameters:
 			path: src/Type/BatchTimeType.php
 
 		-
-			message: "#^Anonymous function should have native return typehint \"string\"\\.$#"
-			count: 1
-			path: src/Type/DACHCountryType.php
-
-		-
-			message: "#^Property Nucleos\\\\Form\\\\Type\\\\DoctrineDiscriminatorType\\:\\:\\$entityManager with generic class Sonata\\\\Doctrine\\\\Entity\\\\BaseEntityManager does not specify its types\\: T$#"
-			count: 1
-			path: src/Type/DoctrineDiscriminatorType.php
-
-		-
 			message: "#^Method Nucleos\\\\Form\\\\Type\\\\DoctrineDiscriminatorType\\:\\:__construct\\(\\) has parameter \\$manager with generic class Sonata\\\\Doctrine\\\\Entity\\\\BaseEntityManager but does not specify its types\\: T$#"
 			count: 1
 			path: src/Type/DoctrineDiscriminatorType.php
 
 		-
-			message: "#^Anonymous function should have native return typehint \"string\"\\.$#"
+			message: "#^Property Nucleos\\\\Form\\\\Type\\\\DoctrineDiscriminatorType\\:\\:\\$entityManager with generic class Sonata\\\\Doctrine\\\\Entity\\\\BaseEntityManager does not specify its types\\: T$#"
 			count: 1
-			path: src/Type/GenderType.php
+			path: src/Type/DoctrineDiscriminatorType.php
 
 		-
 			message: "#^Method Nucleos\\\\Form\\\\Type\\\\JsonType\\:\\:reverseTransform\\(\\) return type has no value type specified in iterable type array\\.$#"
@@ -76,17 +66,17 @@ parameters:
 			path: src/Type/JsonType.php
 
 		-
+			message: "#^Anonymous function should have native return typehint \"string\"\\.$#"
+			count: 1
+			path: src/Type/TimePickerType.php
+
+		-
 			message: "#^Method Nucleos\\\\Form\\\\Type\\\\TimePickerType\\:\\:createDpOptions\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Type/TimePickerType.php
 
 		-
 			message: "#^Method Nucleos\\\\Form\\\\Type\\\\TimePickerType\\:\\:createDpOptions\\(\\) return type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/Type/TimePickerType.php
-
-		-
-			message: "#^Anonymous function should have native return typehint \"string\"\\.$#"
 			count: 1
 			path: src/Type/TimePickerType.php
 
@@ -111,7 +101,7 @@ parameters:
 			path: src/Validator/Constraints/DateAfterValidator.php
 
 		-
-			message: "#^Instantiated class Symfony\\\\Component\\\\HttpKernel\\\\Client not found\\.$#"
+			message: "#^Call to method getResponse\\(\\) on an unknown class Symfony\\\\Component\\\\HttpKernel\\\\Client\\.$#"
 			count: 1
 			path: tests/Bridge/Symfony/Bundle/BundleIntegrationTest.php
 
@@ -121,27 +111,12 @@ parameters:
 			path: tests/Bridge/Symfony/Bundle/BundleIntegrationTest.php
 
 		-
-			message: "#^Call to method getResponse\\(\\) on an unknown class Symfony\\\\Component\\\\HttpKernel\\\\Client\\.$#"
+			message: "#^Instantiated class Symfony\\\\Component\\\\HttpKernel\\\\Client not found\\.$#"
 			count: 1
 			path: tests/Bridge/Symfony/Bundle/BundleIntegrationTest.php
 
 		-
-			message: "#^Property Nucleos\\\\Form\\\\Tests\\\\Type\\\\AutocompleteTypeTest\\:\\:\\$objectRepository with generic interface Doctrine\\\\Persistence\\\\ObjectRepository does not specify its types\\: T$#"
-			count: 1
-			path: tests/Type/AutocompleteTypeTest.php
-
-		-
-			message: "#^Offset 'grand_child' does not exist on Symfony\\\\Component\\\\Form\\\\FormView\\|null\\.$#"
-			count: 3
-			path: tests/Type/AutocompleteTypeTest.php
-
-		-
 			message: "#^Method Nucleos\\\\Form\\\\Tests\\\\Type\\\\AutocompleteTypeTest\\:\\:create\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: tests/Type/AutocompleteTypeTest.php
-
-		-
-			message: "#^Method Nucleos\\\\Form\\\\Tests\\\\Type\\\\AutocompleteTypeTest\\:\\:createNamed\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: tests/Type/AutocompleteTypeTest.php
 
@@ -156,7 +131,22 @@ parameters:
 			path: tests/Type/AutocompleteTypeTest.php
 
 		-
+			message: "#^Method Nucleos\\\\Form\\\\Tests\\\\Type\\\\AutocompleteTypeTest\\:\\:createNamed\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: tests/Type/AutocompleteTypeTest.php
+
+		-
 			message: "#^Method Nucleos\\\\Form\\\\Tests\\\\Type\\\\AutocompleteTypeTest\\:\\:getTypes\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: tests/Type/AutocompleteTypeTest.php
+
+		-
+			message: "#^Offset 'grand_child' does not exist on Symfony\\\\Component\\\\Form\\\\FormView\\|null\\.$#"
+			count: 3
+			path: tests/Type/AutocompleteTypeTest.php
+
+		-
+			message: "#^Property Nucleos\\\\Form\\\\Tests\\\\Type\\\\AutocompleteTypeTest\\:\\:\\$objectRepository with generic interface Doctrine\\\\Persistence\\\\ObjectRepository does not specify its types\\: T$#"
 			count: 1
 			path: tests/Type/AutocompleteTypeTest.php
 
@@ -166,17 +156,7 @@ parameters:
 			path: tests/Type/BaseTypeTest.php
 
 		-
-			message: "#^Offset 'grand_child' does not exist on Symfony\\\\Component\\\\Form\\\\FormView\\|null\\.$#"
-			count: 3
-			path: tests/Type/BaseTypeTest.php
-
-		-
 			message: "#^Method Nucleos\\\\Form\\\\Tests\\\\Type\\\\BaseTypeTest\\:\\:create\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: tests/Type/BaseTypeTest.php
-
-		-
-			message: "#^Method Nucleos\\\\Form\\\\Tests\\\\Type\\\\BaseTypeTest\\:\\:createNamed\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: tests/Type/BaseTypeTest.php
 
@@ -191,9 +171,14 @@ parameters:
 			path: tests/Type/BaseTypeTest.php
 
 		-
-			message: "#^Property Nucleos\\\\Form\\\\Tests\\\\Type\\\\DoctrineDiscriminatorTypeTest\\:\\:\\$baseEntityManager with generic class Sonata\\\\Doctrine\\\\Entity\\\\BaseEntityManager does not specify its types\\: T$#"
+			message: "#^Method Nucleos\\\\Form\\\\Tests\\\\Type\\\\BaseTypeTest\\:\\:createNamed\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
 			count: 1
-			path: tests/Type/DoctrineDiscriminatorTypeTest.php
+			path: tests/Type/BaseTypeTest.php
+
+		-
+			message: "#^Offset 'grand_child' does not exist on Symfony\\\\Component\\\\Form\\\\FormView\\|null\\.$#"
+			count: 3
+			path: tests/Type/BaseTypeTest.php
 
 		-
 			message: "#^Access to an undefined property Prophecy\\\\Prophecy\\\\ObjectProphecy\\<Doctrine\\\\ORM\\\\Mapping\\\\ClassMetadata\\>\\:\\:\\$discriminatorMap\\.$#"
@@ -206,9 +191,9 @@ parameters:
 			path: tests/Type/DoctrineDiscriminatorTypeTest.php
 
 		-
-			message: "#^Trying to mock an undefined method getEnd\\(\\) on class stdClass\\.$#"
-			count: 13
-			path: tests/Validator/Constraints/BatchTimeAfterValidatorTest.php
+			message: "#^Property Nucleos\\\\Form\\\\Tests\\\\Type\\\\DoctrineDiscriminatorTypeTest\\:\\:\\$baseEntityManager with generic class Sonata\\\\Doctrine\\\\Entity\\\\BaseEntityManager does not specify its types\\: T$#"
+			count: 1
+			path: tests/Type/DoctrineDiscriminatorTypeTest.php
 
 		-
 			message: "#^Property Nucleos\\\\Form\\\\Tests\\\\Type\\\\DoctrineDiscriminatorTypeTest\\:\\:\\$classMetadata with generic class Doctrine\\\\ORM\\\\Mapping\\\\ClassMetadata does not specify its types\\: T$#"
@@ -222,11 +207,16 @@ parameters:
 
 		-
 			message: "#^Trying to mock an undefined method getEnd\\(\\) on class stdClass\\.$#"
+			count: 13
+			path: tests/Validator/Constraints/BatchTimeAfterValidatorTest.php
+
+		-
+			message: "#^Trying to mock an undefined method getBegin\\(\\) on class stdClass\\.$#"
 			count: 11
 			path: tests/Validator/Constraints/DateAfterValidatorTest.php
 
 		-
-			message: "#^Trying to mock an undefined method getBegin\\(\\) on class stdClass\\.$#"
+			message: "#^Trying to mock an undefined method getEnd\\(\\) on class stdClass\\.$#"
 			count: 11
 			path: tests/Validator/Constraints/DateAfterValidatorTest.php
 
