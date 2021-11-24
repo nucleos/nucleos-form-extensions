@@ -7,3 +7,26 @@ repository:
   description: ⚙️ This library adds some custom form elements and validation for symfony.
   homepage: https://nucleos.rocks
   topics: hacktoberfest, library, symfony, symfony-bridge, form, validation
+
+branches:
+  - name: main
+    protection:
+      enforce_admins: false
+      required_status_checks:
+        contexts:
+          - "Coding Standards (8)"
+          - "Static Code Analysis (8.1)"
+          - "Test (PHP 8, symfony 4.4, lowest)"
+          - "Test (PHP 8, symfony 5.1, lowest)"
+          - "Test (PHP 8, symfony 4.4, highest)"
+          - "Test (PHP 8, symfony 5.1, highest)"
+          - "Test (PHP 8.1, symfony 4.4, lowest)"
+          - "Test (PHP 8.1, symfony 5.1, lowest)"
+          - "Test (PHP 8.1, symfony 4.4, highest)"
+          - "Test (PHP 8.1, symfony 5.1, highest)"
+          - "Code Coverage (8.1)"
+          - "Mutation Tests (8.1)"
+        strict: true
+
+      required_pull_request_reviews: null
+      restrictions: null
