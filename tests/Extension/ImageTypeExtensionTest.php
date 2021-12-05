@@ -13,7 +13,6 @@ namespace Nucleos\Form\Tests\Extension;
 
 use Nucleos\Form\Extension\ImageTypeExtension;
 use PHPUnit\Framework\TestCase;
-use Prophecy\PhpUnit\ProphecyTrait;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormInterface;
@@ -22,8 +21,6 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 final class ImageTypeExtensionTest extends TestCase
 {
-    use ProphecyTrait;
-
     public function testConfigureOptions(): void
     {
         $resolver = new OptionsResolver();
@@ -38,13 +35,13 @@ final class ImageTypeExtensionTest extends TestCase
 
     public function testBuildForm(): void
     {
-        $builder = $this->prophesize(FormBuilderInterface::class);
-        $builder->setAttribute('image_path', 'image')
-            ->shouldBeCalled()
+        $builder = $this->createMock(FormBuilderInterface::class);
+        $builder->expects(static::once())->method('setAttribute')
+            ->with('image_path', 'image')
         ;
 
         $extension = new ImageTypeExtension();
-        $extension->buildForm($builder->reveal(), [
+        $extension->buildForm($builder, [
             'image_path' => 'image',
         ]);
     }
@@ -53,20 +50,20 @@ final class ImageTypeExtensionTest extends TestCase
     {
         $view = new FormView();
 
-        $parentForm = $this->prophesize(FormInterface::class);
-        $parentForm->getData()
+        $parentForm = $this->createMock(FormInterface::class);
+        $parentForm->method('getData')
             ->willReturn([
                 'image' => '/foo/bar.png',
             ])
         ;
 
-        $form = $this->prophesize(FormInterface::class);
-        $form->getParent()
+        $form = $this->createMock(FormInterface::class);
+        $form->method('getParent')
             ->willReturn($parentForm)
         ;
 
         $extension = new ImageTypeExtension();
-        $extension->buildView($view, $form->reveal(), [
+        $extension->buildView($view, $form, [
             'image_path' => '[image]',
         ]);
 
@@ -77,18 +74,18 @@ final class ImageTypeExtensionTest extends TestCase
     {
         $view = new FormView();
 
-        $parentForm = $this->prophesize(FormInterface::class);
-        $parentForm->getData()
+        $parentForm = $this->createMock(FormInterface::class);
+        $parentForm->method('getData')
             ->willReturn(null)
         ;
 
-        $form = $this->prophesize(FormInterface::class);
-        $form->getParent()
+        $form = $this->createMock(FormInterface::class);
+        $form->method('getParent')
             ->willReturn($parentForm)
         ;
 
         $extension = new ImageTypeExtension();
-        $extension->buildView($view, $form->reveal(), [
+        $extension->buildView($view, $form, [
             'image_path' => '[image]',
         ]);
 

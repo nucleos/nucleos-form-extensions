@@ -14,49 +14,46 @@ namespace Nucleos\Form\Tests\Type;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Mapping\ClassMetadata;
 use Nucleos\Form\Tests\Fixtures\EntityDoctrineDiscriminatorType;
-use Prophecy\PhpUnit\ProphecyTrait;
-use Prophecy\Prophecy\ObjectProphecy;
+use PHPUnit\Framework\MockObject\MockObject;
 use Sonata\Doctrine\Entity\BaseEntityManager;
 use Symfony\Component\Form\ChoiceList\View\ChoiceView;
 
 final class DoctrineDiscriminatorTypeTest extends BaseTypeTest
 {
-    use ProphecyTrait;
+    /**
+     * @var BaseEntityManager&MockObject
+     */
+    private BaseEntityManager $baseEntityManager;
 
     /**
-     * @var ObjectProphecy<BaseEntityManager>
+     * @var EntityManager&MockObject
      */
-    private $baseEntityManager;
+    private EntityManager $entityManager;
 
     /**
-     * @var ObjectProphecy<EntityManager>
+     * @var ClassMetadata&MockObject
      */
-    private $entityManager;
-
-    /**
-     * @var ObjectProphecy<ClassMetadata>
-     */
-    private $classMetadata;
+    private ClassMetadata $classMetadata;
 
     protected function setUp(): void
     {
-        $this->classMetadata = $this->prophesize(ClassMetadata::class);
+        $this->classMetadata = $this->createMock(ClassMetadata::class);
 
         $this->classMetadata->discriminatorMap = [
             'foo' => 'FooEntity',
             'bar' => 'BarEntity',
         ];
 
-        $this->entityManager = $this->prophesize(EntityManager::class);
-        $this->entityManager->getClassMetadata('MyEntityClass')
+        $this->entityManager = $this->createMock(EntityManager::class);
+        $this->entityManager->method('getClassMetadata')->with('MyEntityClass')
             ->willReturn($this->classMetadata)
         ;
 
-        $this->baseEntityManager = $this->prophesize(BaseEntityManager::class);
-        $this->baseEntityManager->getClass()
+        $this->baseEntityManager = $this->createMock(BaseEntityManager::class);
+        $this->baseEntityManager->method('getClass')
             ->willReturn('MyEntityClass')
         ;
-        $this->baseEntityManager->getEntityManager()
+        $this->baseEntityManager->method('getEntityManager')
             ->willReturn($this->entityManager)
         ;
 
@@ -104,7 +101,7 @@ final class DoctrineDiscriminatorTypeTest extends BaseTypeTest
     protected function getTypes(): array
     {
         return [
-            new EntityDoctrineDiscriminatorType($this->baseEntityManager->reveal()),
+            new EntityDoctrineDiscriminatorType($this->baseEntityManager),
         ];
     }
 }

@@ -126,11 +126,6 @@ parameters:
 			path: tests/Type/BaseTypeTest.php
 
 		-
-			message: "#^Access to an undefined property Prophecy\\\\Prophecy\\\\ObjectProphecy\\<Doctrine\\\\ORM\\\\Mapping\\\\ClassMetadata\\>\\:\\:\\$discriminatorMap\\.$#"
-			count: 1
-			path: tests/Type/DoctrineDiscriminatorTypeTest.php
-
-		-
 			message: "#^Method Nucleos\\\\Form\\\\Tests\\\\Type\\\\DoctrineDiscriminatorTypeTest\\:\\:getTypes\\(\\) return type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: tests/Type/DoctrineDiscriminatorTypeTest.php
