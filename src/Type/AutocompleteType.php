@@ -18,6 +18,9 @@ use Symfony\Component\Form\FormView;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\PropertyAccess\PropertyAccess;
 
+/**
+ * @deprecated
+ */
 final class AutocompleteType extends AbstractType
 {
     public function configureOptions(OptionsResolver $resolver): void
