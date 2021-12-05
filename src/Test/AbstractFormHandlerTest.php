@@ -29,22 +29,16 @@ abstract class AbstractFormHandlerTest extends TestCase
     /**
      * @var FormInterface&MockObject
      */
-    protected $form;
+    protected FormInterface $form;
 
-    /**
-     * @var Request
-     */
-    protected $request;
+    protected Request $request;
 
     /**
      * @var MockObject&Session
      */
-    protected $session;
+    protected Session $session;
 
-    /**
-     * @var array
-     */
-    private $errors;
+    private array $errors;
 
     protected function setUp(): void
     {
@@ -63,11 +57,9 @@ abstract class AbstractFormHandlerTest extends TestCase
     /**
      * Executes the preProcess method.
      *
-     * @param mixed|null $data
-     *
      * @throws ReflectionException
      */
-    final protected function executePreProcess(Request $request, $data = null): ?Response
+    final protected function executePreProcess(Request $request, mixed $data = null): ?Response
     {
         $handler = $this->createFormHandler();
 
@@ -92,11 +84,9 @@ abstract class AbstractFormHandlerTest extends TestCase
     /**
      * Executes the process method.
      *
-     * @param mixed|null $data
-     *
      * @throws ReflectionException
      */
-    final protected function executeProcess(Request $request, $data = null): bool
+    final protected function executeProcess(Request $request, mixed $data = null): bool
     {
         $handler = $this->createFormHandler();
 
@@ -121,11 +111,9 @@ abstract class AbstractFormHandlerTest extends TestCase
     /**
      * Executes the postProcess method.
      *
-     * @param mixed|null $data
-     *
      * @throws ReflectionException
      */
-    final protected function executePostProcess(Request $request, Response $response, $data = null): ?Response
+    final protected function executePostProcess(Request $request, Response $response, mixed $data = null): ?Response
     {
         $handler = $this->createFormHandler();
 

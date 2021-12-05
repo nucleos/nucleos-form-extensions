@@ -18,10 +18,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 abstract class DoctrineDiscriminatorType extends AbstractType
 {
-    /**
-     * @var BaseEntityManager
-     */
-    private $entityManager;
+    private BaseEntityManager $entityManager;
 
     public function __construct(BaseEntityManager $manager)
     {

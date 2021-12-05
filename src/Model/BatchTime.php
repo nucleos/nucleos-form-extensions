@@ -11,19 +11,13 @@ declare(strict_types=1);
 
 namespace Nucleos\Form\Model;
 
-use DateTime;
+use DateTimeInterface;
 
 class BatchTime
 {
-    /**
-     * @var int
-     */
-    private $day = 0;
+    private int $day = 0;
 
-    /**
-     * @var DateTime|null
-     */
-    private $time;
+    private ?DateTimeInterface $time = null;
 
     public function __toString()
     {
@@ -45,12 +39,12 @@ class BatchTime
         $this->day = $day ?: 0;
     }
 
-    public function getTime(): ?DateTime
+    public function getTime(): ?DateTimeInterface
     {
         return $this->time;
     }
 
-    public function setTime(?DateTime $time): void
+    public function setTime(?DateTimeInterface $time): void
     {
         $this->time = $time;
     }

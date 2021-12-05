@@ -21,10 +21,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 final class AbstractFormHandlerTestCaseTest extends AbstractFormHandlerTest
 {
-    /**
-     * @var FormHandlerInterface
-     */
-    private $formHandler;
+    private FormHandlerInterface $formHandler;
 
     public function testExecutePreProcess(): void
     {
