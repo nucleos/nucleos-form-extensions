@@ -39,7 +39,7 @@ final class BatchTimeType extends AbstractType
         ;
     }
 
-    public function getBlockPrefix()
+    public function getBlockPrefix(): string
     {
         return 'batch_time';
     }

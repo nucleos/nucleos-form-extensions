@@ -26,11 +26,6 @@ parameters:
 			path: src/Model/BatchTime.php
 
 		-
-			message: "#^Anonymous function should have native return typehint \"bool\"\\.$#"
-			count: 1
-			path: src/Test/AbstractFormHandlerTest.php
-
-		-
 			message: "#^Method Nucleos\\\\Form\\\\Test\\\\AbstractFormHandlerTest\\:\\:assertError\\(\\) has parameter \\$messageParameters with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Test/AbstractFormHandlerTest.php
@@ -56,7 +51,12 @@ parameters:
 			path: src/Type/DoctrineDiscriminatorType.php
 
 		-
-			message: "#^Method Nucleos\\\\Form\\\\Type\\\\JsonType\\:\\:reverseTransform\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: "#^Call to function is_array\\(\\) with array will always evaluate to true\\.$#"
+			count: 2
+			path: src/Type/JsonType.php
+
+		-
+			message: "#^Call to function is_string\\(\\) with string will always evaluate to true\\.$#"
 			count: 1
 			path: src/Type/JsonType.php
 
@@ -64,11 +64,6 @@ parameters:
 			message: "#^Method Nucleos\\\\Form\\\\Type\\\\JsonType\\:\\:transformTextToArray\\(\\) return type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Type/JsonType.php
-
-		-
-			message: "#^Anonymous function should have native return typehint \"string\"\\.$#"
-			count: 1
-			path: src/Type/TimePickerType.php
 
 		-
 			message: "#^Method Nucleos\\\\Form\\\\Type\\\\TimePickerType\\:\\:createDpOptions\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
@@ -99,6 +94,21 @@ parameters:
 			message: "#^Method Nucleos\\\\Form\\\\Validator\\\\Constraints\\\\DateAfterValidator\\:\\:getFieldValue\\(\\) has parameter \\$object with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Validator/Constraints/DateAfterValidator.php
+
+		-
+			message: "#^Method Nucleos\\\\Form\\\\Tests\\\\Bridge\\\\Symfony\\\\App\\\\AppKernel\\:\\:configureContainer\\(\\) has parameter \\$container with no type specified\\.$#"
+			count: 1
+			path: tests/Bridge/Symfony/App/AppKernel.php
+
+		-
+			message: "#^Method Nucleos\\\\Form\\\\Tests\\\\Bridge\\\\Symfony\\\\App\\\\AppKernel\\:\\:configureContainer\\(\\) has parameter \\$loader with no type specified\\.$#"
+			count: 1
+			path: tests/Bridge/Symfony/App/AppKernel.php
+
+		-
+			message: "#^Method Nucleos\\\\Form\\\\Tests\\\\Bridge\\\\Symfony\\\\App\\\\AppKernel\\:\\:configureRoutes\\(\\) has parameter \\$routes with no type specified\\.$#"
+			count: 1
+			path: tests/Bridge/Symfony/App/AppKernel.php
 
 		-
 			message: "#^Call to method getResponse\\(\\) on an unknown class Symfony\\\\Component\\\\HttpKernel\\\\Client\\.$#"
