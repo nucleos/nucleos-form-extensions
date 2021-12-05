@@ -11,6 +11,7 @@ declare(strict_types=1);
 
 namespace Nucleos\Form\Type;
 
+use NumberFormatter;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\DataTransformer\NumberToLocalizedStringTransformer;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -35,7 +36,7 @@ final class NumberOutputType extends AbstractType
             ->setDefaults([
                 'precision'     => null,
                 'grouping'      => false,
-                'rounding_mode' => NumberToLocalizedStringTransformer::ROUND_HALF_UP,
+                'rounding_mode' => NumberFormatter::ROUND_HALFUP,
                 'suffix'        => '',
                 'prefix'        => '',
                 'required'      => false,
@@ -46,13 +47,13 @@ final class NumberOutputType extends AbstractType
             ->setAllowedTypes('suffix', 'string')
             ->setAllowedTypes('prefix', 'string')
             ->setAllowedValues('rounding_mode', [
-                NumberToLocalizedStringTransformer::ROUND_FLOOR,
-                NumberToLocalizedStringTransformer::ROUND_DOWN,
-                NumberToLocalizedStringTransformer::ROUND_HALF_DOWN,
-                NumberToLocalizedStringTransformer::ROUND_HALF_EVEN,
-                NumberToLocalizedStringTransformer::ROUND_HALF_UP,
-                NumberToLocalizedStringTransformer::ROUND_UP,
-                NumberToLocalizedStringTransformer::ROUND_CEILING,
+                NumberFormatter::ROUND_FLOOR,
+                NumberFormatter::ROUND_DOWN,
+                NumberFormatter::ROUND_HALFDOWN,
+                NumberFormatter::ROUND_HALFEVEN,
+                NumberFormatter::ROUND_HALFUP,
+                NumberFormatter::ROUND_UP,
+                NumberFormatter::ROUND_CEILING,
             ])
         ;
     }

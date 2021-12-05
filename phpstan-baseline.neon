@@ -106,11 +106,6 @@ parameters:
 			path: tests/Bridge/Symfony/Bundle/BundleIntegrationTest.php
 
 		-
-			message: "#^Cannot access property \\$vars on Symfony\\\\Component\\\\Form\\\\FormView\\|null\\.$#"
-			count: 6
-			path: tests/Type/BaseTypeTest.php
-
-		-
 			message: "#^Method Nucleos\\\\Form\\\\Tests\\\\Type\\\\BaseTypeTest\\:\\:create\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: tests/Type/BaseTypeTest.php
@@ -128,11 +123,6 @@ parameters:
 		-
 			message: "#^Method Nucleos\\\\Form\\\\Tests\\\\Type\\\\BaseTypeTest\\:\\:createNamed\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
 			count: 1
-			path: tests/Type/BaseTypeTest.php
-
-		-
-			message: "#^Offset 'grand_child' does not exist on Symfony\\\\Component\\\\Form\\\\FormView\\|null\\.$#"
-			count: 3
 			path: tests/Type/BaseTypeTest.php
 
 		-
