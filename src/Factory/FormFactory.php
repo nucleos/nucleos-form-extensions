@@ -14,6 +14,9 @@ namespace Nucleos\Form\Factory;
 use Symfony\Component\Form\FormFactoryInterface as SymfonyFormFactory;
 use Symfony\Component\Form\FormInterface;
 
+/**
+ * @deprecated
+ */
 final class FormFactory implements FormFactoryInterface
 {
     /**
