@@ -11,6 +11,7 @@ declare(strict_types=1);
 
 namespace Nucleos\Form\Validator\Constraints;
 
+use Attribute;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\Exception\InvalidOptionsException;
 
@@ -19,6 +20,7 @@ use Symfony\Component\Validator\Exception\InvalidOptionsException;
  *
  * @Target({"CLASS", "ANNOTATION"})
  */
+#[Attribute(Attribute::TARGET_CLASS | Attribute::IS_REPEATABLE)]
 final class BatchTimeAfter extends Constraint
 {
     /**
