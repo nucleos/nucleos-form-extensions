@@ -22,11 +22,6 @@ Open a command console, enter your project directory and execute the following c
 composer require nucleos/form-extensions
 ```
 
-### Assets [deprecated]
-
-It is recommended to use [webpack](https://webpack.js.org/) / [webpack-encore](https://github.com/symfony/webpack-encore)
-to include the `Autocomplete.js` file in your page. These file is located in the `assets` folder.
-
 ## Symfony usage
 
 If you want to use this library inside symfony, you can use a bridge.

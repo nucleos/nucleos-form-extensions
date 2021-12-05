@@ -10,29 +10,6 @@ on:
       - "**"
 
 jobs:
-  webpack:
-    name: "Webpack build"
-
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: "Checkout"
-        uses: actions/checkout@v2.4.0
-
-      - name: "Using Node"
-        uses: actions/setup-node@v2.4.1
-
-      - name: "Install dependencies"
-        run: |
-          yarn
-
-      - name: "Build"
-        run: yarn build
-
-      - name: "Check size"
-        run: |
-          yarn size
-
   coding-standards:
     name: "Coding Standards"
 
