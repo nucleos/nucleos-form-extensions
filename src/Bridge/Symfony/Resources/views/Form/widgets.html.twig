@@ -81,14 +81,3 @@
         {% endif %}
     {% endapply %}
 {% endblock %}
-
-{% block nucleos_autocomplete_widget %}
-    {% set attr = attr|merge({
-        'data-autocomplete': {
-            'ajaxRoute': path(route_name),
-            'text': text|default(''),
-        }|json_encode,
-        'placeholder': empty_value|trans({}, translation_domain)
-    }) %}
-    {{ block('form_widget') }}
-{% endblock %}
