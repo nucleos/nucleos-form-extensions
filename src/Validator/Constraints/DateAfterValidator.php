@@ -24,6 +24,8 @@ final class DateAfterValidator extends ConstraintValidator
     /**
      * @SuppressWarnings(PHPMD.CyclomaticComplexity)
      * @SuppressWarnings(PHPMD.NPathComplexity)
+     *
+     * @param mixed $value
      */
     public function validate($value, Constraint $constraint): void
     {

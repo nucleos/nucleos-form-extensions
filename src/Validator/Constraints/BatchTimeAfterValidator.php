@@ -25,6 +25,8 @@ final class BatchTimeAfterValidator extends ConstraintValidator
      * @SuppressWarnings(PHPMD.CyclomaticComplexity)
      * @SuppressWarnings(PHPMD.NPathComplexity)
      * @SuppressWarnings(PHPMD.ExcessiveMethodLength)
+     *
+     * @param mixed $value
      */
     public function validate($value, Constraint $constraint): void
     {

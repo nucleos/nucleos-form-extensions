@@ -49,12 +49,12 @@ final class AutocompleteType extends AbstractType
         $view->vars['empty_value'] = $options['empty_value'];
     }
 
-    public function getBlockPrefix()
+    public function getBlockPrefix(): string
     {
         return 'nucleos_autocomplete';
     }
 
-    public function getParent()
+    public function getParent(): ?string
     {
         return BaseAutocompleteType::class;
     }

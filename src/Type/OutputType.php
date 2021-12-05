@@ -16,6 +16,9 @@ use Symfony\Component\Form\DataTransformerInterface;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
+/**
+ * @phpstan-implements DataTransformerInterface<mixed, mixed>
+ */
 final class OutputType extends AbstractType implements DataTransformerInterface
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
@@ -34,14 +37,14 @@ final class OutputType extends AbstractType implements DataTransformerInterface
         ]);
     }
 
-    public function transform($data)
+    public function transform($value): mixed
     {
-        return $data;
+        return $value;
     }
 
-    public function reverseTransform($data): string
+    public function reverseTransform($value): mixed
     {
-        return $data ?? '';
+        return $value ?? '';
     }
 
     public function getBlockPrefix(): string

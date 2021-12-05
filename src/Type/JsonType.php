@@ -16,6 +16,9 @@ use Symfony\Component\Form\DataTransformerInterface;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 
+/**
+ * @phpstan-implements DataTransformerInterface<mixed[], string>
+ */
 final class JsonType extends AbstractType implements DataTransformerInterface
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
@@ -23,42 +26,42 @@ final class JsonType extends AbstractType implements DataTransformerInterface
         $builder->addModelTransformer($this);
     }
 
-    public function transform($json): string
+    public function transform($value): mixed
     {
-        if (null === $json) {
-            return '';
+        if (null === $value) {
+            return null;
         }
 
-        if (!\is_array($json)) {
-            $json = json_decode($json, true);
+        if (!\is_array($value)) {
+            $value = json_decode($value, true);
         }
 
         $text = '';
-        if (\is_array($json)) {
-            foreach ($json as $key => $value) {
-                $text .= trim($key).': '.trim($value)."\r\n";
+        if (\is_array($value)) {
+            foreach ($value as $key => $val) {
+                $text .= trim($key).': '.trim($val)."\r\n";
             }
         }
 
         return $text;
     }
 
-    public function reverseTransform($text): array
+    public function reverseTransform($value): mixed
     {
-        if (null === $text) {
+        if (null === $value) {
             return [];
         }
 
-        $json = json_decode($text, true);
+        $json = json_decode($value, true);
 
-        if (false !== $json && \is_string($text)) {
-            $json = self::transformTextToArray($text);
+        if (false !== $json && \is_string($value)) {
+            $json = self::transformTextToArray($value);
         }
 
         return $json;
     }
 
-    public function getParent()
+    public function getParent(): ?string
     {
         return TextareaType::class;
     }

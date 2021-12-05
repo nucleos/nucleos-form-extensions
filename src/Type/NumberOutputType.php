@@ -57,12 +57,12 @@ final class NumberOutputType extends AbstractType
         ;
     }
 
-    public function getBlockPrefix()
+    public function getBlockPrefix(): string
     {
         return 'number_output';
     }
 
-    public function getParent()
+    public function getParent(): ?string
     {
         return OutputType::class;
     }
