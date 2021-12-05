@@ -2,27 +2,31 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
-## 5.2.0 - TBD
+## 5.2.0 - 2021-12-05
 
-### Added
 
-- Nothing.
+-----
 
-### Changed
+### Release Notes for [5.2.0](https://github.com/nucleos/nucleos-form-extensions/milestone/2)
 
-- Nothing.
 
-### Deprecated
 
-- Nothing.
+### 5.2.0
 
-### Removed
+- Total issues resolved: **0**
+- Total pull requests resolved: **5**
+- Total contributors: **1**
 
-- Nothing.
+#### Enhancement
 
-### Fixed
+ - [360: Deprecate AutocompleteType](https://github.com/nucleos/nucleos-form-extensions/pull/360) thanks to @core23
+ - [359: Deprecate form factory](https://github.com/nucleos/nucleos-form-extensions/pull/359) thanks to @core23
+ - [356: Update tools and use make to run them](https://github.com/nucleos/nucleos-form-extensions/pull/356) thanks to @core23
 
-- Nothing.
+#### dependency
+
+ - [357: Bump symfony 5.4](https://github.com/nucleos/nucleos-form-extensions/pull/357) thanks to @core23
+ - [353: Drop PHP 7 support](https://github.com/nucleos/nucleos-form-extensions/pull/353) thanks to @core23
 
 ## 5.1.0 - 2021-01-18
 
