@@ -11,7 +11,6 @@ namespace Symfony\Component\DependencyInjection\Loader\Configurator;
 
 use Nucleos\Form\Extension\DownloadTypeExtension;
 use Nucleos\Form\Extension\ImageTypeExtension;
-use Nucleos\Form\Type\AutocompleteType;
 use Nucleos\Form\Type\BatchTimeType;
 use Nucleos\Form\Type\DACHCountryType;
 use Nucleos\Form\Type\DateOutputType;
@@ -59,11 +58,6 @@ return static function (ContainerConfigurator $container): void {
         ->set('nucleos_form.type.time_picker', TimePickerType::class)
             ->tag('validator.constraint_validator', [
                 'form.type' => 'nucleos_type_time_picker',
-            ])
-
-        ->set('nucleos_form.type.autocomplete', AutocompleteType::class)
-            ->tag('validator.constraint_validator', [
-                'form.type' => 'nucleos_autocomplete',
             ])
 
         ->set('nucleos_form.image_type_extension', ImageTypeExtension::class)
