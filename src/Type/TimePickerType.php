@@ -68,7 +68,7 @@ final class TimePickerType extends AbstractType
         $dpOptions = [];
 
         foreach ($options as $key => $value) {
-            if (false !== strpos($key, 'dp_')) {
+            if (str_contains($key, 'dp_')) {
                 // We remove 'dp_' and camelize the options names
                 $dpKey = substr($key, 3);
                 $dpKey = preg_replace_callback(

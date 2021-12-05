@@ -11,6 +11,7 @@ declare(strict_types=1);
 
 namespace Nucleos\Form\Type;
 
+use JsonException;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\DataTransformerInterface;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -33,7 +34,10 @@ final class JsonType extends AbstractType implements DataTransformerInterface
         }
 
         if (!\is_array($value)) {
-            $value = json_decode($value, true);
+            try {
+                $value = json_decode($value, true, 512, JSON_THROW_ON_ERROR);
+            } catch (JsonException) {
+            }
         }
 
         $text = '';
@@ -52,9 +56,13 @@ final class JsonType extends AbstractType implements DataTransformerInterface
             return [];
         }
 
-        $json = json_decode($value, true);
+        try {
+            $json = json_decode($value, true, 512, JSON_THROW_ON_ERROR);
+        } catch (JsonException) {
+            return [];
+        }
 
-        if (false !== $json && \is_string($value)) {
+        if (\is_string($value)) {
             $json = self::transformTextToArray($value);
         }
 
