@@ -1,6 +1,26 @@
 parameters:
 	ignoreErrors:
 		-
+			message: "#^Method Nucleos\\\\Form\\\\Factory\\\\FormFactory\\:\\:__construct\\(\\) has parameter \\$validationGroups with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Factory/FormFactory.php
+
+		-
+			message: "#^Method Nucleos\\\\Form\\\\Factory\\\\FormFactory\\:\\:create\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Factory/FormFactory.php
+
+		-
+			message: "#^Property Nucleos\\\\Form\\\\Factory\\\\FormFactory\\:\\:\\$validationGroups type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Factory/FormFactory.php
+
+		-
+			message: "#^Method Nucleos\\\\Form\\\\Factory\\\\FormFactoryInterface\\:\\:create\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Factory/FormFactoryInterface.php
+
+		-
 			message: "#^Short ternary operator is not allowed\\. Use null coalesce operator if applicable or consider using long ternary\\.$#"
 			count: 1
 			path: src/Model/BatchTime.php
@@ -104,6 +124,41 @@ parameters:
 			message: "#^Instantiated class Symfony\\\\Component\\\\HttpKernel\\\\Client not found\\.$#"
 			count: 1
 			path: tests/Bridge/Symfony/Bundle/BundleIntegrationTest.php
+
+		-
+			message: "#^Method Nucleos\\\\Form\\\\Tests\\\\Type\\\\AutocompleteTypeTest\\:\\:create\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: tests/Type/AutocompleteTypeTest.php
+
+		-
+			message: "#^Method Nucleos\\\\Form\\\\Tests\\\\Type\\\\AutocompleteTypeTest\\:\\:createBuilder\\(\\) has parameter \\$childOptions with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: tests/Type/AutocompleteTypeTest.php
+
+		-
+			message: "#^Method Nucleos\\\\Form\\\\Tests\\\\Type\\\\AutocompleteTypeTest\\:\\:createBuilder\\(\\) has parameter \\$parentOptions with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: tests/Type/AutocompleteTypeTest.php
+
+		-
+			message: "#^Method Nucleos\\\\Form\\\\Tests\\\\Type\\\\AutocompleteTypeTest\\:\\:createNamed\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: tests/Type/AutocompleteTypeTest.php
+
+		-
+			message: "#^Method Nucleos\\\\Form\\\\Tests\\\\Type\\\\AutocompleteTypeTest\\:\\:getTypes\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: tests/Type/AutocompleteTypeTest.php
+
+		-
+			message: "#^Offset 'grand_child' does not exist on Symfony\\\\Component\\\\Form\\\\FormView\\|null\\.$#"
+			count: 3
+			path: tests/Type/AutocompleteTypeTest.php
+
+		-
+			message: "#^Property Nucleos\\\\Form\\\\Tests\\\\Type\\\\AutocompleteTypeTest\\:\\:\\$objectRepository with generic interface Doctrine\\\\Persistence\\\\ObjectRepository does not specify its types\\: T$#"
+			count: 1
+			path: tests/Type/AutocompleteTypeTest.php
 
 		-
 			message: "#^Cannot access property \\$vars on Symfony\\\\Component\\\\Form\\\\FormView\\|null\\.$#"
