@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace Nucleos\Form\Validator\Constraints;
 
-use DateTime;
+use DateTimeInterface;
 use Symfony\Component\PropertyAccess\Exception\NoSuchPropertyException;
 use Symfony\Component\PropertyAccess\PropertyAccess;
 use Symfony\Component\Validator\Constraint;
@@ -85,7 +85,7 @@ final class DateAfterValidator extends ConstraintValidator
     /**
      * @param array|object $object
      */
-    private function getFieldValue($object, string $field): ?DateTime
+    private function getFieldValue($object, string $field): ?DateTimeInterface
     {
         $propertyAccessor = PropertyAccess::createPropertyAccessor();
 
@@ -95,8 +95,8 @@ final class DateAfterValidator extends ConstraintValidator
             throw new InvalidArgumentException($e->getMessage());
         }
 
-        if (null !== $value && !$value instanceof DateTime) {
-            throw new UnexpectedTypeException($value, DateTime::class);
+        if (null !== $value && !$value instanceof DateTimeInterface) {
+            throw new UnexpectedTypeException($value, DateTimeInterface::class);
         }
 
         return $value;
