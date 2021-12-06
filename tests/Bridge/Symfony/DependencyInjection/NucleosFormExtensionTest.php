@@ -33,18 +33,18 @@ final class NucleosFormExtensionTest extends AbstractExtensionTestCase
     {
         $this->load();
 
-        $this->assertContainerBuilderHasService('nucleos_form.type.dach_country', DACHCountryType::class);
-        $this->assertContainerBuilderHasService('nucleos_form.type.gender', GenderType::class);
-        $this->assertContainerBuilderHasService('nucleos_form.type.output', OutputType::class);
-        $this->assertContainerBuilderHasService('nucleos_form.type.date_output', DateOutputType::class);
-        $this->assertContainerBuilderHasService('nucleos_form.type.number_output', NumberOutputType::class);
-        $this->assertContainerBuilderHasService('nucleos_form.type.batch_time', BatchTimeType::class);
-        $this->assertContainerBuilderHasService('nucleos_form.type.time_picker', TimePickerType::class);
-        $this->assertContainerBuilderHasService('nucleos_form.image_type_extension', ImageTypeExtension::class);
-        $this->assertContainerBuilderHasService('nucleos_form.download_type_extension', DownloadTypeExtension::class);
+        $this->assertContainerBuilderHasService(DACHCountryType::class);
+        $this->assertContainerBuilderHasService(GenderType::class);
+        $this->assertContainerBuilderHasService(OutputType::class);
+        $this->assertContainerBuilderHasService(DateOutputType::class);
+        $this->assertContainerBuilderHasService(NumberOutputType::class);
+        $this->assertContainerBuilderHasService(BatchTimeType::class);
+        $this->assertContainerBuilderHasService(TimePickerType::class);
+        $this->assertContainerBuilderHasService(ImageTypeExtension::class);
+        $this->assertContainerBuilderHasService(DownloadTypeExtension::class);
 
-        $this->assertContainerBuilderHasService('nucleos_form.validator.date_after', DateAfterValidator::class);
-        $this->assertContainerBuilderHasService('nucleos_form.validator.batch_time_after', BatchTimeAfterValidator::class);
+        $this->assertContainerBuilderHasService(DateAfterValidator::class);
+        $this->assertContainerBuilderHasService(BatchTimeAfterValidator::class);
     }
 
     public function testLoadWithTwigExtension(): void
