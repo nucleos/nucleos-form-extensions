@@ -23,52 +23,34 @@ use Symfony\Component\Form\Extension\Core\Type\FileType;
 return static function (ContainerConfigurator $container): void {
     $container->services()
 
-        ->set('nucleos_form.type.dach_country', DACHCountryType::class)
-            ->tag('validator.constraint_validator', [
-                'form.type' => 'nucleos_country',
-            ])
+        ->set(DACHCountryType::class)
+            ->tag('form.type', [])
 
-        ->set('nucleos_form.type.gender', GenderType::class)
-            ->tag('validator.constraint_validator', [
-                'form.type' => 'gender',
-            ])
+        ->set(GenderType::class)
+            ->tag('form.type', [])
 
-        ->set('nucleos_form.type.output', OutputType::class)
-            ->tag('validator.constraint_validator', [
-                'form.type' => 'output',
-            ])
+        ->set(OutputType::class)
+            ->tag('form.type', [])
 
-        ->set('nucleos_form.type.date_output', DateOutputType::class)
-            ->tag('validator.constraint_validator', [
-                'form.type' => 'date_output',
-            ])
+        ->set(DateOutputType::class)
+            ->tag('form.type', [])
 
-        ->set('nucleos_form.type.number_output', NumberOutputType::class)
-            ->tag('validator.constraint_validator', [
-                'form.type' => 'number_output',
-            ])
+        ->set(NumberOutputType::class)
+            ->tag('form.type', [])
 
-        ->set('nucleos_form.type.batch_time', BatchTimeType::class)
-            ->tag('validator.constraint_validator', [
-                'form.type' => 'batch_time',
-            ])
+        ->set(BatchTimeType::class)
+            ->tag('form.type', [])
 
-        ->alias('nucleos_form.time_picker', 'nucleos_form.type.time_picker')
+        ->set(TimePickerType::class)
+            ->tag('form.type', [])
 
-        ->set('nucleos_form.type.time_picker', TimePickerType::class)
-            ->tag('validator.constraint_validator', [
-                'form.type' => 'nucleos_type_time_picker',
-            ])
-
-        ->set('nucleos_form.image_type_extension', ImageTypeExtension::class)
+        ->set(ImageTypeExtension::class)
             ->tag('form.type_extension', [
-                'alias'         => 'file',
                 'extended-type' => FileType::class,
             ])
 
-        ->set('nucleos_form.download_type_extension', DownloadTypeExtension::class)
+        ->set(DownloadTypeExtension::class)
             ->tag('form.type_extension', [
-                'alias'         => 'file',
                 'extended-type' => FileType::class,
             ])
 

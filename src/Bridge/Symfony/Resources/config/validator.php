@@ -15,17 +15,11 @@ use Nucleos\Form\Validator\Constraints\DateAfterValidator;
 return static function (ContainerConfigurator $container): void {
     $container->services()
 
-        ->set('nucleos_form.validator.date_after', DateAfterValidator::class)
-            ->public()
-            ->tag('validator.constraint_validator', [
-                'alias' => 'nucleos_form.validator.date_after',
-            ])
+        ->set(DateAfterValidator::class)
+            ->tag('validator.constraint_validator', [])
 
-        ->set('nucleos_form.validator.batch_time_after', BatchTimeAfterValidator::class)
-            ->public()
-            ->tag('validator.constraint_validator', [
-                'alias' => 'nucleos_form.validator.batch_time_after',
-            ])
+        ->set(BatchTimeAfterValidator::class)
+            ->tag('validator.constraint_validator', [])
 
     ;
 };
