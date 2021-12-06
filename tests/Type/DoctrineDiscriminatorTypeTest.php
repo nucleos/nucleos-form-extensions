@@ -11,25 +11,28 @@ declare(strict_types=1);
 
 namespace Nucleos\Form\Tests\Type;
 
-use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Mapping\ClassMetadata;
-use Nucleos\Form\Tests\Fixtures\EntityDoctrineDiscriminatorType;
+use Doctrine\Persistence\ManagerRegistry;
+use Doctrine\Persistence\ObjectManager;
+use Nucleos\Form\Type\DoctrineDiscriminatorType;
 use PHPUnit\Framework\MockObject\MockObject;
-use Sonata\Doctrine\Entity\BaseEntityManager;
 use Symfony\Component\Form\ChoiceList\View\ChoiceView;
+use Symfony\Component\Form\Extension\Core\Type\FormType;
+use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Form\FormInterface;
 use Symfony\Component\Form\FormTypeInterface;
 
 final class DoctrineDiscriminatorTypeTest extends BaseTypeTest
 {
     /**
-     * @var BaseEntityManager&MockObject
+     * @var ManagerRegistry&MockObject
      */
-    private BaseEntityManager $baseEntityManager;
+    private ManagerRegistry $managerRegistry;
 
     /**
-     * @var EntityManager&MockObject
+     * @var ObjectManager&MockObject
      */
-    private EntityManager $entityManager;
+    private ObjectManager $objectManager;
 
     /**
      * @var ClassMetadata&MockObject
@@ -45,17 +48,14 @@ final class DoctrineDiscriminatorTypeTest extends BaseTypeTest
             'bar' => 'BarEntity',
         ];
 
-        $this->entityManager = $this->createMock(EntityManager::class);
-        $this->entityManager->method('getClassMetadata')->with('MyEntityClass')
+        $this->objectManager = $this->createMock(ObjectManager::class);
+        $this->objectManager->method('getClassMetadata')->with('MyEntityClass')
             ->willReturn($this->classMetadata)
         ;
 
-        $this->baseEntityManager = $this->createMock(BaseEntityManager::class);
-        $this->baseEntityManager->method('getClass')
-            ->willReturn('MyEntityClass')
-        ;
-        $this->baseEntityManager->method('getEntityManager')
-            ->willReturn($this->entityManager)
+        $this->managerRegistry = $this->createMock(ManagerRegistry::class);
+        $this->managerRegistry->method('getManagerForClass')->with('MyEntityClass')
+            ->willReturn($this->objectManager)
         ;
 
         parent::setUp();
@@ -63,16 +63,35 @@ final class DoctrineDiscriminatorTypeTest extends BaseTypeTest
 
     public function testTypesAreSelectable(): void
     {
-        $choices = $this->factory->create($this->getTestedType())
+        $choices = $this->factory->create($this->getTestedType(), null, [
+            'class' => 'MyEntityClass',
+        ])
             ->createView()->vars['choices'];
 
         static::assertContainsEquals(new ChoiceView('foo', 'foo', 'foo'), $choices);
         static::assertContainsEquals(new ChoiceView('bar', 'bar', 'bar'), $choices);
     }
 
+    public function testPassIdAndNameToViewWithGrandParent(): void
+    {
+        $builder = $this->factory->createNamedBuilder('parent', FormType::class)
+            ->add('child', FormType::class)
+        ;
+        $builder->get('child')->add('grand_child', $this->getTestedType(), [
+            'class' => 'MyEntityClass',
+        ]);
+        $view = $builder->getForm()->createView();
+
+        static::assertSame('parent_child_grand_child', $view['child']['grand_child']->vars['id']);
+        static::assertSame('grand_child', $view['child']['grand_child']->vars['name']);
+        static::assertSame('parent[child][grand_child]', $view['child']['grand_child']->vars['full_name']);
+    }
+
     public function testUnknownTypeIsNotIncluded(): void
     {
-        $choices = $this->factory->create($this->getTestedType(), 'types')
+        $choices = $this->factory->create($this->getTestedType(), 'types', [
+            'class' => 'MyEntityClass',
+        ])
             ->createView()->vars['choices'];
 
         $countryCodes = [];
@@ -91,12 +110,52 @@ final class DoctrineDiscriminatorTypeTest extends BaseTypeTest
 
     public function testSubmitNullUsesDefaultEmptyData($emptyData = 'foo', $expectedData = 'foo'): void
     {
-        parent::testSubmitNullUsesDefaultEmptyData($emptyData, $expectedData);
+        $builder = $this->factory->createBuilder($this->getTestedType(), null, [
+            'class' => 'MyEntityClass',
+        ]);
+
+        if ($builder->getCompound()) {
+            $emptyData = [];
+            foreach ($builder as $field) {
+                // empty children should map null (model data) in the compound view data
+                $emptyData[$field->getName()] = null;
+            }
+        } else {
+            // simple fields share the view and the model format, unless they use a transformer
+            $expectedData = $emptyData;
+        }
+
+        $form = $builder->setEmptyData($emptyData)->getForm()->submit(null);
+
+        static::assertSame($emptyData, $form->getViewData());
+        static::assertSame($expectedData, $form->getNormData());
+        static::assertSame($expectedData, $form->getData());
+    }
+
+    protected function create(mixed $data = null, array $options = []): FormInterface
+    {
+        return parent::create($data, array_merge([
+            'class' => 'MyEntityClass',
+        ], $options));
+    }
+
+    protected function createNamed(string $name, mixed $data = null, array $options = []): FormInterface
+    {
+        return parent::createNamed($name, $data, array_merge([
+            'class' => 'MyEntityClass',
+        ], $options));
+    }
+
+    protected function createBuilder(array $parentOptions = [], array $childOptions = []): FormBuilderInterface
+    {
+        return parent::createBuilder($parentOptions, array_merge([
+            'class' => 'MyEntityClass',
+        ], $childOptions));
     }
 
     protected function getTestedType(): string
     {
-        return EntityDoctrineDiscriminatorType::class;
+        return DoctrineDiscriminatorType::class;
     }
 
     /**
@@ -105,7 +164,7 @@ final class DoctrineDiscriminatorTypeTest extends BaseTypeTest
     protected function getTypes(): array
     {
         return [
-            new EntityDoctrineDiscriminatorType($this->baseEntityManager),
+            new DoctrineDiscriminatorType($this->managerRegistry),
         ];
     }
 }

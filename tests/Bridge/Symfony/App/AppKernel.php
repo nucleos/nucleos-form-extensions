@@ -11,6 +11,7 @@ declare(strict_types=1);
 
 namespace Nucleos\Form\Tests\Bridge\Symfony\App;
 
+use Doctrine\Bundle\DoctrineBundle\DoctrineBundle;
 use Nucleos\Form\Bridge\Symfony\Bundle\NucleosFormBundle;
 use Nucleos\Form\Tests\Bridge\Symfony\App\Controller\SampleTestController;
 use Symfony\Bundle\FrameworkBundle\FrameworkBundle;
@@ -31,6 +32,7 @@ final class AppKernel extends Kernel
     public function registerBundles(): iterable
     {
         yield new FrameworkBundle();
+        yield new DoctrineBundle();
         yield new NucleosFormBundle();
     }
 

@@ -18,6 +18,7 @@ use Nucleos\Form\Extension\ImageTypeExtension;
 use Nucleos\Form\Type\BatchTimeType;
 use Nucleos\Form\Type\DACHCountryType;
 use Nucleos\Form\Type\DateOutputType;
+use Nucleos\Form\Type\DoctrineDiscriminatorType;
 use Nucleos\Form\Type\GenderType;
 use Nucleos\Form\Type\NumberOutputType;
 use Nucleos\Form\Type\OutputType;
@@ -31,6 +32,8 @@ final class NucleosFormExtensionTest extends AbstractExtensionTestCase
 {
     public function testLoadDefault(): void
     {
+        $this->setParameter('kernel.bundles', []);
+
         $this->load();
 
         $this->assertContainerBuilderHasService(DACHCountryType::class);
@@ -45,6 +48,19 @@ final class NucleosFormExtensionTest extends AbstractExtensionTestCase
 
         $this->assertContainerBuilderHasService(DateAfterValidator::class);
         $this->assertContainerBuilderHasService(BatchTimeAfterValidator::class);
+
+        $this->assertContainerBuilderNotHasService(DoctrineDiscriminatorType::class);
+    }
+
+    public function testLoadDefaultWithAdmin(): void
+    {
+        $this->setParameter('kernel.bundles', [
+            'DoctrineBundle' => true,
+        ]);
+
+        $this->load();
+
+        $this->assertContainerBuilderHasService(DoctrineDiscriminatorType::class);
     }
 
     public function testLoadWithTwigExtension(): void
