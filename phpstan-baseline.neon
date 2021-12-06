@@ -11,16 +11,6 @@ parameters:
 			path: src/Type/BatchTimeType.php
 
 		-
-			message: "#^Method Nucleos\\\\Form\\\\Type\\\\DoctrineDiscriminatorType\\:\\:__construct\\(\\) has parameter \\$manager with generic class Sonata\\\\Doctrine\\\\Entity\\\\BaseEntityManager but does not specify its types\\: T$#"
-			count: 1
-			path: src/Type/DoctrineDiscriminatorType.php
-
-		-
-			message: "#^Property Nucleos\\\\Form\\\\Type\\\\DoctrineDiscriminatorType\\:\\:\\$entityManager with generic class Sonata\\\\Doctrine\\\\Entity\\\\BaseEntityManager does not specify its types\\: T$#"
-			count: 1
-			path: src/Type/DoctrineDiscriminatorType.php
-
-		-
 			message: "#^Method Nucleos\\\\Form\\\\Tests\\\\Bridge\\\\Symfony\\\\App\\\\AppKernel\\:\\:configureContainer\\(\\) has parameter \\$container with no type specified\\.$#"
 			count: 1
 			path: tests/Bridge/Symfony/App/AppKernel.php
@@ -49,11 +39,6 @@ parameters:
 			message: "#^Instantiated class Symfony\\\\Component\\\\HttpKernel\\\\Client not found\\.$#"
 			count: 1
 			path: tests/Bridge/Symfony/Bundle/BundleIntegrationTest.php
-
-		-
-			message: "#^Property Nucleos\\\\Form\\\\Tests\\\\Type\\\\DoctrineDiscriminatorTypeTest\\:\\:\\$baseEntityManager with generic class Sonata\\\\Doctrine\\\\Entity\\\\BaseEntityManager does not specify its types\\: T$#"
-			count: 1
-			path: tests/Type/DoctrineDiscriminatorTypeTest.php
 
 		-
 			message: "#^Property Nucleos\\\\Form\\\\Tests\\\\Type\\\\DoctrineDiscriminatorTypeTest\\:\\:\\$classMetadata with generic class Doctrine\\\\ORM\\\\Mapping\\\\ClassMetadata does not specify its types\\: T$#"
