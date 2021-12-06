@@ -83,7 +83,7 @@ final class DateAfterValidator extends ConstraintValidator
     }
 
     /**
-     * @param array|object $object
+     * @param mixed[]|object $object
      */
     private function getFieldValue($object, string $field): ?DateTime
     {

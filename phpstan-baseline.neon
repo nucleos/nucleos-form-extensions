@@ -6,16 +6,6 @@ parameters:
 			path: src/Model/BatchTime.php
 
 		-
-			message: "#^Method Nucleos\\\\Form\\\\Test\\\\AbstractFormHandlerTest\\:\\:assertError\\(\\) has parameter \\$messageParameters with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/Test/AbstractFormHandlerTest.php
-
-		-
-			message: "#^Property Nucleos\\\\Form\\\\Test\\\\AbstractFormHandlerTest\\:\\:\\$errors type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/Test/AbstractFormHandlerTest.php
-
-		-
 			message: "#^Short ternary operator is not allowed\\. Use null coalesce operator if applicable or consider using long ternary\\.$#"
 			count: 1
 			path: src/Type/BatchTimeType.php
@@ -29,51 +19,6 @@ parameters:
 			message: "#^Property Nucleos\\\\Form\\\\Type\\\\DoctrineDiscriminatorType\\:\\:\\$entityManager with generic class Sonata\\\\Doctrine\\\\Entity\\\\BaseEntityManager does not specify its types\\: T$#"
 			count: 1
 			path: src/Type/DoctrineDiscriminatorType.php
-
-		-
-			message: "#^Call to function is_array\\(\\) with array will always evaluate to true\\.$#"
-			count: 2
-			path: src/Type/JsonType.php
-
-		-
-			message: "#^Call to function is_string\\(\\) with string will always evaluate to true\\.$#"
-			count: 1
-			path: src/Type/JsonType.php
-
-		-
-			message: "#^Method Nucleos\\\\Form\\\\Type\\\\JsonType\\:\\:transformTextToArray\\(\\) return type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/Type/JsonType.php
-
-		-
-			message: "#^Method Nucleos\\\\Form\\\\Type\\\\TimePickerType\\:\\:createDpOptions\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/Type/TimePickerType.php
-
-		-
-			message: "#^Method Nucleos\\\\Form\\\\Type\\\\TimePickerType\\:\\:createDpOptions\\(\\) return type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/Type/TimePickerType.php
-
-		-
-			message: "#^Method Nucleos\\\\Form\\\\Validator\\\\Constraints\\\\BatchTimeAfter\\:\\:__construct\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/Validator/Constraints/BatchTimeAfter.php
-
-		-
-			message: "#^Method Nucleos\\\\Form\\\\Validator\\\\Constraints\\\\BatchTimeAfterValidator\\:\\:getFieldValue\\(\\) has parameter \\$object with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/Validator/Constraints/BatchTimeAfterValidator.php
-
-		-
-			message: "#^Method Nucleos\\\\Form\\\\Validator\\\\Constraints\\\\DateAfter\\:\\:__construct\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/Validator/Constraints/DateAfter.php
-
-		-
-			message: "#^Method Nucleos\\\\Form\\\\Validator\\\\Constraints\\\\DateAfterValidator\\:\\:getFieldValue\\(\\) has parameter \\$object with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/Validator/Constraints/DateAfterValidator.php
 
 		-
 			message: "#^Method Nucleos\\\\Form\\\\Tests\\\\Bridge\\\\Symfony\\\\App\\\\AppKernel\\:\\:configureContainer\\(\\) has parameter \\$container with no type specified\\.$#"
@@ -104,31 +49,6 @@ parameters:
 			message: "#^Instantiated class Symfony\\\\Component\\\\HttpKernel\\\\Client not found\\.$#"
 			count: 1
 			path: tests/Bridge/Symfony/Bundle/BundleIntegrationTest.php
-
-		-
-			message: "#^Method Nucleos\\\\Form\\\\Tests\\\\Type\\\\BaseTypeTest\\:\\:create\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: tests/Type/BaseTypeTest.php
-
-		-
-			message: "#^Method Nucleos\\\\Form\\\\Tests\\\\Type\\\\BaseTypeTest\\:\\:createBuilder\\(\\) has parameter \\$childOptions with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: tests/Type/BaseTypeTest.php
-
-		-
-			message: "#^Method Nucleos\\\\Form\\\\Tests\\\\Type\\\\BaseTypeTest\\:\\:createBuilder\\(\\) has parameter \\$parentOptions with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: tests/Type/BaseTypeTest.php
-
-		-
-			message: "#^Method Nucleos\\\\Form\\\\Tests\\\\Type\\\\BaseTypeTest\\:\\:createNamed\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
-			count: 1
-			path: tests/Type/BaseTypeTest.php
-
-		-
-			message: "#^Method Nucleos\\\\Form\\\\Tests\\\\Type\\\\DoctrineDiscriminatorTypeTest\\:\\:getTypes\\(\\) return type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: tests/Type/DoctrineDiscriminatorTypeTest.php
 
 		-
 			message: "#^Property Nucleos\\\\Form\\\\Tests\\\\Type\\\\DoctrineDiscriminatorTypeTest\\:\\:\\$baseEntityManager with generic class Sonata\\\\Doctrine\\\\Entity\\\\BaseEntityManager does not specify its types\\: T$#"

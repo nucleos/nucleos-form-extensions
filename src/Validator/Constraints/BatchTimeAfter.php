@@ -48,10 +48,7 @@ final class BatchTimeAfter extends Constraint
      */
     public $required = true;
 
-    /**
-     * @param array $options
-     */
-    public function __construct($options = null)
+    public function __construct(mixed $options = null)
     {
         parent::__construct($options);
 

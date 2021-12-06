@@ -63,6 +63,11 @@ final class TimePickerType extends AbstractType
         return 'nucleos_type_time_picker';
     }
 
+    /**
+     * @param array<string, mixed> $options
+     *
+     * @return array<string, mixed>
+     */
     private static function createDpOptions(array $options): array
     {
         $dpOptions = [];

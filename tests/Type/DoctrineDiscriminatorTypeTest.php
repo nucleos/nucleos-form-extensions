@@ -17,6 +17,7 @@ use Nucleos\Form\Tests\Fixtures\EntityDoctrineDiscriminatorType;
 use PHPUnit\Framework\MockObject\MockObject;
 use Sonata\Doctrine\Entity\BaseEntityManager;
 use Symfony\Component\Form\ChoiceList\View\ChoiceView;
+use Symfony\Component\Form\FormTypeInterface;
 
 final class DoctrineDiscriminatorTypeTest extends BaseTypeTest
 {
@@ -98,6 +99,9 @@ final class DoctrineDiscriminatorTypeTest extends BaseTypeTest
         return EntityDoctrineDiscriminatorType::class;
     }
 
+    /**
+     * @return FormTypeInterface[]
+     */
     protected function getTypes(): array
     {
         return [

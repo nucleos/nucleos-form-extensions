@@ -182,21 +182,25 @@ abstract class BaseTypeTest extends TypeTestCase
     }
 
     /**
-     * @param mixed|null $data
+     * @param array<string, mixed> $options
      */
-    protected function create($data = null, array $options = []): FormInterface
+    protected function create(mixed $data = null, array $options = []): FormInterface
     {
         return $this->factory->create($this->getTestedType(), $data, $options);
     }
 
     /**
-     * @param mixed|null $data
+     * @param array<string, mixed> $options
      */
-    protected function createNamed(string $name, $data = null, array $options = []): FormInterface
+    protected function createNamed(string $name, mixed $data = null, array $options = []): FormInterface
     {
         return $this->factory->createNamed($name, $this->getTestedType(), $data, $options);
     }
 
+    /**
+     * @param array<string, mixed> $parentOptions
+     * @param array<string, mixed> $childOptions
+     */
     protected function createBuilder(array $parentOptions = [], array $childOptions = []): FormBuilderInterface
     {
         return $this->factory

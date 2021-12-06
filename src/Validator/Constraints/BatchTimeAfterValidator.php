@@ -104,7 +104,7 @@ final class BatchTimeAfterValidator extends ConstraintValidator
     }
 
     /**
-     * @param array|object $object
+     * @param mixed[]|object $object
      */
     private function getFieldValue($object, string $field): ?BatchTime
     {
