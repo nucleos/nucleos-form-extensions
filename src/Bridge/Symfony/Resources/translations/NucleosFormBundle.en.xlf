@@ -29,6 +29,10 @@
         <source>gender.male</source>
         <target>male</target>
       </trans-unit>
+      <trans-unit id="gender.non_binary">
+        <source>gender.non_binary</source>
+        <target>non-binary</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

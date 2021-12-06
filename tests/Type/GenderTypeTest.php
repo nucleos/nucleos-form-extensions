@@ -24,6 +24,7 @@ final class GenderTypeTest extends BaseTypeTest
 
         static::assertContainsEquals(new ChoiceView('m', 'm', 'gender.male'), $choices);
         static::assertContainsEquals(new ChoiceView('f', 'f', 'gender.female'), $choices);
+        static::assertContainsEquals(new ChoiceView('d', 'd', 'gender.non_binary'), $choices);
     }
 
     public function testUnknownGenderIsNotIncluded(): void
