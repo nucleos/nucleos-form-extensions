@@ -10,3 +10,5 @@ parameters:
 
     bootstrapFiles:
         - vendor-bin/tools/vendor/autoload.php
+
+    treatPhpDocTypesAsCertain: false

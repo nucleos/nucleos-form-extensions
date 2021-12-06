@@ -38,6 +38,9 @@ abstract class AbstractFormHandlerTest extends TestCase
      */
     protected Session $session;
 
+    /**
+     * @phpstan-var array<array{message: string, parameters: array<string, mixed>, count: int}>
+     */
     private array $errors;
 
     protected function setUp(): void
@@ -137,6 +140,8 @@ abstract class AbstractFormHandlerTest extends TestCase
 
     /**
      * Assets an error.
+     *
+     * @param array<string, mixed> $messageParameters
      */
     final protected function assertError(string $message, array $messageParameters = []): void
     {
