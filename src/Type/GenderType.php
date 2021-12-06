@@ -21,12 +21,15 @@ final class GenderType extends AbstractType
 
     public const TYPE_FEMALE = 'f';
 
+    public const TYPE_NON_BINARY = 'd';
+
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
             'choices' => [
-                'male'   => static::TYPE_MALE,
-                'female' => static::TYPE_FEMALE,
+                'male'       => static::TYPE_MALE,
+                'female'     => static::TYPE_FEMALE,
+                'non_binary' => static::TYPE_NON_BINARY,
             ],
             'choice_label' => static function ($value, $key, $index) {
                 return 'gender.'.$key;
