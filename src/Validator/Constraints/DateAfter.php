@@ -48,9 +48,26 @@ final class DateAfter extends Constraint
      */
     public $required = true;
 
-    public function __construct(mixed $options = null)
-    {
-        parent::__construct($options);
+    /**
+     * @param array<string, mixed> $options
+     */
+    public function __construct(
+        array $options = [],
+        string $firstField = null,
+        string $secondField = null,
+        string $message = null,
+        string $emptyMessage = null,
+        bool $required = null,
+        array $groups = null,
+        mixed $payload = null,
+    ) {
+        parent::__construct($options, $groups, $payload);
+
+        $this->firstField   = $firstField   ?? $this->firstField;
+        $this->secondField  = $secondField  ?? $this->secondField;
+        $this->message      = $message      ?? $this->message;
+        $this->emptyMessage = $emptyMessage ?? $this->emptyMessage;
+        $this->required     = $required     ?? $this->required;
 
         if ($this->firstField === $this->secondField) {
             throw new InvalidOptionsException('The options "firstField" and "secondField" can not be the same for constraint '.__CLASS__, [
