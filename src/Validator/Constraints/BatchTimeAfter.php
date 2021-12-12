@@ -61,6 +61,13 @@ final class BatchTimeAfter extends Constraint
         array $groups = null,
         mixed $payload = null,
     ) {
+        if (null !== $firstField) {
+            $options['firstField'] = $firstField;
+        }
+        if (null !== $secondField) {
+            $options['secondField'] = $secondField;
+        }
+
         parent::__construct($options, $groups, $payload);
 
         $this->firstField   = $firstField   ?? $this->firstField;
