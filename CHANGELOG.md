@@ -2,27 +2,30 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
-## 6.1.0 - TBD
+## 6.1.0 - 2022-02-11
 
-### Added
 
-- Nothing.
+-----
 
-### Changed
+### Release Notes for [6.1.0](https://github.com/nucleos/nucleos-form-extensions/milestone/8)
 
-- Nothing.
+Feature release (minor)
 
-### Deprecated
+### 6.1.0
 
-- Nothing.
+- Total issues resolved: **0**
+- Total pull requests resolved: **4**
+- Total contributors: **1**
 
-### Removed
+#### Enhancement
 
-- Nothing.
+ - [392: Use shared pipelines](https://github.com/nucleos/nucleos-form-extensions/pull/392) thanks to @core23
+ - [379: Add support for named validator constraint arguments](https://github.com/nucleos/nucleos-form-extensions/pull/379) thanks to @core23
+ - [378: Remove composer-bin plugin](https://github.com/nucleos/nucleos-form-extensions/pull/378) thanks to @core23
 
-### Fixed
+#### Bug
 
-- Nothing.
+ - [380: Fix constraint initialization](https://github.com/nucleos/nucleos-form-extensions/pull/380) thanks to @core23
 
 ## 5.3.0 - TBD
 
