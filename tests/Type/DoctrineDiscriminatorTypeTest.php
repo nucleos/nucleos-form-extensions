@@ -14,6 +14,8 @@ namespace Nucleos\Form\Tests\Type;
 use Doctrine\ORM\Mapping\ClassMetadata;
 use Doctrine\Persistence\ManagerRegistry;
 use Doctrine\Persistence\ObjectManager;
+use Nucleos\Form\Tests\Fixtures\BarEntity;
+use Nucleos\Form\Tests\Fixtures\FooEntity;
 use Nucleos\Form\Type\DoctrineDiscriminatorType;
 use PHPUnit\Framework\MockObject\MockObject;
 use Symfony\Component\Form\ChoiceList\View\ChoiceView;
@@ -44,8 +46,8 @@ final class DoctrineDiscriminatorTypeTest extends BaseTypeTest
         $this->classMetadata = $this->createMock(ClassMetadata::class);
 
         $this->classMetadata->discriminatorMap = [
-            'foo' => 'FooEntity',
-            'bar' => 'BarEntity',
+            'foo' => FooEntity::class,
+            'bar' => BarEntity::class,
         ];
 
         $this->objectManager = $this->createMock(ObjectManager::class);
