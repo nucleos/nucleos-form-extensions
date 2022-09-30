@@ -23,6 +23,8 @@ use Symfony\Component\Validator\Test\ConstraintValidatorTestCase;
 
 /**
  * @SuppressWarnings(PHPMD.TooManyPublicMethods)
+ *
+ * @extends ConstraintValidatorTestCase<BatchTimeAfterValidator>
  */
 final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
 {
