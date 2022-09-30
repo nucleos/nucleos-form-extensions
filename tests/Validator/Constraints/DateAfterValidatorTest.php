@@ -22,6 +22,8 @@ use Symfony\Component\Validator\Test\ConstraintValidatorTestCase;
 
 /**
  * @SuppressWarnings(PHPMD.TooManyPublicMethods)
+ *
+ * @extends ConstraintValidatorTestCase<DateAfterValidator>
  */
 final class DateAfterValidatorTest extends ConstraintValidatorTestCase
 {
