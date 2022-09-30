@@ -50,7 +50,7 @@ final class DoctrineDiscriminatorType extends AbstractType
     /**
      * @param class-string $class
      *
-     * @return array<string, string>
+     * @return array<int|string, int|string>
      */
     private function getChoices(string $class): array
     {
@@ -66,10 +66,8 @@ final class DoctrineDiscriminatorType extends AbstractType
 
         \assert($meta instanceof ClassMetadataInfo);
 
-        if (\is_array($meta->discriminatorMap)) {
-            foreach ($meta->discriminatorMap as $key => $value) {
-                $choices[$key] = $key;
-            }
+        foreach ($meta->discriminatorMap as $key => $value) {
+            $choices[$key] = $key;
         }
 
         return $choices;
