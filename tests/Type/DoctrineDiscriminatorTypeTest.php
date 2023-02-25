@@ -32,7 +32,7 @@ final class DoctrineDiscriminatorTypeTest extends BaseTypeTest
     private ManagerRegistry $managerRegistry;
 
     /**
-     * @var ObjectManager&MockObject
+     * @var MockObject&ObjectManager
      */
     private ObjectManager $objectManager;
 
