@@ -19,7 +19,7 @@ class BatchTime
 
     private ?DateTimeInterface $time = null;
 
-    public function __toString()
+    public function __toString(): string
     {
         return $this->toString();
     }
