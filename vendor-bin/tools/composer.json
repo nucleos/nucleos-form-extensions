@@ -19,9 +19,9 @@
         "vimeo/psalm": "^5.0"
     },
     "config": {
-        "bin-dir": "../../vendor/bin",
         "allow-plugins": {
             "phpstan/extension-installer": true
-        }
+        },
+        "bin-dir": "../../vendor/bin"
     }
 }
