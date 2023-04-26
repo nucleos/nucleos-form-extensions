@@ -20,6 +20,5 @@ return static function (ContainerConfigurator $container): void {
 
         ->set(BatchTimeAfterValidator::class)
             ->tag('validator.constraint_validator', [])
-
     ;
 };
