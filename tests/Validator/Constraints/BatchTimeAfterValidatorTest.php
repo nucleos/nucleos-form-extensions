@@ -59,7 +59,7 @@ final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
         $end->setTime(new DateTime());
 
         $object = $this->getMockBuilder('stdClass')
-            ->setMethods(['getEnd'])
+            ->addMethods(['getEnd'])
             ->getMock()
         ;
         $object->method('getEnd')->willReturn($end);
@@ -82,7 +82,7 @@ final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
         $begin->setTime(new DateTime());
 
         $object = $this->getMockBuilder('stdClass')
-            ->setMethods(['getBegin'])
+            ->addMethods(['getBegin'])
             ->getMock()
         ;
         $object->method('getBegin')->willReturn($begin);
@@ -105,7 +105,7 @@ final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
         $begin->setTime(new DateTime());
 
         $object = $this->getMockBuilder('stdClass')
-            ->setMethods(['getBegin', 'getEnd'])
+            ->addMethods(['getBegin', 'getEnd'])
             ->getMock()
         ;
         $object->method('getBegin')->willReturn($begin);
@@ -129,7 +129,7 @@ final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
         $end->setTime(new DateTime());
 
         $object = $this->getMockBuilder('stdClass')
-            ->setMethods(['getBegin', 'getEnd'])
+            ->addMethods(['getBegin', 'getEnd'])
             ->getMock()
         ;
         $object->method('getBegin')->willReturn('test');
@@ -151,7 +151,7 @@ final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
         $end->setTime(new DateTime());
 
         $object = $this->getMockBuilder('stdClass')
-            ->setMethods(['getBegin', 'getEnd'])
+            ->addMethods(['getBegin', 'getEnd'])
             ->getMock()
         ;
         $object->method('getBegin')->willReturn(null);
@@ -182,7 +182,7 @@ final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
         $begin->setTime(new DateTime());
 
         $object = $this->getMockBuilder('stdClass')
-            ->setMethods(['getBegin', 'getEnd'])
+            ->addMethods(['getBegin', 'getEnd'])
             ->getMock()
         ;
         $object->method('getBegin')->willReturn($begin);
@@ -216,7 +216,7 @@ final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
         $end->setTime(new DateTime('2015-01-01 10:00'));
 
         $object = $this->getMockBuilder('stdClass')
-            ->setMethods(['getBegin', 'getEnd'])
+            ->addMethods(['getBegin', 'getEnd'])
             ->getMock()
         ;
         $object->method('getBegin')->willReturn($begin);
@@ -250,7 +250,7 @@ final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
         $end->setTime(new DateTime('2015-02-01 10:00'));
 
         $object = $this->getMockBuilder('stdClass')
-            ->setMethods(['getBegin', 'getEnd'])
+            ->addMethods(['getBegin', 'getEnd'])
             ->getMock()
         ;
         $object->method('getBegin')->willReturn($begin);
@@ -277,7 +277,7 @@ final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
         $end->setTime(new DateTime('2015-01-01 10:00'));
 
         $object = $this->getMockBuilder('stdClass')
-            ->setMethods(['getBegin', 'getEnd'])
+            ->addMethods(['getBegin', 'getEnd'])
             ->getMock()
         ;
         $object->method('getBegin')->willReturn($begin);
@@ -298,7 +298,7 @@ final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
     public function testValidateNotRequired(): void
     {
         $object = $this->getMockBuilder('stdClass')
-            ->setMethods(['getBegin', 'getEnd'])
+            ->addMethods(['getBegin', 'getEnd'])
             ->getMock()
         ;
         $object->method('getBegin')->willReturn(null);
@@ -323,7 +323,7 @@ final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
         $end->setTime(new DateTime());
 
         $object = $this->getMockBuilder('stdClass')
-            ->setMethods(['getBegin', 'getEnd'])
+            ->addMethods(['getBegin', 'getEnd'])
             ->getMock()
         ;
         $object->method('getBegin')->willReturn(null);
@@ -355,7 +355,7 @@ final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
         $begin->setTime(new DateTime());
 
         $object = $this->getMockBuilder('stdClass')
-            ->setMethods(['getBegin', 'getEnd'])
+            ->addMethods(['getBegin', 'getEnd'])
             ->getMock()
         ;
         $object->method('getBegin')->willReturn($begin);
@@ -389,7 +389,7 @@ final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
         $end->setTime(new DateTime('2015-02-01 10:00'));
 
         $object = $this->getMockBuilder('stdClass')
-            ->setMethods(['getBegin', 'getEnd'])
+            ->addMethods(['getBegin', 'getEnd'])
             ->getMock()
         ;
         $object->method('getBegin')->willReturn($begin);
@@ -422,7 +422,7 @@ final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
         $end = new BatchTime();
 
         $object = $this->getMockBuilder('stdClass')
-            ->setMethods(['getBegin', 'getEnd'])
+            ->addMethods(['getBegin', 'getEnd'])
             ->getMock()
         ;
         $object->method('getBegin')->willReturn($begin);

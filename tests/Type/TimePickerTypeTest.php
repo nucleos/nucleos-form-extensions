@@ -13,7 +13,7 @@ namespace Nucleos\Form\Tests\Type;
 
 use Nucleos\Form\Type\TimePickerType;
 
-final class TimePickerTypeTest extends BaseTypeTest
+final class TimePickerTypeTest extends BaseTypeTestCase
 {
     public function testSubmitNull($expected = null, $norm = null, $view = ''): void
     {

@@ -15,7 +15,7 @@ use Nucleos\Form\Type\DACHCountryType;
 use Symfony\Component\Form\ChoiceList\View\ChoiceView;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
-final class DACHCountryTypeTest extends BaseTypeTest
+final class DACHCountryTypeTest extends BaseTypeTestCase
 {
     public function testCountriesAreSelectable(): void
     {

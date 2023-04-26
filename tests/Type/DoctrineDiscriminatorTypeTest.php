@@ -24,7 +24,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\Form\FormTypeInterface;
 
-final class DoctrineDiscriminatorTypeTest extends BaseTypeTest
+final class DoctrineDiscriminatorTypeTest extends BaseTypeTestCase
 {
     /**
      * @var ManagerRegistry&MockObject
