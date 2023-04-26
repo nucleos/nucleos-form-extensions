@@ -13,7 +13,7 @@ namespace Nucleos\Form\Tests\Type;
 
 use Nucleos\Form\Type\DateOutputType;
 
-final class DateOutputTypeTest extends BaseTypeTest
+final class DateOutputTypeTest extends BaseTypeTestCase
 {
     public function testSubmitNull($expected = null, $norm = null, $view = ''): void
     {

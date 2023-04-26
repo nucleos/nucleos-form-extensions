@@ -14,12 +14,13 @@ namespace Nucleos\Form\Tests\Type;
 use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormInterface;
+use Symfony\Component\Form\FormTypeInterface;
 use Symfony\Component\Form\Test\TypeTestCase;
 
 /**
  * @SuppressWarnings(PHPMD.TooManyPublicMethods)
  */
-abstract class BaseTypeTest extends TypeTestCase
+abstract class BaseTypeTestCase extends TypeTestCase
 {
     public function testPassDisabledAsOption(): void
     {
@@ -209,5 +210,8 @@ abstract class BaseTypeTest extends TypeTestCase
         ;
     }
 
+    /**
+     * @return class-string<FormTypeInterface<mixed>>
+     */
     abstract protected function getTestedType(): string;
 }

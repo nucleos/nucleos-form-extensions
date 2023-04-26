@@ -55,7 +55,7 @@ final class DateAfterValidatorTest extends ConstraintValidatorTestCase
         $this->expectException(InvalidArgumentException::class);
 
         $object = $this->getMockBuilder('stdClass')
-            ->setMethods(['getEnd'])
+            ->addMethods(['getEnd'])
             ->getMock()
         ;
         $object->method('getEnd')->willReturn(new DateTime());
@@ -75,7 +75,7 @@ final class DateAfterValidatorTest extends ConstraintValidatorTestCase
         $this->expectException(InvalidArgumentException::class);
 
         $object = $this->getMockBuilder('stdClass')
-            ->setMethods(['getBegin'])
+            ->addMethods(['getBegin'])
             ->getMock()
         ;
         $object->method('getBegin')->willReturn(new DateTime());
@@ -95,7 +95,7 @@ final class DateAfterValidatorTest extends ConstraintValidatorTestCase
         $this->expectException(UnexpectedTypeException::class);
 
         $object = $this->getMockBuilder('stdClass')
-            ->setMethods(['getBegin', 'getEnd'])
+            ->addMethods(['getBegin', 'getEnd'])
             ->getMock()
         ;
         $object->method('getBegin')->willReturn(new DateTime());
@@ -116,7 +116,7 @@ final class DateAfterValidatorTest extends ConstraintValidatorTestCase
         $this->expectException(UnexpectedTypeException::class);
 
         $object = $this->getMockBuilder('stdClass')
-            ->setMethods(['getBegin', 'getEnd'])
+            ->addMethods(['getBegin', 'getEnd'])
             ->getMock()
         ;
         $object->method('getBegin')->willReturn('test');
@@ -135,7 +135,7 @@ final class DateAfterValidatorTest extends ConstraintValidatorTestCase
     public function testValidateEmptyFirstValue(): void
     {
         $object = $this->getMockBuilder('stdClass')
-            ->setMethods(['getBegin', 'getEnd'])
+            ->addMethods(['getBegin', 'getEnd'])
             ->getMock()
         ;
         $object->method('getBegin')->willReturn(null);
@@ -163,7 +163,7 @@ final class DateAfterValidatorTest extends ConstraintValidatorTestCase
     public function testValidateEmptySecondValue(): void
     {
         $object = $this->getMockBuilder('stdClass')
-            ->setMethods(['getBegin', 'getEnd'])
+            ->addMethods(['getBegin', 'getEnd'])
             ->getMock()
         ;
         $object->method('getBegin')->willReturn(new DateTime());
@@ -191,7 +191,7 @@ final class DateAfterValidatorTest extends ConstraintValidatorTestCase
     public function testValidateDatesInvalid(): void
     {
         $object = $this->getMockBuilder('stdClass')
-            ->setMethods(['getBegin', 'getEnd'])
+            ->addMethods(['getBegin', 'getEnd'])
             ->getMock()
         ;
         $object->method('getBegin')->willReturn(new DateTime('2015-02-01 10:00'));
@@ -219,7 +219,7 @@ final class DateAfterValidatorTest extends ConstraintValidatorTestCase
     public function testValidateDatesValid(): void
     {
         $object = $this->getMockBuilder('stdClass')
-            ->setMethods(['getBegin', 'getEnd'])
+            ->addMethods(['getBegin', 'getEnd'])
             ->getMock()
         ;
         $object->method('getBegin')->willReturn(new DateTime('2015-01-01 10:00'));
@@ -240,7 +240,7 @@ final class DateAfterValidatorTest extends ConstraintValidatorTestCase
     public function testValidateEqualDate(): void
     {
         $object = $this->getMockBuilder('stdClass')
-            ->setMethods(['getBegin', 'getEnd'])
+            ->addMethods(['getBegin', 'getEnd'])
             ->getMock()
         ;
         $object->method('getBegin')->willReturn(new DateTime('2015-01-01 10:00'));
@@ -261,7 +261,7 @@ final class DateAfterValidatorTest extends ConstraintValidatorTestCase
     public function testValidateNotRequired(): void
     {
         $object = $this->getMockBuilder('stdClass')
-            ->setMethods(['getBegin', 'getEnd'])
+            ->addMethods(['getBegin', 'getEnd'])
             ->getMock()
         ;
         $object->method('getBegin')->willReturn(null);
@@ -283,7 +283,7 @@ final class DateAfterValidatorTest extends ConstraintValidatorTestCase
     public function testValidateNotRequiredWithEmptyFirst(): void
     {
         $object = $this->getMockBuilder('stdClass')
-            ->setMethods(['getBegin', 'getEnd'])
+            ->addMethods(['getBegin', 'getEnd'])
             ->getMock()
         ;
         $object->method('getBegin')->willReturn(null);
@@ -307,7 +307,7 @@ final class DateAfterValidatorTest extends ConstraintValidatorTestCase
     public function testValidateNotRequiredWithEmptySecond(): void
     {
         $object = $this->getMockBuilder('stdClass')
-            ->setMethods(['getBegin', 'getEnd'])
+            ->addMethods(['getBegin', 'getEnd'])
             ->getMock()
         ;
         $object->method('getBegin')->willReturn(new DateTime());
