@@ -19,6 +19,5 @@ return static function (ContainerConfigurator $container): void {
             ->args([
                 service('doctrine'),
             ])
-
     ;
 };

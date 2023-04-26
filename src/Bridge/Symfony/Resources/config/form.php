@@ -53,6 +53,5 @@ return static function (ContainerConfigurator $container): void {
             ->tag('form.type_extension', [
                 'extended-type' => FileType::class,
             ])
-
     ;
 };
