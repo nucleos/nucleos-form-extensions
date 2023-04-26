@@ -2,27 +2,29 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
-## 6.2.0 - TBD
+## 6.2.0 - 2023-04-26
 
-### Added
 
-- Nothing.
+-----
 
-### Changed
+### Release Notes for [6.2.0](https://github.com/nucleos/nucleos-form-extensions/milestone/11)
 
-- Nothing.
+Feature release (minor)
 
-### Deprecated
+### 6.2.0
 
-- Nothing.
+- Total issues resolved: **0**
+- Total pull requests resolved: **3**
+- Total contributors: **1**
 
-### Removed
+#### Enhancement
 
-- Nothing.
+ - [484: Update build tools](https://github.com/nucleos/nucleos-form-extensions/pull/484) thanks to @core23
 
-### Fixed
+#### dependency
 
-- Nothing.
+ - [483: Drop support for symfony 6.1](https://github.com/nucleos/nucleos-form-extensions/pull/483) thanks to @core23
+ - [481: Drop support for PHP 8.0](https://github.com/nucleos/nucleos-form-extensions/pull/481) thanks to @core23
 
 ## 6.1.0 - 2022-02-11
 
