@@ -17,7 +17,6 @@ use Symfony\Component\Validator\Exception\InvalidOptionsException;
 
 /**
  * @Annotation
- *
  * @Target({"CLASS", "ANNOTATION"})
  */
 #[Attribute(Attribute::TARGET_CLASS | Attribute::IS_REPEATABLE)]

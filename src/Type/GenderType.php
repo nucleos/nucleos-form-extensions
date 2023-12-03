@@ -27,9 +27,9 @@ final class GenderType extends AbstractType
     {
         $resolver->setDefaults([
             'choices' => [
-                'male'       => static::TYPE_MALE,
-                'female'     => static::TYPE_FEMALE,
-                'non_binary' => static::TYPE_NON_BINARY,
+                'male'       => self::TYPE_MALE,
+                'female'     => self::TYPE_FEMALE,
+                'non_binary' => self::TYPE_NON_BINARY,
             ],
             'choice_label' => static function ($value, $key, $index) {
                 return 'gender.'.$key;

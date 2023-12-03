@@ -9,6 +9,4 @@
 
 namespace Nucleos\Form\Tests\Fixtures;
 
-class FooEntity
-{
-}
+class FooEntity {}

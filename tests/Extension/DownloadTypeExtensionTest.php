@@ -30,14 +30,14 @@ final class DownloadTypeExtensionTest extends TestCase
 
         $result = $resolver->resolve();
 
-        static::assertNull($result['download_path']);
-        static::assertSame('link_download', $result['download_text']);
+        self::assertNull($result['download_path']);
+        self::assertSame('link_download', $result['download_text']);
     }
 
     public function testBuildForm(): void
     {
         $builder = $this->createMock(FormBuilderInterface::class);
-        $builder->expects(static::once())->method('setAttribute')
+        $builder->expects(self::once())->method('setAttribute')
             ->with('download_path', 'image')
         ;
 
@@ -69,8 +69,8 @@ final class DownloadTypeExtensionTest extends TestCase
             'download_text' => 'link_download',
         ]);
 
-        static::assertSame('/foo/bar.png', $view->vars['download_path']);
-        static::assertSame('link_download', $view->vars['download_text']);
+        self::assertSame('/foo/bar.png', $view->vars['download_path']);
+        self::assertSame('link_download', $view->vars['download_text']);
     }
 
     public function testBuildViewWithoutData(): void
@@ -93,12 +93,12 @@ final class DownloadTypeExtensionTest extends TestCase
             'download_text' => 'link_download',
         ]);
 
-        static::assertNull($view->vars['download_path']);
-        static::assertSame('link_download', $view->vars['download_text']);
+        self::assertNull($view->vars['download_path']);
+        self::assertSame('link_download', $view->vars['download_text']);
     }
 
     public function testExtendedTypes(): void
     {
-        static::assertSame([FileType::class], DownloadTypeExtension::getExtendedTypes());
+        self::assertSame([FileType::class], DownloadTypeExtension::getExtendedTypes());
     }
 }

@@ -13,6 +13,4 @@ namespace Nucleos\Form\Handler\Exception;
 
 use InvalidArgumentException;
 
-class InvalidCallbackException extends InvalidArgumentException
-{
-}
+class InvalidCallbackException extends InvalidArgumentException {}

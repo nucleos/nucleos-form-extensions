@@ -20,14 +20,14 @@ final class BatchTimeTypeTest extends BaseTypeTestCase
     {
         $type = new BatchTimeType();
 
-        static::assertSame(FormType::class, $type->getParent());
+        self::assertSame(FormType::class, $type->getParent());
     }
 
     public function testGetBlockPrefix(): void
     {
         $type = new BatchTimeType();
 
-        static::assertSame('batch_time', $type->getBlockPrefix());
+        self::assertSame('batch_time', $type->getBlockPrefix());
     }
 
     public function testSubmitNull($expected = null, $norm = null, $view = null): void
@@ -37,14 +37,14 @@ final class BatchTimeTypeTest extends BaseTypeTestCase
         ]);
         $form->submit(null);
 
-        static::assertSame($expected, $form->getData());
-        static::assertSame($norm, $form->getNormData());
-        static::assertSame($view, $form->getViewData());
+        self::assertSame($expected, $form->getData());
+        self::assertSame($norm, $form->getNormData());
+        self::assertSame($view, $form->getViewData());
     }
 
     public function testSubmitNullUsesDefaultEmptyData($emptyData = null, $expectedData = null): void
     {
-        static::markTestSkipped('emptyData is not supported');
+        self::markTestSkipped('emptyData is not supported');
     }
 
     protected function getTestedType(): string

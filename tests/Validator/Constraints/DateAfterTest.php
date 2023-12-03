@@ -56,8 +56,8 @@ final class DateAfterTest extends TestCase
             'secondField' => 'second',
         ]);
 
-        static::assertSame('first', $dateAfter->firstField);
-        static::assertSame('second', $dateAfter->secondField);
+        self::assertSame('first', $dateAfter->firstField);
+        self::assertSame('second', $dateAfter->secondField);
     }
 
     public function testGetTarget(): void
@@ -67,6 +67,6 @@ final class DateAfterTest extends TestCase
             'secondField' => 'second',
         ]);
 
-        static::assertSame('class', $dateAfter->getTargets());
+        self::assertSame('class', $dateAfter->getTargets());
     }
 }

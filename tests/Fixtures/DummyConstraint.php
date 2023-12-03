@@ -13,6 +13,4 @@ namespace Nucleos\Form\Tests\Fixtures;
 
 use Symfony\Component\Validator\Constraint;
 
-final class DummyConstraint extends Constraint
-{
-}
+final class DummyConstraint extends Constraint {}
