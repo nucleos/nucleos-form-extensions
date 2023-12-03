@@ -20,17 +20,19 @@ final class GenderTypeTest extends BaseTypeTestCase
     public function testGendersAreSelectable(): void
     {
         $choices = $this->factory->create($this->getTestedType())
-            ->createView()->vars['choices'];
+            ->createView()->vars['choices']
+        ;
 
-        static::assertContainsEquals(new ChoiceView('m', 'm', 'gender.male'), $choices);
-        static::assertContainsEquals(new ChoiceView('f', 'f', 'gender.female'), $choices);
-        static::assertContainsEquals(new ChoiceView('d', 'd', 'gender.non_binary'), $choices);
+        self::assertContainsEquals(new ChoiceView('m', 'm', 'gender.male'), $choices);
+        self::assertContainsEquals(new ChoiceView('f', 'f', 'gender.female'), $choices);
+        self::assertContainsEquals(new ChoiceView('d', 'd', 'gender.non_binary'), $choices);
     }
 
     public function testUnknownGenderIsNotIncluded(): void
     {
         $choices = $this->factory->create($this->getTestedType(), 'gender')
-            ->createView()->vars['choices'];
+            ->createView()->vars['choices']
+        ;
 
         $genderCodes = [];
 
@@ -38,7 +40,7 @@ final class GenderTypeTest extends BaseTypeTestCase
             $genderCodes[] = $choice->value;
         }
 
-        static::assertNotContains('t', $genderCodes);
+        self::assertNotContains('t', $genderCodes);
     }
 
     public function testSubmitNull($expected = null, $norm = null, $view = null): void
@@ -55,14 +57,14 @@ final class GenderTypeTest extends BaseTypeTestCase
     {
         $type = new GenderType();
 
-        static::assertSame(ChoiceType::class, $type->getParent());
+        self::assertSame(ChoiceType::class, $type->getParent());
     }
 
     public function testGetBlockPrefix(): void
     {
         $type = new GenderType();
 
-        static::assertSame('gender', $type->getBlockPrefix());
+        self::assertSame('gender', $type->getBlockPrefix());
     }
 
     protected function getTestedType(): string

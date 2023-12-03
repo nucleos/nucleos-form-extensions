@@ -66,12 +66,12 @@ final class NucleosFormExtensionTest extends AbstractExtensionTestCase
     public function testLoadWithTwigExtension(): void
     {
         $fakeContainer = $this->createMock(ContainerBuilder::class);
-        $fakeContainer->expects(static::once())
+        $fakeContainer->expects(self::once())
             ->method('hasExtension')
-            ->with(static::equalTo('twig'))
+            ->with(self::equalTo('twig'))
             ->willReturn(true)
         ;
-        $fakeContainer->expects(static::once())
+        $fakeContainer->expects(self::once())
             ->method('prependExtensionConfig')
             ->with('twig', ['form_themes' => ['@NucleosForm/Form/widgets.html.twig']])
         ;

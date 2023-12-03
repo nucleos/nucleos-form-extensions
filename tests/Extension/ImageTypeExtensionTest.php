@@ -30,13 +30,13 @@ final class ImageTypeExtensionTest extends TestCase
 
         $result = $resolver->resolve();
 
-        static::assertNull($result['image_path']);
+        self::assertNull($result['image_path']);
     }
 
     public function testBuildForm(): void
     {
         $builder = $this->createMock(FormBuilderInterface::class);
-        $builder->expects(static::once())->method('setAttribute')
+        $builder->expects(self::once())->method('setAttribute')
             ->with('image_path', 'image')
         ;
 
@@ -67,7 +67,7 @@ final class ImageTypeExtensionTest extends TestCase
             'image_path' => '[image]',
         ]);
 
-        static::assertSame('/foo/bar.png', $view->vars['image_url']);
+        self::assertSame('/foo/bar.png', $view->vars['image_url']);
     }
 
     public function testBuildViewWithoutData(): void
@@ -89,11 +89,11 @@ final class ImageTypeExtensionTest extends TestCase
             'image_path' => '[image]',
         ]);
 
-        static::assertNull($view->vars['image_url']);
+        self::assertNull($view->vars['image_url']);
     }
 
     public function testExtendedTypes(): void
     {
-        static::assertSame([FileType::class], ImageTypeExtension::getExtendedTypes());
+        self::assertSame([FileType::class], ImageTypeExtension::getExtendedTypes());
     }
 }

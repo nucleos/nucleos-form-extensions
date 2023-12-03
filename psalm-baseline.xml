@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<files psalm-version="v4.14.0@14dcbc908ab2625cd7a74258ee6c740cbecc6140">
+<files psalm-version="5.16.0@2897ba636551a8cb61601cc26f6ccfbba6c36591">
   <file src="src/Type/JsonType.php">
-    <TooManyTemplateParams occurrences="1">
-      <code>DataTransformerInterface</code>
-    </TooManyTemplateParams>
-  </file>
-  <file src="src/Type/OutputType.php">
-    <TooManyTemplateParams occurrences="1">
-      <code>DataTransformerInterface</code>
-    </TooManyTemplateParams>
+    <NoValue>
+      <code>$value</code>
+    </NoValue>
   </file>
 </files>

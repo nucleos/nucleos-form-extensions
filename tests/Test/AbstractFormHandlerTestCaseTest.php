@@ -30,7 +30,7 @@ final class AbstractFormHandlerTestCaseTest extends AbstractFormHandlerTest
         $object  = new stdClass();
         $request = new Request();
 
-        static::assertNull($this->executePreProcess($request, $object));
+        self::assertNull($this->executePreProcess($request, $object));
     }
 
     public function testExecutePreProcessWithError(): void
@@ -42,7 +42,7 @@ final class AbstractFormHandlerTestCaseTest extends AbstractFormHandlerTest
 
         $this->assertError('my error', ['foo' => 'bar']);
 
-        static::assertNotNull($this->executePreProcess($request, $object));
+        self::assertNotNull($this->executePreProcess($request, $object));
     }
 
     public function testExecuteProcess(): void
@@ -52,7 +52,7 @@ final class AbstractFormHandlerTestCaseTest extends AbstractFormHandlerTest
         $object  = new stdClass();
         $request = new Request();
 
-        static::assertTrue($this->executeProcess($request, $object));
+        self::assertTrue($this->executeProcess($request, $object));
     }
 
     public function testExecuteProcessWithError(): void
@@ -64,7 +64,7 @@ final class AbstractFormHandlerTestCaseTest extends AbstractFormHandlerTest
 
         $this->assertError('my error', ['foo' => 'bar']);
 
-        static::assertFalse($this->executeProcess($request, $object));
+        self::assertFalse($this->executeProcess($request, $object));
     }
 
     public function testExecutePostProcess(): void
@@ -75,7 +75,7 @@ final class AbstractFormHandlerTestCaseTest extends AbstractFormHandlerTest
         $request  = new Request();
         $response = new Response();
 
-        static::assertSame($response, $this->executePostProcess($request, $response, $object));
+        self::assertSame($response, $this->executePostProcess($request, $response, $object));
     }
 
     public function testExecutePostProcessWithError(): void
@@ -88,7 +88,7 @@ final class AbstractFormHandlerTestCaseTest extends AbstractFormHandlerTest
 
         $this->assertError('my error', ['foo' => 'bar']);
 
-        static::assertNull($this->executePostProcess($request, $response, $object));
+        self::assertNull($this->executePostProcess($request, $response, $object));
     }
 
     protected function createFormHandler(): FormHandlerInterface

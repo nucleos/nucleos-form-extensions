@@ -9,6 +9,4 @@
 
 namespace Nucleos\Form\Tests\Fixtures;
 
-class BarEntity
-{
-}
+class BarEntity {}

@@ -21,13 +21,13 @@ final class NucleosFormBundleTest extends TestCase
     {
         $bundle = new NucleosFormBundle();
 
-        static::assertStringEndsWith('Bridge/Symfony/Bundle', \dirname($bundle->getPath()));
+        self::assertStringEndsWith('Bridge/Symfony/Bundle', \dirname($bundle->getPath()));
     }
 
     public function testGetContainerExtension(): void
     {
         $bundle = new NucleosFormBundle();
 
-        static::assertInstanceOf(NucleosFormExtension::class, $bundle->getContainerExtension());
+        self::assertInstanceOf(NucleosFormExtension::class, $bundle->getContainerExtension());
     }
 }

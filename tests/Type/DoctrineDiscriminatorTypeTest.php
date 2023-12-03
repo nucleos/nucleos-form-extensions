@@ -68,10 +68,11 @@ final class DoctrineDiscriminatorTypeTest extends BaseTypeTestCase
         $choices = $this->factory->create($this->getTestedType(), null, [
             'class' => 'MyEntityClass',
         ])
-            ->createView()->vars['choices'];
+            ->createView()->vars['choices']
+        ;
 
-        static::assertContainsEquals(new ChoiceView('foo', 'foo', 'foo'), $choices);
-        static::assertContainsEquals(new ChoiceView('bar', 'bar', 'bar'), $choices);
+        self::assertContainsEquals(new ChoiceView('foo', 'foo', 'foo'), $choices);
+        self::assertContainsEquals(new ChoiceView('bar', 'bar', 'bar'), $choices);
     }
 
     public function testPassIdAndNameToViewWithGrandParent(): void
@@ -84,9 +85,9 @@ final class DoctrineDiscriminatorTypeTest extends BaseTypeTestCase
         ]);
         $view = $builder->getForm()->createView();
 
-        static::assertSame('parent_child_grand_child', $view['child']['grand_child']->vars['id']);
-        static::assertSame('grand_child', $view['child']['grand_child']->vars['name']);
-        static::assertSame('parent[child][grand_child]', $view['child']['grand_child']->vars['full_name']);
+        self::assertSame('parent_child_grand_child', $view['child']['grand_child']->vars['id']);
+        self::assertSame('grand_child', $view['child']['grand_child']->vars['name']);
+        self::assertSame('parent[child][grand_child]', $view['child']['grand_child']->vars['full_name']);
     }
 
     public function testUnknownTypeIsNotIncluded(): void
@@ -94,7 +95,8 @@ final class DoctrineDiscriminatorTypeTest extends BaseTypeTestCase
         $choices = $this->factory->create($this->getTestedType(), 'types', [
             'class' => 'MyEntityClass',
         ])
-            ->createView()->vars['choices'];
+            ->createView()->vars['choices']
+        ;
 
         $countryCodes = [];
 
@@ -102,7 +104,7 @@ final class DoctrineDiscriminatorTypeTest extends BaseTypeTestCase
             $countryCodes[] = $choice->value;
         }
 
-        static::assertNotContains('baz', $countryCodes);
+        self::assertNotContains('baz', $countryCodes);
     }
 
     public function testSubmitNull($expected = null, $norm = null, $view = ''): void
@@ -129,9 +131,9 @@ final class DoctrineDiscriminatorTypeTest extends BaseTypeTestCase
 
         $form = $builder->setEmptyData($emptyData)->getForm()->submit(null);
 
-        static::assertSame($emptyData, $form->getViewData());
-        static::assertSame($expectedData, $form->getNormData());
-        static::assertSame($expectedData, $form->getData());
+        self::assertSame($emptyData, $form->getViewData());
+        self::assertSame($expectedData, $form->getNormData());
+        self::assertSame($expectedData, $form->getData());
     }
 
     protected function create(mixed $data = null, array $options = []): FormInterface

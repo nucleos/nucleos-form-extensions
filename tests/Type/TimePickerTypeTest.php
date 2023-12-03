@@ -38,9 +38,9 @@ final class TimePickerTypeTest extends BaseTypeTestCase
 
         $form = $builder->setEmptyData($emptyData)->getForm()->submit(null);
 
-        static::assertSame($emptyData, $form->getViewData());
-        static::assertSame('05:23:00', $form->getNormData()->format('H:i:s'));
-        static::assertSame('05:23:00', $form->getData()->format('H:i:s'));
+        self::assertSame($emptyData, $form->getViewData());
+        self::assertSame('05:23:00', $form->getNormData()->format('H:i:s'));
+        self::assertSame('05:23:00', $form->getData()->format('H:i:s'));
     }
 
     protected function getTestedType(): string

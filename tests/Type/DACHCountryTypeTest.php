@@ -20,17 +20,19 @@ final class DACHCountryTypeTest extends BaseTypeTestCase
     public function testCountriesAreSelectable(): void
     {
         $choices = $this->factory->create($this->getTestedType())
-            ->createView()->vars['choices'];
+            ->createView()->vars['choices']
+        ;
 
-        static::assertContainsEquals(new ChoiceView('DE', 'DE', 'form.choice_de'), $choices);
-        static::assertContainsEquals(new ChoiceView('AT', 'AT', 'form.choice_at'), $choices);
-        static::assertContainsEquals(new ChoiceView('CH', 'CH', 'form.choice_ch'), $choices);
+        self::assertContainsEquals(new ChoiceView('DE', 'DE', 'form.choice_de'), $choices);
+        self::assertContainsEquals(new ChoiceView('AT', 'AT', 'form.choice_at'), $choices);
+        self::assertContainsEquals(new ChoiceView('CH', 'CH', 'form.choice_ch'), $choices);
     }
 
     public function testUnknownCountryIsNotIncluded(): void
     {
         $choices = $this->factory->create($this->getTestedType(), 'country')
-            ->createView()->vars['choices'];
+            ->createView()->vars['choices']
+        ;
 
         $countryCodes = [];
 
@@ -38,7 +40,7 @@ final class DACHCountryTypeTest extends BaseTypeTestCase
             $countryCodes[] = $choice->value;
         }
 
-        static::assertNotContains('ZZ', $countryCodes);
+        self::assertNotContains('ZZ', $countryCodes);
     }
 
     public function testSubmitNull($expected = null, $norm = null, $view = null): void
@@ -55,14 +57,14 @@ final class DACHCountryTypeTest extends BaseTypeTestCase
     {
         $type = new DACHCountryType();
 
-        static::assertSame(ChoiceType::class, $type->getParent());
+        self::assertSame(ChoiceType::class, $type->getParent());
     }
 
     public function testGetBlockPrefix(): void
     {
         $type = new DACHCountryType();
 
-        static::assertSame('nucleos_country', $type->getBlockPrefix());
+        self::assertSame('nucleos_country', $type->getBlockPrefix());
     }
 
     protected function getTestedType(): string

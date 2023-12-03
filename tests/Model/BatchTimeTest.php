@@ -26,8 +26,8 @@ final class BatchTimeTest extends TestCase
     {
         $batchTime = new BatchTime();
 
-        static::assertSame('Day: 0, Time: null', $batchTime->__toString());
-        static::assertSame('Day: 0, Time: null', $batchTime->toString());
+        self::assertSame('Day: 0, Time: null', $batchTime->__toString());
+        self::assertSame('Day: 0, Time: null', $batchTime->toString());
     }
 
     public function testDay(): void
@@ -35,7 +35,7 @@ final class BatchTimeTest extends TestCase
         $batchTime = new BatchTime();
         $batchTime->setDay(3);
 
-        static::assertSame(3, $batchTime->getDay());
+        self::assertSame(3, $batchTime->getDay());
     }
 
     public function testTime(): void
@@ -45,7 +45,7 @@ final class BatchTimeTest extends TestCase
         $batchTime = new BatchTime();
         $batchTime->setTime($time);
 
-        static::assertSame($time, $batchTime->getTime());
+        self::assertSame($time, $batchTime->getTime());
     }
 
     public function testSeconds(): void
@@ -56,6 +56,6 @@ final class BatchTimeTest extends TestCase
         $batchTime->setDay(2);
         $batchTime->setTime($time);
 
-        static::assertSame(224580, $batchTime->getSeconds());
+        self::assertSame(224580, $batchTime->getSeconds());
     }
 }
