@@ -34,7 +34,7 @@ final class DateAfterValidator extends ConstraintValidator
         }
 
         if (!\is_object($value)) {
-            throw new InvalidArgumentException(sprintf('Could not validate "%s"', \gettype($value)));
+            throw new InvalidArgumentException(\sprintf('Could not validate "%s"', \gettype($value)));
         }
 
         $firstFieldName  = $constraint->firstField;
