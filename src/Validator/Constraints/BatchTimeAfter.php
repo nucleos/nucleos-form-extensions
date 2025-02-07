@@ -52,12 +52,12 @@ final class BatchTimeAfter extends Constraint
      */
     public function __construct(
         array $options = [],
-        string $firstField = null,
-        string $secondField = null,
-        string $message = null,
-        string $emptyMessage = null,
-        bool $required = null,
-        array $groups = null,
+        ?string $firstField = null,
+        ?string $secondField = null,
+        ?string $message = null,
+        ?string $emptyMessage = null,
+        ?bool $required = null,
+        ?array $groups = null,
         mixed $payload = null,
     ) {
         if (null !== $firstField) {

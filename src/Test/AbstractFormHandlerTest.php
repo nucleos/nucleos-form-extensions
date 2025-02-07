@@ -165,7 +165,7 @@ abstract class AbstractFormHandlerTest extends TestCase
                 }
 
                 throw new AssertionFailedError(
-                    sprintf("Method 'addError' was not expected to be called with message '%s'", $error->getMessage())
+                    \sprintf("Method 'addError' was not expected to be called with message '%s'", $error->getMessage())
                 );
             }
 
@@ -193,7 +193,7 @@ abstract class AbstractFormHandlerTest extends TestCase
         foreach ($this->errors as $data) {
             if (0 === $data['count']) {
                 throw new AssertionFailedError(
-                    sprintf("Method 'addError' was expected to be called with message '%s' actually was not called", $data['message'])
+                    \sprintf("Method 'addError' was expected to be called with message '%s' actually was not called", $data['message'])
                 );
             }
         }
