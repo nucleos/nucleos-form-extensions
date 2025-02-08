@@ -4,6 +4,9 @@ includes:
 parameters:
     level: 8
 
+    parallel:
+        maximumNumberOfProcesses: 4
+
     paths:
         - src
         - tests
@@ -11,4 +14,3 @@ parameters:
     bootstrapFiles:
         - vendor-bin/tools/vendor/autoload.php
 
-    treatPhpDocTypesAsCertain: false
