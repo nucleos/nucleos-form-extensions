@@ -1,67 +1,320 @@
 parameters:
 	ignoreErrors:
 		-
-			message: "#^Short ternary operator is not allowed\\. Use null coalesce operator if applicable or consider using long ternary\\.$#"
+			message: '#^Method Nucleos\\Form\\Handler\\AbstractFormHandler\:\:handle\(\) has parameter \$form with generic interface Symfony\\Component\\Form\\FormInterface but does not specify its types\: TData$#'
+			identifier: missingType.generics
+			count: 1
+			path: src/Handler/AbstractFormHandler.php
+
+		-
+			message: '#^Method Nucleos\\Form\\Handler\\AbstractFormHandler\:\:postProcess\(\) has parameter \$form with generic interface Symfony\\Component\\Form\\FormInterface but does not specify its types\: TData$#'
+			identifier: missingType.generics
+			count: 1
+			path: src/Handler/AbstractFormHandler.php
+
+		-
+			message: '#^Method Nucleos\\Form\\Handler\\AbstractFormHandler\:\:preProcess\(\) has parameter \$form with generic interface Symfony\\Component\\Form\\FormInterface but does not specify its types\: TData$#'
+			identifier: missingType.generics
+			count: 1
+			path: src/Handler/AbstractFormHandler.php
+
+		-
+			message: '#^Method Nucleos\\Form\\Handler\\AbstractFormHandler\:\:process\(\) has parameter \$form with generic interface Symfony\\Component\\Form\\FormInterface but does not specify its types\: TData$#'
+			identifier: missingType.generics
+			count: 1
+			path: src/Handler/AbstractFormHandler.php
+
+		-
+			message: '#^Method Nucleos\\Form\\Handler\\AbstractFormHandler\:\:validate\(\) has parameter \$form with generic interface Symfony\\Component\\Form\\FormInterface but does not specify its types\: TData$#'
+			identifier: missingType.generics
+			count: 1
+			path: src/Handler/AbstractFormHandler.php
+
+		-
+			message: '#^Method Nucleos\\Form\\Handler\\FormHandlerInterface\:\:handle\(\) has parameter \$form with generic interface Symfony\\Component\\Form\\FormInterface but does not specify its types\: TData$#'
+			identifier: missingType.generics
+			count: 1
+			path: src/Handler/FormHandlerInterface.php
+
+		-
+			message: '#^Short ternary operator is not allowed\. Use null coalesce operator if applicable or consider using long ternary\.$#'
+			identifier: ternary.shortNotAllowed
 			count: 1
 			path: src/Model/BatchTime.php
 
 		-
-			message: "#^Short ternary operator is not allowed\\. Use null coalesce operator if applicable or consider using long ternary\\.$#"
+			message: '#^Property Nucleos\\Form\\Test\\AbstractFormHandlerTest\:\:\$form with generic interface Symfony\\Component\\Form\\FormInterface does not specify its types\: TData$#'
+			identifier: missingType.generics
+			count: 1
+			path: src/Test/AbstractFormHandlerTest.php
+
+		-
+			message: '#^Class Nucleos\\Form\\Type\\BatchTimeType extends generic class Symfony\\Component\\Form\\AbstractType but does not specify its types\: TData$#'
+			identifier: missingType.generics
 			count: 1
 			path: src/Type/BatchTimeType.php
 
 		-
-			message: "#^Method Nucleos\\\\Form\\\\Tests\\\\Bridge\\\\Symfony\\\\App\\\\AppKernel\\:\\:configureContainer\\(\\) has parameter \\$container with no type specified\\.$#"
+			message: '#^Short ternary operator is not allowed\. Use null coalesce operator if applicable or consider using long ternary\.$#'
+			identifier: ternary.shortNotAllowed
+			count: 1
+			path: src/Type/BatchTimeType.php
+
+		-
+			message: '#^Class Nucleos\\Form\\Type\\DACHCountryType extends generic class Symfony\\Component\\Form\\AbstractType but does not specify its types\: TData$#'
+			identifier: missingType.generics
+			count: 1
+			path: src/Type/DACHCountryType.php
+
+		-
+			message: '#^Method Nucleos\\Form\\Type\\DACHCountryType\:\:getParent\(\) never returns null so it can be removed from the return type\.$#'
+			identifier: return.unusedType
+			count: 1
+			path: src/Type/DACHCountryType.php
+
+		-
+			message: '#^Class Nucleos\\Form\\Type\\DateOutputType extends generic class Symfony\\Component\\Form\\AbstractType but does not specify its types\: TData$#'
+			identifier: missingType.generics
+			count: 1
+			path: src/Type/DateOutputType.php
+
+		-
+			message: '#^Method Nucleos\\Form\\Type\\DateOutputType\:\:getParent\(\) never returns null so it can be removed from the return type\.$#'
+			identifier: return.unusedType
+			count: 1
+			path: src/Type/DateOutputType.php
+
+		-
+			message: '#^Class Nucleos\\Form\\Type\\DoctrineDiscriminatorType extends generic class Symfony\\Component\\Form\\AbstractType but does not specify its types\: TData$#'
+			identifier: missingType.generics
+			count: 1
+			path: src/Type/DoctrineDiscriminatorType.php
+
+		-
+			message: '#^Method Nucleos\\Form\\Type\\DoctrineDiscriminatorType\:\:getParent\(\) never returns null so it can be removed from the return type\.$#'
+			identifier: return.unusedType
+			count: 1
+			path: src/Type/DoctrineDiscriminatorType.php
+
+		-
+			message: '#^Class Nucleos\\Form\\Type\\GenderType extends generic class Symfony\\Component\\Form\\AbstractType but does not specify its types\: TData$#'
+			identifier: missingType.generics
+			count: 1
+			path: src/Type/GenderType.php
+
+		-
+			message: '#^Method Nucleos\\Form\\Type\\GenderType\:\:getParent\(\) never returns null so it can be removed from the return type\.$#'
+			identifier: return.unusedType
+			count: 1
+			path: src/Type/GenderType.php
+
+		-
+			message: '#^Call to function is_array\(\) with array\<mixed, mixed\> will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 1
+			path: src/Type/JsonType.php
+
+		-
+			message: '#^Call to function is_array\(\) with array\<mixed\> will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 1
+			path: src/Type/JsonType.php
+
+		-
+			message: '#^Call to function is_string\(\) with string will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 1
+			path: src/Type/JsonType.php
+
+		-
+			message: '#^Class Nucleos\\Form\\Type\\JsonType extends generic class Symfony\\Component\\Form\\AbstractType but does not specify its types\: TData$#'
+			identifier: missingType.generics
+			count: 1
+			path: src/Type/JsonType.php
+
+		-
+			message: '#^Method Nucleos\\Form\\Type\\JsonType\:\:getParent\(\) never returns null so it can be removed from the return type\.$#'
+			identifier: return.unusedType
+			count: 1
+			path: src/Type/JsonType.php
+
+		-
+			message: '#^Method Nucleos\\Form\\Type\\JsonType\:\:reverseTransform\(\) never returns null so it can be removed from the return type\.$#'
+			identifier: return.unusedType
+			count: 1
+			path: src/Type/JsonType.php
+
+		-
+			message: '#^Class Nucleos\\Form\\Type\\NumberOutputType extends generic class Symfony\\Component\\Form\\AbstractType but does not specify its types\: TData$#'
+			identifier: missingType.generics
+			count: 1
+			path: src/Type/NumberOutputType.php
+
+		-
+			message: '#^Method Nucleos\\Form\\Type\\NumberOutputType\:\:getParent\(\) never returns null so it can be removed from the return type\.$#'
+			identifier: return.unusedType
+			count: 1
+			path: src/Type/NumberOutputType.php
+
+		-
+			message: '#^Class Nucleos\\Form\\Type\\OutputType extends generic class Symfony\\Component\\Form\\AbstractType but does not specify its types\: TData$#'
+			identifier: missingType.generics
+			count: 1
+			path: src/Type/OutputType.php
+
+		-
+			message: '#^Class Nucleos\\Form\\Type\\TimePickerType extends generic class Symfony\\Component\\Form\\AbstractType but does not specify its types\: TData$#'
+			identifier: missingType.generics
+			count: 1
+			path: src/Type/TimePickerType.php
+
+		-
+			message: '#^Method Nucleos\\Form\\Type\\TimePickerType\:\:getParent\(\) never returns null so it can be removed from the return type\.$#'
+			identifier: return.unusedType
+			count: 1
+			path: src/Type/TimePickerType.php
+
+		-
+			message: '#^Method Nucleos\\Form\\Tests\\Bridge\\Symfony\\App\\AppKernel\:\:configureContainer\(\) has parameter \$container with no type specified\.$#'
+			identifier: missingType.parameter
 			count: 1
 			path: tests/Bridge/Symfony/App/AppKernel.php
 
 		-
-			message: "#^Method Nucleos\\\\Form\\\\Tests\\\\Bridge\\\\Symfony\\\\App\\\\AppKernel\\:\\:configureContainer\\(\\) has parameter \\$loader with no type specified\\.$#"
+			message: '#^Method Nucleos\\Form\\Tests\\Bridge\\Symfony\\App\\AppKernel\:\:configureContainer\(\) has parameter \$loader with no type specified\.$#'
+			identifier: missingType.parameter
 			count: 1
 			path: tests/Bridge/Symfony/App/AppKernel.php
 
 		-
-			message: "#^Method Nucleos\\\\Form\\\\Tests\\\\Bridge\\\\Symfony\\\\App\\\\AppKernel\\:\\:configureRoutes\\(\\) has parameter \\$routes with no type specified\\.$#"
+			message: '#^Method Nucleos\\Form\\Tests\\Bridge\\Symfony\\App\\AppKernel\:\:configureRoutes\(\) has parameter \$routes with no type specified\.$#'
+			identifier: missingType.parameter
 			count: 1
 			path: tests/Bridge/Symfony/App/AppKernel.php
 
 		-
-			message: "#^Call to method getResponse\\(\\) on an unknown class Symfony\\\\Component\\\\HttpKernel\\\\Client\\.$#"
+			message: '#^Call to method getResponse\(\) on an unknown class Symfony\\Component\\HttpKernel\\Client\.$#'
+			identifier: class.notFound
 			count: 1
 			path: tests/Bridge/Symfony/Bundle/BundleIntegrationTest.php
 
 		-
-			message: "#^Call to method request\\(\\) on an unknown class Symfony\\\\Component\\\\HttpKernel\\\\Client\\.$#"
+			message: '#^Call to method request\(\) on an unknown class Symfony\\Component\\HttpKernel\\Client\.$#'
+			identifier: class.notFound
 			count: 1
 			path: tests/Bridge/Symfony/Bundle/BundleIntegrationTest.php
 
 		-
-			message: "#^Instantiated class Symfony\\\\Component\\\\HttpKernel\\\\Client not found\\.$#"
+			message: '#^Instantiated class Symfony\\Component\\HttpKernel\\Client not found\.$#'
+			identifier: class.notFound
 			count: 1
 			path: tests/Bridge/Symfony/Bundle/BundleIntegrationTest.php
 
 		-
-			message: "#^Property Nucleos\\\\Form\\\\Tests\\\\Type\\\\DoctrineDiscriminatorTypeTest\\:\\:\\$classMetadata with generic class Doctrine\\\\ORM\\\\Mapping\\\\ClassMetadata does not specify its types\\: T$#"
+			message: '#^Method Nucleos\\Form\\Tests\\Fixtures\\AlwaysErrorFormHandler\:\:postProcess\(\) has parameter \$form with generic interface Symfony\\Component\\Form\\FormInterface but does not specify its types\: TData$#'
+			identifier: missingType.generics
+			count: 1
+			path: tests/Fixtures/AlwaysErrorFormHandler.php
+
+		-
+			message: '#^Method Nucleos\\Form\\Tests\\Fixtures\\AlwaysErrorFormHandler\:\:preProcess\(\) has parameter \$form with generic interface Symfony\\Component\\Form\\FormInterface but does not specify its types\: TData$#'
+			identifier: missingType.generics
+			count: 1
+			path: tests/Fixtures/AlwaysErrorFormHandler.php
+
+		-
+			message: '#^Method Nucleos\\Form\\Tests\\Fixtures\\AlwaysErrorFormHandler\:\:preProcess\(\) never returns null so it can be removed from the return type\.$#'
+			identifier: return.unusedType
+			count: 1
+			path: tests/Fixtures/AlwaysErrorFormHandler.php
+
+		-
+			message: '#^Method Nucleos\\Form\\Tests\\Fixtures\\AlwaysErrorFormHandler\:\:process\(\) has parameter \$form with generic interface Symfony\\Component\\Form\\FormInterface but does not specify its types\: TData$#'
+			identifier: missingType.generics
+			count: 1
+			path: tests/Fixtures/AlwaysErrorFormHandler.php
+
+		-
+			message: '#^Method Nucleos\\Form\\Tests\\Fixtures\\DemoFormHandler\:\:process\(\) has parameter \$form with generic interface Symfony\\Component\\Form\\FormInterface but does not specify its types\: TData$#'
+			identifier: missingType.generics
+			count: 1
+			path: tests/Fixtures/DemoFormHandler.php
+
+		-
+			message: '#^Method Nucleos\\Form\\Tests\\Fixtures\\SimpleFormHandler\:\:process\(\) has parameter \$form with generic interface Symfony\\Component\\Form\\FormInterface but does not specify its types\: TData$#'
+			identifier: missingType.generics
+			count: 1
+			path: tests/Fixtures/SimpleFormHandler.php
+
+		-
+			message: '#^Method Nucleos\\Form\\Tests\\Type\\BaseTypeTestCase\:\:create\(\) return type with generic interface Symfony\\Component\\Form\\FormInterface does not specify its types\: TData$#'
+			identifier: missingType.generics
+			count: 1
+			path: tests/Type/BaseTypeTestCase.php
+
+		-
+			message: '#^Method Nucleos\\Form\\Tests\\Type\\BaseTypeTestCase\:\:createBuilder\(\) return type with generic interface Symfony\\Component\\Form\\FormBuilderInterface does not specify its types\: TData$#'
+			identifier: missingType.generics
+			count: 1
+			path: tests/Type/BaseTypeTestCase.php
+
+		-
+			message: '#^Method Nucleos\\Form\\Tests\\Type\\BaseTypeTestCase\:\:createNamed\(\) return type with generic interface Symfony\\Component\\Form\\FormInterface does not specify its types\: TData$#'
+			identifier: missingType.generics
+			count: 1
+			path: tests/Type/BaseTypeTestCase.php
+
+		-
+			message: '#^Method Nucleos\\Form\\Tests\\Type\\DoctrineDiscriminatorTypeTest\:\:create\(\) return type with generic interface Symfony\\Component\\Form\\FormInterface does not specify its types\: TData$#'
+			identifier: missingType.generics
 			count: 1
 			path: tests/Type/DoctrineDiscriminatorTypeTest.php
 
 		-
-			message: "#^Trying to mock an undefined method getBegin\\(\\) on class stdClass\\.$#"
+			message: '#^Method Nucleos\\Form\\Tests\\Type\\DoctrineDiscriminatorTypeTest\:\:createBuilder\(\) return type with generic interface Symfony\\Component\\Form\\FormBuilderInterface does not specify its types\: TData$#'
+			identifier: missingType.generics
+			count: 1
+			path: tests/Type/DoctrineDiscriminatorTypeTest.php
+
+		-
+			message: '#^Method Nucleos\\Form\\Tests\\Type\\DoctrineDiscriminatorTypeTest\:\:createNamed\(\) return type with generic interface Symfony\\Component\\Form\\FormInterface does not specify its types\: TData$#'
+			identifier: missingType.generics
+			count: 1
+			path: tests/Type/DoctrineDiscriminatorTypeTest.php
+
+		-
+			message: '#^Method Nucleos\\Form\\Tests\\Type\\DoctrineDiscriminatorTypeTest\:\:getTypes\(\) return type with generic interface Symfony\\Component\\Form\\FormTypeInterface does not specify its types\: TData$#'
+			identifier: missingType.generics
+			count: 1
+			path: tests/Type/DoctrineDiscriminatorTypeTest.php
+
+		-
+			message: '#^Property Nucleos\\Form\\Tests\\Type\\DoctrineDiscriminatorTypeTest\:\:\$classMetadata with generic class Doctrine\\ORM\\Mapping\\ClassMetadata does not specify its types\: T$#'
+			identifier: missingType.generics
+			count: 1
+			path: tests/Type/DoctrineDiscriminatorTypeTest.php
+
+		-
+			message: '#^Trying to mock an undefined method getBegin\(\) on class stdClass\.$#'
+			identifier: phpunit.mockMethod
 			count: 13
 			path: tests/Validator/Constraints/BatchTimeAfterValidatorTest.php
 
 		-
-			message: "#^Trying to mock an undefined method getEnd\\(\\) on class stdClass\\.$#"
+			message: '#^Trying to mock an undefined method getEnd\(\) on class stdClass\.$#'
+			identifier: phpunit.mockMethod
 			count: 13
 			path: tests/Validator/Constraints/BatchTimeAfterValidatorTest.php
 
 		-
-			message: "#^Trying to mock an undefined method getBegin\\(\\) on class stdClass\\.$#"
+			message: '#^Trying to mock an undefined method getBegin\(\) on class stdClass\.$#'
+			identifier: phpunit.mockMethod
 			count: 11
 			path: tests/Validator/Constraints/DateAfterValidatorTest.php
 
 		-
-			message: "#^Trying to mock an undefined method getEnd\\(\\) on class stdClass\\.$#"
+			message: '#^Trying to mock an undefined method getEnd\(\) on class stdClass\.$#'
+			identifier: phpunit.mockMethod
 			count: 11
 			path: tests/Validator/Constraints/DateAfterValidatorTest.php
 
