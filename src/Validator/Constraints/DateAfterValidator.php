@@ -22,8 +22,8 @@ use Symfony\Component\Validator\Exception\UnexpectedTypeException;
 final class DateAfterValidator extends ConstraintValidator
 {
     /**
-     * @SuppressWarnings(PHPMD.CyclomaticComplexity)
-     * @SuppressWarnings(PHPMD.NPathComplexity)
+     * @SuppressWarnings("PHPMD.CyclomaticComplexity")
+     * @SuppressWarnings("PHPMD.NPathComplexity")
      *
      * @param mixed $value
      */

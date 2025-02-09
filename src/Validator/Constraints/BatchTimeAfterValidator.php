@@ -22,9 +22,9 @@ use Symfony\Component\Validator\Exception\UnexpectedTypeException;
 final class BatchTimeAfterValidator extends ConstraintValidator
 {
     /**
-     * @SuppressWarnings(PHPMD.CyclomaticComplexity)
-     * @SuppressWarnings(PHPMD.NPathComplexity)
-     * @SuppressWarnings(PHPMD.ExcessiveMethodLength)
+     * @SuppressWarnings("PHPMD.CyclomaticComplexity")
+     * @SuppressWarnings("PHPMD.NPathComplexity")
+     * @SuppressWarnings("PHPMD.ExcessiveMethodLength")
      *
      * @param mixed $value
      */
