@@ -17,6 +17,9 @@ use Symfony\Component\Form\FormInterface;
 use Symfony\Component\Form\FormView;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
+/**
+ * @extends AbstractType<DateTimeInterface>
+ */
 final class DateOutputType extends AbstractType
 {
     public function buildView(FormView $view, FormInterface $form, array $options): void
@@ -45,7 +48,7 @@ final class DateOutputType extends AbstractType
         return 'date_output';
     }
 
-    public function getParent(): ?string
+    public function getParent(): string
     {
         return OutputType::class;
     }

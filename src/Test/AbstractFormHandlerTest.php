@@ -24,10 +24,13 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\Session;
 
+/**
+ * @template T
+ */
 abstract class AbstractFormHandlerTest extends TestCase
 {
     /**
-     * @var FormInterface&MockObject
+     * @var FormInterface<T>&MockObject
      */
     protected FormInterface $form;
 
@@ -55,6 +58,9 @@ abstract class AbstractFormHandlerTest extends TestCase
         $this->errors = [];
     }
 
+    /**
+     * @return FormHandlerInterface<T>
+     */
     abstract protected function createFormHandler(): FormHandlerInterface;
 
     /**

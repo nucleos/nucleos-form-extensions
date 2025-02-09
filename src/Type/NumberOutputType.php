@@ -17,6 +17,9 @@ use Symfony\Component\Form\Extension\Core\DataTransformer\NumberToLocalizedStrin
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
+/**
+ * @extends AbstractType<numeric>
+ */
 final class NumberOutputType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
@@ -63,7 +66,7 @@ final class NumberOutputType extends AbstractType
         return 'number_output';
     }
 
-    public function getParent(): ?string
+    public function getParent(): string
     {
         return OutputType::class;
     }

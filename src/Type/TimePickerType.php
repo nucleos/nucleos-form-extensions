@@ -11,12 +11,16 @@ declare(strict_types=1);
 
 namespace Nucleos\Form\Type;
 
+use DateTimeInterface;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TimeType;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\Form\FormView;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
+/**
+ * @extends AbstractType<DateTimeInterface>
+ */
 final class TimePickerType extends AbstractType
 {
     public function finishView(FormView $view, FormInterface $form, array $options): void
@@ -53,7 +57,7 @@ final class TimePickerType extends AbstractType
         ;
     }
 
-    public function getParent(): ?string
+    public function getParent(): string
     {
         return TimeType::class;
     }

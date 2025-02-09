@@ -16,10 +16,15 @@ use Symfony\Component\Form\FormInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
+/**
+ * @template T
+ */
 interface FormHandlerInterface
 {
     /**
      * Handels form processing.
+     *
+     * @param FormInterface<T> $form
      *
      * @throws InvalidCallbackException
      */

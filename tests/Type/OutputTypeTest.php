@@ -13,6 +13,9 @@ namespace Nucleos\Form\Tests\Type;
 
 use Nucleos\Form\Type\OutputType;
 
+/**
+ * @extends BaseTypeTestCase<mixed>
+ */
 final class OutputTypeTest extends BaseTypeTestCase
 {
     public function testSubmitNull($expected = null, $norm = null, $view = ''): void

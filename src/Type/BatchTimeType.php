@@ -17,11 +17,14 @@ use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
+/**
+ * @extends AbstractType<BatchTime>
+ */
 final class BatchTimeType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
-        $emptyData = $builder->getEmptyData() ?: null;
+        $emptyData = $builder->getEmptyData();
 
         $builder
             ->add('day', ChoiceType::class, [

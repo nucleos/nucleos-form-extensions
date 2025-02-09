@@ -19,6 +19,8 @@ use Symfony\Component\Form\Test\TypeTestCase;
 
 /**
  * @SuppressWarnings("PHPMD.TooManyPublicMethods")
+ *
+ * @template T
  */
 abstract class BaseTypeTestCase extends TypeTestCase
 {
@@ -184,6 +186,8 @@ abstract class BaseTypeTestCase extends TypeTestCase
 
     /**
      * @param array<string, mixed> $options
+     *
+     * @return FormInterface<T>
      */
     protected function create(mixed $data = null, array $options = []): FormInterface
     {
@@ -192,6 +196,8 @@ abstract class BaseTypeTestCase extends TypeTestCase
 
     /**
      * @param array<string, mixed> $options
+     *
+     * @return FormInterface<T>
      */
     protected function createNamed(string $name, mixed $data = null, array $options = []): FormInterface
     {
@@ -201,6 +207,8 @@ abstract class BaseTypeTestCase extends TypeTestCase
     /**
      * @param array<string, mixed> $parentOptions
      * @param array<string, mixed> $childOptions
+     *
+     * @return FormBuilderInterface<T>
      */
     protected function createBuilder(array $parentOptions = [], array $childOptions = []): FormBuilderInterface
     {
@@ -211,7 +219,7 @@ abstract class BaseTypeTestCase extends TypeTestCase
     }
 
     /**
-     * @return class-string<FormTypeInterface<mixed>>
+     * @return class-string<FormTypeInterface<T>>
      */
     abstract protected function getTestedType(): string;
 }

@@ -16,6 +16,11 @@ use Symfony\Component\Form\FormInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
+/**
+ * @template T
+ *
+ * @implements FormHandlerInterface<T>
+ */
 abstract class AbstractFormHandler implements FormHandlerInterface
 {
     /**
@@ -57,6 +62,8 @@ abstract class AbstractFormHandler implements FormHandlerInterface
 
     /**
      * Executes before form validating and processing is started.
+     *
+     * @param FormInterface<T> $form
      */
     protected function preProcess(FormInterface $form, Request $request): ?Response
     {
@@ -65,6 +72,8 @@ abstract class AbstractFormHandler implements FormHandlerInterface
 
     /**
      * Executes after preprocessing and before form processing is started.
+     *
+     * @param FormInterface<T> $form
      */
     protected function validate(FormInterface $form, Request $request): ?Response
     {
@@ -73,11 +82,15 @@ abstract class AbstractFormHandler implements FormHandlerInterface
 
     /**
      * Executes the form processing.
+     *
+     * @param FormInterface<T> $form
      */
     abstract protected function process(FormInterface $form, Request $request): bool;
 
     /**
      * Executes after form processing is finished and filters response.
+     *
+     * @param FormInterface<T> $form
      */
     protected function postProcess(FormInterface $form, Request $request, Response $response): ?Response
     {

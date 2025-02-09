@@ -18,6 +18,8 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 /**
  * @phpstan-implements DataTransformerInterface<mixed, mixed>
+ *
+ * @extends AbstractType<mixed>
  */
 final class OutputType extends AbstractType implements DataTransformerInterface
 {

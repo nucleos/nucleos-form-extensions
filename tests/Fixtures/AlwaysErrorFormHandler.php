@@ -17,6 +17,9 @@ use Symfony\Component\Form\FormInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
+/**
+ * @extends AbstractFormHandler<mixed>
+ */
 final class AlwaysErrorFormHandler extends AbstractFormHandler
 {
     protected function process(FormInterface $form, Request $request): bool

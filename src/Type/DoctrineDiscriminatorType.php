@@ -20,6 +20,9 @@ use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\OptionsResolver\Options;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
+/**
+ * @extends AbstractType<string>
+ */
 final class DoctrineDiscriminatorType extends AbstractType
 {
     private ManagerRegistry $manager;
@@ -29,7 +32,7 @@ final class DoctrineDiscriminatorType extends AbstractType
         $this->manager = $manager;
     }
 
-    public function getParent(): ?string
+    public function getParent(): string
     {
         return ChoiceType::class;
     }
