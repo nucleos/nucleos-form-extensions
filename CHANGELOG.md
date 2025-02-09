@@ -2,27 +2,32 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
-## 6.6.0 - TBD
+## 6.6.0 - 2025-02-09
 
-### Added
 
-- Nothing.
+-----
 
-### Changed
+### Release Notes for [6.6.0](https://github.com/nucleos/nucleos-form-extensions/milestone/19)
 
-- Nothing.
+Feature release (minor)
 
-### Deprecated
+### 6.6.0
 
-- Nothing.
+- Total issues resolved: **0**
+- Total pull requests resolved: **6**
+- Total contributors: **2**
 
-### Removed
+#### Enhancement
 
-- Nothing.
+ - [502: Add phpstan type hints](https://github.com/nucleos/nucleos-form-extensions/pull/502) thanks to @core23
+ - [501: Sync tool config ](https://github.com/nucleos/nucleos-form-extensions/pull/501) thanks to @core23
+ - [500: Remove infection testing ](https://github.com/nucleos/nucleos-form-extensions/pull/500) thanks to @core23
+ - [498: Remove psalm in favor of phpstan ](https://github.com/nucleos/nucleos-form-extensions/pull/498) thanks to @core23
 
-### Fixed
+#### dependency
 
-- Nothing.
+ - [496: Update PHPStan packages to v2 (major)](https://github.com/nucleos/nucleos-form-extensions/pull/496) thanks to @renovate[bot]
+ - [493: Update dependency matthiasnoback/symfony-dependency-injection-test to v6](https://github.com/nucleos/nucleos-form-extensions/pull/493) thanks to @renovate[bot]
 
 ## 6.5.0 - 2024-08-14
 
