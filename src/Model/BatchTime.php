@@ -36,7 +36,7 @@ class BatchTime
 
     public function setDay(?int $day): void
     {
-        $this->day = $day ?: 0;
+        $this->day = $day ?? 0;
     }
 
     public function getTime(): ?DateTimeInterface

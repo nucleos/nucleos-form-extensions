@@ -15,6 +15,9 @@ use Nucleos\Form\Type\GenderType;
 use Symfony\Component\Form\ChoiceList\View\ChoiceView;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
+/**
+ * @extends BaseTypeTestCase<string>
+ */
 final class GenderTypeTest extends BaseTypeTestCase
 {
     public function testGendersAreSelectable(): void

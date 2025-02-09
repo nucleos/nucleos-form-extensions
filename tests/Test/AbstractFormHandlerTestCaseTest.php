@@ -19,6 +19,9 @@ use stdClass;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
+/**
+ * @extends AbstractFormHandlerTest<mixed>
+ */
 final class AbstractFormHandlerTestCaseTest extends AbstractFormHandlerTest
 {
     private FormHandlerInterface $formHandler;

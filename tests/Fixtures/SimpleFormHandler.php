@@ -15,6 +15,9 @@ use Nucleos\Form\Handler\AbstractFormHandler;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\HttpFoundation\Request;
 
+/**
+ * @extends AbstractFormHandler<mixed>
+ */
 final class SimpleFormHandler extends AbstractFormHandler
 {
     protected function process(FormInterface $form, Request $request): bool

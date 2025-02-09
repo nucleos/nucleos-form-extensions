@@ -11,9 +11,13 @@ declare(strict_types=1);
 
 namespace Nucleos\Form\Tests\Type;
 
+use Nucleos\Form\Model\BatchTime;
 use Nucleos\Form\Type\BatchTimeType;
 use Symfony\Component\Form\Extension\Core\Type\FormType;
 
+/**
+ * @extends BaseTypeTestCase<BatchTime>
+ */
 final class BatchTimeTypeTest extends BaseTypeTestCase
 {
     public function testGetParent(): void

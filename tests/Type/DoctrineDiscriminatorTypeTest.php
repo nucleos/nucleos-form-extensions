@@ -24,6 +24,9 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\Form\FormTypeInterface;
 
+/**
+ * @extends BaseTypeTestCase<string>
+ */
 final class DoctrineDiscriminatorTypeTest extends BaseTypeTestCase
 {
     /**

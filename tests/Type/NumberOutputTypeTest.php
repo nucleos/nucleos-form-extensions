@@ -13,6 +13,9 @@ namespace Nucleos\Form\Tests\Type;
 
 use Nucleos\Form\Type\NumberOutputType;
 
+/**
+ * @extends BaseTypeTestCase<numeric>
+ */
 final class NumberOutputTypeTest extends BaseTypeTestCase
 {
     public function testSubmitNull($expected = null, $norm = null, $view = ''): void

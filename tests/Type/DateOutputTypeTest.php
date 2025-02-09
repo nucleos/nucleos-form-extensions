@@ -11,8 +11,12 @@ declare(strict_types=1);
 
 namespace Nucleos\Form\Tests\Type;
 
+use DateTimeInterface;
 use Nucleos\Form\Type\DateOutputType;
 
+/**
+ * @extends BaseTypeTestCase<DateTimeInterface>
+ */
 final class DateOutputTypeTest extends BaseTypeTestCase
 {
     public function testSubmitNull($expected = null, $norm = null, $view = ''): void

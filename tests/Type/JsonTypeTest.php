@@ -13,6 +13,9 @@ namespace Nucleos\Form\Tests\Type;
 
 use Nucleos\Form\Type\JsonType;
 
+/**
+ * @extends BaseTypeTestCase<mixed>
+ */
 final class JsonTypeTest extends BaseTypeTestCase
 {
     public function testSubmitNull($expected = [], $norm = null, $view = ''): void
