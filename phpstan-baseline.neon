@@ -25,24 +25,6 @@ parameters:
 			path: tests/Bridge/Symfony/App/AppKernel.php
 
 		-
-			message: '#^Call to method getResponse\(\) on an unknown class Symfony\\Component\\HttpKernel\\Client\.$#'
-			identifier: class.notFound
-			count: 1
-			path: tests/Bridge/Symfony/Bundle/BundleIntegrationTest.php
-
-		-
-			message: '#^Call to method request\(\) on an unknown class Symfony\\Component\\HttpKernel\\Client\.$#'
-			identifier: class.notFound
-			count: 1
-			path: tests/Bridge/Symfony/Bundle/BundleIntegrationTest.php
-
-		-
-			message: '#^Instantiated class Symfony\\Component\\HttpKernel\\Client not found\.$#'
-			identifier: class.notFound
-			count: 1
-			path: tests/Bridge/Symfony/Bundle/BundleIntegrationTest.php
-
-		-
 			message: '#^Method Nucleos\\Form\\Tests\\Fixtures\\AlwaysErrorFormHandler\:\:preProcess\(\) never returns null so it can be removed from the return type\.$#'
 			identifier: return.unusedType
 			count: 1
@@ -77,28 +59,4 @@ parameters:
 			identifier: missingType.generics
 			count: 1
 			path: tests/Type/DoctrineDiscriminatorTypeTest.php
-
-		-
-			message: '#^Trying to mock an undefined method getBegin\(\) on class stdClass\.$#'
-			identifier: phpunit.mockMethod
-			count: 13
-			path: tests/Validator/Constraints/BatchTimeAfterValidatorTest.php
-
-		-
-			message: '#^Trying to mock an undefined method getEnd\(\) on class stdClass\.$#'
-			identifier: phpunit.mockMethod
-			count: 13
-			path: tests/Validator/Constraints/BatchTimeAfterValidatorTest.php
-
-		-
-			message: '#^Trying to mock an undefined method getBegin\(\) on class stdClass\.$#'
-			identifier: phpunit.mockMethod
-			count: 11
-			path: tests/Validator/Constraints/DateAfterValidatorTest.php
-
-		-
-			message: '#^Trying to mock an undefined method getEnd\(\) on class stdClass\.$#'
-			identifier: phpunit.mockMethod
-			count: 11
-			path: tests/Validator/Constraints/DateAfterValidatorTest.php
 

@@ -15,6 +15,7 @@ use DateTime;
 use InvalidArgumentException;
 use Nucleos\Form\Model\BatchTime;
 use Nucleos\Form\Tests\Fixtures\DummyConstraint;
+use Nucleos\Form\Tests\Fixtures\ExampleClass;
 use Nucleos\Form\Validator\Constraints\BatchTimeAfter;
 use Nucleos\Form\Validator\Constraints\BatchTimeAfterValidator;
 use Symfony\Component\Validator\ConstraintValidatorInterface;
@@ -43,7 +44,7 @@ final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
 
         $constraint = new BatchTimeAfter(
             [
-                'firstField'  => 'begin',
+                'firstField'  => 'invalid',
                 'secondField' => 'end',
             ]
         );
@@ -58,16 +59,13 @@ final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
         $end = new BatchTime();
         $end->setTime(new DateTime());
 
-        $object = $this->getMockBuilder('stdClass')
-            ->addMethods(['getEnd'])
-            ->getMock()
-        ;
-        $object->method('getEnd')->willReturn($end);
+        $object = new ExampleClass();
+        $object->setEnd($end);
 
         $constraint = new BatchTimeAfter(
             [
                 'firstField'  => 'begin',
-                'secondField' => 'end',
+                'secondField' => 'invalid',
             ]
         );
 
@@ -81,16 +79,13 @@ final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
         $begin = new BatchTime();
         $begin->setTime(new DateTime());
 
-        $object = $this->getMockBuilder('stdClass')
-            ->addMethods(['getBegin'])
-            ->getMock()
-        ;
-        $object->method('getBegin')->willReturn($begin);
+        $object = new ExampleClass();
+        $object->setBegin($begin);
 
         $constraint = new BatchTimeAfter(
             [
                 'firstField'  => 'begin',
-                'secondField' => 'end',
+                'secondField' => 'invalid',
             ]
         );
 
@@ -104,12 +99,9 @@ final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
         $begin = new BatchTime();
         $begin->setTime(new DateTime());
 
-        $object = $this->getMockBuilder('stdClass')
-            ->addMethods(['getBegin', 'getEnd'])
-            ->getMock()
-        ;
-        $object->method('getBegin')->willReturn($begin);
-        $object->method('getEnd')->willReturn('test');
+        $object = new ExampleClass();
+        $object->setBegin($begin);
+        $object->setEnd('test');
 
         $constraint = new BatchTimeAfter(
             [
@@ -128,12 +120,9 @@ final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
         $end = new BatchTime();
         $end->setTime(new DateTime());
 
-        $object = $this->getMockBuilder('stdClass')
-            ->addMethods(['getBegin', 'getEnd'])
-            ->getMock()
-        ;
-        $object->method('getBegin')->willReturn('test');
-        $object->method('getEnd')->willReturn($end);
+        $object = new ExampleClass();
+        $object->setBegin('test');
+        $object->setEnd($end);
 
         $constraint = new BatchTimeAfter(
             [
@@ -150,12 +139,9 @@ final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
         $end = new BatchTime();
         $end->setTime(new DateTime());
 
-        $object = $this->getMockBuilder('stdClass')
-            ->addMethods(['getBegin', 'getEnd'])
-            ->getMock()
-        ;
-        $object->method('getBegin')->willReturn(null);
-        $object->method('getEnd')->willReturn($end);
+        $object = new ExampleClass();
+        $object->setBegin(null);
+        $object->setEnd($end);
 
         $constraint = new BatchTimeAfter(
             [
@@ -181,12 +167,9 @@ final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
         $begin = new BatchTime();
         $begin->setTime(new DateTime());
 
-        $object = $this->getMockBuilder('stdClass')
-            ->addMethods(['getBegin', 'getEnd'])
-            ->getMock()
-        ;
-        $object->method('getBegin')->willReturn($begin);
-        $object->method('getEnd')->willReturn(null);
+        $object = new ExampleClass();
+        $object->setBegin($begin);
+        $object->setEnd(null);
 
         $constraint = new BatchTimeAfter(
             [
@@ -215,12 +198,9 @@ final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
         $end = new BatchTime();
         $end->setTime(new DateTime('2015-01-01 10:00'));
 
-        $object = $this->getMockBuilder('stdClass')
-            ->addMethods(['getBegin', 'getEnd'])
-            ->getMock()
-        ;
-        $object->method('getBegin')->willReturn($begin);
-        $object->method('getEnd')->willReturn($end);
+        $object = new ExampleClass();
+        $object->setBegin($begin);
+        $object->setEnd($end);
 
         $constraint = new BatchTimeAfter(
             [
@@ -249,12 +229,9 @@ final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
         $end = new BatchTime();
         $end->setTime(new DateTime('2015-02-01 10:00'));
 
-        $object = $this->getMockBuilder('stdClass')
-            ->addMethods(['getBegin', 'getEnd'])
-            ->getMock()
-        ;
-        $object->method('getBegin')->willReturn($begin);
-        $object->method('getEnd')->willReturn($end);
+        $object = new ExampleClass();
+        $object->setBegin($begin);
+        $object->setEnd($end);
 
         $constraint = new BatchTimeAfter(
             [
@@ -276,12 +253,9 @@ final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
         $end = new BatchTime();
         $end->setTime(new DateTime('2015-01-01 10:00'));
 
-        $object = $this->getMockBuilder('stdClass')
-            ->addMethods(['getBegin', 'getEnd'])
-            ->getMock()
-        ;
-        $object->method('getBegin')->willReturn($begin);
-        $object->method('getEnd')->willReturn($end);
+        $object = new ExampleClass();
+        $object->setBegin($begin);
+        $object->setEnd($end);
 
         $constraint = new BatchTimeAfter(
             [
@@ -297,12 +271,9 @@ final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
 
     public function testValidateNotRequired(): void
     {
-        $object = $this->getMockBuilder('stdClass')
-            ->addMethods(['getBegin', 'getEnd'])
-            ->getMock()
-        ;
-        $object->method('getBegin')->willReturn(null);
-        $object->method('getEnd')->willReturn(null);
+        $object = new ExampleClass();
+        $object->setBegin(null);
+        $object->setEnd(null);
 
         $constraint = new BatchTimeAfter(
             [
@@ -322,12 +293,9 @@ final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
         $end = new BatchTime();
         $end->setTime(new DateTime());
 
-        $object = $this->getMockBuilder('stdClass')
-            ->addMethods(['getBegin', 'getEnd'])
-            ->getMock()
-        ;
-        $object->method('getBegin')->willReturn(null);
-        $object->method('getEnd')->willReturn($end);
+        $object = new ExampleClass();
+        $object->setBegin(null);
+        $object->setEnd($end);
 
         $constraint = new BatchTimeAfter(
             [
@@ -354,12 +322,9 @@ final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
         $begin = new BatchTime();
         $begin->setTime(new DateTime());
 
-        $object = $this->getMockBuilder('stdClass')
-            ->addMethods(['getBegin', 'getEnd'])
-            ->getMock()
-        ;
-        $object->method('getBegin')->willReturn($begin);
-        $object->method('getEnd')->willReturn(null);
+        $object = new ExampleClass();
+        $object->setBegin($begin);
+        $object->setEnd(null);
 
         $constraint = new BatchTimeAfter(
             [
@@ -388,12 +353,9 @@ final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
         $end = new BatchTime();
         $end->setTime(new DateTime('2015-02-01 10:00'));
 
-        $object = $this->getMockBuilder('stdClass')
-            ->addMethods(['getBegin', 'getEnd'])
-            ->getMock()
-        ;
-        $object->method('getBegin')->willReturn($begin);
-        $object->method('getEnd')->willReturn($end);
+        $object = new ExampleClass();
+        $object->setBegin($begin);
+        $object->setEnd($end);
 
         $constraint = new BatchTimeAfter(
             [
@@ -421,12 +383,9 @@ final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
 
         $end = new BatchTime();
 
-        $object = $this->getMockBuilder('stdClass')
-            ->addMethods(['getBegin', 'getEnd'])
-            ->getMock()
-        ;
-        $object->method('getBegin')->willReturn($begin);
-        $object->method('getEnd')->willReturn($end);
+        $object = new ExampleClass();
+        $object->setBegin($begin);
+        $object->setEnd($end);
 
         $constraint = new BatchTimeAfter(
             [
