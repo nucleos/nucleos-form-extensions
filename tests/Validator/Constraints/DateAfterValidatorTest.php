@@ -14,6 +14,7 @@ namespace Nucleos\Form\Tests\Validator\Constraints;
 use DateTime;
 use InvalidArgumentException;
 use Nucleos\Form\Tests\Fixtures\DummyConstraint;
+use Nucleos\Form\Tests\Fixtures\ExampleClass;
 use Nucleos\Form\Validator\Constraints\DateAfter;
 use Nucleos\Form\Validator\Constraints\DateAfterValidator;
 use Symfony\Component\Validator\ConstraintValidatorInterface;
@@ -54,15 +55,12 @@ final class DateAfterValidatorTest extends ConstraintValidatorTestCase
     {
         $this->expectException(InvalidArgumentException::class);
 
-        $object = $this->getMockBuilder('stdClass')
-            ->addMethods(['getEnd'])
-            ->getMock()
-        ;
-        $object->method('getEnd')->willReturn(new DateTime());
+        $object = new ExampleClass();
+        $object->setEnd(new DateTime());
 
         $constraint = new DateAfter(
             [
-                'firstField'  => 'begin',
+                'firstField'  => 'invalid',
                 'secondField' => 'end',
             ]
         );
@@ -74,16 +72,13 @@ final class DateAfterValidatorTest extends ConstraintValidatorTestCase
     {
         $this->expectException(InvalidArgumentException::class);
 
-        $object = $this->getMockBuilder('stdClass')
-            ->addMethods(['getBegin'])
-            ->getMock()
-        ;
-        $object->method('getBegin')->willReturn(new DateTime());
+        $object = new ExampleClass();
+        $object->setBegin(new DateTime());
 
         $constraint = new DateAfter(
             [
                 'firstField'  => 'begin',
-                'secondField' => 'end',
+                'secondField' => 'invalid',
             ]
         );
 
@@ -94,12 +89,9 @@ final class DateAfterValidatorTest extends ConstraintValidatorTestCase
     {
         $this->expectException(UnexpectedTypeException::class);
 
-        $object = $this->getMockBuilder('stdClass')
-            ->addMethods(['getBegin', 'getEnd'])
-            ->getMock()
-        ;
-        $object->method('getBegin')->willReturn(new DateTime());
-        $object->method('getEnd')->willReturn('test');
+        $object = new ExampleClass();
+        $object->setBegin(new DateTime());
+        $object->setEnd('test');
 
         $constraint = new DateAfter(
             [
@@ -115,12 +107,9 @@ final class DateAfterValidatorTest extends ConstraintValidatorTestCase
     {
         $this->expectException(UnexpectedTypeException::class);
 
-        $object = $this->getMockBuilder('stdClass')
-            ->addMethods(['getBegin', 'getEnd'])
-            ->getMock()
-        ;
-        $object->method('getBegin')->willReturn('test');
-        $object->method('getEnd')->willReturn(new DateTime());
+        $object = new ExampleClass();
+        $object->setBegin('test');
+        $object->setEnd(new DateTime());
 
         $constraint = new DateAfter(
             [
@@ -134,12 +123,9 @@ final class DateAfterValidatorTest extends ConstraintValidatorTestCase
 
     public function testValidateEmptyFirstValue(): void
     {
-        $object = $this->getMockBuilder('stdClass')
-            ->addMethods(['getBegin', 'getEnd'])
-            ->getMock()
-        ;
-        $object->method('getBegin')->willReturn(null);
-        $object->method('getEnd')->willReturn(new DateTime());
+        $object = new ExampleClass();
+        $object->setBegin(null);
+        $object->setEnd(new DateTime());
 
         $constraint = new DateAfter(
             [
@@ -162,12 +148,9 @@ final class DateAfterValidatorTest extends ConstraintValidatorTestCase
 
     public function testValidateEmptySecondValue(): void
     {
-        $object = $this->getMockBuilder('stdClass')
-            ->addMethods(['getBegin', 'getEnd'])
-            ->getMock()
-        ;
-        $object->method('getBegin')->willReturn(new DateTime());
-        $object->method('getEnd')->willReturn(null);
+        $object = new ExampleClass();
+        $object->setBegin(new DateTime());
+        $object->setEnd(null);
 
         $constraint = new DateAfter(
             [
@@ -190,12 +173,9 @@ final class DateAfterValidatorTest extends ConstraintValidatorTestCase
 
     public function testValidateDatesInvalid(): void
     {
-        $object = $this->getMockBuilder('stdClass')
-            ->addMethods(['getBegin', 'getEnd'])
-            ->getMock()
-        ;
-        $object->method('getBegin')->willReturn(new DateTime('2015-02-01 10:00'));
-        $object->method('getEnd')->willReturn(new DateTime('2015-01-01 10:00'));
+        $object = new ExampleClass();
+        $object->setBegin(new DateTime('2015-02-01 10:00'));
+        $object->setEnd(new DateTime('2015-01-01 10:00'));
 
         $constraint = new DateAfter(
             [
@@ -218,12 +198,9 @@ final class DateAfterValidatorTest extends ConstraintValidatorTestCase
 
     public function testValidateDatesValid(): void
     {
-        $object = $this->getMockBuilder('stdClass')
-            ->addMethods(['getBegin', 'getEnd'])
-            ->getMock()
-        ;
-        $object->method('getBegin')->willReturn(new DateTime('2015-01-01 10:00'));
-        $object->method('getEnd')->willReturn(new DateTime('2015-02-01 10:00'));
+        $object = new ExampleClass();
+        $object->setBegin(new DateTime('2015-01-01 10:00'));
+        $object->setEnd(new DateTime('2015-02-01 10:00'));
 
         $constraint = new DateAfter(
             [
@@ -239,12 +216,9 @@ final class DateAfterValidatorTest extends ConstraintValidatorTestCase
 
     public function testValidateEqualDate(): void
     {
-        $object = $this->getMockBuilder('stdClass')
-            ->addMethods(['getBegin', 'getEnd'])
-            ->getMock()
-        ;
-        $object->method('getBegin')->willReturn(new DateTime('2015-01-01 10:00'));
-        $object->method('getEnd')->willReturn(new DateTime('2015-01-01 10:00'));
+        $object = new ExampleClass();
+        $object->setBegin(new DateTime('2015-01-01 10:00'));
+        $object->setEnd(new DateTime('2015-01-01 10:00'));
 
         $constraint = new DateAfter(
             [
@@ -260,12 +234,9 @@ final class DateAfterValidatorTest extends ConstraintValidatorTestCase
 
     public function testValidateNotRequired(): void
     {
-        $object = $this->getMockBuilder('stdClass')
-            ->addMethods(['getBegin', 'getEnd'])
-            ->getMock()
-        ;
-        $object->method('getBegin')->willReturn(null);
-        $object->method('getEnd')->willReturn(null);
+        $object = new ExampleClass();
+        $object->setBegin(null);
+        $object->setEnd(null);
 
         $constraint = new DateAfter(
             [
@@ -282,12 +253,9 @@ final class DateAfterValidatorTest extends ConstraintValidatorTestCase
 
     public function testValidateNotRequiredWithEmptyFirst(): void
     {
-        $object = $this->getMockBuilder('stdClass')
-            ->addMethods(['getBegin', 'getEnd'])
-            ->getMock()
-        ;
-        $object->method('getBegin')->willReturn(null);
-        $object->method('getEnd')->willReturn(new DateTime());
+        $object = new ExampleClass();
+        $object->setBegin(null);
+        $object->setEnd(new DateTime());
 
         $constraint = new DateAfter(
             [
@@ -306,12 +274,9 @@ final class DateAfterValidatorTest extends ConstraintValidatorTestCase
 
     public function testValidateNotRequiredWithEmptySecond(): void
     {
-        $object = $this->getMockBuilder('stdClass')
-            ->addMethods(['getBegin', 'getEnd'])
-            ->getMock()
-        ;
-        $object->method('getBegin')->willReturn(new DateTime());
-        $object->method('getEnd')->willReturn(null);
+        $object = new ExampleClass();
+        $object->setBegin(new DateTime());
+        $object->setEnd(null);
 
         $constraint = new DateAfter(
             [
