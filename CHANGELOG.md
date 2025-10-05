@@ -2,27 +2,29 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
-## 6.7.0 - TBD
+## 6.7.0 - 2025-10-05
 
-### Added
 
-- Nothing.
+-----
 
-### Changed
+### Release Notes for [6.7.0](https://github.com/nucleos/nucleos-form-extensions/milestone/21)
 
-- Nothing.
+Feature release (minor)
 
-### Deprecated
+### 6.7.0
 
-- Nothing.
+- Total issues resolved: **0**
+- Total pull requests resolved: **3**
+- Total contributors: **1**
 
-### Removed
+#### dependency
 
-- Nothing.
+ - [505: Update to phpunit v12](https://github.com/nucleos/nucleos-form-extensions/pull/505) thanks to @core23
+ - [504: Add support for doctrine/persistence v4](https://github.com/nucleos/nucleos-form-extensions/pull/504) thanks to @core23
 
-### Fixed
+#### Enhancement
 
-- Nothing.
+ - [503: Remove ci pipeline overrides ](https://github.com/nucleos/nucleos-form-extensions/pull/503) thanks to @core23
 
 ## 6.6.0 - 2025-02-09
 
