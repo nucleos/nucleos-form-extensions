@@ -2,27 +2,24 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
-## 6.8.0 - TBD
+## 6.8.0 - 2025-10-12
 
-### Added
 
-- Nothing.
+-----
 
-### Changed
+### Release Notes for [6.8.0](https://github.com/nucleos/nucleos-form-extensions/milestone/23)
 
-- Nothing.
+Feature release (minor)
 
-### Deprecated
+### 6.8.0
 
-- Nothing.
+- Total issues resolved: **0**
+- Total pull requests resolved: **1**
+- Total contributors: **1**
 
-### Removed
+#### dependency
 
-- Nothing.
-
-### Fixed
-
-- Nothing.
+ - [520: Add support for doctrine/doctrine-bundle 3](https://github.com/nucleos/nucleos-form-extensions/pull/520) thanks to @core23
 
 ## 6.7.0 - 2025-10-05
 
