@@ -43,10 +43,8 @@ final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
         $this->expectExceptionMessage('Could not validate "string"');
 
         $constraint = new BatchTimeAfter(
-            [
-                'firstField'  => 'invalid',
-                'secondField' => 'end',
-            ]
+            firstField  : 'invalid',
+            secondField : 'end',
         );
 
         $this->validator->validate('dummy', $constraint);
@@ -63,10 +61,8 @@ final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
         $object->setEnd($end);
 
         $constraint = new BatchTimeAfter(
-            [
-                'firstField'  => 'begin',
-                'secondField' => 'invalid',
-            ]
+            firstField  : 'begin',
+            secondField : 'invalid',
         );
 
         $this->validator->validate($object, $constraint);
@@ -83,10 +79,8 @@ final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
         $object->setBegin($begin);
 
         $constraint = new BatchTimeAfter(
-            [
-                'firstField'  => 'begin',
-                'secondField' => 'invalid',
-            ]
+            firstField  : 'begin',
+            secondField : 'invalid',
         );
 
         $this->validator->validate($object, $constraint);
@@ -104,10 +98,8 @@ final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
         $object->setEnd('test');
 
         $constraint = new BatchTimeAfter(
-            [
-                'firstField'  => 'begin',
-                'secondField' => 'end',
-            ]
+            firstField  : 'begin',
+            secondField : 'end',
         );
 
         $this->validator->validate($object, $constraint);
@@ -125,10 +117,8 @@ final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
         $object->setEnd($end);
 
         $constraint = new BatchTimeAfter(
-            [
-                'firstField'  => 'begin',
-                'secondField' => 'end',
-            ]
+            firstField  : 'begin',
+            secondField : 'end',
         );
 
         $this->validator->validate($object, $constraint);
@@ -144,10 +134,8 @@ final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
         $object->setEnd($end);
 
         $constraint = new BatchTimeAfter(
-            [
-                'firstField'  => 'begin',
-                'secondField' => 'end',
-            ]
+            firstField  : 'begin',
+            secondField : 'end',
         );
 
         $this->setPropertyPath('');
@@ -172,10 +160,8 @@ final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
         $object->setEnd(null);
 
         $constraint = new BatchTimeAfter(
-            [
-                'firstField'  => 'begin',
-                'secondField' => 'end',
-            ]
+            firstField  : 'begin',
+            secondField : 'end',
         );
 
         $this->setPropertyPath('');
@@ -203,10 +189,8 @@ final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
         $object->setEnd($end);
 
         $constraint = new BatchTimeAfter(
-            [
-                'firstField'  => 'begin',
-                'secondField' => 'end',
-            ]
+            firstField  : 'begin',
+            secondField : 'end',
         );
 
         $this->setPropertyPath('');
@@ -234,10 +218,8 @@ final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
         $object->setEnd($end);
 
         $constraint = new BatchTimeAfter(
-            [
-                'firstField'  => 'begin',
-                'secondField' => 'end',
-            ]
+            firstField  : 'begin',
+            secondField : 'end',
         );
 
         $this->validator->validate($object, $constraint);
@@ -258,10 +240,8 @@ final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
         $object->setEnd($end);
 
         $constraint = new BatchTimeAfter(
-            [
-                'firstField'  => 'begin',
-                'secondField' => 'end',
-            ]
+            firstField  : 'begin',
+            secondField : 'end',
         );
 
         $this->validator->validate($object, $constraint);
@@ -276,11 +256,9 @@ final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
         $object->setEnd(null);
 
         $constraint = new BatchTimeAfter(
-            [
-                'firstField'  => 'begin',
-                'secondField' => 'end',
-                'required'    => false,
-            ]
+            firstField  : 'begin',
+            secondField : 'end',
+            required    : false,
         );
 
         $this->validator->validate($object, $constraint);
@@ -298,11 +276,9 @@ final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
         $object->setEnd($end);
 
         $constraint = new BatchTimeAfter(
-            [
-                'firstField'  => 'begin',
-                'secondField' => 'end',
-                'required'    => false,
-            ]
+            firstField  : 'begin',
+            secondField : 'end',
+            required    : false,
         );
 
         $this->setPropertyPath('');
@@ -327,11 +303,9 @@ final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
         $object->setEnd(null);
 
         $constraint = new BatchTimeAfter(
-            [
-                'firstField'  => 'begin',
-                'secondField' => 'end',
-                'required'    => false,
-            ]
+            firstField  : 'begin',
+            secondField : 'end',
+            required    : false,
         );
 
         $this->setPropertyPath('');
@@ -358,10 +332,8 @@ final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
         $object->setEnd($end);
 
         $constraint = new BatchTimeAfter(
-            [
-                'firstField'  => 'begin',
-                'secondField' => 'end',
-            ]
+            firstField  : 'begin',
+            secondField : 'end',
         );
 
         $this->setPropertyPath('');
@@ -388,10 +360,8 @@ final class BatchTimeAfterValidatorTest extends ConstraintValidatorTestCase
         $object->setEnd($end);
 
         $constraint = new BatchTimeAfter(
-            [
-                'firstField'  => 'begin',
-                'secondField' => 'end',
-            ]
+            firstField  : 'begin',
+            secondField : 'end',
         );
 
         $this->setPropertyPath('');

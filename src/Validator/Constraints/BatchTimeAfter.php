@@ -14,6 +14,7 @@ namespace Nucleos\Form\Validator\Constraints;
 use Attribute;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\Exception\InvalidOptionsException;
+use Symfony\Component\Validator\Exception\MissingOptionsException;
 
 /**
  * @Annotation
@@ -48,6 +49,8 @@ final class BatchTimeAfter extends Constraint
     public $required = true;
 
     /**
+     * @SuppressWarnings("PHPMD.NPathComplexity")
+     *
      * @param array<string, mixed> $options
      */
     public function __construct(
@@ -75,6 +78,18 @@ final class BatchTimeAfter extends Constraint
         $this->emptyMessage = $emptyMessage ?? $this->emptyMessage;
         $this->required     = $required     ?? $this->required;
 
+        if (null === $this->firstField) {
+            throw new MissingOptionsException('The options "firstField" must be set for constraint "'.__CLASS__.'".', [
+                'firstField',
+            ]);
+        }
+
+        if (null === $this->secondField) {
+            throw new MissingOptionsException('The options "secondField" must be set for constraint "'.__CLASS__.'".', [
+                'secondField',
+            ]);
+        }
+
         if ($this->firstField === $this->secondField) {
             throw new InvalidOptionsException('The options "firstField" and "secondField" can not be the same for constraint '.__CLASS__, [
                 'firstField',
@@ -83,6 +98,9 @@ final class BatchTimeAfter extends Constraint
         }
     }
 
+    /**
+     * @return string[]
+     */
     public function getRequiredOptions(): array
     {
         return [

@@ -42,10 +42,8 @@ final class DateAfterValidatorTest extends ConstraintValidatorTestCase
         $this->expectExceptionMessage('Could not validate "string"');
 
         $constraint = new DateAfter(
-            [
-                'firstField'  => 'begin',
-                'secondField' => 'end',
-            ]
+            firstField  : 'begin',
+            secondField : 'end',
         );
 
         $this->validator->validate('dummy', $constraint);
@@ -59,10 +57,8 @@ final class DateAfterValidatorTest extends ConstraintValidatorTestCase
         $object->setEnd(new DateTime());
 
         $constraint = new DateAfter(
-            [
-                'firstField'  => 'invalid',
-                'secondField' => 'end',
-            ]
+            firstField  : 'invalid',
+            secondField : 'end',
         );
 
         $this->validator->validate($object, $constraint);
@@ -76,10 +72,8 @@ final class DateAfterValidatorTest extends ConstraintValidatorTestCase
         $object->setBegin(new DateTime());
 
         $constraint = new DateAfter(
-            [
-                'firstField'  => 'begin',
-                'secondField' => 'invalid',
-            ]
+            firstField  : 'begin',
+            secondField : 'invalid',
         );
 
         $this->validator->validate($object, $constraint);
@@ -94,10 +88,8 @@ final class DateAfterValidatorTest extends ConstraintValidatorTestCase
         $object->setEnd('test');
 
         $constraint = new DateAfter(
-            [
-                'firstField'  => 'begin',
-                'secondField' => 'end',
-            ]
+            firstField  : 'begin',
+            secondField : 'end',
         );
 
         $this->validator->validate($object, $constraint);
@@ -112,10 +104,8 @@ final class DateAfterValidatorTest extends ConstraintValidatorTestCase
         $object->setEnd(new DateTime());
 
         $constraint = new DateAfter(
-            [
-                'firstField'  => 'begin',
-                'secondField' => 'end',
-            ]
+            firstField  : 'begin',
+            secondField : 'end',
         );
 
         $this->validator->validate($object, $constraint);
@@ -128,10 +118,8 @@ final class DateAfterValidatorTest extends ConstraintValidatorTestCase
         $object->setEnd(new DateTime());
 
         $constraint = new DateAfter(
-            [
-                'firstField'  => 'begin',
-                'secondField' => 'end',
-            ]
+            firstField  : 'begin',
+            secondField : 'end',
         );
 
         $this->setPropertyPath('');
@@ -153,10 +141,8 @@ final class DateAfterValidatorTest extends ConstraintValidatorTestCase
         $object->setEnd(null);
 
         $constraint = new DateAfter(
-            [
-                'firstField'  => 'begin',
-                'secondField' => 'end',
-            ]
+            firstField  : 'begin',
+            secondField : 'end',
         );
 
         $this->setPropertyPath('');
@@ -178,10 +164,8 @@ final class DateAfterValidatorTest extends ConstraintValidatorTestCase
         $object->setEnd(new DateTime('2015-01-01 10:00'));
 
         $constraint = new DateAfter(
-            [
-                'firstField'  => 'begin',
-                'secondField' => 'end',
-            ]
+            firstField  : 'begin',
+            secondField : 'end',
         );
 
         $this->setPropertyPath('');
@@ -203,10 +187,8 @@ final class DateAfterValidatorTest extends ConstraintValidatorTestCase
         $object->setEnd(new DateTime('2015-02-01 10:00'));
 
         $constraint = new DateAfter(
-            [
-                'firstField'  => 'begin',
-                'secondField' => 'end',
-            ]
+            firstField  : 'begin',
+            secondField : 'end',
         );
 
         $this->validator->validate($object, $constraint);
@@ -221,10 +203,8 @@ final class DateAfterValidatorTest extends ConstraintValidatorTestCase
         $object->setEnd(new DateTime('2015-01-01 10:00'));
 
         $constraint = new DateAfter(
-            [
-                'firstField'  => 'begin',
-                'secondField' => 'end',
-            ]
+            firstField  : 'begin',
+            secondField : 'end',
         );
 
         $this->validator->validate($object, $constraint);
@@ -239,11 +219,9 @@ final class DateAfterValidatorTest extends ConstraintValidatorTestCase
         $object->setEnd(null);
 
         $constraint = new DateAfter(
-            [
-                'firstField'  => 'begin',
-                'secondField' => 'end',
-                'required'    => false,
-            ]
+            firstField  : 'begin',
+            secondField : 'end',
+            required    : false,
         );
 
         $this->validator->validate($object, $constraint);
@@ -258,11 +236,9 @@ final class DateAfterValidatorTest extends ConstraintValidatorTestCase
         $object->setEnd(new DateTime());
 
         $constraint = new DateAfter(
-            [
-                'firstField'  => 'begin',
-                'secondField' => 'end',
-                'required'    => false,
-            ]
+            firstField  : 'begin',
+            secondField : 'end',
+            required    : false,
         );
 
         $this->setPropertyPath('');
@@ -279,11 +255,9 @@ final class DateAfterValidatorTest extends ConstraintValidatorTestCase
         $object->setEnd(null);
 
         $constraint = new DateAfter(
-            [
-                'firstField'  => 'begin',
-                'secondField' => 'end',
-                'required'    => false,
-            ]
+            firstField  : 'begin',
+            secondField : 'end',
+            required    : false,
         );
 
         $this->setPropertyPath('');
