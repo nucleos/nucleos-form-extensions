@@ -88,6 +88,8 @@ final class TimePickerType extends AbstractType
                     $dpKey
                 );
 
+                \assert(null !== $dpKey);
+
                 $dpOptions[$dpKey] = $value;
             }
         }

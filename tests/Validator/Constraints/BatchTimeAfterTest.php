@@ -23,9 +23,9 @@ final class BatchTimeAfterTest extends TestCase
         $this->expectException(MissingOptionsException::class);
         $this->expectExceptionMessageMatches(\sprintf('#^%s#', preg_quote('The options "firstField" must be set for constraint', '#')));
 
-        new BatchTimeAfter([
-            'secondField' => 'first',
-        ]);
+        new BatchTimeAfter(
+            secondField : 'first',
+        );
     }
 
     public function testItIsNotInstantiableWithMissingSecondField(): void
@@ -33,9 +33,9 @@ final class BatchTimeAfterTest extends TestCase
         $this->expectException(MissingOptionsException::class);
         $this->expectExceptionMessageMatches(\sprintf('#^%s#', preg_quote('The options "secondField" must be set for constraint', '#')));
 
-        new BatchTimeAfter([
-            'firstField' => 'first',
-        ]);
+        new BatchTimeAfter(
+            firstField : 'first',
+        );
     }
 
     public function testItIsNotInstantiableWithSameField(): void
@@ -43,18 +43,18 @@ final class BatchTimeAfterTest extends TestCase
         $this->expectException(InvalidOptionsException::class);
         $this->expectExceptionMessage('The options "firstField" and "secondField" can not be the same for constraint '.BatchTimeAfter::class);
 
-        new BatchTimeAfter([
-            'firstField'  => 'first',
-            'secondField' => 'first',
-        ]);
+        new BatchTimeAfter(
+            firstField  : 'first',
+            secondField : 'first',
+        );
     }
 
     public function testItIsInstantiable(): void
     {
-        $dateAfter = new BatchTimeAfter([
-            'firstField'  => 'first',
-            'secondField' => 'second',
-        ]);
+        $dateAfter = new BatchTimeAfter(
+            firstField  : 'first',
+            secondField : 'second',
+        );
 
         self::assertSame('first', $dateAfter->firstField);
         self::assertSame('second', $dateAfter->secondField);
@@ -62,10 +62,10 @@ final class BatchTimeAfterTest extends TestCase
 
     public function testGetTarget(): void
     {
-        $dateAfter = new BatchTimeAfter([
-            'firstField'  => 'first',
-            'secondField' => 'second',
-        ]);
+        $dateAfter = new BatchTimeAfter(
+            firstField  : 'first',
+            secondField : 'second',
+        );
 
         self::assertSame('class', $dateAfter->getTargets());
     }
