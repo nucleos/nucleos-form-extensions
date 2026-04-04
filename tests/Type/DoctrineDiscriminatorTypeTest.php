@@ -54,12 +54,12 @@ final class DoctrineDiscriminatorTypeTest extends BaseTypeTestCase
         ];
 
         $this->objectManager = $this->createMock(ObjectManager::class);
-        $this->objectManager->method('getClassMetadata')->with('MyEntityClass')
+        $this->objectManager->expects(self::once())->method('getClassMetadata')->with('MyEntityClass')
             ->willReturn($this->classMetadata)
         ;
 
         $this->managerRegistry = $this->createMock(ManagerRegistry::class);
-        $this->managerRegistry->method('getManagerForClass')->with('MyEntityClass')
+        $this->managerRegistry->expects(self::once())->method('getManagerForClass')->with('MyEntityClass')
             ->willReturn($this->objectManager)
         ;
 
